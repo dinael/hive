@@ -1,0 +1,52 @@
+@use '../../setup' as setup;
+@use '../../02-tools/functions' as *;
+@use '../../03-modules/accessibility' as accessibility;
+
+// Phrasing tag
+@use "abbr" as *;      // <abbr>
+@use "big" as *;       // <big>
+@use "code" as *;      // <code>, <samp>, <kbd>
+@use "del" as *;       // <del>, <s>
+@use "dfn" as *;       // <dfn>
+@use "emphasis" as *;  // <em>, <i>
+@use "ins" as *;       // <ins>
+@use "mark" as *;      // <mark>
+@use "scripts" as *;   // <sub>, <sup>
+@use "small" as *;     // <small>
+@use "strong" as *;    // <strong>
+@use "pre" as *;       // <pre>
+
+// ## Flow text content tags
+:where(P) {
+    overflow-wrap: break-word;
+}
+
+// $$ phrasing content
+@include big-styles;
+@include code-styles;
+@include delete-styles;
+@include emphasis-styles;
+@include inserted-styles;
+@include mark-styles;
+@include preformatted-styles;
+@include small-styles;
+@include strong-styles;
+@include sub-and-sup-styles;
+@include sub-styles;
+@include sup-styles;
+
+// ## tags without style by default
+
+:where(bdo){}
+
+:where(ru)by{}
+
+:where(rp){}
+
+:where(rt){}
+
+:where(ti)me{}
+
+:where(wb)r{}
+
+:where(bd)i{}

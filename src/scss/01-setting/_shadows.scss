@@ -1,0 +1,28 @@
+
+
+//## Shadows
+$shadow-s: 0 0.25rem 1rem -0.5rem hsla(0 0% 0% / 0.75);
+$shadow-m: 0 0.3125rem 0.3125rem hsla(0 0% 0% / 0.3);
+$shadow-l: 0 0.3125rem 0.3125rem hsla(0 0% 0% / 0.5);
+$shadow-hover: 0 0.4rem 1rem -0.5rem hsla(0 0% 0% / 0.75);
+//## Text shadow
+$shadow-text-s: 0 0.25rem 1rem -0.5rem hsla(0 0% 0% / 0.75);
+$shadow-text-m: 0 0.3125rem 0.3125rem hsla(0 0% 0% / 0.3);
+$shadow-text-l: 0 0.3125rem 0.3125rem hsla(0 0% 0% / 0.5);
+$shadow-text-hover: 0 0.4rem 1rem -0.5rem hsla(0 0% 0% / 0.75);
+
+// $$ Shadows
+$shadow-swatches: (
+    S: $shadow-s,
+    M: $shadow-m,
+    L: $shadow-l,
+    hover: $shadow-hover
+) !default;
+
+// $$ Text shadow
+$text-shadow-swatches: (
+    S: $shadow-text-s,
+    M: $shadow-text-m,
+    L: $shadow-text-l,
+    hover: $shadow-text-hover
+) !default;

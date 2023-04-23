@@ -1,0 +1,52 @@
+@use '../../setup' as setup;
+@use '../../02-tools/functions' as *;
+@use '../../03-modules/breakpoints' as breakpoint;
+
+// ## List
+$-ut-list: setup.$ut-list;
+
+$-list-styles: (
+    none,
+    auto,
+    disc,
+    circle,
+    square,
+    decimal,
+    decimal-leading-zero,
+    lower-roman,
+    upper-roman,
+    lower-greek,
+    lower-latin,
+    upper-latin,
+    armenian,
+    georgian,
+    lower-alpha,
+    upper-alpha
+);
+
+@if $-ut-list {
+    [class*="list:"] {
+        margin-inline-start: var(--list-margin, 4ch);
+
+        li {
+            &::marker {
+                color: var(--list-styles-color, var(--color-primary));
+            }
+
+            &:not(:first-child) {
+                padding-block-start: var(--list-item-space, 0.5em);
+            }
+        }
+    }
+    .list {
+        &\:flat {
+            --list-margin: 0;
+        }
+
+        @each $name in $-list-styles {
+            &\:#{$name} {
+                --list-style: #{$name};
+            }
+        }
+    }
+}

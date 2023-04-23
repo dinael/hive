@@ -1,0 +1,18 @@
+@use '../../scss/03-modules/texts' as text;
+
+.text-component {
+  width: var(--text-width, auto);
+
+  &.ellipsis {
+    --text-width: calc(100% - 1ch);
+    @include text.ellipsis;
+  }
+  // TODO: hacer ellipsis por líneas
+  &.ellipsis-lines {
+    //@include text.ellipsis;
+  }
+
+  &.a11y-length {
+    --title-max-width: 65ch;
+  }
+}

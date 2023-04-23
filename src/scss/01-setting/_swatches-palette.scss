@@ -1,0 +1,258 @@
+// ## Palettes
+
+// $$ Red
+$red-100: hsl(10 200% 90%);
+$red-200: hsl(10 95% 80%);
+$red-300: hsl(10 85% 60%);
+$red-400: hsl(10 80% 40%);
+$red-500: hsl(10 75% 30%);
+$red-600: hsl(10 65% 20%);
+$red-700: hsl(10 55% 10%);
+$red-800: hsl(10 50% 5%);
+$red-900: hsl(10 40% 2%);
+
+// $$ Orange
+$orange-100: hsl(25 200% 200%);
+$orange-200: hsl(25 95% 90%);
+$orange-300: hsl(25 85% 80%);
+$orange-400: hsl(25 80% 60%);
+$orange-500: hsl(25 75% 50%);
+$orange-600: hsl(25 65% 40%);
+$orange-700: hsl(25 55% 30%);
+$orange-800: hsl(25 50% 20%);
+$orange-900: hsl(25 40% 8%);
+
+// $$ Brown
+
+$brown-100: hsl(30 20% 80%);
+$brown-200: hsl(30 30% 65%);
+$brown-300: hsl(25 40% 50%);
+$brown-400: hsl(15 45% 40%);
+$brown-500: hsl(9 35% 30%);
+$brown-600: hsl(10 50% 20%);
+$brown-700: hsl(360 50% 10%);
+$brown-800: hsl(360 50% 5%);
+$brown-900:  hsl(360 60% 3%);
+
+// $$ Yellow
+$yellow-100: hsl(55 200% 90%);
+$yellow-200: hsl(55 95% 80%);
+$yellow-300: hsl(55 85% 60%);
+$yellow-400: hsl(55 80% 40%);
+$yellow-500: hsl(55 75% 30%);
+$yellow-600: hsl(55 65% 20%);
+$yellow-700: hsl(55 55% 10%);
+$yellow-800: hsl(55 50% 5%);
+$yellow-900: hsl(55 40% 2%);
+
+// $$ Green
+$green-100: hsl(125 200% 90%);
+$green-200: hsl(125 95% 80%);
+$green-300: hsl(125 85% 60%);
+$green-400: hsl(125 80% 40%);
+$green-500: hsl(125 75% 30%);
+$green-600: hsl(125 65% 20%);
+$green-700: hsl(125 55% 10%);
+$green-800: hsl(125 50% 5%);
+$green-900: hsl(125 40% 2%);
+
+// $$ Aquamarine
+$aquamarine-100: hsl(165 200% 90%);
+$aquamarine-200: hsl(165 95% 80%);
+$aquamarine-300: hsl(165 85% 60%);
+$aquamarine-400: hsl(165 80% 40%);
+$aquamarine-500: hsl(165 75% 30%);
+$aquamarine-600: hsl(165 65% 20%);
+$aquamarine-700: hsl(165 55% 10%);
+$aquamarine-800: hsl(165 50% 5%);
+$aquamarine-900: hsl(165 40% 2%);
+
+// $$ Blue
+$blue-100: hsl(205 200% 90%);
+$blue-200: hsl(205 95% 80%);
+$blue-300: hsl(205 85% 60%);
+$blue-400: hsl(205 80% 40%);
+$blue-500: hsl(205 75% 30%);
+$blue-600: hsl(205 65% 20%);
+$blue-700: hsl(205 55% 10%);
+$blue-800: hsl(205 50% 5%);
+$blue-900: hsl(205 40% 2%);
+
+// $$ Violet
+$violet-100: hsl(245 200% 90%);
+$violet-200: hsl(245 95% 80%);
+$violet-300: hsl(245 85% 60%);
+$violet-400: hsl(245 80% 40%);
+$violet-500: hsl(245 75% 30%);
+$violet-600: hsl(245 65% 20%);
+$violet-700: hsl(245 55% 10%);
+$violet-800: hsl(245 50% 5%);
+$violet-900: hsl(245 40% 2%);
+
+// $$ Purple
+$purple-100: hsl(280 200% 90%);
+$purple-200: hsl(280 95% 80%);
+$purple-300: hsl(280 85% 60%);
+$purple-400: hsl(280 80% 40%);
+$purple-500: hsl(280 75% 30%);
+$purple-600: hsl(280 65% 20%);
+$purple-700: hsl(280 55% 10%);
+$purple-800: hsl(280 33% 5%);
+$purple-900: hsl(280 40% 2%);
+
+// $$ Magenta
+$magenta-100: hsl(315 200% 90%);
+$magenta-200: hsl(315 95% 80%);
+$magenta-300: hsl(315 85% 60%);
+$magenta-400: hsl(315 80% 40%);
+$magenta-500: hsl(315 75% 30%);
+$magenta-600: hsl(315 65% 20%);
+$magenta-700: hsl(315 55% 10%);
+$magenta-800: hsl(315 40% 5%);
+$magenta-900: hsl(315 32% 2%);
+
+// $$ Pink
+$pink-100: hsl(345 200% 95%);
+$pink-200: hsl(345 95% 90%);
+$pink-300: hsl(345 85% 85%);
+$pink-400: hsl(345 75% 70%);
+$pink-500: hsl(345 75% 60%);
+$pink-600: hsl(345 60% 40%);
+$pink-700: hsl(345 50% 30%);
+$pink-800: hsl(345 30% 20%);
+$pink-900: hsl(345 10% 10%);
+
+$palette: (
+    red: (
+        'default': $red-400,
+        '100': $red-100,
+        '200': $red-200,
+        '300': $red-300,
+        '400': $red-400,
+        '500': $red-500,
+        '600': $red-600,
+        '700': $red-700,
+        '800': $red-800,
+        '900': $red-900,
+    ),
+    orange: (
+        'default': $orange-400,
+        '100': $orange-100,
+        '200': $orange-200,
+        '300': $orange-300,
+        '400': $orange-400,
+        '500': $orange-500,
+        '600': $orange-600,
+        '700': $orange-700,
+        '800': $orange-800,
+        '900': $orange-900,
+    ),
+    brown: (
+        'default': $brown-400,
+        '100': $brown-100,
+        '200': $brown-200,
+        '300': $brown-300,
+        '400': $brown-400,
+        '500': $brown-500,
+        '600': $brown-600,
+        '700': $brown-700,
+        '800': $brown-800,
+        '900': $brown-900,
+    ),
+    yellow: (
+        'default': $yellow-400,
+        '100': $yellow-100,
+        '200': $yellow-200,
+        '300': $yellow-300,
+        '400': $yellow-400,
+        '500': $yellow-500,
+        '600': $yellow-600,
+        '700': $yellow-700,
+        '800': $yellow-800,
+        '900': $yellow-900,
+    ),
+    green: (
+        'default': $green-400,
+        '100': $green-100,
+        '200': $green-200,
+        '300': $green-300,
+        '400': $green-400,
+        '500': $green-500,
+        '600': $green-600,
+        '700': $green-700,
+        '800': $green-800,
+        '900': $green-900,
+    ),
+    aquamarine: (
+        'default': $aquamarine-400,
+        '100': $aquamarine-100,
+        '200': $aquamarine-200,
+        '300': $aquamarine-300,
+        '400': $aquamarine-400,
+        '500': $aquamarine-500,
+        '600': $aquamarine-600,
+        '700': $aquamarine-700,
+        '800': $aquamarine-800,
+        '900': $aquamarine-900,
+    ),
+    blue: (
+        default: $blue-400,
+        '100': $blue-100,
+        '200': $blue-200,
+        '300': $blue-300,
+        '400': $blue-400,
+        '500': $blue-500,
+        '600': $blue-600,
+        '700': $blue-700,
+        '800': $blue-800,
+        '900': $blue-900,
+    ),
+    violet: (
+        'default': $violet-400,
+        '100': $violet-100,
+        '200': $violet-200,
+        '300': $violet-300,
+        '400': $violet-400,
+        '500': $violet-500,
+        '600': $violet-600,
+        '700': $violet-700,
+        '800': $violet-800,
+        '900': $violet-900,
+    ),
+    purple: (
+        'default': $purple-400,
+        '100': $purple-100,
+        '200': $purple-200,
+        '300': $purple-300,
+        '400': $purple-400,
+        '500': $purple-500,
+        '600': $purple-600,
+        '700': $purple-700,
+        '800': $purple-800,
+        '900': $purple-900,
+    ),
+    magenta: (
+        'default': $magenta-400,
+        '100': $magenta-100,
+        '200': $magenta-200,
+        '300': $magenta-300,
+        '400': $magenta-400,
+        '500': $magenta-500,
+        '600': $magenta-600,
+        '700': $magenta-700,
+        '800': $magenta-800,
+        '900': $magenta-900,
+    ),
+    pink: (
+        'default': $pink-400,
+        '100': $pink-100,
+        '200': $pink-200,
+        '300': $pink-300,
+        '400': $pink-400,
+        '500': $pink-500,
+        '600': $pink-600,
+        '700': $pink-700,
+        '800': $pink-800,
+        '900': $pink-900,
+    ),
+)

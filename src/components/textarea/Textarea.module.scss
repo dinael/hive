@@ -1,0 +1,16 @@
+@use '../../scss/02-tools/functions' as *;
+@use '../../scss/03-modules/forms' as form;
+
+.textarea-component{
+  position: static;
+
+  textarea {
+    padding: 0.5rem;
+    border-radius: radius(XXS);
+    transition: background-color .35s ease-in-out;
+
+    &:focus {
+      --textarea-background: var(--color-accent);
+    }
+  }
+}

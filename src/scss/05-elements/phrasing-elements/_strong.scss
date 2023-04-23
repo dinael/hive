@@ -1,0 +1,9 @@
+// The Strong Importance element
+// strong & b tag
+@mixin strong-styles {
+    :where(b, strong) {
+        font-weight: var(--font-weight, 600);
+
+        @content;
+    }
+}

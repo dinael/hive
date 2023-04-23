@@ -1,0 +1,44 @@
+@use '../../setup' as setup;
+
+// ## Images
+$-ut-img: setup.$ut-img;
+
+@if $-ut-img {
+    .object-fit {
+        &\:fill {
+            object-fit: fill;
+        }
+
+        &\:contain {
+            object-fit: contain;
+        }
+
+        &\:cover {
+            object-fit: cover;
+        }
+
+        &\:scale {
+            object-fit: scale-down;
+        }
+
+        &\:inherit {
+            object-fit: inherit;
+        }
+
+        &\:initial {
+            object-fit: initial;
+        }
+
+        &\:revert {
+            object-fit: revert;
+        }
+
+        &\:unset {
+            object-fit: unset;
+        }
+
+        &\:none {
+            object-fit: none;
+        }
+    }
+}

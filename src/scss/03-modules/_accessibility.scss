@@ -1,0 +1,65 @@
+
+// ## Accessibility
+// $$ Screen reader only
+@mixin sr-only {
+    position: absolute;
+    white-space: nowrap;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    max-inline-size: 0;
+    max-block-size: 0;
+    margin-block: 0;
+    margin-inline: 0;
+
+    &:focus {
+        position: relative;
+        clip: auto;
+        width: auto;
+        height: auto;
+        overflow: auto;
+    }
+
+    .sr-only-focusable { // focusable,visually hidden element.
+        &:not(:focus):not(:focus-within){
+            //@extend.sr-only;
+        }
+    }
+}
+
+// Usage:
+// @include accessibility.sr-only
+
+// $$ High contrast mode active
+@mixin high-contrast {
+    @media (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+// $$ High contrast mode with specific black on white theme
+@mixin high-contrast-black-on-white {
+    @media (-ms-high-contrast: black-on-white) {
+        @content;
+    }
+}
+
+// $$ High contrast mode with specific white on black theme
+@mixin high-contrast-white-on-black {
+    @media (-ms-high-contrast: white-on-black) {
+        @content;
+    }
+}
+
+// $$ Motion browsers setting
+@mixin motion-no-preference {
+    @media (prefers-reduced-motion: no-preference) {
+        @content;
+    }
+}
+

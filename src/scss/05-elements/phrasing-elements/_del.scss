@@ -1,0 +1,7 @@
+@mixin delete-styles {
+    :where(del, s) {
+        text-decoration: var(--delete-text-decoration, line-through);
+
+        @content;
+    }
+}

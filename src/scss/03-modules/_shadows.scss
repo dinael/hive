@@ -1,0 +1,27 @@
+@use 'sass:map';
+@use '../01-setting/shadows' as shadow;
+
+// ## Local vars
+$-elevation: shadow.$shadow-swatches;
+$-text-shadow: shadow.$text-shadow-swatches;
+
+@function elevation($kind) {
+    @if map-has-key($-elevation, $kind) {
+        @return map.get($-elevation, $kind);
+    }
+
+    @warn "The key #{$kind} in elevation is a undefined value";
+    @return null;
+}
+
+@function text($kind) {
+    @if map-has-key($-text-shadow, $kind) {
+        @return map.get($-text-shadow, $kind);
+    }
+
+    @warn "The key #{$kind} in text-shadow is a undefined value";
+    @return null;
+}
+
+// Usage:
+// box-shadow: shadow.elevation(S);

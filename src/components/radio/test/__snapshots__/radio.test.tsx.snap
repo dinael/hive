@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InputRadio > renders snapshot 1`] = `
+<div>
+  <label
+    class="clasName-test"
+    for="id-test"
+  >
+    <span>
+      label-text
+    </span>
+    <input
+      aria-describedby=""
+      id="id-test"
+      name="inputRadio"
+      type="radio"
+      value="value-test"
+    />
+  </label>
+</div>
+`;

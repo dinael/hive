@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Paragraph > renders snapshot 1`] = `
+<div>
+  <p
+    class="
+        paragraph-component
+        
+        
+        
+        className-test
+      "
+  >
+    children-test
+  </p>
+</div>
+`;

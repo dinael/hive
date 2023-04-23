@@ -1,0 +1,39 @@
+@use '../../setup' as setup;
+
+// ## suffixes
+$-ut-suffixes: setup.$ut-suffixes;
+
+@if $-ut-suffixes {
+    .suffix,
+    [class*="suffix:"] {
+        &::after {
+            content: var(--suffixes);
+        }
+    }
+
+    .suffix {
+        &\:colon {
+            --suffixes: ":";
+        }
+
+        &\:semi-colon {
+            --suffixes: ";";
+        }
+
+        &\:comma {
+            --suffixes: ",";
+        }
+        // Currencies
+        &\:eur {
+            --suffixes: "€"
+        }
+
+        &\:dollar {
+            --suffixes: "$"
+        }
+
+        &\:percent {
+            --suffixes: "%"
+        }
+    }
+}

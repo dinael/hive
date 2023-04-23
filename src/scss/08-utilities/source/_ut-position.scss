@@ -1,0 +1,24 @@
+@use '../../setup' as setup;
+
+// ## Position
+$-ut-position: setup.$ut-position;
+
+$-position: (
+    relative,
+    absolute,
+    fixed,
+    sticky
+);
+
+@if $-ut-position {
+    [class*="position:"] {
+        position: var(--position);
+    }
+    .position {
+        @each $name in $-position {
+            &\:#{$name} {
+                --position: #{$name};
+            }
+        }
+    }
+}

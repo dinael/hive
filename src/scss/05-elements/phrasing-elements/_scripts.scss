@@ -1,0 +1,31 @@
+// Subscript and Superscript
+@mixin sub-and-sup-styles {
+
+    :where(sub, sup) {
+        font-size: var(--font-size);
+        position: relative;
+        line-height: 0;
+        vertical-align: baseline;
+        inset-block: var(--font-inset-block);
+
+        @content;
+    }
+}
+
+@mixin sup-styles {
+    :where(sup) {
+        --font-size: 75%;
+        --font-inset-block: -0.5em 0;
+
+        @content;
+    }
+}
+
+@mixin sub-styles {
+    :where(sub) {
+        --font-size: 75%;
+        --font-inset-block: 0.35em 0;
+
+        @content;
+    }
+}

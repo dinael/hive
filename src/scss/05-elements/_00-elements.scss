@@ -1,0 +1,18 @@
+// Tags
+@forward './body';
+@forward './main';
+// ---
+@forward './anchor';
+@forward './blockquote';
+@forward './table';
+@forward './hr';
+@forward './details';
+
+// tags groups
+@forward './embedded-elements';
+@forward './form-elements';
+@forward './heading-elements';
+@forward './images-elements';
+@forward './list-elements';
+@forward './math-elements';
+@forward './phrasing-elements';

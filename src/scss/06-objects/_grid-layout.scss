@@ -1,0 +1,264 @@
+@use 'sass:math';
+@use '../setup' as setup;
+@use '../01-setting/01-global' as global;
+@use '../01-setting/grid' as grid;
+@use '../01-setting/screen' as screen;
+@use '../02-tools/functions' as *;
+@use '../03-modules/breakpoints' as breakpoint;
+
+$-grid-system: setup.$grid-system;
+
+// ## Local vars
+$-max-screen: setup.$max-screen;
+$-min-screen: setup.$min-screen;
+$-screens: screen.$screen !default;
+$-wrapper-desktop-padding: 1rem !default;
+$-grid-columns: grid.$grid-columns-number !default;
+$-grid-columns-size: grid.$grid-columns-size !default;
+$-grid-gap: global.$gap-flow !default;
+$-gap-flow-row: global.$gap-flow-row !default;
+$-gap-flow-column: global.$gap-flow-column !default;
+
+// ## Grid
+@if $-grid-system {
+	.wrapper {
+		padding-inline: var(--grid-wrapper-padding, 0.5rem);
+		margin-inline: auto;
+		inline-size: min(100%, #{maps($-screens, $-max-screen)});
+	}
+
+	.out-wrapper {
+		@include breakpoint.screen(desktop) {
+			margin-inline: calc(var(--grid-wrapper-padding) * -1);
+		}
+	}
+
+	.grid {
+		display: var(--grid-display, grid);
+
+		&\@system {
+			display: grid;
+			grid-auto-flow: var(--grid-flow, row);
+			grid-template-rows: var(--grid-template-row, repeat(auto-fill, 1fr));
+			grid-template-columns: var(--grid-template-column, repeat(#{$-grid-columns}, 1fr));
+			column-gap: var(--grid-gap-column, 0);
+			row-gap: var(--grid-gap-row, 0);
+
+			& > * {
+				grid-column-start: 1;
+				grid-column-end: -1;
+			}
+
+			@include breakpoint.screen(mobile-portrait) {
+				& > * {
+					grid-column-start: auto;
+					grid-column-end: auto;
+				}
+
+			}
+
+			&.column {
+				grid-auto-flow: column;
+			}
+			// TODO: Revisar
+			&.gap {
+				--grid-gap-row: #{$-gap-flow-row};
+				--grid-gap-column: #{$-gap-flow-column};
+			}
+			// TODO: darle una vuelta a esto
+			.col\:started {
+				grid-column-start: -1;
+			}
+
+			.col\:ended {
+				grid-column-end: -1;
+			}
+
+			.col\:wide {
+				grid-column-end: span $-grid-columns;
+			}
+
+			@for $i from 1 through $-grid-columns {
+				.grid-start\:#{$i} {
+					grid-column-start: #{$i};
+				}
+			}
+
+			@for $i from 1 + 1 through $-grid-columns {
+				.grid-end\:#{$i} {
+					grid-column-end: #{$i + 1};
+				}
+			}
+
+			// $$ Main grid system
+			@for $i from 1 through $-grid-columns {
+				.grid\@default\:#{$i} {
+					grid-column-end: span #{$i};
+				}
+			}
+
+			// ## Responsive
+			// $$ QHD
+			@include breakpoint.screen(QHD) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@qhd\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ HD
+			@include breakpoint.screen(HD) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@hd\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ Desktop
+			@include breakpoint.screen(desktop) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@desktop\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ standard
+			@include breakpoint.screen(standard) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@standard\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ laptop
+			@include breakpoint.screen(laptop) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@laptop\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ Tablet
+			@include breakpoint.screen(tablet-landscape) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@tablet-landscape\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ Tablet portrait
+			@include breakpoint.screen(tablet-portrait) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@tablet\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ Mobile landscape
+			@include breakpoint.screen(mobile-landscape) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@mobile-landscape\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+
+			// $$ Mobile portrait
+			@include breakpoint.screen(mobile-portrait) {
+				@for $i from 1 through $-grid-columns {
+					.grid\@mobile\:#{$i} {
+						grid-column-end: span #{$i};
+					}
+				}
+			}
+		}
+	}
+
+	// ## Responsive utilities
+	// $$ QHD
+	@include breakpoint.screen(QHD) {
+		.grid\@qhd\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ HD
+	@include breakpoint.screen(HD) {
+		.grid\@hd\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ Desktop
+	@include breakpoint.screen(desktop) {
+		.grid\@desktop\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ standard
+	@include breakpoint.screen(standard) {
+		.grid\@standard\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ laptop
+	@include breakpoint.screen(laptop) {
+		.grid\@laptop\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ Tablet
+	@include breakpoint.screen(tablet-landscape) {
+		.grid\@tablet\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ Tablet portrait
+	@include breakpoint.screen(tablet-portrait) {
+		.grid\@tablet-portrait\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ Mobile landscape
+	@include breakpoint.screen(mobile-landscape) {
+		.grid\@mobile-landscape\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// $$ Mobile portrait
+	@include breakpoint.screen(mobile-portrait) {
+		.grid\@mobile-portrait\:100 {
+			inline-size: 100%;
+		}
+	}
+
+	// ## Hide content responsive
+
+	@include breakpoint.screen(mobile-portrait) {
+		// This is accessible
+		.grid\@mobile\:hidden {
+			overflow: hidden;
+			max-block-size: 1px !important;
+			max-inline-size: 1px !important;
+			margin: -1px 0 0 -1px !important;
+			padding: 0 !important;
+		}
+		// Non accessible
+		.grid\@mobile\:none {
+			display: none;
+		}
+	}
+}

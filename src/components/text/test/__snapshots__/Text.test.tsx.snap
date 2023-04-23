@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Text > renders as a block element 1`] = `
+<div>
+  <p
+    class="
+        text-component
+        
+        className-test
+      "
+  >
+    Example text
+  </p>
+</div>
+`;
+
+exports[`Text > renders snapshot 1`] = `
+<div>
+  <span
+    class="
+        text-component
+        
+        className-test
+      "
+  >
+    Example text
+  </span>
+</div>
+`;
+
+exports[`Text > renders with the correct extra className 1`] = `
+<div>
+  <span
+    class="
+        text-component
+        
+        className-test
+      "
+  >
+    Example text
+  </span>
+</div>
+`;
+
+exports[`Text > renders with the correct tag name 1`] = `
+<div>
+  <span
+    class="
+        text-component
+        
+        className-test
+      "
+  >
+    Example text
+  </span>
+</div>
+`;
+
+exports[`Text > renders with the correct text 1`] = `
+<div>
+  <span
+    class="
+        text-component
+        
+        className-test
+      "
+  >
+    Example text
+  </span>
+</div>
+`;

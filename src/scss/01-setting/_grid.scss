@@ -1,0 +1,14 @@
+@use '../setup' as setup;
+// Screen
+$grid-screen: setup.$max-screen;
+
+// Columns numbers
+$grid-columns-number: setup.$grid-columns-number !default;
+
+$grid-columns-size: (
+    xs: 8rem,  // 128px
+    sm: 10rem, // 160px
+    md: 12rem, // 192px
+    lg: 15rem, // 240px
+    xl: 50rem, // 800px
+) !default;

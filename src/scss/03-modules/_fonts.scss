@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '../setup' as setup;
+@use '../01-setting/01-global' as global;
+@use '../01-setting/font' as font;
+@use '../01-setting/screen' as screen;
+@use '../02-tools/functions' as *;
+@forward '../01-setting/font';
+
+// ## Local vars
+$-global-unit-value: global.$global-unit-value; // 16 default
+$-max-screen: setup.$max-screen;
+$-min-screen: setup.$min-screen;
+$-screens: screen.$screen !default;
+$-font-sizes: font.$font-sizes;
+$-line-height: font.$line-height;
+$-family: font.$family;
+$-weight: font.$weight;
+
+$-max-screen-clamp: strip-unit(maps($-screens, $-max-screen));
+$-min-screen-clamp: strip-unit(maps($-screens, $-min-screen));
+
+// ## Functions fonts
+// $$ Font family
+@function family($font-family) {
+    @if map-has-key($-family, $font-family) {
+        $result: map.get($-family, $font-family);
+        @return $result;
+    }
+
+    @error "value undefined";
+}
+// Usage:
+// font-family: font.family(title);
+
+// $$ Font size
+@function size($size) {
+    $min-size: map.get($-font-sizes, $size, 'min');
+    $max-size: map.get($-font-sizes, $size, 'max');
+    $slope: math.div((($max-size - $min-size)), ($-max-screen-clamp - $-min-screen-clamp));
+    $vw: ($min-size * $slope) + $min-size;
+    $clamp: get-clamp(
+        $min-size: $min-size,
+        $max-size: $max-size,
+        $min-screen: $-min-screen-clamp,
+        $max-screen: $-max-screen-clamp
+    );
+
+    @return $clamp;
+}
+// Usage:
+// font-size: font.size(XL);
+
+// $$ line-height
+@function line-height($line-height) {
+    @if map-has-key($-line-height, $line-height) {
+        $result: map.get($-line-height, $line-height);
+        @return $result;
+    }
+
+    @error "value undefined";
+}
+// Usage:
+// line-height: font.line-height(XL);
+
+// $$ Font weight
+@function weight($font-weight) {
+    @if map-has-key($-weight, $font-weight) {
+        $result: map.get($-weight, $font-weight);
+        @return $result;
+    }
+
+    @error "value undefined";
+}
+// Usage:
+// font-weight: font.weight(bold);
+
+// $$ Line-height Crop
+@mixin line-height-crop($line-height) {
+    &::before {
+        content: '';
+        display: inherit;
+        height: 0;
+        width: 0;
+        margin-block-start: calc((1 - #{$line-height}) * 0.5em);
+    }
+}

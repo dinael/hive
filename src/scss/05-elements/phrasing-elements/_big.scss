@@ -1,0 +1,7 @@
+@mixin big-styles {
+    :where(big) {
+        font-size: var(--font-size-big, 120%);
+
+        @content;
+    }
+}

@@ -1,0 +1,34 @@
+@use '../../scss/02-tools/functions' as *;
+
+.fieldset-component {
+  --fieldset-padding-block: 1rem;
+  --fieldset-padding-inline: 1rem;
+
+  border-radius: radius(XXS);
+  border-width: var(--fieldset-border-width, max(2px, 0.125rem));
+  border-style: var(--fieldset-border-style, solid);
+  border-color: var(--fieldset-border-color, var(--color-primary));
+
+  &:has(legend) {
+    --fieldset-padding-block: 0.5rem 1rem;
+  }
+
+  legend {
+    --legend-font-weight: 500;
+
+    padding-inline: var(--fieldset-component-padding-inline, 1ch);
+    position: relative;
+    z-index: 1;
+  }
+
+  &.flat  {
+    --fieldset-padding-block: 0;
+    --fieldset-padding-inline: 0;
+    --fieldset-border-width: 0;
+
+    legend {
+      --fieldset-component-padding-inline: 0;
+      --legend-font-weight: normal;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../../02-tools/mixins' as *;
+
+:is(input[type="radio"]) {
+    background: var(--radio-background, transparent);
+    block-size: var(--radio-block-size, 1.25rem);
+    inline-size: var(--radio-inline-size, 1.25rem);
+    border-radius: var(--radio-border-radius);
+    border-width: var(--radio-border-width, 0.0625rem);
+    border-style: var(--radio-border-style, solid);
+    border-color: var(--radio-border-color);
+    cursor: pointer;
+
+    &:focus {
+        @include focus;
+    }
+
+    &:required {}
+    &:indeterminate {}
+    &+label {
+        &[for] {}
+    }
+}

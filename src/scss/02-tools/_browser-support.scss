@@ -1,0 +1,188 @@
+// ## Browser support && device
+
+//http://browserhacks.com/
+
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+// Usage:
+// @include retina {
+//  width: 30px;
+// }
+
+// $$ Aural
+@mixin aural {
+    @media aural {
+        @content;
+    }
+}
+// Usage:
+// @include aural{
+//  width: 30px;
+// }
+
+// $$ Internet Explorer
+// $$ IE ≥ 11
+@mixin ie-media {
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+        @content;
+    }
+}
+//Usage: @include ie-media{
+//   width: 30px;
+//}
+
+// $$ IE ≥ 9
+// Deprecate
+@mixin ie9-media {
+    @media screen and (min-width: 0\0) {
+        @content;
+    }
+}
+
+// $$ IE 10
+@mixin ie10-media {
+    @supports (-ms-ime-align:auto) {
+        @content;
+    }
+}
+
+// ## Edge
+@mixin edge {
+    @media screen {
+        @media (min-width: 0) {
+            @content;
+        }
+    }
+}
+
+@mixin edge-media($selector) {
+    _:-ms-lang(x),
+    _:-webkit-full-screen,
+    #{"."+"#{$selector}"} {
+        @content;
+    }
+}
+// usage: @include only_ie9( '.my_element', (color: red))
+
+// ## FIREFOX
+// $$ Firefox ≥ 3
+@mixin ff-3 {
+    @media \0 all {
+        @content;
+    }
+}
+
+// $$ Firefox ≥ 3.6
+@mixin ff3-6-media {
+    @media screen and (-moz-images-in-menus: 0) {
+        @content;
+    }
+}
+
+// $$ Firefox ≥ 4
+@mixin ff4-media {
+    @media screen and (min--moz-device-pixel-ratio: 0) {
+        @content;
+    }
+}
+
+// $$ Firefox all Windows version
+@mixin ff-all-win {
+    @media (-moz-os-version: windows-xp),
+    (-moz-os-version: windows-vista),
+    (-moz-os-version: windows-win7),
+    (-moz-os-version: windows-win8) {
+        @content;
+    }
+}
+
+// $$ Firefox for all theme Windows version
+@mixin ff-win-theme {
+    @media screen and (-moz-windows-theme) {
+        @content;
+    }
+}
+
+// $$ Firefox for windows compositor
+@mixin ff-win-compositor {
+    @media not all and (-moz-windows-compositor) {
+        @content;
+    }
+}
+
+// $$ Firefox windows XP
+@mixin ff-xp {
+    @media (-moz-os-version: windows-xp) {
+        @content;
+    }
+}
+
+// $$ Firefox windows 7
+@mixin ff-win7 {
+    @media (-moz-os-version: windows-win7) {
+        @content;
+    }
+}
+
+// $$ Firefox windows 8
+@mixin ff-win8 {
+    @media (-moz-os-version: windows-win7) {
+        @content;
+    }
+}
+
+// $$ Firefox for linux
+@mixin ff-linux {
+    @media not all and (-moz-windows-compositor) {
+        @content;
+    }
+}
+
+// $$ Safari
+@mixin safari {
+    .selector:not(*:root) {
+        @content;
+    }
+}
+
+// $$ Chrome iPhone
+@mixin chrome-mobile {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        @content;
+    }
+}
+
+// $$ Touchscreens
+@mixin touchscreens {
+    @media (hover: none) and (pointer: coarse) {
+        @content;
+    }
+}
+
+// $$ Mouse & touchpad
+@mixin mouse {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+// $$ Device based in peripheral pens, touch blackboards or touch  projector
+@mixin pointer-and-pen {
+    @media (hover: none) and (pointer: fine) {
+        @content;
+    }
+}
+
+// $$ Nintendo Wii controller, Microsoft Kinect
+@mixin game-console {
+    @media (hover: hover) and (pointer: coarse) {
+        @content;
+    }
+}

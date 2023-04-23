@@ -1,0 +1,111 @@
+@use '../../setup' as setup;
+@use '../../01-setting/01-global' as global;
+
+// ## Size flow
+$-ut-size-flow: setup.$ut-size-flow;
+// width
+$-percentage-w-interval: global.$percentage-w-interval !default;
+$-percentage-w-end: global.$percentage-w-end !default;
+// height
+$-percentage-h-interval: global.$percentage-h-interval !default;
+$-percentage-h-end: global.$percentage-h-end !default;
+
+$-sizes-flow-names: (
+    auto,
+    inherit,
+    initial,
+    max-content,
+    min-content,
+    fit-content
+);
+
+@if $-ut-size-flow {
+    .w {
+        @each $name in $-sizes-flow-names {
+            &\:#{$name} {
+                inline-size: #{$name};
+            }
+        }
+
+        @for $i from 1 through $-percentage-w-end {
+            $valor: ($-percentage-w-interval * $i);
+
+            @if $valor < 10 {
+                &\:0#{$valor} {
+                    inline-size: unquote(($-percentage-w-interval * $i) + '%');
+                }
+            }
+
+            @else {
+                @if $valor < 100 or $valor > 100 {
+                    &\:#{$valor} {
+                        inline-size: unquote(($-percentage-w-interval * $i) + '%');
+                    }
+                }
+            }
+        }
+
+        &\:100,
+        &\:wide {
+            inline-size: 100%;
+        }
+
+        &\:half {
+            inline-size: 50%;
+        }
+
+        &\:quarter {
+            inline-size: 25%;
+        }
+
+        &\:third {
+            inline-size: 33.333%;
+        }
+
+    }
+
+    // $$ height | percentage of 5 in 5 to 100%
+    .h,
+    .height {
+        @each $name in $-sizes-flow-names {
+            &\:#{$name} {
+                block-size: #{$name};
+            }
+        }
+
+        @for $i from 1 through $-percentage-h-end {
+            $valor: ($-percentage-h-interval * $i);
+
+            @if $valor < 10 {
+                &\:0#{$valor} {
+                    block-size: unquote(($-percentage-h-interval * $i) + '%');
+                }
+            }
+
+            @else {
+                @if $valor < 100 or $valor>100 {
+                    &\:#{$valor} {
+                        block-size: unquote(($-percentage-h-interval * $i) + '%');
+                    }
+                }
+            }
+        }
+
+        &\:tall,
+        &\:100 {
+            block-size: 100%;
+        }
+
+        &\:half {
+            block-size: 50%;
+        }
+
+        &\:quarter {
+            block-size: 25%;
+        }
+
+        &\:third {
+            block-size: 33.333%;
+        }
+    }
+}

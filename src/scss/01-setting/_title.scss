@@ -1,0 +1,36 @@
+// ## Title
+
+// min and max use only rem units
+$title-size: (
+    XXL: (
+        'min': 3,
+        'max': 4,
+        'line-height': 1.1,
+    ),
+    XL: (
+        'min': 2.75,
+        'max': 3.75,
+        'line-height': 1.1,
+    ),
+    L: (
+        'min': 2.5,
+        'max': 3.5,
+        'line-height': 1.1,
+    ),
+    M: (
+        'min': 1.75,
+        'max': 3.25,
+        'line-height': 1.1,
+    ),
+    S: (
+        'min': 1.5,
+        'max': 3,
+        'line-height': 1.1,
+    ),
+    XS: (
+        'min': 1,
+        'max': 2.75,
+        'line-height': 1.1,
+    ),
+) !default;
+

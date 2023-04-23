@@ -1,0 +1,183 @@
+//## GrillaCSS float version
+
+.wrapper {
+	display: block;
+	overflow: hidden;
+	width: $desktop;
+    padding: 0;
+	margin: 0 auto;
+}
+
+.grid-row,
+.g-row {
+	width: 100%;
+	flex-wrap: wrap;
+
+	&--gutter {
+		@extend .g-row;
+		width: 100%;
+
+		& > [class^="grid"] {
+			padding-left: $gutter-width;
+			padding-right: $gutter-width;
+		}
+	}
+}
+
+// $$ show & hide by devices
+.only {
+	&--desktop {
+		display: block;
+	}
+
+	&--tablet,
+	&--mobile {
+		display: none;
+	}
+}
+
+.not {
+	&--desktop {
+		display: none;
+	}
+}
+
+// $$ Grid system
+@for $i from 1 through $grid-columns {
+	.grid-desktop--#{$i} {
+		float: left;
+		width: ((100/$grid-columns) * $i) *1%;
+	}
+}
+
+@for $i from 1 through $grid-columns {
+	.grid-center--#{$i} {
+		clear: both;
+		width: ((100/$grid-columns) * $i) *1%;
+		margin: 0 auto;
+	}
+}
+
+@for $i from 1 through ($grid-columns) -1 {
+	.grid-offset--#{($i)} {
+		margin-left: ((100/$grid-columns) * $i) *1%;
+	}
+}
+
+// $$ Media queries
+@media only screen and (max-width: $desktop - 1) {
+	.wrapper {
+		width: 100%;
+	}
+	@for $i from 1 through $grid-columns {
+		.grid-desktop-small--#{$i} {
+			float: left;
+			width: ((100/$grid-columns) * $i) *1%;
+		}
+	}
+}
+
+@media only screen and (max-width: $tablet-landscape + 1) {
+	.wrapper {
+		max-width: $tablet-landscape;
+	}
+	@for $i from 1 through $grid-columns {
+		.grid-tablet--#{$i} {
+			float: left;
+			width: ((100/$grid-columns) * $i) *1%;
+		}
+	}
+}
+
+@media only screen and (max-width: $tablet-portrait) {
+	.wrapper {
+		max-width: $tablet-portrait;
+	}
+	@for $i from 1 through $grid-columns {
+		.grid-tablet-portrait--#{$i} {
+			float: left;
+			width: ((100/$grid-columns) * $i) *1%;
+		}
+	}
+}
+
+// $$ grid system for widescreen mobile phones and landscape
+@media only screen and (max-width: $mobile-landscape) {
+	.wrapper {
+		max-width: $mobile-landscape;
+	}
+	@for $i from 1 through $grid-columns {
+		.grid-mobile--#{$i} {
+			float: left;
+			width: ((100/$grid-columns) * $i) *1%;
+		}
+	}
+}
+
+// $$ grid system only for small screen mobile phones and portrait
+@media only screen and (min-width: 10px) and (max-width: $mobile-portrait) {
+	.wrapper {
+		max-width: 100% !important;
+	}
+	.grid-row > [class^="grid"],
+	.g-row > [class^="grid"] {
+		width: 100%;
+		margin-left: 0 !important;
+	}
+	.grid-row--gutter > [class^="grid"],
+	.g-row--gutter > [class^="grid"] {
+		width: 100%;
+		margin-left: 0 !important;
+	}
+	@for $i from 1 through ($grid-columns) {
+		.mobile-grid--#{$i} {
+			width: ((100/$grid-columns) * $i) *1% !important;
+		}
+	}
+}
+
+@media only screen and (min-width: $tablet-portrait - 1) and (max-width: $tablet-landscape) {
+	.only {
+		&--desktop {
+			display: none !important;
+		}
+
+		&--tablet {
+			display: block !important;
+		}
+	}
+	.not {
+		&--tablet {
+			display: none !important;
+		}
+
+		&--desktop {
+			display: block !important;
+		}
+	}
+}
+
+@media only screen and (max-width: $tablet-portrait - 1) {
+	.only {
+		&--mobile {
+			display: block;
+		}
+
+		&--desktop {
+			display: none;
+		}
+
+		&--tablet {
+			display: none !important;
+		}
+	}
+	.not {
+		&--mobile {
+			display: none !important;
+		}
+
+		&--desktop {
+			display: block !important;
+		}
+	}
+}

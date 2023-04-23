@@ -1,0 +1,28 @@
+@use '../02-tools/functions' as *;
+@use '../03-modules/colors' as swatch;
+
+:is(blockquote, q){
+    outline-color: transparent;
+    quotes: none;
+    background: var(--blockquote-background, hsla(0, 0%, 60%, 0.1));
+    border-radius: var(--blockquote-border-radius, #{radius(XXS)});
+    padding-inline: var(--blockquote-padding-inline, 0.5rem);
+    padding-block: var(--blockquote-padding-block, 0.5rem);
+    border-width: var(--blockquote-border-width, max(1px, 0.0625rem));
+    border-style: solid;
+    border-color: var(--blockquote-border-color, var(--decorator-border-color));
+
+    &:before {
+        content: var(--blockquote-before-content, '"');
+    }
+
+    &:after {
+        content: var(--blockquote-after-content,'"');
+    }
+}
+
+:is(q) {
+    --blockquote-padding-block: 0;
+    --blockquote-padding-inline: 0;
+}
+

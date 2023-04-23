@@ -1,0 +1,6 @@
+@use '../../02-tools/mixins' as *;
+
+.ui-test,
+.ui-debug {
+    @include test-ui;
+}

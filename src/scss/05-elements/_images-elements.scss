@@ -1,0 +1,53 @@
+// ## Images tags
+
+:where(img) {
+    block-size: var(--img-block-size, auto);
+    display: var(--img-display, block);
+    inline-size: var(--img-inline-size, 100%);
+    object-fit: var(--img-object-fit, cover);
+    object-position: var(--img-object-position); //object-position: bottom 10px right 20px;
+    object-view-box: var(--img-object-view-box, 0); //object-view-box: inset(25% 20% 15% 0%);
+    position: var(--img-position, relative);
+    aspect-ratio: var(--img-aspect-ratio);
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+:where(picture) {
+    display: var(--picture-display, block);
+    inline-size: var(--picture-width, 100%);
+}
+
+:where(figure) {
+    display: var(--figure-display, block);
+    inline-size: var(--figure-width, 100%);
+}
+
+
+:where(figcaption) {
+    display: var(--figcaption-display, block);
+}
+
+
+:where(svg) {
+    display: var(--svg-display, block);
+    overflow: hidden;
+    fill: currentColor;
+    vertical-align: middle;
+    block-size: var(--svg-height, auto);
+    inline-size: var(--svg-width, 100%);
+
+    &:not([fill]) {
+        stroke: none;
+        fill: currentColor;
+    }
+
+    &:not(:root) {
+        overflow: hidden;
+    }
+}
+

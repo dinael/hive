@@ -1,0 +1,158 @@
+@use 'sass:map';
+@use '../01-setting/shape' as shape;
+@use '../02-tools/functions' as *;
+@use '../02-tools/mixins' as *;
+
+// ## local vars
+$-square: shape.$square !default;
+$-circle: shape.$circle !default;
+
+// ## Shapes
+// $$ Square
+@mixin square-custom($s: null) {
+    @include size($w: $s, $h: $s);
+}
+
+// Usage:
+// @include shapes.square-custom(2rem);
+
+// $$ Square min size
+@mixin square-min-size($s: null) {
+    @include min-size($mw: $s, $mh: $s);
+}
+
+// Usage:
+// @include shapes.square-min-size(2rem);
+
+@mixin square($size: null) {
+    @if $size==XXL {
+        $size: map.get($-square, XXL);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==XL {
+        $size: map.get($-square, XL);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==L {
+        $size: map.get($-square, L);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==M {
+        $size: map.get($-square, M);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==S {
+        $size: map.get($-square, S);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==XS {
+        $size: map.get($-square, XS);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+}
+
+// $$ Circle
+@mixin circle-custom($size: null) {
+    border-radius: $size / 2;
+    background-clip: padding-box;
+    @include square($size);
+}
+
+// Usage:
+// @include shapes.circle-custom(2rem);
+
+@mixin circle($size: null) {
+    border-radius: 100%;
+    background-clip: padding-box;
+
+    @if $size==XXL {
+        $size: map.get($-circle, XXL);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==XL {
+        $size: map.get($-circle, XL);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==L {
+        $size: map.get($-circle, L);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==M {
+        $size: map.get($-circle, M);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==S {
+        $size: map.get($-circle, S);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+
+    @if $size==XS {
+        $size: map.get($-circle, XS);
+
+        block-size: $size;
+        inline-size: $size;
+    }
+}
+
+// Usage:
+// @include shapes.circle(2rem);
+
+// $$ Triangle
+@mixin triangle($t: 1rem, $l: 1rem, $r: 1rem, $direction: up, $color: rgb(218, 183, 183)) {
+    width: 0;
+    height: 0;
+    border-block-start: $t solid $color;
+    border-inline-start: $t solid transparent;
+    border-inline-end: $t solid transparent;
+
+    @if $direction==up {
+        transform: rotate(180deg);
+    }
+
+    @if $direction==right {
+        transform: rotate(90deg);
+    }
+
+    @if $direction==down {
+        transform: rotate(0deg);
+    }
+
+    @if $direction==left {
+        transform: rotate(-90deg);
+    }
+
+    @else {
+        transform: rotate(0deg);
+    }
+}

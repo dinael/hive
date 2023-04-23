@@ -1,0 +1,71 @@
+@use '../../setup' as setup;
+@use '../../01-setting/01-global' as global;
+@use '../../01-setting/gap' as gap;
+@use '../../02-tools/functions' as *;
+
+// Check your browsers support before starting to use this classes
+//https://caniuse.com/?search=gap
+
+// ## Gap
+$-ut-gap-flow: setup.$ut-gap-flow;
+$-gap-flow: global.$gap-flow !default;
+$-gap-size: gap.$gap !default;
+
+@if $-ut-gap-flow {
+    .gap {
+        // .gap:1, ... , .gap:4
+        @for $i from 1 through 4 {
+            $value: $i;
+
+            &\:#{$value} {
+                gap: calc(#{$-gap-flow} * #{$i});
+            }
+        }
+
+        &\:half {
+            gap: calc(#{$-gap-flow} / 2);
+        }
+
+        &\:none {
+            gap: 0;
+        }
+
+        &\-column,
+        &\-col {
+            // .gap-column:1, ... , .gap-column:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    grid-column-gap: calc(#{$-gap-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                grid-column-gap: calc(#{$-gap-flow} / 2);
+            }
+        }
+
+        &\-row {
+            // .gap-row:1, ... , .gap-row:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    grid-row-gap: calc(#{$-gap-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                grid-row-gap: calc(#{$-gap-flow} / 2);
+            }
+        }
+
+        //$$ Size
+        @each $size, $value in $-gap-size {
+            &\:#{to-lower-case($size)} {
+                gap: $value;
+            }
+        }
+    }
+}

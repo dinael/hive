@@ -1,0 +1,15 @@
+@use '../../setup' as setup;
+@use '../../02-tools/functions' as *;
+
+// ## Letter spacing
+$-ut-letter-spacing: setup.$ut-letter-spacing;
+
+.letter-spacing {
+    &\:dense {
+        letter-spacing: max(0.0625rem, 1px);
+    }
+
+    &\:double {
+        letter-spacing: max(0.125rem, 2px);
+    }
+}

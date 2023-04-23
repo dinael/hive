@@ -1,0 +1,227 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Checkbox > calls onChecked handler when clicked 1`] = `
+<div>
+  <label
+    class="
+          checkbox-component
+          
+          
+        "
+    for="id-test"
+    value="example-value"
+  >
+    <input
+      aria-aria-describedby="validation-message-id-test"
+      aria-checked="false"
+      id="id-test"
+      role="checkbox"
+      type="checkbox"
+      value="example-value"
+    />
+    <span>
+      Example label
+    </span>
+    <span
+      aria-atomic="true"
+      aria-live="assertive"
+      class="validation-message"
+      id="validation-message-id-test"
+      role="alert"
+    >
+      <span
+        aria-hidden="true"
+        class="
+        icon-component
+        xs
+        
+      "
+        style="--icon-color: currentColor;"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>
+            close
+          </title>
+          <use
+            xlink:href="/src/assets/sprite.svg#close"
+          />
+        </svg>
+      </span>
+      Error text
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox > calls onChecked handler when clicked 2`] = `
+<div>
+  <label
+    class="
+          checkbox-component
+          
+          
+        "
+    for="id-test"
+    value="example-value"
+  >
+    <input
+      aria-aria-describedby="validation-message-id-test"
+      aria-checked="false"
+      id="id-test"
+      role="checkbox"
+      type="checkbox"
+      value="example-value"
+    />
+    <span>
+      Example label
+    </span>
+    <span
+      aria-atomic="true"
+      aria-live="assertive"
+      class="validation-message"
+      id="validation-message-id-test"
+      role="alert"
+    >
+      <span
+        aria-hidden="true"
+        class="
+        icon-component
+        xs
+        
+      "
+        style="--icon-color: currentColor;"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>
+            close
+          </title>
+          <use
+            xlink:href="/src/assets/sprite.svg#close"
+          />
+        </svg>
+      </span>
+      Error text
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox > renders snapshot 1`] = `
+<div>
+  <label
+    class="
+          checkbox-component
+          
+          
+        "
+    for="id-test"
+    value="example-value"
+  >
+    <input
+      aria-aria-describedby="validation-message-id-test"
+      aria-checked="false"
+      id="id-test"
+      role="checkbox"
+      type="checkbox"
+    />
+    <span>
+      Example label
+    </span>
+    <span
+      aria-atomic="true"
+      aria-live="assertive"
+      class="validation-message"
+      id="validation-message-id-test"
+      role="alert"
+    >
+      <span
+        aria-hidden="true"
+        class="
+        icon-component
+        xs
+        
+      "
+        style="--icon-color: currentColor;"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>
+            close
+          </title>
+          <use
+            xlink:href="/src/assets/sprite.svg#close"
+          />
+        </svg>
+      </span>
+      Error text
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Checkbox > renders with the correct label 1`] = `
+<div>
+  <label
+    class="
+          checkbox-component
+          
+          
+        "
+    for="id-test"
+    value="example-value"
+  >
+    <input
+      aria-aria-describedby="validation-message-id-test"
+      aria-checked="false"
+      id="id-test"
+      role="checkbox"
+      type="checkbox"
+    />
+    <span>
+      Example label
+    </span>
+    <span
+      aria-atomic="true"
+      aria-live="assertive"
+      class="validation-message"
+      id="validation-message-id-test"
+      role="alert"
+    >
+      <span
+        aria-hidden="true"
+        class="
+        icon-component
+        xs
+        
+      "
+        style="--icon-color: currentColor;"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <title>
+            close
+          </title>
+          <use
+            xlink:href="/src/assets/sprite.svg#close"
+          />
+        </svg>
+      </span>
+      Error text
+    </span>
+  </label>
+</div>
+`;

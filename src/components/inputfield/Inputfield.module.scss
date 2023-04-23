@@ -1,0 +1,187 @@
+@use '../../scss/02-tools/functions' as *;
+@use '../../scss/03-modules/colors' as swatch;
+@use '../../scss/03-modules/forms' as form;
+
+// ## Input field
+$input-field-background: swatch.brand(positive) !default;
+$input-field-border-color: var(--color-primary) !default;
+$input-field-color: var(--color-primary) !default;
+$input-field-border-radius: radius(XXS) !default;
+$input-field-border: 0.125rem solid var(--input-field-border-color, #{$input-field-border-color}) !default;
+$input-field-height: 3rem !default;
+$input-field-height-landscape: 2.75rem !default;
+$input-field-padding: 1em !default;
+// placeholder
+$-input-field-placeholder-color: #797979 !default;
+// State
+// Filled
+$input-field-filled: var(--color-primary) !default;
+$input-field-filled-border-color: var(--color-primary) !default;
+//out the range
+$-input-field-invalid-background: hsla(0, 80%, 40%, 0.2) !default;
+// Disabled
+$input-field-disabled-color: var(--color-text) !default;
+$input-field-disabled-background: gray !default;
+$input-field-disabled-border-color: grey!default;
+$input-field-disabled-placeholder-color: gray !default;
+// State
+// error
+$input-field-error-message-padding-inline: 0.25em;
+
+.inputfiled-component {
+  display: var(--label-display, inline-flex);
+  flex: var(--label-flex, 1 1 auto);
+  flex-flow: var(--label-flex-flow, column);
+  color: var(--color-primary);
+  inline-size: var(--inputfiled-inline-size, 100%);
+
+  input {
+    &[type="date"],
+    &[type="datetime-local"],
+    &[type="datetime"],
+    &[type="email"],
+    &[type="month"],
+    &[type="number"],
+    &[type="password"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="text"],
+    &[type="time"],
+    &[type="url"],
+    &[type="week"] {
+      --input-height: #{$input-field-height};
+      --input-border-width: 0.125rem;
+      --input-border-radius: #{$input-field-border-radius};
+      --input-border-color: #{$input-field-color};
+      --input-padding-inline: #{$input-field-padding};
+      --input-color: #{$input-field-color};
+      --input-background: #{$input-field-background};
+
+      transition: background-color .35s ease-in-out;
+
+      // Placeholder
+      @include form.placeholder {
+        --input-placeholder-color: #{$-input-field-placeholder-color};
+      }
+
+      // Filled
+      &:not(:placeholder-shown) {
+        --input-placeholder-shown-color: #{$input-field-filled-border-color};
+        --input-placeholder-shown-border-color: #{$input-field-filled-border-color};
+      }
+    }
+
+    // $$ Number
+    &[type="number"] {
+      &:out-of-range {
+        --input-border-color: var(--color-validation-error) !important;
+        --color-focus: var(--color-validation-error) !important;
+        --input-background: #{$-input-field-invalid-background} !important;
+
+        @include form.placeholder {
+          --input-placeholder-color: var(--color-validation-error);
+          --input-placeholder-border-color: var(--color-validation-error);
+          --input-placeholder-background: #{$-input-field-invalid-background} !important;
+        }
+      }
+    }
+
+    // $$ State
+
+    // Focus
+    &:focus {
+      --input-background: var(--color-accent);
+
+      &::-webkit-input-placeholder {
+        color: gray;
+      }
+
+      &::-moz-placeholder {
+        color: gray;
+      }
+
+      &:-moz-placeholder {
+        color: gray;
+      }
+
+      &:-ms-input-placeholder {
+        color: gray;
+      }
+    }
+
+    // Disabled
+    &:disabled,
+    &.disabled {
+      --input-color: #{$input-field-disabled-color};
+      --input-background: #{$input-field-disabled-background};
+      --input-border-color: #{$input-field-disabled-border-color};
+
+      @include form.placeholder {
+        --input-placeholder-color: #{$input-field-disabled-color};
+      }
+
+      &:not(:placeholder-shown) {
+        --input-placeholder-shown-color: #{$input-field-disabled-color};
+        --input-placeholder-shown-border-color: #{$input-field-disabled-border-color};
+        --input-placeholder-shown-background: #{$input-field-disabled-background};
+      }
+
+      &::-webkit-datetime-edit-text,
+      &::-webkit-datetime-edit-day-field,
+      &::-webkit-datetime-edit-month-field,
+      &::-webkit-datetime-edit-year-field,
+      &::-webkit-datetime-edit-hour-field,
+      &::-webkit-datetime-edit-minute-field,
+      &::-webkit-datetime-edit-second-field {}
+
+      .datetimebox,
+      .placeholder {}
+    }
+
+    // Required
+    &:required {}
+
+    &:invalid {
+      --input-border-color: var(--color-validation-error) !important;
+      --color-focus: var(--color-validation-error) !important;
+      --input-background: #{$-input-field-invalid-background} !important;
+
+      &:not(:placeholder-shown) {
+        --input-placeholder-shown-color: var(--color-validation-error);
+        --input-placeholder-shown-border-color: var(--color-validation-error);
+        --input-placeholder-shown-background: #{$-input-field-invalid-background} !important;
+      }
+
+      @include form.placeholder {
+        --input-placeholder-color: var(--color-validation-error);
+      }
+    }
+
+    //Valid
+    &:valid {}
+
+  }
+
+  &.has-error {
+    input {
+      color: var(--color-primary);
+      background: pink;
+
+      &::-webkit-input-placeholder {
+        color: var(--color-primary);
+      }
+
+      &::-moz-placeholder {
+        color: var(--color-primary);
+      }
+
+      &:-moz-placeholder {
+        color: var(--color-primary);
+      }
+
+      &:-ms-input-placeholder {
+        color: var(--color-primary);
+      }
+    }
+  }
+}

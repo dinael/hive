@@ -1,0 +1,15 @@
+@use '../../03-modules/forms' as form;
+
+:is(select) {
+    block-size: var(--select-block-size, 2.75rem);
+    border-radius: var(--select-border-radius);
+    border-width: var(--select-border-width);
+    border-style: var(--select-border-style, solid);
+    border-color: var(--select-border-color, inherit);
+    color: var(--select-color, fieldtext);
+    cursor: pointer;
+    inline-size: var(--select-inline-size, 100%);
+    padding-inline: var(--select-padding-inline);
+    padding-block: var(--select-padding-block);
+    background-color: var(--select-background-color, field);
+}

@@ -1,0 +1,109 @@
+@use 'sass:map';
+@use '../setup' as setup;
+@use '../02-tools/functions' as *;
+
+// ## Texts
+// $$ Hide inline text
+@mixin hide-line {
+    overflow: hidden;
+    padding: 0;
+    text-indent: 101%;
+    white-space: nowrap;
+}
+// Usage:
+// @include text.hide-line;
+
+// $$ Text indent
+@mixin indent($space) {
+    text-indent: $space;
+    white-space: normal;
+}
+// Usage:
+// @include text.indent(2rem);
+
+// $$ Ellipsis last line
+@mixin ellipsis($lines: null) {
+    @if $lines != null{
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: $lines;
+        display: -webkit-box;
+        display: block;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        @content;
+    }
+    @else {
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        @content;
+    }
+}
+// Usage:
+// @include text.ellipsis(3);
+
+@mixin truncate($width: null) {
+    @include ellipsis {
+        @content
+    }
+    @if $width != null {
+        inline-size: $width;
+    }
+}
+// Usage:
+// @include text.truncate(3rem);
+
+// $$ Capital letter
+@mixin capital-letter {
+    &:first-child:first-letter {
+        font-size: 3em;
+        float: left;
+        line-height: 0.5;
+        text-transform: uppercase !important;
+    }
+}
+// Usage:
+// @include text.capital-letter;
+
+// $$ Line-height Crop
+@mixin line-height-crop($line-height) {
+    &::before {
+        content: '';
+        display: inherit;
+        inline-size: 0;
+        block-size: 0;
+        margin-block-start: calc((1 - #{$line-height}) * 0.5em);
+    }
+}
+
+@mixin text-crop($line-height: 1.6, $top-adjustment: 0, $bottom-adjustment: 0) {
+    // Configured in Step 1
+    $top-crop: 3;
+    $bottom-crop: 23;
+    $crop-font-size: 16;
+    $crop-line-height: 1.2;
+
+    // Apply values to calculate em-based margins that work with any font size
+    $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+    $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+
+    // Mixin output
+    line-height: $line-height;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        inline-size: 0;
+        block-size: 0;
+    }
+
+    &::before {
+        margin-block-end: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
+    }
+
+    &::after {
+        margin-block-start: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
+    }
+}

@@ -1,0 +1,198 @@
+@use '../../scss/02-tools/functions' as *;
+@use '../../scss/02-tools/mixins' as *;
+@use '../../scss/03-modules/texts' as text;
+
+.button-component {
+  --button-gap: 0 0.5rem;
+  --button-background: var(--color-primary);
+  --button-border-width: max(2px, 0.125rem);
+  --button-border-color: var(--color-primary);
+  --button-border-radius: #{radius(XXS)};
+  --button-padding-block: 0;
+  --button-padding-inline: 1em;
+
+  font-size: var(--button-font-size);
+  flex-direction: var(--button-direction, row);
+  transition: background .35s ease-in-out;
+  cursor: pointer;
+
+  &:focus {
+    filter: none;
+    @include focus;
+  }
+  // TODO: tinted color
+  &:disabled {
+    --button-color: hsl(0 0% 40%);
+    --button-border-color: hsl(0 0% 40%);
+    --button-background: hsl(0 0% 80%);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  .text {
+    overflow: hidden;
+  }
+}
+
+// ## Kind
+a.button-component {
+  --anchor-color: var(--button-color);
+  --anchor-background: var(--color-primary);
+
+  display: inline-flex;
+  align-items: center;
+  flex-direction: var(--button-direction);
+  gap: var(--button-gap);
+  justify-content: center;
+  block-size: var(--button-block-size);
+  min-inline-size: var(--button-inline-size);
+  padding-block: var(--button-padding-block);
+  padding-inline: var(--button-padding-inline);
+  text-decoration: none;
+  border-width: var(--button-border-width);
+  border-style: var(--button-border-style, solid);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  background: var(--button-background);
+
+  &[disabled] {
+    --button-color: hsl(0 0% 40%);
+    --button-border-color: hsl(0 0% 40%);
+    --button-background: hsl(0 0% 80%);
+
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+// ## Variant
+.primary {
+  --button-background: var(--color-primary);
+  --button-color: var(--color-basic-positive);
+  --button-border-color: var(--color-primary-dark);
+
+  &:hover {
+    --button-background: var(--color-primary-light);
+  }
+}
+
+.secondary {
+  --button-background: var(--color-secondary);
+  --button-color: var(--color-basic-positive);
+  --button-border-color: var(--color-secondary-dark);
+
+  &:hover {
+    --button-color: var(--color-basic-positive);
+    --button-background: var(--color-secondary-extra-dark);
+  }
+}
+
+.alt {
+  --button-color: var(--color-primary);
+  --button-background: transparent;
+  --button-border-color: var(--color-primary);
+
+  &:hover {
+    --button-color: var(--color-basic-positive);
+    --button-background: var(--color-primary);
+    --button-border-color: var(--color-primary);
+  }
+}
+
+.ghost {
+  --button-color: var(--color-primary);
+  --button-background: transparent;
+  --button-border-color: transparent;
+
+  transition: border 0.35s ease;
+
+  &:hover {
+    --button-background: transparent;
+    --button-border-color: var(--color-primary);
+  }
+}
+
+.success {
+  --button-color: var(--color-primary);
+  --button-border-color: var(--color-validation-success-dark);
+  --button-background: var(--color-validation-success);
+
+  &:hover {
+    --button-color: var(--color-basic-positive);
+    --button-background: var(--color-validation-success-dark);
+  }
+}
+
+.danger {
+  --button-color: var(--color-basic-positive);
+  --button-border-color: var(--color-validation-danger-dark);
+  --button-background: var(--color-validation-danger);
+
+  &:hover {
+    --button-color: var(--color-basic-positive);
+    --button-background: var(--color-validation-danger-dark);
+  }
+}
+
+// ## Sizes
+.xs {
+  --button-inline-size: fit-content;
+  --button-block-size: 1.5rem;
+  --button-font-size: var(--font-size-xs);
+  --button-padding-inline: 0.5em;
+}
+
+.s {
+  --button-inline-size: fit-content;
+  --button-block-size: 2rem;
+  --button-font-size: var(--font-size-s);
+  --button-padding-inline: 0.75em;
+}
+
+.m {
+  --button-font-size: var(--font-size-m);
+  --button-block-size: 2.75rem;
+}
+
+.l {
+  --button-inline-size: 10rem;
+  --button-block-size: 3rem;
+  --button-font-size: var(--font-size-l);
+  --button-padding-inline: 1.5em;
+}
+
+// ## Kind
+.default {
+  --botton-display: inline-flex;
+}
+
+.rounded {
+  --button-border-radius: #{radius(circle)};
+  --button-padding-block: 0;
+  --button-padding-inline: 0;
+  --button-inline-size: var(--button-block-size);
+  --button-flex-basis: var(--button-inline-size);
+}
+
+.fullwidth {
+  --button-inline-size: 100% !important;
+}
+
+// ## Text properties
+.ellipsis,
+a.ellipsis {
+  max-inline-size: calc(100% - 2rem);
+  @include text.ellipsis;
+}
+
+.left {
+  --button-direction: row;
+}
+
+.right {
+  --button-direction: row-reverse;
+}
+
+
+
+

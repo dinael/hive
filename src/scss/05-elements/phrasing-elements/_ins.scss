@@ -1,0 +1,7 @@
+@mixin inserted-styles {
+    :where(ins) {
+        text-decoration: var(--ins-text-decoration, underline);
+
+        @content;
+    }
+}

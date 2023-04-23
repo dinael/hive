@@ -1,0 +1,9 @@
+// i and em tag emphasis
+@mixin emphasis-styles {
+
+    :where(i, em, cite) {
+        font-style: var(--font-style, italic);
+
+        @content;
+    }
+}

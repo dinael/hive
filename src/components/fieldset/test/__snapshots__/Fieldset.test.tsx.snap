@@ -1,0 +1,161 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Fieldset > renders fieldset with correctly 1`] = `
+<div>
+  <fieldset
+    class="
+        fieldset-component
+        
+        className-test
+      "
+  >
+    <legend>
+      <span
+        class="
+      label-text-component
+      
+      is-required
+      
+      inputfiled-label
+      "
+      >
+        Legend Text:
+        <em
+          class="required-text"
+          title="Required text"
+        >
+          *
+        </em>
+      </span>
+    </legend>
+  </fieldset>
+</div>
+`;
+
+exports[`Fieldset > renders legend hidden 1`] = `
+<div>
+  <fieldset
+    class="
+        fieldset-component
+        
+        className-test
+      "
+  >
+    <legend>
+      <span
+        class="
+      label-text-component
+      
+      is-required
+      
+      inputfiled-label
+      "
+      >
+        Legend Text:
+        <em
+          class="required-text"
+          title="Required text"
+        >
+          *
+        </em>
+      </span>
+    </legend>
+  </fieldset>
+</div>
+`;
+
+exports[`Fieldset > renders legend with correctly 1`] = `
+<div>
+  <fieldset
+    class="
+        fieldset-component
+        
+        className-test
+      "
+  >
+    <legend>
+      <span
+        class="
+      label-text-component
+      
+      is-required
+      
+      inputfiled-label
+      "
+      >
+        Legend Text:
+        <em
+          class="required-text"
+          title="Required text"
+        >
+          *
+        </em>
+      </span>
+    </legend>
+  </fieldset>
+</div>
+`;
+
+exports[`Fieldset > renders snapshot 1`] = `
+<div>
+  <fieldset
+    class="
+        fieldset-component
+        
+        className-test
+      "
+  >
+    <legend>
+      <span
+        class="
+      label-text-component
+      
+      is-required
+      
+      inputfiled-label
+      "
+      >
+        Legend Text:
+        <em
+          class="required-text"
+          title="Required text"
+        >
+          *
+        </em>
+      </span>
+    </legend>
+  </fieldset>
+</div>
+`;
+
+exports[`Fieldset > renders with a custom class 1`] = `
+<div>
+  <fieldset
+    class="
+        fieldset-component
+        
+        className-test
+      "
+  >
+    <legend>
+      <span
+        class="
+      label-text-component
+      
+      is-required
+      
+      inputfiled-label
+      "
+      >
+        Legend Text:
+        <em
+          class="required-text"
+          title="Required text"
+        >
+          *
+        </em>
+      </span>
+    </legend>
+  </fieldset>
+</div>
+`;

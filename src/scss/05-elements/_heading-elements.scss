@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use '../setup' as setup;
+@use '../02-tools/functions' as *;
+@use '../03-modules/titles' as title;
+
+$-heading-default: setup.$heading-default;
+$-title-size: title.$title-size;
+
+// ## Heading tags
+:where(h1, h2, h3, h4, h5, h6, [class*="title:"]) {
+    color: var(--title-color);
+    font-family: var(--title-font-family);
+    font-size: var(--title-size);
+    font-weight: var(--title-font-weight, 700);
+    line-height: var(--title-line-height);
+    max-inline-size: var(--title-max-width, auto); // For accessibility: maximum width of 65characters
+    overflow-wrap: break-word;
+}

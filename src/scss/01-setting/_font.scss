@@ -1,0 +1,78 @@
+@use '../setup' as setup;
+@use './01-global' as global;
+
+$size: global.$font-size !default;
+
+// ## Font
+// $$ Google fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=latin-ext&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+
+// $$ Font Family token
+$primary: 'Open Sans', sans-serif  !default;
+$secondary: 'Roboto', sans-serif !default;
+$weight: 600;
+$title: $secondary !default;
+
+// $$ font family
+$family: (
+    default: $primary,
+    secondary: $secondary,
+    title:   $title
+) !default;
+
+// $$ Font size
+$font-sizes: (
+    default: (
+        'min': 1,
+        'max': 1.125,
+    ),
+    paragraph: (
+        'min': 1,
+        'max': 1.125,
+    ),
+    XXL: (
+        'min': 1.75,
+        'max': 1.90,
+    ),
+    XL: (
+        'min': 1.5,
+        'max': 1.75,
+    ),
+    L: (
+        'min': 1.25,
+        'max': 1.5,
+    ),
+    M: (
+        'min': 1.125,
+        'max': 1.25,
+    ),
+    S: (
+        'min': 0.85,
+        'max': 0.95,
+    ),
+    XS: (
+        'min': 0.75,
+        'max': 0.95,
+    ),
+    XXS: (
+        'min': 0.5,
+        'max': 0.75,
+    )
+
+) !default;
+
+// TODO: darle una vuelta
+// $$ line-height
+$line-height: (
+    default: 1.5,
+    paragraph: 1.5,
+    XXL: 2.5,
+    XL: 2,
+    L: 1.75,
+    M: 1.5,
+    S: 1.2,
+    XS: 1.2,
+    XXS: 0.9
+) !default;
+

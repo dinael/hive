@@ -1,0 +1,35 @@
+@use '../../setup' as setup;
+
+// ## Images
+$-ut-blend-mode: setup.$ut-blend-mode;
+
+$-blend-mode:
+    normal,
+    multiply,
+    screen, overlay,
+    darken, lighten,
+    color-dodge,
+    color-burn,
+    hard-light,
+    soft-light,
+    difference,
+    exclusion,
+    hue,
+    saturation,
+    color,
+    luminosity;
+
+@if $-ut-blend-mode {
+
+    [class*="blend-mode:"] {
+        background-blend-mode: var(--background-blend-mode);
+    }
+
+    .blend-mode {
+        @each $name in $-blend-mode {
+            &\:#{$name} {
+                --background-blend-mode: #{$name};
+            }
+        }
+    }
+}

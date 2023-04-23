@@ -1,0 +1,220 @@
+@use "sass:map";
+@use '../setup' as setup;
+@use '../01-setting/colors-brand' as swatch;
+@use '../01-setting/swatches-gray-scale' as gray-scale;
+
+// ## Local vars
+$-colors: swatch.$color-swatches;
+$-gradients: swatch.$gradient-swatches;
+$-grays: gray-scale.$gray-swatches;
+
+// ## Functions colors
+// $$ Tone
+@function brand($tone, $shade: default) {
+    @if map-has-key($-colors, $tone, $shade) {
+        $swatchMap: map.get($-colors, $tone);
+        $result: map.get($swatchMap, $shade);
+        @return $result;
+    }
+
+    @error "The key #{$tone} or #{$shade} is a value undefined";
+    @return null;
+}
+
+// Usage:
+// background: color.brand(blue, 'dark');
+
+
+// $$ Gray
+@function gray($tone, $shade: default) {
+    @if map-has-key($-grays, $tone, $shade) {
+        $swatchMap: map.get($-grays, $tone);
+        $result: map.get($swatchMap, $shade);
+        @return $result;
+    }
+
+    @error "The key #{$tone} or #{$shade} is a value undefined";
+    @return null;
+}
+// Usage:
+// background: color.gray(bluish, '100');
+
+// $$ Convert color from hex to RGB
+@function convert-rgb($color) {
+    @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})");
+}
+// Usage:
+// background: color.convert-rgb(#f1f1f1);
+
+// $$ Convert color from hex to RGBa
+@function convert-rgba($color, $alpha: 1.0) {
+    @return unquote("rgba(#{red($color)}, #{green($color)}, #{blue($color)}, #{$alpha})");
+}
+// Usage:
+// background: color.convert-rgba(red);
+
+// $$ Tint
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+// Usage:
+// background: color.tint(blue, 10%);
+
+// $$ Shade
+@function shade($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+// Usage:
+// background: color.shade(blue, 10%);
+
+// $$ Gradient
+@mixin linear-gradient($start, $end, $degrees: 90) {
+    background: linear-gradient($degrees + deg, $start 0%, $stop 100%);
+}
+
+@function gradient-preset($key) {
+    @if map-has-key($-gradients, $key) {
+        $deg: map.get(map.get($-gradients, $key), deg);
+        $start: map.get(map.get($-gradients, $key), start);
+        $end: map.get(map.get($-gradients, $key), end);
+        $gradient: linear-gradient($deg+deg, $start 0%, $end 100%);
+        @return $gradient;
+    }
+
+    @error "The key #{$key} is a value undefined";
+    @return null;
+}
+
+// $$ RGBA
+// Custom properties scope
+@mixin rgba-var($r, $g, $b, $a:null, $prefix:null) {
+    @if $prefix {
+        --#{$prefix}-color-r: #{$r};
+        --#{$prefix}-color-g: #{$g};
+        --#{$prefix}-color-b: #{$b};
+        @if $a{
+            --#{$prefix}-color-alfa: #{$a};
+        }
+    } @else {
+        --color-r: #{$r};
+        --color-g: #{$g};
+        --color-b: #{$b};
+        @if $a{
+            --color-alfa: #{$a};
+        }
+    }
+}
+
+@function rgba($r: null, $g: null, $b: null, $a: null, $alfa: false, $prefix: null) {
+    $color-r: null;
+    $color-g: null;
+    $color-b: null;
+    $color-a: null;
+    $letter-a: null;
+    $result: null;
+
+    @if $r {
+        $color-r: #{',' $r};
+    }
+
+    @if $g {
+        $color-g: #{',' $g};
+    }
+
+    @if $b {
+        $color-b: #{',' $b};
+    }
+
+    @if $alfa {
+        @if $prefix {
+            $color-a: #{',''var(--#{$prefix}-color-alfa, #{$a})'};
+        } @else {
+            $color-a: #{',''var(--color-alfa, #{$a})'};
+        }
+    }
+
+    @if $a {
+        @if $prefix {
+            $color-a: #{',''var(--#{$prefix}-color-alfa, #{$a})'};
+        } @else {
+            $color-a: #{',''var(--color-alfa, #{$a})'};
+        }
+        $letter-a: 'a'
+    }
+
+    @if $prefix {
+        $result: #{'rgb'+'#{$letter-a}'+ '(var(--#{$prefix}-color-r#{$color-r}), var(--#{$prefix}-color-g#{$color-g}), var(--#{$prefix}-color-b#{$color-b})#{$color-a})'};
+    } @else {
+        $result: #{'rgb'+'#{$letter-a}'+ '(var(--color-r#{$color-r}), var(--color-g#{$color-g}), var(--color-b#{$color-b})#{$color-a})'};
+    }
+
+    @return $result;
+}
+
+// $$ HSLA
+// Custom properties scope
+@mixin hsla-var($h, $s, $l, $a:null, $alfa:null, $prefix:null) {
+    @if $prefix {
+        --#{$prefix}-color-h: #{$h};
+        --#{$prefix}-color-s: #{$s};
+        --#{$prefix}-color-l: #{$l};
+        @if $a {
+            --#{$prefix}-color-a: #{$a};
+        }
+    } @else {
+        --color-h: #{$h};
+        --color-s: #{$s};
+        --color-l: #{$l};
+        @if $a {
+            --color-a: #{$a};
+        }
+    }
+}
+
+// $$ HSLA
+@function hsla($h: null, $s: null, $l: null, $a: null, $alfa: false, $prefix: null) {
+    $color-h: null;
+    $color-s: null;
+    $color-l: null;
+    $color-a: null;
+    $letter-a: null;
+    $result: null;
+
+    @if $h {
+        $color-h: #{',' $h};
+    }
+
+    @if $s {
+        $color-s: #{',' $s};
+    }
+
+    @if $l {
+        $color-l: #{',' $l};
+    }
+
+    @if $alfa {
+        @if $prefix {
+            $color-a: #{',''var(--#{$prefix}-color-a, #{$a})'};
+        } @else {
+            $color-a: #{',''var(--color-a, #{$a})'};
+        }
+    }
+
+    @if $a {
+        @if $prefix {
+            $color-a: #{',''var(--#{$prefix}-color-a, #{$a})'};
+        } @else {
+            $color-a: #{',''var(--color-a, #{$a})'};
+        }
+        $letter-a: 'a'
+    }
+
+    @if $prefix {
+        $result: #{'hsl'+'#{$letter-a}'+ '(var(--#{$prefix}-color-h#{$color-h}), var(--#{$prefix}-color-s#{$color-s}), var(--#{$prefix}-color-l#{$color-l})#{$color-a})'};
+    } @else {
+        $result: #{'hsl'+'#{$letter-a}'+ '(var(--color-h#{$color-h}), var(--color-s#{$color-s}), var(--color-l#{$color-l})#{$color-a})'};
+    }
+
+    @return $result;
+}

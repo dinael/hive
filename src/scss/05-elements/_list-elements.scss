@@ -1,0 +1,42 @@
+// ## Lists
+
+:where(ul, ol) {
+    list-style: var(--list-style, none);
+}
+
+:where(li) {
+    &::marker {
+        color: var(--list-style-color, var(--color-primary));
+    }
+}
+
+:where(dl) {
+    dt {
+        font-weight: var(--dt-font-weight, 600);
+
+        &:after {
+            content: var(--dt-after-content, ":");
+        }
+    }
+
+    dd {
+        padding-inline: var(--dd-padding-inline, 0.5em 0);
+        padding-block: var(--dd-padding-block, 0 0.5em);
+    }
+
+    &.horizontal {
+        display: inline-flex;
+
+        dt {
+            padding-block: var(--dt-padding-block, 0);
+            padding-inline: var(--dt-padding-inline, 0 0.25em);
+        }
+
+        dd {
+            padding-block: var(--dd-padding-block, 0);
+            padding-inline: var(--dd-padding-inline, 0 0.75em);
+        }
+    }
+
+
+}

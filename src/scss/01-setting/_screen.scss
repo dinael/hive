@@ -1,0 +1,32 @@
+// DESKTOP MEASURE:
+// Screen Resolution Stats Europe in all device
+// Oct 2019 - Oct 2020
+
+// 1920x1080 - 14.76%
+// 1536x864 - 5.37%
+// 1440x900 - 4.24%
+// 1366x768 - 8.37%
+// 375x667 - 4.41%
+// 360x640 - 5.89%
+
+// More information:
+// http://gs.statcounter.com/
+// http://screensiz.es
+
+// ## Screen
+$screen: (
+    fullscreen: 100%,
+    QHD: 2560px,             // 160rem
+    HD: 1920px,              // 120rem
+    desktop: 1440px,         // 90rem
+    desktop-small: 1280px,   // 80rem
+    desktop-large: 1800px,   // 112.5rem
+    laptop: 1360px,          // 85rem
+    standard: 1200px,        // 75rem
+    tablet-landscape: 992px, // 62rem
+    tablet-large: 1024px,    // 64rem
+    tablet-portrait: 860px,  // 48rem
+    mobile-landscape: 800px, // 46.25rem
+    mobile-portrait: 740px,  // 28.75rem
+    mobile-small: 320px,     // 20rem
+) !default;

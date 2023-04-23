@@ -1,0 +1,123 @@
+@use '../../scss/02-tools/functions' as *;
+@use '../../scss/03-modules/forms' as form;
+
+.inputselect-component {
+  --select-block-size: 2.75rem;
+  --select-border-radius: #{radius(XXS)};
+  --select-border-width: max(0.125rem, 1px);
+  --select-border-color: var(--color-primary);
+  --select-color: var(--color-primary);
+  --select-inline-size: 100%;
+  --select-padding-inline: 1em;
+  --select-padding-block: 0;
+  --select-background-color: var(--color-basic-positive);
+
+  display: var(--label-display, grid);
+  grid-template-areas: "label" "select" "error";
+  color: var(--color-primary);
+  inline-size: var(--inputfiled-inline-size, 100%);
+  position: relative;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  &:has(select:focus) {
+    --select-background-color: greenyellow;
+    --chevron-rotate: 180deg;
+  }
+
+  select {
+    @include form.appearance-none;
+    grid-area: select;
+    background: var(--select-background-color);
+
+    // $$ State
+    // Focus
+    &:focus {
+
+      &::-webkit-input-placeholder {
+        color: gray;
+      }
+
+      &::-moz-placeholder {
+        color: gray;
+      }
+
+      &:-moz-placeholder {
+        color: gray;
+      }
+
+      &:-ms-input-placeholder {
+        color: gray;
+      }
+    }
+
+    // Disabled
+    &:disabled,
+    &.disabled {
+      @include form.placeholder {
+      }
+
+      &:not(:placeholder-shown) {
+      }
+    }
+  }
+  &.has-error {
+    --select-background-color: pink !important;
+
+    select {
+      color: var(--color-primary);
+
+      &::-webkit-input-placeholder {
+        color: var(--color-primary);
+      }
+
+      &::-moz-placeholder {
+        color: var(--color-primary);
+      }
+
+      &:-moz-placeholder {
+        color: var(--color-primary);
+      }
+
+      &:-ms-input-placeholder {
+        color: var(--color-primary);
+      }
+    }
+  }
+}
+
+.label {
+  display: inline-flex;
+  grid-area: label;
+}
+
+.icon {
+  grid-area: select;
+  display: flex;
+  align-items: center;
+  block-size: calc(2.75rem - 4px) !important;
+  inline-size: calc(2.75rem - 4px) !important;
+  padding: 0.625rem;
+  margin: 0.125rem 0.125rem 0.125rem auto;
+  pointer-events: none;
+  background: var(--select-background-color);
+  & > svg {
+    transform: rotate(var(--chevron-rotate, 0));
+    transition: transform .35s ease-in-out;
+  }
+}
+
+.validation-message {
+  --icon-color: red;
+
+  grid-area: error;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--icon-color);
+  padding: 0 0.5em;
+  margin-top: .25rem;
+}
+
+.is-required {
+  color: var(--color-required, red);
+}

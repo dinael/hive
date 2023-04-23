@@ -1,0 +1,60 @@
+// ## Setting
+// $$ Accessibility
+$accessibility: false;
+$accessibility-text: false;
+
+// $$ Theme color-scheme
+$theme-color-scheme: false;
+
+// $$ Grid system
+$grid-system: true;
+$grid-columns-number: 12;
+// fullscreen | QHD | HD | desktop | laptop | standard | tablet-landscape | table-portrait | mobile-landscape | mobile-portrait | mobile-small
+$max-screen: 'laptop';
+$min-screen: 'mobile-portrait';
+
+// $$ Heading
+$heading-default: false;
+
+// $$ Color system
+// Shadows
+$shadow: true;
+$shadow-text: true;
+
+// ## Debugging
+$debug: false;
+$debug-vertical-rhythm: false;
+$debug-columns: false;
+$debug-grid-system: false;
+$debug-accessibility: false;
+
+// ## components
+$c-button: true;
+$c-form-elements: true;
+
+// ## utility classes
+$ut-accessibility: $accessibility; // Activate what do want to use
+$ut-animation-effects: true;
+$ut-blend-mode: true;
+$ut-clip-path: true;
+$ut-cursor: true;
+$ut-debug: $debug;
+$ut-decorator: true;
+$ut-display: true;
+$ut-flex: true;
+$ut-gap-flow: true;
+$ut-grid: true;
+$ut-iframe: true;
+$ut-img: true;
+$ut-letter-spacing: true;
+$ut-list: true;
+$ut-margin-flow: true;
+$ut-paragraph: true;
+$ut-position: true;
+$ut-ratio: true;
+$ut-scroll: true;
+$ut-size-flow: true;
+$ut-space-flow: true;
+$ut-suffixes: true;
+$ut-text: true;
+$ut-title: true;

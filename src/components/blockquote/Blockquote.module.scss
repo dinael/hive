@@ -1,0 +1,90 @@
+@use '../../scss/02-tools/functions' as *;
+
+.blockquote-component {
+  --blockquote-border-radius: #{radius(XS)};
+  --blockquote-padding-block: 1rem;
+  --blockquote-padding-inline: 1.5rem;
+  --blockquote-border-color: var(--color-primary-light);
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  margin-block: 0.75em;
+  position: relative;
+
+  &::before,
+  &::after {
+    font-size: 3em;
+    font-weight: bold;
+    position: absolute;
+    block-size: fit-content;
+    inline-size: fit-content;
+    line-height: 0;
+    inset-block: var(--blockquote-quotation-marks-inset-block);
+    inset-inline: var(--blockquote-quotation-marks-inset-inline);
+  }
+
+  &:before {
+    --blockquote-before-content: "❝";
+    --blockquote-quotation-marks-inset-block: 0.25rem 0;
+    --blockquote-quotation-marks-inset-inline: -0.5rem 100%;
+  }
+
+  &:after {
+    --blockquote-after-content: "❞";
+    --blockquote-quotation-marks-inset-block: calc(100% + 0.5rem);
+    --blockquote-quotation-marks-inset-inline: calc(100% - 1.5rem);
+  }
+
+}
+
+// Variant
+.flat {
+  --blockquote-border-radius: #{radius(XXS)};
+  --blockquote-border-color: transparent;
+  --blockquote-title-font-size: var(--font-size);
+  --blockquote-title-font-weight: 600;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+.fancy{
+  --blockquote-content-after-content: null;
+  --blockquote-background: var(--color-basic-positive);
+  --blockquote-border-width: max(2px, 0.125rem);
+}
+
+.blockquote {
+  &-header {
+    position: relative;
+    padding-block-end: .25em;
+  }
+
+  &-title {
+    font-size: var(--blockquote-title-font-size, var(--font-size-m));
+    font-weight: var(--blockquote-title-font-weight, 700);
+  }
+
+  &-content {
+    &::after,
+    &::before {
+      content: var(--blockquote-content-after-content, '"');
+    }
+  }
+
+  &-footer {
+    font-size: var(--font-size-xs);
+    border-block-start: max(0.0625rem, 1px) solid var(--decorator-border-color);
+    margin-block-start: 0.5em;
+    padding-block-start: 0.5em;
+    text-align: right;
+  }
+}
+
+
+

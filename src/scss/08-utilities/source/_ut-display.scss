@@ -1,0 +1,44 @@
+@use '../../setup' as setup;
+
+// ## display
+$-ut-display: setup.$ut-display;
+
+@if $-ut-display {
+    .block {
+        display: block;
+    }
+
+    .none {
+        display: none !important;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .grid {
+        display: -ms-grid;
+        display: grid;
+
+        &\:column,
+        &\:col {
+            grid-auto-flow: column;
+        }
+
+        &\:row {
+            grid-auto-flow: column;
+        }
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .inline-flex {
+        display: inline-flex;
+    }
+
+    .inline-grid {
+        display: grid-inline;
+    }
+}
