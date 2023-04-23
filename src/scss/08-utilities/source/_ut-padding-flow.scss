@@ -1,0 +1,177 @@
+@use 'sass:math';
+@use '../../setup' as setup;
+@use '../../01-setting/01-global' as global;
+
+// ## space flow
+$-ut-space-flow: setup.$ut-space-flow;
+$-space-flow: global.$space-flow !default;
+$-space-flow-horizontal: global.$space-flow-horizontal !default;
+$-space-flow-vertical: global.$space-flow-vertical !default;
+
+@if $-ut-space-flow {
+    .p {
+        &\:none {
+            padding-block-end: 0;
+        }
+
+        &-v,
+        &-y,
+        &-block,
+        &-vertical {
+            // .p-v:1, ... , .p-v:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    padding-block: calc(#{$-space-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                padding-block: calc(#{$-space-flow} / 2);
+            }
+
+            &\:none {
+                padding-block: 0;
+            }
+        }
+
+        &-h,
+        &-x,
+        &-inline,
+        &-horizontal {
+            // .p-h:1, ... , .p-h:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    padding-inline: calc(#{$-space-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                padding-inline: #{clac(#{$-space-flow} / 2)};
+            }
+
+            &\:none {
+                padding-inline: 0;
+            }
+        }
+
+        &-l {
+            // .p-l:1, ... , .p-l:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    padding-inline-start: calc(#{$-space-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                padding-inline-start: calc(#{$-space-flow} / 2);
+            }
+
+            &\:none {
+                padding-inline-start: 0;
+            }
+        }
+
+        &-r {
+            // .p-r:1, ... , .p-r:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    padding-inline-end: calc(#{$-space-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                padding-inline-end: calc(#{$-space-flow} / 2);
+            }
+
+            &\:none {
+                padding-inline-end: 0;
+            }
+        }
+
+        &-t {
+            // .p-top:1, ... , .p-top:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    padding-block-start: calc(#{$-space-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                padding-block-start: calc(#{$-space-flow} / 2);
+            }
+
+            &\:none {
+                padding-block-start: 0;
+            }
+        }
+
+        &-b {
+            // .p-set:1, ... , .p-set:4
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    padding-block-end: calc(#{$-space-flow} * #{$i});
+                }
+            }
+
+            &\:half {
+                padding-block-end: calc(#{$-space-flow} / 2);
+            }
+
+            &\:none {
+                padding-block-end: 0;
+            }
+        }
+        // Directions
+        &\@to-top {
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} > *:not(:first-child) {
+                    margin-block-start: calc(#{$-space-flow} * #{$i});
+                }
+            }
+        }
+
+        &\@to-right {
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} > *:not(:last-child) {
+                    margin-inline-end: calc(#{$-space-flow} * #{$i});
+                }
+            }
+        }
+
+        &\@to-left {
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} > *:not(:first-child) {
+                    margin-inline-start: calc(#{$-space-flow} * #{$i});
+                }
+            }
+        }
+
+        &\@to-bottom {
+            @for $i from 1 through 4 {
+                $value: $i;
+
+                &\:#{$value} > *:not(:last-child) {
+                    margin-block-end: calc(#{$-space-flow} * #{$i});
+                }
+            }
+        }
+    }
+}

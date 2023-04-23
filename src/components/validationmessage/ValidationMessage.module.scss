@@ -1,0 +1,40 @@
+.validation-message {
+  --icon-color: red;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25em 0.5em;
+  margin-top: .25rem;
+  border-width: max(2px, 0.125rem);
+  border-style: solid;
+  border-color: var(--color-validation-message-border-color, var(--icon-color));
+  border-radius: 0.25em;
+  color: var(--color-validation-message-color, var(--icon-color));
+  background-color: var(--color-validation-message-background);
+
+  // Kind
+  &.info {
+    --icon-color: blue;
+  }
+
+  &.warning {
+    --icon-color: orange;
+  }
+
+  &.error {
+    --icon-color: red;
+  }
+
+  &.success {
+    --icon-color: green;
+  }
+
+  &.help {
+    --icon-color: grey;
+  }
+
+  &.safe {
+    --icon-color: inherit;
+  }
+}

@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "sass:math";
+@use '../setup' as setup;
+@use '../01-setting/01-global' as global;
+@use '../01-setting/title' as title;
+@use '../01-setting/screen' as screen;
+@use '../02-tools/functions' as *;
+@forward '../01-setting/title';
+
+// ## Local vars
+$-global-unit-value: global.$global-unit-value; // 16 default
+$-max-screen: setup.$max-screen;
+$-min-screen: setup.$min-screen;
+$-screens: screen.$screen !default;
+$-title-size: title.$title-size;
+
+$-max-screen-clamp: strip-unit(maps($-screens, $-max-screen));
+$-min-screen-clamp: strip-unit(maps($-screens, $-min-screen));
+
+@function size($size) {
+    $-min-size: map.get($-title-size, $size, 'min');
+    $-max-size: map.get($-title-size, $size, 'max');
+    $-clamp: get-clamp(
+        $min-size: $-min-size,
+        $max-size: $-max-size,
+        $min-screen: $-min-screen-clamp,
+        $max-screen: $-max-screen-clamp
+    );
+
+    @return #{$-clamp};
+}
+
+@function line-height($size) {
+    $-line-height: map.get($-title-size, $size, 'line-height');
+
+    @return #{$-line-height};
+}

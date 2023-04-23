@@ -1,0 +1,18 @@
+:where(hr) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: var(--hr-overflow, visible);
+    border: var(--hr-border, max(0.0625rem, 1px));
+    block-size: var(--hr-block-size, 1em);
+    inline-size: var(--hr-inline-size, 100%);
+    margin-block: var(--hr-margin-block, 0.5em 0.5em);
+    margin-inline: var(--hr-margin-inline, auto auto);
+
+    &::after {
+        content: "";
+        inline-size: calc(100% - 2rem);
+        block-size: 0.0625rem;
+        background: var(--hr-after-background, var(--decorator-border-color));
+    }
+}

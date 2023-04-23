@@ -1,0 +1,35 @@
+@use '../../scss/02-tools/functions' as *;
+@use '../../scss/02-tools/mixins' as *;
+@use '../../scss/03-modules/texts' as text;
+
+.anchor-component {
+  border-radius: var(--anchor-border-radius, #{radius(XXS)});
+  cursor: pointer;
+
+  &:focus {
+    filter: none;
+    @include focus;
+  }
+
+  &.disabled{
+    color: var(--anchor-color-disabled);
+
+    @include disabled
+  }
+
+  &.safe-area {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: index(default);
+      inset: var(--safe-area-inset, -1.25ch);
+      cursor: pointer;
+    }
+  }
+
+  &:has([class*="icon-component"]) {
+    gap: 0.25rem;
+  }
+}

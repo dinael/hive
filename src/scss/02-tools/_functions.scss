@@ -1,0 +1,73 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '../01-setting/01-global' as global;
+@use '../01-setting/radius' as radius;
+@use '../01-setting/layer' as layer;
+
+// local vars
+$-unit: global.$global-unit-value;
+$-radius-sizes: radius.$radius-size;
+$-layer: layer.$layer;
+
+// $$ Units
+// Rem
+@function rem($value, $root: $-unit) {
+    $result: math.div($value * $root, global.$global-unit-value);
+    @return $result + rem;
+    @error "The unit #{$value} is not valid";
+}
+// Usage: font-size: rem(2);
+
+@function strip-unit($number) {
+    @if type-of($number)=='number' and not unitless($number) {
+        @return math.div($number , ($number * 0 + 1));
+    }
+}
+
+@function px-to-rem($value) {
+    $number: strip-unit($value);
+    $result: #{math.div($number , global.$global-unit-value)};
+    @return $result + rem;
+
+    @error "The unit #{$value} is not valid";
+}
+
+// $$ Get maps
+@function maps($map, $value) {
+    @if map-has-key($map, $value) {
+        @return map.get($map, $value);
+    }
+
+    @error "The key #{$value} is a undefined value";
+}
+// Usage: width: maps(sizes, M);
+
+
+// $$ Get clamp value
+@function get-clamp($min-size, $max-size, $min-screen, $max-screen) {
+    $slope: math.div((($max-size - $min-size)), ($max-screen - $min-screen));
+    $vw: -$min-size * $slope + $min-size;
+    $clamp-size: clamp(#{$min-size * 1rem}, #{$slope * 100rem } + #{$vw * 1vw}, #{$max-size * 1rem});
+
+    @return  $clamp-size;
+}
+
+// $$  Border radius sizes
+@function radius($size) {
+    @if $size == circle {
+        @return 100%;
+    }
+    @if map-has-key($-radius-sizes, $size) {
+        $result: map.get($-radius-sizes, $size) * 1rem;
+        @return $result;
+    }
+
+    @error "value undefined";
+}
+
+// $$ Z index control
+@function index($value) {
+    $result: map.get($-layer, $value);
+    @return $result;
+    @error "value undefined";
+}

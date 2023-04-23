@@ -1,0 +1,16 @@
+body {
+    //background: yellowgreen;
+}
+
+.gallery-icons {
+  display: flex;
+  gap: 1%;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+  }
+}

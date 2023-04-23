@@ -1,0 +1,81 @@
+@use '../../../scss/setup' as setup;
+@use '../../02-tools/functions' as *;
+@use '../../02-tools/mixins' as *;
+@use '../../03-modules/colors' as swatch;
+@use '../../03-modules/forms' as form;
+
+@forward 'button';    // <button>, <input[type="button"]>, <input[type="submit"]>, <input[type="reset"]>
+@forward 'checkbox';  // <input[type="checkbox"]>
+@forward 'input';     // <input>
+@forward 'radio';     // <input[type="radio"]>
+@forward 'range';     // <input[type="range"]>
+@forward 'select';    // <select>
+@forward 'textarea';  // <textarea>
+
+:is(fieldset) {
+    padding-block: var(--fieldset-padding-block);
+    padding-inline: var(--fieldset-padding-inline);
+}
+
+:where(
+    input,
+    button,
+    select,
+    textarea) {
+        font-family: var(--font-family, inherit);
+        font-size: var(--font-size, inherit);
+        line-height: var(--font-line-height, inherit);
+        text-transform: none;
+}
+
+:where(
+    [disabled],
+    [readonly]) {
+        @include form.disabled;
+}
+
+:where(legend) {
+    display: inline-flex;
+    font-size: var(--legend-font-size);
+    font-weight: var(--legend-font-weight);
+    max-inline-size: 100%;
+    white-space: normal;
+}
+
+:where(output) {
+    display: var(--output-display, inline-flex);
+}
+
+//TODO
+// $$ Select
+$-accessibility: setup.$accessibility;
+$-accessibility-height: 2.75rem;
+:where(select) {
+    @if $-accessibility {
+        min-block-size: $accessibility-height;
+    }
+
+    text-transform: none;
+    vertical-align: middle;
+
+    &[multiple] {
+        vertical-align: top;
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
+
+    &:focus {
+        @include focus;
+    }
+
+    option {
+
+    }
+}

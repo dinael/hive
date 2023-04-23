@@ -1,0 +1,39 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ValidationMessage > renders snapshot 1`] = `
+<div>
+  <span
+    class="
+        validation-message
+        error
+        className-Text}
+      "
+    id="id-test"
+    role="alert"
+  >
+    <span
+      aria-hidden="true"
+      class="
+        icon-component
+        m
+        
+      "
+      style="--icon-color: currentColor;"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <title>
+          close
+        </title>
+        <use
+          xlink:href="/src/assets/sprite.svg#close"
+        />
+      </svg>
+    </span>
+    message-test
+  </span>
+</div>
+`;

@@ -1,0 +1,58 @@
+@use '../02-tools/functions' as *;
+
+// ## Form
+// $$ placeholder
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &[placeholder] {
+        @content;
+    }
+}
+// Usage:
+// @include form.placeholder {
+//       your css
+// }
+
+@mixin appearance-none {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+// Usage:
+// @include form.appearance-none;
+
+@mixin required  {
+    outline: 0.0625rem solid var(--color-validation-error);
+
+    @content;
+}
+// Usage:
+// @include form.required;
+
+@mixin disabled ($opacity: null) {
+    @if $opacity {
+        opacity: $opacity;
+    }
+
+    pointer-events: none;
+    cursor: default !important;
+}
+// Usage:
+// @include form.disable($opacity: 0.8);
+
+@mixin read-only {
+    @include disabled;
+}
+// Usage:
+// @include form.read-only;

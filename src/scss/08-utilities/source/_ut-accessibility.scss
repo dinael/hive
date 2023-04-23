@@ -1,0 +1,87 @@
+@use '../../setup' as setup;
+@use '../../03-modules/accessibility' as accessibility;
+
+// ## Accessibility
+$-ut-accessibility: setup.$ut-accessibility;
+
+// $$ Screen reader only
+
+.sr-only {
+	@include accessibility.sr-only;
+}
+
+@if $-ut-accessibility {
+	a[href],
+	area[href],
+	input:not([disabled]),
+	select:not([disabled]),
+	textarea:not([disabled]),
+	button:not([disabled]),
+	iframe,
+	[tabindex],
+	[contentEditable="true"] {
+		&:not([tabindex='-1']) {
+			// TODO: your SCSS for focusable elements goes here
+		}
+	}
+
+	// $$ ARIA roles
+
+	[role="button"] {
+		cursor: pointer;
+	}
+
+	[aria-busy="true"] {
+		cursor: progress;
+	}
+
+	[aria-controls] {
+		cursor: pointer;
+	}
+
+	[aria-disabled] {
+		cursor: default;
+	}
+
+	[aria-hidden="false"][hidden]:not(:focus) {
+		clip: rect(0, 0, 0, 0);
+		display: inherit;
+		position: absolute;
+	}
+
+	[role="region"][aria-labelledby][tabindex] {
+		overflow: auto;
+	}
+
+	[role="region"][aria-labelledby][tabindex]:focus {
+		outline: .1em solid rgba(0, 0, 0, .1);
+	}
+
+	button[aria-expanded="false"] + * {
+		display: none;
+	}
+
+	textarea[aria-invalid="true"],
+	textarea[aria-invalid="spelling"],
+	textarea[aria-invalid="grammar"],
+	input:not([type="checkbox"]):not([type="file"]):not([type="image"]):not([type="radio"]):not([type="range"])[aria-invalid] {
+		background: linear-gradient(135deg, var(--debug-error) 0, var(--debug-error) .4em, var(--color-basic-positive) .4em);
+	}
+
+	a[aria-current="page"] {
+		background-color: var(--color-primary);
+		border-color: var(--color-primary);
+	}
+
+	@media screen and (prefers-reduced-motion: reduce) {
+		*::after,
+		*::before {
+			animation: none !important;
+			transition: none !important;
+		}
+
+		html {
+			scroll-behavior: auto;
+		}
+	}
+}

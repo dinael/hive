@@ -1,0 +1,183 @@
+@use "sass:math";
+@use "sass:meta";
+@use "sass:selector";
+
+// ## mixin
+
+// $$ Selectors
+// append to parent
+@mixin parent-to-child($new-parent) {
+    @at-root #{append($new-parent, &)} {
+        @content;
+    }
+}
+// Usage:
+// @include mixin.parent-to-child(".new-parent");
+
+// $$ Flex
+@mixin flex-centered ($flex: false) {
+    @if $flex==true {
+        display: flex;
+    }
+
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-column-centered($flex: false) {
+    @include flex-centered($flex);
+    flex-direction: column;
+}
+
+@mixin clearfix() {
+    zoom: 1;
+
+    &:before {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        content: " ";
+        display: table;
+        visibility: hidden;
+        clear: both;
+        font-size: 0;
+        height: 0;
+    }
+}
+// Usage:
+// @include clearfix;
+
+// ## size
+@mixin size($w: null, $h: null) {
+    block-size: $h;
+    inline-size: $w;
+}
+// Usage:
+// @include shapes.size(2rem);
+
+// $$ min-size
+@mixin min-size($mw: null, $mh: null) {
+    min-inline-size: $mw;
+    min-block-size: $mh;
+}
+
+// Usage:
+// @include shapes.min-size(4px,0.125rem);
+
+// ## Position
+// $$ Relative
+@mixin relative($t: null, $r:null, $b:null, $l:null) {
+    position: relative;
+    inset-block-start: $t;
+    inset-block-block: $b;
+    inset-inline-start: $l;
+    inset-inline-block: $r;
+}
+// Usage:
+// @include relative(t: 1rem, $l:0);
+
+// $$ Absolute
+@mixin absolute($t: null, $r:null, $b:null, $l:null) {
+    position: absolute;
+    inset-block-start: $t;
+    inset-block-block: $b;
+    inset-inline-start: $l;
+    inset-inline-block: $r;
+}
+// Usage:
+// @include absolute(b: 1rem, $r:0);
+
+// $$ Fixed
+@mixin fixed($t: null, $r:null, $b:null, $l:null) {
+    position: fixed;
+    inset-block-start: $t;
+    inset-block-block: $b;
+    inset-inline-start: $l;
+    inset-inline-block: $r;
+}
+// Usage:
+// @include fixed(t: 0, $r:1rem);
+
+// $$ Gradient
+@mixin linear-gradient($direction, $color-stops) {
+    background: nth(nth($color-stops, 1), 1);
+    background: linear-gradient($direction, $color-stops);
+}
+// Usage:
+// @include linear-gradient(vertical, red);
+
+// ## Text & font
+// $$ Text gradient
+@mixin text-gradient($color1: null, $color2: null) {
+    background: -webkit-linear-gradient($color1, $color2);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+// Usage:
+// @include text-gradient(blue, red);
+
+
+// $$ suffixes
+@mixin suffix($character) {
+    position: relative;
+
+    &:after {
+        content: quote($character);
+        position: relative;
+    }
+}
+// Usage:
+// @include mixin.suffix;
+
+// ## TODO:
+// add start inside the mixin
+// ## List
+@mixin list-counter-point() {
+    content: counters(list-item, '.');
+}
+
+@mixin focus($kind: 'ring') {
+    @content;
+
+    @if $kind == 'ring' {
+        outline: var(--focus-outline, var(--focus-outline-width, 0.125rem) var(--focus-outline-style, solid) var(--focus-outline-color,var(--color-focus)));
+        outline-offset: var(--focus-outline-offset, 0.1875rem);
+    }
+
+    @if $kind == 'glow' {
+        outline: var(--focus-outline, 0);
+        box-shadow: 0 0 0.25rem 0.125rem var(--color-focus);
+    }
+
+    @if $kind == 'none' {
+        outline: var(--focus-outline)
+    }
+}
+
+// ## cursor
+@mixin cursor-custom($url) {
+    //Create a custom cursor
+    cursor: url('$url'), auto;
+}
+
+// ## Test
+@mixin test-ui {
+    border: 0.1875rem dashed deeppink !important;
+    background: greenyellow !important;
+}
+// Usage:
+// @include mixin.test-ui;
+
+@mixin disabled ($opacity: null) {
+  @if $opacity {
+    opacity: $opacity;
+  }
+
+  pointer-events: none;
+  cursor: default !important;
+}
+
+// Usage:
+// @include form.disable($opacity: 0.8);

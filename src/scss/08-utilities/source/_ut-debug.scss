@@ -1,0 +1,249 @@
+@use '../../setup' as setup;
+@use '../../01-setting/01-global' as global;
+@use '../../01-setting/grid' as grid;
+@use '../../03-modules/breakpoints' as breakpoints;
+
+// ## DEBUG
+$-debug: false;// setup.$debug;
+$-debug-vertical-rhythm: setup.$debug-vertical-rhythm;
+$-debug-columns: setup.$debug-columns;
+$-debug-grid-system: setup.$debug-grid-system;
+$-debug-accessibility: setup.$debug-accessibility;
+$-debug-unit-flow: global.$unit-flow !default;
+$-debug-grid-screen: grid.$grid-screen !default;
+$debug-grid-columns-number: grid.$grid-columns-number !default;
+
+
+// Enable this stylesheets to visually detect any improperly nested or
+// potentially invalid markup, or any potentially inaccessible code.
+//
+// Red          ==      Error
+// Yellow       ==      Warning
+// Green        ==      Success
+// Grey		    ==      Be careful
+// None         ==      should be fine
+//
+
+@if $-debug {
+	// Are there any empty elements in your page?
+	:empty {
+		outline: 5px dotted var(--debug-warning);
+	}
+
+	// Images require `alt` attributes, empty `alt`s are fine but should be
+	// double-checked, no `alt` is bad and is flagged red.
+	img[alt=''],
+	img[alt=''],
+	img:not([alt]) {
+		outline: 3px dashed var(--debug-error) !important;
+	}
+
+	// Links sometimes, though not always, benefit from `title` attributes. Links
+	// without are never invalid but it's a good idea to check.
+	a {
+		outline: 5px dotted var(--debug-warning);
+	}
+
+	a[title] {
+		outline: 0;
+	}
+
+	// Double-check any links whose `href` is something questionable.
+	a:not([href]),
+	a[href='#'],
+	a[href="#"],
+	a[href=""],
+	a[href*='javascript'],
+	a[href*="javascript:void(0)"] {
+		outline: 5px dotted var(--debug-warning);
+	}
+
+	// The `target` attribute ain't too nice...
+	a[target] {
+		outline: 5px dotted var(--debug-warning);
+	}
+
+	// Ensure any lists only contain `li`s as children.
+	:is(ul, ol) > *:not(li) {
+		outline: 5px dotted var(--debug-error);
+	}
+
+	ul > *:not(li),
+	ol > *:not(li) {
+		outline: 5px dotted var(--debug-error);
+	}
+
+	// It's always nice to give `th`s `scope` attributes.
+	th {
+		outline: 5px dotted var(--debug-warning);
+	}
+
+	th[scope] {
+		outline: 0;
+	}
+
+	// `tr`s as children of `table`s ain't great, did you need a `thead`/`tbody`?
+	table > tr {
+		outline: 5px dotted var(--debug-warning,);
+	}
+
+	// `tfoot` needs to come *before* `tbody`.
+	tbody + tfoot {
+		outline: 5px dotted var(--debug-warning);
+	}
+
+	// Forms require `action` attributes
+
+	form {
+		outline: 5px dotted var(--debug-error);
+	}
+
+	form[action] {
+		outline: 0;
+	}
+
+	// Various form-field types have required attributes. `input`s need `type`
+	// attributes, `textarea`s need `rows` and `cols` attributes and submit buttons
+	// need a `value` attribute.
+
+	textarea,
+	input {
+		outline: 5px dotted var(--debug-error);
+	}
+
+	input[type] {
+		outline: 0;
+	}
+
+	textarea[rows][cols] {
+		outline: 0;
+	}
+
+	input[type='submit'] {
+		outline: 5px dotted var(--debug-error);
+	}
+
+	input[type='submit'][value] {
+		outline: 0;
+	}
+
+	// Avoid inline styles where possible.
+
+	[style] {
+		outline: 5px dotted var(--debug-warning);
+	}
+
+	// You should avoid using IDs for CSS, is this doing any styling?
+
+	[id] {
+		outline: 2px dotted var(--debug-careful);
+	}
+
+	.icon:not([aria-hidden='true']) {
+		outline: 3px dashed var(--debug-error) !important;
+	}
+
+	// Forbidden nesting
+	:not(figure) > figcaption,
+	:not(fieldset) > legend,
+	:not(dl) > :is(dt, dd),
+	:not(tr) > :is(td, th),
+	:not(select) > :is(option, optgroup),
+	:not(table) > :is(thead, tfood, tbody, tr, colgroup, caption) {
+		outline: 2px dotted var(--debug-warning);
+	}
+
+	// Div inside inline elements
+	:is(b, i, q, em, abbr, cite, code, span, small, label, strong) > div {
+		outline: 2px dotted var(--debug-error);
+	}
+
+	span > div {
+		outline: 2px dotted var(--debug-error);
+	}
+
+	span
+		> :not(abbr):not(audio):not(b):not(bdo):not(br):not(button):not(canvas):not(cite):not(code):not(command):not(data):not(datalist):not(dfn):not(em):not(embed):not(i):not(iframe):not(img):not(input):not(kbd):not(keygen):not(label):not(mark):not(math):not(meter):not(noscript):not(object):not(output):not(picture):not(progress):not(q):not(ruby):not(samp):not(script):not(select):not(small):not(span):not(strong):not(sub):not(sup):not(svg):not(textarea):not(time):not(var):not(video):not(wbr) {
+		outline: 3px dotted var(--debug-error);
+	}
+
+	// Input  fields without label
+	input:not([type='button']):not([type='reset']):not([type='submit']):not([aria-labelledby], [id]),
+	textarea:not([aria-labelledby], [id]),
+	label:not([for]) {
+		outline: 2px dashed var(--debug-warning);
+	}
+
+	// Tabindex order misuse
+	[tabindex]:not([tabindex='0'], [tabindex='-1']) {
+		outline: 2px dotted var(--debug-error);
+	}
+}
+
+@if $-debug-vertical-rhythm {
+	body {
+		background-image: linear-gradient(#777 1px, transparent 1px);
+		background-size: 100% #{$-debug-unit-flow};
+	}
+}
+
+@if $-debug-columns {
+	.wrapper {
+		box-shadow: inset rgba(0, 0, 0, 0.3) 1px 0;
+		background-image: linear-gradient(to right, transparent calc(100% - 1px), rgba(0, 0, 0, 0.3));
+		background-size: calc(#{breakpoints.device(#{$-debug-grid-screen})} / #{$debug-grid-columns-number});
+	}
+}
+
+@if $-debug-grid-system {
+	.grid\@system {
+		border: 1px solid deepskyblue !important;
+
+		& > * {
+			background: rgba(pink, 0.5) !important;
+			border: 1px dotted hotpink !important;
+		}
+	}
+}
+
+@if $-debug-accessibility {
+	// $$ ARIA Label
+	input[type='button']:not([aria-label]),
+	input[type='submit']:not([aria-label]),
+	input[type='reset']:not([aria-label]),
+	input[type='text']:not([aria-label]),
+	input[type='email']:not([aria-label]),
+	input[type='password']:not([aria-label]),
+	input[type='color']:not([aria-label]),
+	input[type='checkbox']:not([aria-label]),
+	input[type='radio']:not([aria-label]),
+	input[type='range']:not([aria-label]),
+	input[type='url']:not([aria-label]),
+	input[type='date']:not([aria-label]),
+	input[type='time']:not([aria-label]),
+	input[type='file']:not([aria-label]),
+	input[type='week']:not([aria-label]),
+	i:not([aria-label]),
+	button:not([aria-label]) {
+		outline: 2px dashed var(--debug-warning) !important;
+	}
+
+	*[class~="icon"]:not([aria-hidden="true"]) {
+		outline: 2px dashed var(--debug-warning) !important;
+	}
+
+	img[alt],
+	img[alt=''],
+	img[alt=''],
+	img:not([alt]) {
+		outline: 3px dashed var(--debug-error) !important;
+	}
+
+	img:not([loading="lazy"]) {
+		outline: 2px dashed var(--debug-warning) !important;
+	}
+
+	[role="button"] {
+		outline: 2px dashed var(--debug-warning) !important;
+	}
+}

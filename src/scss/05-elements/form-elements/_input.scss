@@ -1,0 +1,193 @@
+@use '../../../scss/setup' as setup;
+@use '../../02-tools/functions' as *;
+@use '../../02-tools/mixins' as *;
+@use '../../03-modules/forms' as form;
+
+// ## Input
+
+:is(input) {
+    &[type="date"],
+    &[type="datetime-local"],
+    &[type="datetime"],
+    &[type="email"],
+    &[type="month"],
+    &[type="number"],
+    &[type="password"],
+    &[type="search"],
+    &[type="tel"],
+    &[type="text"],
+    &[type="time"],
+    &[type="url"],
+    &[type="week"] {
+        background: var(--input-background);
+        block-size: calc(var(--input-height) - (var(--input-border-width) *2));
+        border-color: var(--input-border-color);
+        border-radius: var(--input-border-radius, 0);
+        border-style: var(--input-border-styles, solid);
+        border-width: var(--input-border-width, 0);
+        caret-color: var(--color-primary);
+        inline-size: var(--input-width, 100%);
+        padding-block: var(--input-padding-block, 0);
+        padding-inline: var(--input-padding-inline);
+        vertical-align: middle;
+        color: var(--input-color, inherit);
+
+        @include form.placeholder {
+            color: var(--input-placeholder-color);
+        }
+
+        &:not(:placeholder-shown) {
+            --input-border-color: var(--input-placeholder-shown-border-color);
+            --input-background: var(--input-placeholder-shown-background);
+
+            color: var(--input-placeholder-shown-color);
+        }
+
+        &:focus {
+            @include focus;
+
+            &::-webkit-input-placeholder {}
+            &::-moz-placeholder {}
+            &:-moz-placeholder {}
+            &:-ms-input-placeholder {}
+        }
+
+        &:focus-visible {
+            &:focus {
+                @include focus;
+            }
+        }
+
+        &:focus-within {}
+
+        &:disabled {
+            @include form.disabled;
+        }
+
+        &[readonly] {
+            @include form.disabled;
+        }
+
+        &:read-only {
+            @include form.disabled;
+        }
+
+        &:autofill {}
+
+        &:enabled {}
+
+        &:invalid {}
+
+        &:out-of-range {}
+
+        &:out-of-range:focus {}
+
+        &:required {}
+
+        &:valid {}
+
+        &:optional {}
+
+    }
+    // $$ Email
+    &[type="email"] {}
+
+    // $$ Number
+    &[type="number"] {
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            height: auto;
+        }
+    }
+
+    // $$ Password
+    &[type="password"] {}
+    // $$ Tel
+    &[type="tel"] {}
+    // $$ URL
+    &[type="url"] {}
+    // $$ Color
+    &[type="color"] {}
+    // $$ Range
+    &[type="range"] {}
+    // $$ File
+    &[type="file"] {
+        &::-webkit-file-upload-button {
+            font: inherit;
+        }
+    }
+
+    // $$ Date inputs
+    &[type="date"],
+    &[type="datetime"],
+    &[type="datetime-local"],
+    &[type="month"],
+    &[type="week"],
+    &[type="time"] {
+        @include form.appearance-none;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+        color: var(--color-primary);
+        //background-image: url(var(--input-date-icon)) !important;
+        background-origin: content-box;
+        background-size: contain;
+        height: var(--input-date-icon-height, 1em);
+        width: var(--input-date-icon-width, 1em);
+        opacity: var(--input-date-icon-opacity, 1);
+        background-repeat: no-repeat;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &::-webkit-date-and-time-value {
+        text-align: left;
+    }
+
+    &::-webkit-datetime-edit-text,
+    &::-webkit-datetime-edit-day-field,
+    &::-webkit-datetime-edit-month-field,
+    &::-webkit-datetime-edit-year-field,
+    &::-webkit-datetime-edit-hour-field,
+    &::-webkit-datetime-edit-minute-field,
+    &::-webkit-datetime-edit-second-field {
+        color: inherit;
+
+        &[disabled]{
+            color: inherit;
+        }
+    }
+
+    &::-ms-clear,
+    &::-ms-reveal {
+        display: none;
+    }
+
+    &:-moz-ui-invalid:not(output) {
+        box-shadow: none;
+    }
+
+    &[type="date"] {}
+
+    &[type="datetime"] {}
+
+    &[type="datetime-local"] {}
+
+    &[type="month"] {}
+
+    &[type="week"] {}
+
+    &[type="time"] {}
+
+    &[type="date"] {}
+
+    &[type="datetime"] {}
+
+    &[type="datetime-local"] {}
+
+    &[type="month"] {}
+
+    &[type="week"] {}
+
+    &[type="time"] {}
+}

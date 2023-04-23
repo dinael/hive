@@ -1,0 +1,156 @@
+@use '../../setup' as setup;
+@use '../../01-setting/font' as font;
+@use '../../03-modules/fonts' as fonts;
+@use '../../03-modules/texts' as text;
+@use '../../03-modules/shadows' as shadow;
+
+// ## Text utilities
+$-ut-text: setup.$ut-text;
+$-font-sizes: font.$font-sizes;
+
+$-text-align: (
+    center,
+    right,
+    left,
+    justify,
+);
+
+$-font-weight: (
+    normal,
+    bold,
+    bolder,
+    lighter,
+    'black',
+);
+
+$-font-style: (
+    italic,
+    oblique,
+    italic-oblique,
+);
+
+$-text-decoration: (
+    underline,
+    line-through,
+    overline,
+);
+
+$-text-shadow: (
+S, M, L
+);
+
+@if $-ut-text {
+    .text {
+        // $$ text alignment
+        @each $name in $-text-align {
+            &\:#{$name} {
+                text-align: #{$name};
+            }
+        }
+
+        // $$ font styles
+        @each $name in $-font-style {
+            &\:#{$name} {
+                font-weight: #{$name};
+            }
+        }
+
+        // $$ font weight
+        @each $name in $-font-weight {
+            &\:#{$name} {
+                font-weight: #{$name};
+            }
+        }
+
+        @for $i from 1 through 9 {
+            &\:#{$i + '00'} {
+                font-weight: #{$i}+'00';
+            }
+        }
+
+        // $$ Text decoration
+        @each $name in $-text-decoration {
+            &\:#{$name} {
+                text-decoration: #{$name};
+            }
+        }
+
+        &\:no-underline {
+            text-decoration: none;
+        }
+
+        // $$ Text shadow
+        &-shadow {
+            text-shadow: shadow.text(S);
+
+            @each $shadow-size in $-text-shadow {
+                &\:#{to-lower-case($shadow-size)} {
+                    text-shadow: shadow.text($shadow-size);
+                }
+            }
+        }
+
+        // $$ Text transform
+        &\:uppercase {
+            text-transform: uppercase;
+        }
+
+        &\:lowercase {
+            text-transform: lowercase;
+        }
+
+        &\:hide {
+            overflow: hidden;
+            padding: 0;
+            text-indent: 101%;
+            white-space: nowrap;
+        }
+
+        // $$ text size
+        @each $size, $value in $-font-sizes {
+            &\:#{to-lower-case($size)} {
+                font-size: var(--font-size-#{to-lower-case($size)});
+            }
+        }
+
+        &\:capital-letter {
+            &:first-letter {
+                font-size: 6ch;
+                line-height: 0.5;
+                float: left;
+                margin: 0.5rem 0.5rem 0 0.25rem;
+                color: var(--color-primary);
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &\:break-word {
+            overflow-wrap: break-word;
+            min-inline-size: 0;
+        }
+
+        &\:to-crop {
+            @include text.line-height-crop(var(--font-line-height));
+        }
+
+        // $$ Special features
+        &\:truncate {
+            @include text.truncate;
+        }
+
+        &\:ellipsis {
+            @include text.ellipsis;
+        }
+
+        // $$ Brand attributes
+        &\:primary {
+            color: var(--color-text-primary);
+        }
+        &\:secondary {
+            color: var(--color-text-secondary);
+        }
+    }
+}

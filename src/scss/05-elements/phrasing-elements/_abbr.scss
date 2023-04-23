@@ -1,0 +1,11 @@
+@use '../../03-modules/forms' as form;
+
+:where(abbr[aria-label]) {
+    text-decoration: var(--abbr-text-decoration, underline dotted);
+}
+
+:where(abbr:not([aria-label])) {
+    --abbr-text-decoration: line-through;
+
+    @include form.disabled;
+}

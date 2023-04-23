@@ -1,0 +1,12 @@
+@use '../03-modules/colors' as swatch;
+
+$selection-color: black;
+$selection-background: yellow;
+
+// ## Selection
+::selection,
+::-moz-selection {
+    color: $selection-color !important;
+    background: $selection-background !important;
+    text-shadow: none;
+}

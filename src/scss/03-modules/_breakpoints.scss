@@ -1,0 +1,91 @@
+@use 'sass:map';
+@use '../01-setting/screen' as screen;
+@forward '../01-setting/screen' as screen-*;
+@forward '../02-tools/browser-support' as browser-*;
+@forward '../02-tools/media-queries' as mq-*;
+
+// ## Local vars
+$-screens: screen.$screen;
+
+@function device($device) {
+	@if map-has-key($-screens, $device) {
+		@return map.get($-screens, $device);
+	}
+
+	@warn "The key #{$device} is a undefined value";
+	@return null;
+}
+
+@mixin screen($device) {
+	@if $device==landscape {
+		@media screen and (orientation: landscape) {
+			@content;
+		}
+	}
+
+	@if $device==portrait {
+		@media screen and (orientation: portrait) {
+			@content;
+		}
+	}
+
+	@if $device==mobile-small {
+		@media screen and (min-width: device(mobile-small)) {
+			@content;
+		}
+	}
+
+	@if $device==mobile-portrait {
+		@media screen and (min-width: device(mobile-portrait)) {
+			@content;
+		}
+	}
+
+	@if $device==mobile-landscape {
+		@media screen and (min-width: device(mobile-landscape)) {
+			@content;
+		}
+	}
+
+	@if $device==tablet {
+		@media screen and (min-width: device(tablet-portrait)) {
+			@content;
+		}
+	}
+
+	@if $device==tablet-landscape {
+		@media screen and (min-width: device(tablet-landscape)) {
+			@content;
+		}
+	}
+
+	@if $device==standard {
+		@media screen and (min-width: device(standard)) {
+			@content;
+		}
+	}
+
+	@if $device==laptop {
+		@media screen and (min-width: device(laptop)) {
+			@content;
+		}
+	}
+
+	@if $device==desktop {
+		@media screen and (min-width: device(desktop)) {
+			@content;
+		}
+	}
+
+	@if $device==HD {
+		@media screen and (min-width: device(HD)) {
+			@content;
+		}
+	}
+
+	@if $device==QHD {
+		@media screen and (min-width: device(QHD)) {
+			@content;
+		}
+	}
+}

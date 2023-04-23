@@ -1,0 +1,10 @@
+// ## Main html tag
+@mixin main-styles {
+    main {
+        block-size: auto;
+        min-block-size: 100%;
+        inline-size: 100%;
+
+        @content;
+    }
+}

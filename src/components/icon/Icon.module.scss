@@ -1,0 +1,32 @@
+.icon-component {
+  display: inline-flex;
+  overflow: hidden;
+  block-size: var(--icon-size);
+  inline-size: var(--icon-size);
+  color: var(--icon-color);
+
+  svg {
+      color: inherit;
+    }
+}
+
+// ## Size
+.xs {
+  --icon-size: 0.75rem;
+}
+
+.s {
+  --icon-size: 0.85rem;
+}
+
+.m {
+  --icon-size: 1rem;
+}
+
+.l {
+  --icon-size: 1.5rem;
+}
+
+.xl {
+  --icon-size: 2rem;
+}

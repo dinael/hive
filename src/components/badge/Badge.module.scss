@@ -1,0 +1,44 @@
+@use '../../scss/02-tools/functions' as *;
+
+$badge-size: 1.25em;
+$badge-spot-size: 1ch;
+$badge-min-width: 1ch;
+$badge-border-radius: 1.5em;
+$badge-padding: 0 0.65ch;
+$badge-column-gap: 0.5ch;
+
+.badge-component {
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  column-gap: $badge-column-gap;
+  color: var(--badge-color, var(--color-basic-positive));
+  block-size: var(--badge-component-height, #{$badge-size});
+  background: var(--badge-background, var(--color-primary));
+  border-radius: $badge-border-radius;
+  padding: var(--badge-component-padding, 0 0.65ch);
+  min-inline-size: var(--badge-component-min-width, #{$badge-size});
+
+  &:empty {
+    --badge-component-height: 0;
+    --badge-component-min-width: 0;
+    --badge-component-padding: 0;
+
+    max-inline-size: var(--badge-component-height);
+  }
+
+  &.spot {
+    --badge-component-height: #{$badge-spot-size};
+    --badge-component-min-width: #{$badge-spot-size};
+    --badge-component-padding: 0;
+  }
+
+  .badge-text {
+    font-size: var(--badge-font-size, var(--font-size-xxs));
+    line-height: 0;
+  }
+
+  // kind
+
+}

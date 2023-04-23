@@ -1,0 +1,33 @@
+@use '../../setup' as setup;
+
+// ## Clip-path
+$-ut-clip-path: setup.$ut-clip-path;
+
+$-clip-path:
+    none,
+    inherit,
+    initial,
+    revert,
+    unset,
+    margin-box,
+    border-box,
+    padding-box,
+    content-box,
+    fill-box,
+    stroke-box,
+    view-box;
+
+
+@if $-ut-clip-path {
+    [class*="clip-path:"] {
+        clip-path: var(--clip-path);
+    }
+
+    .clip-path {
+        @each $name in $-clip-path {
+            &\:#{$name} {
+                --clip-path: #{$name};
+            }
+        }
+    }
+}

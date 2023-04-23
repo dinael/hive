@@ -1,0 +1,77 @@
+@use '../setup' as setup;
+@use '../02-tools/functions' as *;
+@use '../02-tools/mixins' as *;
+@use '../03-modules/colors' as swatch;
+@use '../03-modules/forms' as form;
+
+// ## Links a tag
+:where(a) {
+    display: inline-flex;
+    align-items: center;
+    background: var(--anchor-background, transparent);
+    color: var(--anchor-color);
+    cursor: var(--anchor-cursor, pointer);
+    font-size: var(--anchor-font-size, var(--font-size));
+    outline-color: transparent;
+    text-decoration: var(--anchor-text-decoration, underline);
+    transition: color 0.35s ease-in-out;
+
+    &:hover {
+        --anchor-color: var(--anchor-color-hover);
+
+        filter: var(--anchor-filter, drop-shadow(0 0 0));
+    }
+
+    &:focus {
+        @include focus;
+    }
+    // TODO states
+    // &:active {
+    //     --anchor-color: var(--anchor-color-active);
+
+    //     &:hover {
+    //         --anchor-color: var(--anchor-color-active-hover);
+    //     }
+    // }
+
+    &:visited {
+        --anchor-color: var(--anchor-color-visited);
+    }
+    //     &:hover {
+    //         --anchor-color: var(--anchor-color-visited-hover);
+    //     }
+
+    //     &:active {
+    //         --anchor-color: var(--anchor-color-visited-active);
+    //     }
+    // }
+
+    &:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
+
+    &:not([href]) {
+        --anchor-cursor: default;
+        --anchor-color: var(--anchor-color-disabled);
+
+        @include form.disabled
+    }
+
+    &.safe-area {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: index(under);
+            inset: var(--safe-area-inset, -1.5ch);
+            cursor: default;
+        }
+    }
+
+    &.disabled {
+        color: var(--anchor-color-disabled);
+
+        @include form.disabled
+    }
+}

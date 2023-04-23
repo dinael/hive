@@ -1,0 +1,40 @@
+@use "../setup" as setup;
+@use "../02-tools/functions" as *;
+@use "../03-modules/accessibility" as accessibility;
+
+$-accessibility: setup.$accessibility;
+$-accessibility-text: setup.$accessibility-text;
+
+// For reset CSS
+@mixin body-reset {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    inline-size: 100%;
+    min-block-size: -webkit-fill-available; // Fallback support iOS
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+    text-rendering: optimizeSpeed;
+}
+
+// $$ Generic accessible behavior
+@mixin body-a11y($a11ly: $-accessibility-text) {
+    @if $a11ly {
+        letter-spacing: $-accessibility-letter-spacing;
+    }
+}
+
+// Custom styles
+@mixin  body-styles {
+    :where(body) {
+        @include body-reset;
+        @include body-a11y;
+
+        accent-color: var(--color-primary);
+        background: var(--color-background, transparent);
+        color: var(--color-text, var(--color-text-primary));
+        font-family: var(--font-family, 'sans');
+        font-size: var(--font-size);
+        font-weight: var(--font-weight);
+        line-height: var(--font-line-height, 1.5);
+    }
+}

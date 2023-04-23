@@ -1,0 +1,175 @@
+@use '../../setup' as setup;
+@use '../../01-setting/01-global' as global;
+
+// ## margin flow
+$-ut-margin-flow: setup.$ut-margin-flow;
+$-margin-flow: global.$margin-flow !default;
+
+@if $-ut-margin-flow {
+	.m {
+		// .m:1, ... , .m:4
+		@for $i from 1 through 4 {
+			$value: $i;
+
+			&\:#{$value} {
+				margin-block-end: calc(#{$-margin-flow} * #{$i});
+			}
+
+			&\:half {
+				margin-block-end: calc(#{$-margin-flow} / 2);
+			}
+		}
+
+		&\:auto {
+			margin: auto;
+		}
+
+		&\:none {
+			margin: 0;
+		}
+
+		&-v,
+		&-y,
+		&-block,
+		&-vertical {
+			// .m-v:1, ... , .m-v:4
+			@for $i from 1 through 4 {
+				$value: $i;
+
+				&\:#{$value} {
+					margin-block: calc(#{$-margin-flow} * #{$i});
+				}
+			}
+
+			&\:half {
+				margin-block: calc(#{$-margin-flow} / 2);
+			}
+
+			&\:auto {
+				margin-block: auto;
+			}
+
+			&\:none {
+				margin-block: 0;
+			}
+		}
+
+		&-h,
+		&-x,
+		&-inline,
+		&-horizontal {
+			// .m-h:1, ... , .m-h:4
+			@for $i from 1 through 4 {
+				$value: $i;
+
+				&\:#{$value} {
+					margin-inline: calc(#{$-margin-flow} * #{$i});
+				}
+			}
+
+			&\:half {
+				margin-inline: calc(#{$-margin-flow} / 2);
+			}
+
+			&\:auto {
+				margin-inline: auto;
+			}
+
+			&\:none {
+				margin-inline: 0;
+			}
+		}
+
+		&-l {
+			// .m-l:1, ... , .m-l:4
+			@for $i from 1 through 4 {
+				$value: $i;
+
+				&\:#{$value} {
+					margin-inline-start: calc(#{$-margin-flow} * #{$i});
+				}
+			}
+
+			&\:half {
+				margin-inline-start: calc(#{$-margin-flow} / 2);
+			}
+
+			&\:auto {
+				margin-inline-start: auto;
+			}
+
+			&\:none {
+				margin-inline-start: 0;
+			}
+		}
+
+		&-r {
+			// .m-r:1, ... , .m-r:4
+			@for $i from 1 through 4 {
+				$value: $i;
+
+				&\:#{$value} {
+					margin-inline-end: calc(#{$-margin-flow} * #{$i});
+				}
+			}
+
+			&\:half {
+				margin-inline-end: calc(#{$-margin-flow} / 2);
+			}
+
+			&\:auto {
+				margin-inline-end: auto;
+			}
+
+			&\:none {
+				margin-inline-end: 0;
+			}
+		}
+
+		&-t {
+			// .m-top:1, ... , .m-top:4
+			@for $i from 1 through 4 {
+				$value: $i;
+
+				&\:#{$value} {
+					margin-block-start: calc(#{$-margin-flow} * #{$i});
+				}
+			}
+
+			&\:half {
+				margin-block-start: calc(#{$-margin-flow} / 2);
+			}
+
+			&\:auto {
+				margin-block-start: auto;
+			}
+
+			&\:none {
+				margin-block-start: 0;
+			}
+		}
+
+		&-b {
+			// .m-set:1, ... , .m-set:4
+			@for $i from 1 through 4 {
+				$value: $i;
+
+				&\:#{$value} {
+					margin-block-end: calc(#{$-margin-flow} * #{$i});
+				}
+			}
+
+			&\:half {
+				margin-block-end: calc(#{$-margin-flow} /2);
+			}
+
+			&\:auto {
+				margin-block-end: auto;
+			}
+
+			&\:none {
+				margin-block-end: 0;
+			}
+		}
+	}
+}

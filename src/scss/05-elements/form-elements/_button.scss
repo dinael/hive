@@ -1,0 +1,47 @@
+@use '../../../scss/setup' as setup;
+@use '../../02-tools/functions' as *;
+@use '../../02-tools/mixins' as *;
+
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]) {
+    align-items: center;
+    background: var(--button-background, buttonface);
+    border-color: var(--button-border-color, buttonborder);
+    border-radius: var(--button-border-radius);
+    border-style: var(--button-border-style, solid);
+    border-width: var(--button-border-width);
+    color: var(--button-color, buttontext);
+    cursor: pointer;
+    display: var(--button-display, inline-flex);
+    flex: var(--button-flex-grow) var(--button-flex-shrink) var(--button-flex-basis);
+    gap: var(--button-gap);
+    justify-content: center;
+    block-size: var(--button-block-size);
+    min-inline-size: var(--button-inline-size);
+    overflow: visible;
+    padding-block: var(--button-padding-block);
+    padding-inline: var(--button-padding-inline);
+    touch-action: manipulation;
+
+    &::-webkit-file-upload-button {
+        background: none;
+        border: 0;
+    }
+
+    &:focus {
+        @include focus;
+    }
+
+    &::-moz-focus-inner,
+    &:-moz-focusring {
+        border-style: none;
+        border: 0;
+    }
+}
+
+// $$ image
+:is(input[type="image"]){
+
+    &:focus {
+        @include focus;
+    }
+}

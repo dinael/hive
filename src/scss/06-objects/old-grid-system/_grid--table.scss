@@ -1,0 +1,147 @@
+@function grid($num, $cols:$grid-columns) {
+	@return percentage($num / $cols);
+}
+
+.wrap {
+	margin: 0 auto;
+	width: $desktop;
+
+	@media (max-width: $desktop - 1px) {
+		width: $desktop-small;
+	}
+
+	@media (max-width: $desktop-small - 1px) {
+		width: $tablet-portrait;
+	}
+
+	@media (max-width: $tablet-portrait - 1px) {
+		width: 100%;
+	}
+}
+
+// ## Grid system
+// $$ Row
+.row {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+
+	.reverse {
+		direction: rtl;
+	}
+
+	[class^="grid"] {
+		display: table-cell;
+		position: relative;
+		min-height: 100%;
+
+		&.reverse {
+			direction: ltr;
+		}
+
+		// X axis
+		&.left {
+			text-align: left;
+		}
+
+		&.center {
+			text-align: center;
+		}
+
+		&.right {
+			text-align: right;
+		}
+
+		// Y axis
+		&.top {
+			vertical-align: top;
+		}
+
+		&.middle {
+			vertical-align: middle;
+		}
+
+		&.bottom {
+			vertical-align: bottom;
+		}
+
+		// $$ Container into the col
+		.inner {
+			display: inline-block;
+		}
+
+		.inner-vertical {
+			display: block;
+		}
+
+	}
+}
+
+// $$ Columns
+@for $i from 1 through $grid-columns {
+	.grid-desktop--#{$i} {
+		width: grid($i);
+	}
+}
+
+// $$ Media queries
+@media (max-width: $desktop - 1px) {
+	@for $i from 1 through $grid-columns {
+		.grid-tablet--#{$i} {
+			width: grid($i);
+		}
+	}
+}
+
+@media (max-width: $tablet-portrait - 1px) {
+	@for $i from 1 through $grid-columns {
+		.grid-mobile--#{$i} {
+			width: grid($i);
+		}
+	}
+}
+
+@media (max-width: $mobile-landscape - 1px) {
+	[class^=".grid"] {
+		display: block;
+		width: 100% !important;
+	}
+}
+
+@for $i from 1 through ($grid-columns)-1 {
+	.grid-offset--#{($i)} {
+		margin-left: ((100/$grid-columns) * $i) *1%;
+	}
+}
+
+.only-desktop {
+	display: block;
+
+	@media (max-width: $tablet-portrait - 1px) {
+		display: none !important;
+	}
+}
+
+.only-tablet {
+	display: none !important;
+
+	@media (max-width: $tablet-portrait - 1px) {
+		display: block !important;
+	}
+}
+
+.only-mobile {
+	display: none !important;
+
+	@media (max-width: $mobile-landscape - 1px) {
+		display: block !important;
+	}
+}
+
+.not-desktop {
+	display: none !important;
+
+	@media (max-width: $tablet-portrait - 1px) {
+		display: block !important;
+	}
+}

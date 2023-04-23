@@ -1,0 +1,26 @@
+// ## Embedded content tags
+
+:where( audio, canvas, video) {
+    block-size: auto;
+    max-inline-size: 100%;
+    zoom: 1;
+}
+
+:where(audio) {
+    &:not([controls]) {
+        display: none;
+        block-size: 0;
+    }
+}
+
+:where(canvas) {
+    position: relative;
+}
+
+:where(iframe){
+    aspect-ratio: attr(width number) / attr(height number);
+}
+
+:where(embed){}
+:where(object){}
+:where(video){}

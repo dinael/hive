@@ -1,0 +1,65 @@
+@use '../../scss/03-modules/texts' as text;
+@use '../../scss/03-modules/titles' as title;
+
+.title-component,
+p.title-component {
+  --title-max-width: calc(100% - 1px); // For accessibility: maximum width of 65characters
+
+  display: flex;
+  color: var(--title-color);
+  font-size: var(--title-size);
+  font-weight: var(--title-font-weight, 700);
+  line-height: var(--title-line-height);
+  max-inline-size: var(--title-max-width, auto);
+  margin: 0;
+  overflow-wrap: break-word;
+
+  &.ellipsis {
+    @include text.ellipsis;
+  }
+// TODO: hacer ellipsis por líneas
+  &.ellipsis-lines {
+    //@include text.ellipsis;
+  }
+
+  &.a11y-length {
+    --title-max-width: 65ch;
+  }
+}
+
+p.title-component {
+  --paragraph-font-size: var(--title-size);
+
+  font-family: var(--title-font-family);
+
+}
+
+.xxl {
+    --title-size: clamp(3rem, 0.16129rem + 2.99516vw, 4rem);
+    --title-line-height: 1.1;
+}
+
+.xl {
+    --title-size: clamp(2.75rem, 0.16129rem + 2.74556vw, 3.75rem);
+    --title-line-height: 1.1;
+}
+
+.l {
+    --title-size: clamp(2.5rem, 0.16129rem + 2.49597vw, 3.5rem);
+    --title-line-height: 1.1;
+}
+
+.m {
+    --title-size: clamp(1.75rem, 0.241935rem + 1.74577vw, 3.25rem);
+    --title-line-height: 1.1;
+}
+
+.s {
+    --title-size: clamp(1.5rem, 0.241935rem + 1.49637vw, 3rem);
+    --title-line-height: 1.1;
+}
+
+.xs {
+    --title-size: clamp(1rem, 0.282258rem + 0.997177vw, 2.75rem);
+    --title-line-height: 1.1;
+}

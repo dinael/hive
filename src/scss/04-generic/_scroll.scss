@@ -1,0 +1,46 @@
+@use "../02-tools/functions" as *;
+@use "../03-modules/colors" as swatch;
+
+$scrollbar-height: 0.5rem;
+$scrollbar-background: #{swatch.gray(reddish, "200")};
+// Thumb
+$scrollbar-thumb-background: #{swatch.palette(violet, "200")};
+$scrollbar-thumb-hover-background: #{swatch.palette(violet, "300")};
+$scrollbar-thumb-active-background: #{swatch.palette(violet, "300")};
+$scrollbar-thumb-border-radius: #{radius(M)};
+
+// ## Customize scrollbar
+* {
+    scrollbar-color: #{$scrollbar-thumb-background $scrollbar-background};
+}
+
+::-webkit-scrollbar {
+    width: $scrollbar-height;
+    background: $scrollbar-background;
+    transition: background 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: $scrollbar-height;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: $scrollbar-thumb-border-radius;
+    box-shadow: 0 0 0.375rem #c8c8c8 inset;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: $scrollbar-thumb-border-radius;
+    background: $scrollbar-thumb-background;
+    transition: background 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-image: $scrollbar-thumb-hover-background;
+    transition: background-color 0.2s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: $scrollbar-thumb-active-background;
+    transition: background-color 0.2s ease-in-out;
+}

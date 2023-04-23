@@ -1,0 +1,61 @@
+@use '../../setup' as setup;
+
+// ## flex
+$-ut-grid: setup.$ut-grid;
+
+@if $-ut-grid {
+    .grid {
+        display: grid;
+
+        &\:row{
+            display: grid;
+            grid-auto-flow: row;
+        }
+
+        &\:column {
+            display: grid;
+            grid-auto-flow: column;
+        }
+    }
+
+    .place-item {
+        // center
+        &\:center {
+            place-items: center;
+        }
+
+        &\:center-start {
+            place-items: center start;
+        }
+
+        &\:center-end {
+            place-items: center end;
+        }
+
+        // start
+        &\:start {
+            place-items: start;
+        }
+
+        &\:start-center {
+            place-items: start center;
+        }
+
+        &\:start-end {
+            place-items: start end;
+        }
+
+        // end
+        &\:end {
+            place-items: end;
+        }
+
+        &\:end-center {
+            place-items: end center;
+        }
+
+        &\:end-start {
+            place-items: end start;
+        }
+    }
+}

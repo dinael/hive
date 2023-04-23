@@ -1,0 +1,61 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`List > renders an ordered list when \`ordered\` prop is true 1`] = `
+<div>
+  <ol
+    aria-label=""
+    class="
+        list-component
+        circle
+        
+        className-test"
+    role="list"
+  >
+    <li
+      role="listitem"
+    >
+      Item 1
+    </li>
+    <li
+      role="listitem"
+    >
+      Item 2
+    </li>
+    <li
+      role="listitem"
+    >
+      Item 3
+    </li>
+  </ol>
+</div>
+`;
+
+exports[`List > renders an unordered list by default 1`] = `
+<div>
+  <ul
+    aria-label=""
+    class="
+        list-component
+        circle
+        
+        className-test"
+    role="list"
+  >
+    <li
+      role="listitem"
+    >
+      Item 1
+    </li>
+    <li
+      role="listitem"
+    >
+      Item 2
+    </li>
+    <li
+      role="listitem"
+    >
+      Item 3
+    </li>
+  </ul>
+</div>
+`;

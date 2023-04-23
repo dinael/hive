@@ -1,0 +1,6 @@
+.checkbox-component {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: var(--checkbox-flex-direction, row-reverse);
+  gap: 0.5em;
+}

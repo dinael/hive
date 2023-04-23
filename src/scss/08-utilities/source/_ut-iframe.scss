@@ -1,0 +1,14 @@
+@use '../../setup' as setup;
+
+// ## Images
+$-ut-iframe: setup.$ut-iframe;
+
+@if $-ut-iframe {
+    iframe {
+        border: var(--iframe-border, none);
+
+        &.aspect-ratio {
+            aspect-ratio: attr(width number) / attr(height number);
+        }
+    }
+}

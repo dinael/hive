@@ -1,0 +1,25 @@
+@use '../../setup' as setup;
+
+// ## Scroll
+$-ut-scroll: setup.$ut-scroll;
+
+@if $-ut-scroll {
+    .scroll {
+        overflow: hidden;
+        overflow-y: auto;
+
+        &\:auto {
+            overflow: auto;
+        }
+
+        &\:y {
+            overflow: hidden;
+            overflow-y: auto;
+        }
+
+        &\:x {
+            overflow: hidden;
+            overflow-x: auto;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@use "sass:math";
+@use '../../setup' as setup;
+@use '../../03-modules/fonts' as font;
+@use '../../03-modules/accessibility' as accessibility;
+
+$-ut-paragraph: setup.$ut-paragraph;
+$-accessibility: setup.$accessibility;
+$-ut-paragraph-line-height: font.line-height(default) !default;
+$-paragraph-space-flow: 1rem !default;
+
+$-paragraph-small: 30ch !default;
+$-paragraph-medium: 60ch !default;
+$-paragraph-a11y: 65ch !default;
+
+@if $-ut-paragraph {
+    [class*="paragraph"] {
+
+        @if $-accessibility {
+            --paragraph-max-width: #{$-paragraph-a11y} !important;
+        }
+
+        padding: var(--paragraph-padding, 0);
+        line-height: var(--paragraph-line-height);
+        max-inline-size: var(--paragraph-max-width, auto);
+
+        & + & {
+            padding-block-start: var(--paragraph-padding, #{$-paragraph-space-flow});
+        }
+    }
+
+    .paragraph {
+        // $$ Size
+        &\:small {
+            --paragraph-max-width: #{$-paragraph-small};
+        }
+
+        &\:medium {
+            --paragraph-max-width: #{$-paragraph-medium};
+        }
+
+        &\:a11y {
+            --paragraph-max-width: #{$-paragraph-a11y};
+        }
+
+        @if $-accessibility {
+            &\:non-accessible {
+                --paragraph-max-width: 100%;
+            }
+        }
+
+        &.column {
+
+            // .column:1, ... , .column:4
+            @for $i from 2 through 4 {
+                $value: $i;
+
+                &\:#{$value} {
+                    column-count: ($i);
+                    column-gap: #{$-paragraph-space-flow};
+                }
+            }
+
+            &\:separator,
+            &\:sep {
+                column-rule: var(--separator-border);
+            }
+        }
+
+        &.flat {
+            --paragraph-padding: 0;
+        }
+    }
+}

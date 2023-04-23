@@ -1,0 +1,22 @@
+@use '../02-tools/functions' as *;
+
+// ## Shape
+$square: (
+    XXL: 2rem,
+    XL:  1.75rem,
+    L:   1.25rem,
+    M:   1rem,
+    S:   0.75rem,
+    XS:  0.5rem,
+    XXS: 0.5
+) !default;
+
+$circle: (
+    XXL: 2rem,
+    XL:  1.75rem,
+    L:   1.25rem,
+    M:   1rem,
+    S:   0.75rem,
+    XS:  0.5rem,
+    XXS: 0.5rem
+) !default;

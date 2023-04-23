@@ -1,0 +1,36 @@
+// ##  z-index vars
+
+// Vars
+$_zi-1 : 1;
+$_zi-2 : 2;
+$_zi-3 : 5;
+$_zi-4 : 10;
+$_zi-5 : 15;
+$_zi-6 : 20;
+$_zi-7 : 25;
+$_zi-8 : 50;
+$_zi-9 : 100;
+$_zi-10 : 999;
+
+$_zi-under-1: -1;
+$_zi-under-2: -2;
+$_zi-under-3: -5;
+$_zi-under-4: -10;
+
+$layer: (
+    // App z-index
+    alert: $_zi-8,
+    canvas: $_zi-3,
+    default: $_zi-1,
+    footer: $_zi-6,
+    header: $_zi-3,
+    loader: $_zi-10,
+    menu: $_zi-2,
+    modal: $_zi-9,
+    navbar: $_zi-5 ,
+    navigation: $_zi-4,
+    over: $_zi-2,
+    popup: $_zi-8,
+    tooltip: $_zi-9,
+    under: $_zi-under-1
+) !default;

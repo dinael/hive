@@ -1,0 +1,32 @@
+@use '../02-tools/mixins' as *;
+
+// ## Details & summary
+
+:where(details) {
+    display: var(--details-display, block);
+
+    &[open] {
+        & > summary {
+            list-style-type: var(--details-summary-icon-open, none);
+        }
+    }
+
+    & > summary {
+        list-style-type: var(--details-summary-icon, none);
+    }
+}
+
+:where(summary) {
+    display: list-item;
+    cursor: pointer;
+    outline: var(--summary-outline, 0);
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &:focus {
+        @include focus;
+    }
+}
+

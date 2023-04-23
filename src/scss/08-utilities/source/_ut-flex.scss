@@ -1,0 +1,214 @@
+@use '../../setup' as setup;
+@use '../../02-tools/mixins' as *;
+
+// ## flex
+$-ut-flex: setup.$ut-flex;
+
+@if $-ut-flex {
+    .flex,
+    [class*="flex"] {
+        display: flex;
+        min-inline-size: 0;
+    }
+
+    .flex {
+        &\:none {
+            flex: none !important;
+        }
+
+        &\:row {
+            flex-direction: row;
+
+            // $$ Reverse
+            &.reverse,
+            &.rev {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &\:column {
+            flex-direction: column;
+
+            // $$ Reverse
+            &.reverse,
+            &.rev {
+                flex-direction: column-reverse;
+            }
+        }
+
+        &\:inline {
+            display: inline-flex;
+        }
+
+        &\:wrap {
+            flex-wrap: wrap;
+        }
+
+        &\:nowrap {
+            flex-wrap: nowrap;
+        }
+
+        &\:centered {
+            @include flex-centered;
+        }
+
+        &\:column-centered {
+            @include flex-column-centered;
+        }
+
+        // $$ Grow & shrink
+        &\:1-0 {
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+
+        &\:0-1 {
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+
+        &\:1-1 {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        // $$ Reverse
+        &\:rev,
+        &\:reverse {
+            flex-direction: row-reverse;
+        }
+
+        // $$ Item
+        &-item {
+            &\:auto {
+                flex: 0 1 auto;
+            }
+
+            &\:wide {
+                flex: 1 0 auto;
+            }
+
+            &\:top,
+            &\:t {
+                margin-block-end: auto;
+            }
+
+            &\:right,
+            &\:r {
+                margin-inline-start: auto;
+            }
+
+            &\:bottom {
+                margin-block-start: auto;
+            }
+
+            &\:left,
+            &\:l {
+                margin-inline-end: auto;
+            }
+
+            // $$ Reverse
+            &\:rev,
+            &\:reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        // $$ Horizontal
+        &\:left {
+            justify-content: flex-start;
+
+            &\:auto {
+                margin-inline-start: auto;
+            }
+        }
+
+        &\:center {
+            justify-content: center;
+        }
+
+        &\:right {
+            justify-content: flex-end;
+
+            &\:auto {
+                margin-inline-end: auto;
+            }
+        }
+
+        // $$ Vertical
+        &\:top {
+            align-items: flex-end;
+
+            &\:auto {
+                margin-block-start: auto;
+            }
+        }
+
+        &\:middle {
+            align-items: center;
+        }
+
+        &\:bottom {
+            align-items: flex-end;
+
+            &\:auto {
+                margin-block-end: auto;
+            }
+        }
+
+        &\:stretch {
+            align-items: stretch;
+        }
+
+        &\:baseline {
+            align-items: baseline;
+        }
+
+        // $$ distribution
+        &\:around {
+            justify-content: space-around;
+        }
+
+        &\:between {
+            justify-content: space-between;
+        }
+
+        //$$ special features
+        &\:min {
+            > * {
+                min-inline-size: 0;
+            }
+        }
+
+        // $$ Flex Flow
+        &-flow {
+            &\:column {
+                flex-flow: column;
+            }
+
+            &\:column-reverse {
+                flex-flow: column-reverse;
+            }
+
+            &\:row {
+                flex-flow: row;
+            }
+
+            &\:row-reverse {
+                flex-flow: row-reverse;
+            }
+
+            &\:nowrap {
+                flex-flow: nowrap;
+            }
+
+            &\:wrap {
+                flex-flow: wrap;
+            }
+
+            &\:wrap-reverse {
+                flex-flow: wrap-reverse;
+            }
+        }
+    }
+}

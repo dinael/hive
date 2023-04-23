@@ -1,0 +1,62 @@
+@use '../../02-tools/mixins' as *;
+@use '../../03-modules/forms' as form;
+
+:where(input[type=range]){
+    background: var(--range-background);
+    block-size: var(--range-block-size, 2.75rem);
+    cursor: pointer;
+    inline-size: var(--range-inline-size, 100%);
+
+    &:focus {
+        @include focus;
+    }
+
+    //** Track
+    &::-webkit-slider-runnable-track {
+        inline-size: var(--range-inline-size, 100%);
+    }
+
+    &::-moz-range-track {
+        inline-size: var(--range-inline-size, 100%);
+    }
+
+    &:-ms-track {
+        cursor: pointer;
+        inline-size: var(--range-inline-size, 100%);
+    }
+
+    // ** Track progress
+    &::-moz-range-progress {
+        background-color: var(--range-progress-background, inherit);
+    }
+
+    &::-moz-range-track {
+        background-color: currentColor;
+    }
+
+    //** Fill
+    &::-ms-fill-lower {
+    }
+
+    &::-ms-fill-upper {
+    }
+
+    //** Thumb
+    &::-webkit-slider-thumb {
+        &:hover {
+        }
+    }
+
+    &::-moz-range-thumb {
+        &:hover {}
+    }
+
+    &::-ms-thumb {
+        &:hover {}
+    }
+
+    //** tooltip explorer
+    &::-ms-tooltip {
+        display: none;
+    }
+}

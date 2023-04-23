@@ -1,0 +1,97 @@
+// ## Breakpoints
+
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+// Usage:
+// @include retina {
+//  width: 30px;
+// }
+
+// $$ Aural
+@mixin aural {
+    @media aural {
+        @content;
+    }
+}
+
+// Usage:
+// @include aural{
+//  width: 30px;
+// }
+
+// $$ Mobile
+@mixin mobile {
+    @media screen and (max-width: screen(tablet) - 1px) {
+        @content;
+    }
+}
+
+// Usage:
+// @include mobile{
+//	width: 30px;
+// }
+
+@mixin mobile--landscape {
+    @media screen and (min-width: screen(mobile)) {
+        @content;
+    }
+}
+
+// Usage: @include mobile-landscape {
+// width: 30px;
+// }
+
+// $$ Tablet
+@mixin tablet {
+    @media screen and (max-width: screen(tablet)) {
+        @content;
+    }
+}
+
+// Usage: @include tablet {
+//	width: 30px;
+// }
+
+@mixin tablet--landscape {
+    @media screen and (max-width: screen(tablet-landscape)) {
+        @content;
+    }
+}
+
+//Usage: @include tablet-landscape {
+//	width: 30px;
+//}
+
+@mixin desktop--small {
+    @media screen and (max-width: screen(desktop-small)) {
+        @content;
+    }
+}
+
+//Usage: @include desktop-small
+
+@mixin desktop {
+    @media screen and (min-width: screen(tablet-landscape) + 1px) {
+        @content;
+    }
+}
+
+//Usage: @include desktop {
+//	width: 30px;
+//}
+
+@mixin desktop-min {
+    @media screen and (max-width: screen(desktop) - 1px) {
+        /* desktop min */
+        @content;
+    }
+}

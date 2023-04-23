@@ -1,0 +1,9 @@
+// code, samp, kbd tag
+@mixin code-styles {
+:where( code, samp, kbd) {
+        font-size: var(--font-size);
+        font-family: var(--code-font-family, monospace, monospace);
+
+        @content;
+    }
+}

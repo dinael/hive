@@ -1,0 +1,21 @@
+@use '../../scss/03-modules/accessibility' as a11y;
+
+.label-text-component {
+  display: inline-flex;
+
+  &.is-disabled {
+    color: var(--color-disabled, var(--color-text-disabled));
+  }
+
+  &.is-required {
+    --color-required: var(--color-validation-danger);
+  }
+
+  &.sr-only {
+    @include a11y.sr-only;
+  }
+}
+
+.required-text {
+    color: var(--color-required);
+}

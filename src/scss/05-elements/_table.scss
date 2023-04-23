@@ -1,0 +1,15 @@
+
+:where(table) {
+    border: var(--table-border, none);
+    background: var(--table-background, none);
+    block-size: var(--table-block-size, auto);
+    border-spacing: var(--table-border-spacing, 0);
+    inline-size: var(--table-width, auto);
+}
+
+:where(caption){}
+:where(col){}
+:where(colgroup){}
+:where(th ){}
+:where(tr){}
+:where(td){}

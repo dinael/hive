@@ -1,0 +1,9 @@
+@mixin mark-styles {
+    :where(mark) {
+        background: var(--mark-background, yellow);
+        font-style: var(--mark-font-style, italic);
+        font-weight: var(--font-weight);
+
+        @content;
+    }
+}

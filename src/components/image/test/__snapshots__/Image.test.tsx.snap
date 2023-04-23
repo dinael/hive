@@ -1,0 +1,97 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Image > renders correctly 1`] = `
+<div>
+  <img
+    alt="Imagen description for accessibility"
+    class="
+          image-component
+          disabled
+          none
+          cover
+          className-test
+        "
+    height="300"
+    loading="lazy"
+    src="https://picsum.photos/1440/500?random=1"
+    width="300"
+  />
+</div>
+`;
+
+exports[`Image > renders correctly className 1`] = `
+<div>
+  <img
+    alt="Imagen description for accessibility"
+    class="
+          image-component
+          disabled
+          none
+          cover
+          className-test
+        "
+    height="300"
+    loading="lazy"
+    src="https://picsum.photos/1440/500?random=1"
+    width="300"
+  />
+</div>
+`;
+
+exports[`Image > renders correctly disabled 1`] = `
+<div>
+  <img
+    alt="Imagen description for accessibility"
+    class="
+          image-component
+          disabled
+          none
+          cover
+          className-test
+        "
+    height="300"
+    loading="lazy"
+    src="https://picsum.photos/1440/500?random=1"
+    width="300"
+  />
+</div>
+`;
+
+exports[`Image > renders correctly with imgSet 1`] = `
+<div>
+  <img
+    alt="Imagen description for accessibility"
+    class="
+        image-component
+        disabled
+        none
+        cover
+        className-test
+      "
+    height="300"
+    loading="lazy"
+    src="https://picsum.photos/1440/500?random=1"
+    srcset="https://picsum.photos/1440/500?random=1 320w,https://picsum.photos/900/300?random=2 480w,https://picsum.photos/800/200?random=3 640w"
+    width="300"
+  />
+</div>
+`;
+
+exports[`Image > renders snapshot 1`] = `
+<div>
+  <img
+    alt="Imagen description for accessibility"
+    class="
+          image-component
+          disabled
+          none
+          cover
+          className-test
+        "
+    height="300"
+    loading="lazy"
+    src="https://picsum.photos/1440/500?random=1"
+    width="300"
+  />
+</div>
+`;

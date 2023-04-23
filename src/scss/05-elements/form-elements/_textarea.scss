@@ -1,0 +1,44 @@
+@use '../../02-tools/mixins' as *;
+@use '../../03-modules/forms' as form;
+
+:is(textarea) {
+    background: var(--textarea-background, transparent);
+    min-block-size: var(--textarea-min-block-size, 2.75rem);
+    border-color: var(--textarea-border-color);
+    border-style: var(--textarea-border-style, solid);
+    border-width: var(--textarea-border-width);
+    border-radius: var(--textarea-border-radius);
+    color: var(--textarea-color, inherit);
+    inline-size: var(--textarea-inline-size, 100%);
+    overflow: auto;
+    resize: var(--textarea-resize, vertical);
+    vertical-align: top;
+    padding-inline: var(--textarea-inline-padding);
+    padding-block: var(--textarea-block-padding);
+
+    @include form.placeholder {
+        color: var(--textarea-placeholder-color);
+    }
+
+    &:not(:placeholder-shown) {
+    }
+
+    &:-moz-ui-invalid:not(output) {
+        box-shadow: none;
+    }
+
+    &:focus {
+        @include focus;
+        @include form.placeholder {
+        }
+    }
+    &:required {}
+
+    &:disabled {
+        @include form.disabled;
+    }
+
+    &[readonly] {
+        @include form.disabled;
+    }
+}
