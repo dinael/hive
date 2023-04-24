@@ -71,3 +71,8 @@ $-layer: layer.$layer;
     @return $result;
     @error "value undefined";
 }
+
+// $$ Convert color from hex to RGB
+@function hex-to-rgb($color) {
+  @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})");
+}

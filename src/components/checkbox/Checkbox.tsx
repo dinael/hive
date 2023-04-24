@@ -6,6 +6,7 @@ export type CheckboxProps = {
   value?: string
   label: string
   id?: string
+  required?: boolean
   disabled?: boolean
   className?: string
   onChecked?: (isChecked: boolean) => void
@@ -17,6 +18,7 @@ export type CheckboxProps = {
 export const Checkbox: FC<CheckboxProps> = ({
   label= '',
   id,
+  required = false,
   disabled = false,
   className = '',
   onChecked,
@@ -58,6 +60,7 @@ export const Checkbox: FC<CheckboxProps> = ({
           disabled={disabled}
           aria-checked={isChecked}
           role="checkbox"
+          required={required}
           aria-aria-describedby={`validation-message-${id}`}
         />
       <span>{label}</span>

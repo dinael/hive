@@ -40,14 +40,14 @@ $-grays: gray-scale.$gray-swatches;
 // background: color.gray(bluish, '100');
 
 // $$ Convert color from hex to RGB
-@function convert-rgb($color) {
+@function hex-to-rgb($color) {
     @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})");
 }
 // Usage:
 // background: color.convert-rgb(#f1f1f1);
 
 // $$ Convert color from hex to RGBa
-@function convert-rgba($color, $alpha: 1.0) {
+@function hex-to-rgba($color, $alpha: 1.0) {
     @return unquote("rgba(#{red($color)}, #{green($color)}, #{blue($color)}, #{$alpha})");
 }
 // Usage:

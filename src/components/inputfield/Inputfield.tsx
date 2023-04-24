@@ -88,6 +88,7 @@ export const Inputfield: FC<InputfieldProps> = ({
         type={type ? type : 'text'}
         placeholder={placeholder}
         value={hasValue}
+        required={required}
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
