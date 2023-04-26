@@ -1,0 +1,48 @@
+{
+  "source": [
+    "src/tokens/tokens-output.json"
+  ],
+  "platforms": {
+    "scss": {
+      "options": {
+        "showFileHeader": false,
+        "outputReferences": true
+      },
+      "transforms": [
+        "attribute/cti",
+        "name/cti/kebab",
+        "size/rem"
+      ],
+      "transformGroup": "scss",
+      "prefix": "hive",
+      "buildPath": "src/scss/00-tokens/",
+      "files": [
+        {
+          "destination": "_tokens.scss",
+          "format": "scss/variables"
+        },
+        {
+          "destination": "_tokens-colors.scss",
+          "format": "scss/variables",
+          "filter": {
+            "type": "color"
+          }
+        },
+        {
+          "destination": "_tokens-spacing.scss",
+          "format": "scss/variables",
+          "filter": {
+            "type": "spacing"
+          }
+        },
+        {
+          "destination": "_tokens-border-radius.scss",
+          "format": "scss/variables",
+          "filter": {
+            "type": "borderRadius"
+          }
+        }
+      ]
+    }
+  }
+}
