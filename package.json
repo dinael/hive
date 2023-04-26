@@ -13,14 +13,15 @@
     "test-coverage-storybook": "test-storybook --coverage",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "test-ui": "vitest --ui"
+    "test-ui": "vitest --ui",
+    "tokens": "token-transformer src/tokens/tokens.json src/tokens/tokens-output.json --expandTypography --expandShadow --expandComposition --expandBorder",
+    "styles": "style-dictionary build"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@hover/storybook-addon-pseudo-states": "^1.1.3",
     "@storybook/addon-a11y": "^7.0.2",
     "@storybook/addon-coverage": "^0.0.8",
     "@storybook/addon-essentials": "^7.0.2",

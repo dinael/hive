@@ -21,7 +21,6 @@ const config: StorybookConfig = {
     "@whitespace/storybook-addon-html",
     "storybook-addon-designs",
     "@storybook/addon-styling",
-    "storybook-addon-pseudo-states",
     "@storybook/addon-coverage",
     {
       name: "@storybook/addon-coverage",
