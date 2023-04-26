@@ -3,7 +3,6 @@
 $badge-size: 1.25em;
 $badge-spot-size: 1ch;
 $badge-min-width: 1ch;
-$badge-border-radius: 1.5em;
 $badge-padding: 0 0.65ch;
 $badge-column-gap: 0.5ch;
 
@@ -16,7 +15,7 @@ $badge-column-gap: 0.5ch;
   color: var(--badge-color, var(--color-basic-positive));
   block-size: var(--badge-component-height, #{$badge-size});
   background: var(--badge-background, var(--color-primary));
-  border-radius: $badge-border-radius;
+  border-radius: radius(rounded);
   padding: var(--badge-component-padding, 0 0.65ch);
   min-inline-size: var(--badge-component-min-width, #{$badge-size});
 
