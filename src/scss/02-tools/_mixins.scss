@@ -131,8 +131,6 @@
 // Usage:
 // @include mixin.suffix;
 
-// ## TODO:
-// add start inside the mixin
 // ## List
 @mixin list-counter-point() {
     content: counters(list-item, '.');

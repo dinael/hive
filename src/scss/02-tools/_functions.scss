@@ -47,7 +47,7 @@ $-layer: layer.$layer;
 @function get-clamp($min-size, $max-size, $min-screen, $max-screen) {
     $slope: math.div((($max-size - $min-size)), ($max-screen - $min-screen));
     $vw: -$min-size * $slope + $min-size;
-    $clamp-size: clamp(#{$min-size * 1rem}, #{$slope * 100rem } + #{$vw * 1vw}, #{$max-size * 1rem});
+    $clamp-size: clamp(#{rem($min-size)}, #{$slope * 100rem } + #{$vw * 1vw}, #{rem($max-size * 1rem)});
 
     @return  $clamp-size;
 }
@@ -58,7 +58,8 @@ $-layer: layer.$layer;
         @return 100%;
     }
     @if map-has-key($-radius-sizes, $size) {
-        $result: map.get($-radius-sizes, $size) * 1rem;
+        $value: map.get($-radius-sizes, $size);
+        $result: rem($value);
         @return $result;
     }
 
@@ -72,7 +73,41 @@ $-layer: layer.$layer;
     @error "value undefined";
 }
 
-// $$ Convert color from hex to RGB
+// $$ Colors convert
 @function hex-to-rgb($color) {
-  @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})");
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+  $rgbColor: unquote("rgb(#{$r, $g, $b})");
+
+  @return $rgbColor;
+}
+
+@function hex-to-rgba($color, $alfa: 1) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+  $a: $alfa;
+  $rgbaColor: unquote("rgba(#{$r, $g, $b, $a})");
+
+  @return $rgbaColor;
+}
+
+@function hex-to-hsl($hexColor) {
+  $h: strip-unit(math.round(hue($hexColor)));
+  $s: math.round(saturation($hexColor));
+  $l: math.round(lightness($hexColor));
+  $colorHSL: unquote("hsl(#{$h, $s, $l})");
+
+  @return $colorHSL;
+}
+
+@function hex-to-hsla($hexColor, $alfa: 1) {
+  $h: strip-unit(math.round(hue($hexColor)));
+  $s: math.round(saturation($hexColor));
+  $l: math.round(lightness($hexColor));
+  $a: $alfa;
+  $colorHSLA: unquote("hsla(#{$h, $s, $l, $a})");
+
+  @return $colorHSLA;
 }
