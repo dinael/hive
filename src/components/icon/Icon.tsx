@@ -4,7 +4,7 @@ import sprite from '../../assets/sprite.svg'
 
 export type IconProps = {
   name: string
-  size: 'xs' | 's' | 'm' | 'l' | 'xl'
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl'
   color?: string
   title?: string
   viewBox?: number
