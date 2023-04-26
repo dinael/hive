@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use '../00-tokens/tokens' as token;
 @use '../02-tools/functions' as *;
 
 // ## Swatches
@@ -12,12 +13,12 @@ $_brand-text-secondary: hsl(0 0% 30%);
 $_brand-background: hsl(0 0% 95%);
 $_brand-background-secondary: hsl(0 0% 81%);
 // Brad color
-$_brand-primary: hsl(0, 0%, 5%);
+$_brand-primary: hex-to-hsl(token.$hive-colors-negative);
 $_brand-primary-light: hsl(0, 0%, 30%);
 $_brand-primary-extra-light: pink;
 $_brand-primary-dark: hsl(0, 0%, 0%);
 $_brand-primary-extra-dark: hsl(0, 0%, 0%);
-$_brand-secondary: hsl(200, 100%, 30%);
+$_brand-secondary: hex-to-hsl(token.$hive-colors-pink-900);
 $_brand-secondary-light: hsl(195, 50%, 80%);
 $_brand-secondary-extra-light: hsl(195, 50%, 80%);
 $_brand-secondary-dark: hsl(200, 100%, 40%);
@@ -115,3 +116,13 @@ $gradient-swatches: (
         deg: 15
     )
 ) !default;
+
+/*
+"destination": "_tokens.scss",
+"format": "scss/variables",
+"filter": {
+  "attribute": {
+    "category": "color"
+  }
+}
+*/
