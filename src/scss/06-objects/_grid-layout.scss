@@ -60,7 +60,7 @@ $-gap-flow-column: global.$gap-flow-column !default;
 			&.column {
 				grid-auto-flow: column;
 			}
-			// TODO: Revisar
+
 			&.gap {
 				--grid-gap-row: #{$-gap-flow-row};
 				--grid-gap-column: #{$-gap-flow-column};
