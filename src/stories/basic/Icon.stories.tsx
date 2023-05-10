@@ -11,7 +11,7 @@ export default {
     color: { name: 'Color', control: 'color' },
     title: { name: 'Title', control: 'text' },
     viewBox: { name: 'ViewBox', control: 'number' },
-  },
+  }
 }
 
 export const Default = (args: IconProps) => ([
@@ -21,13 +21,34 @@ export const Default = (args: IconProps) => ([
 export const Gallery = () => ([
   <ul className={'gallery-icons'}>
     <li>
-      <Icon name={'close'} title={'Close'} size={'m'} color={''} viewBox={0} className={''}/>
+      <Icon
+        name={'close'}
+        title={'close'}/>
     </li>
     <li>
-      <Icon name={'check'} title={'Check'} size={'m'} color={''} viewBox={0} className={''}/>
+      <Icon
+        name={'check'}
+        title={'check'}/>
     </li>
     <li>
-      <Icon name={'chevron-down'} title={'Chevron down'} size={'m'} color={''} viewBox={0} className={''}/>
+      <Icon
+        name={'chevron-down'}
+        title={'chevron-down'}/>
+    </li>
+    <li>
+      <Icon
+        name={'warning-cicle'}
+        title={'warning-cicle'}/>
+    </li>
+    <li>
+      <Icon
+        name={'warning-safe'}
+        title={'warning-safe'}/>
+    </li>
+    <li>
+      <Icon
+        name={'info-circle'}
+        title={'info-circle'}/>
     </li>
   </ul>
 ])
@@ -38,6 +59,23 @@ Default.args = {
   color : 'currentColor',
   title: '',
   viewBox: 24,
+}
+
+Default.parameters = {
+  design: [
+    {
+      type: 'link',
+      name: 'Icon source',
+      label: 'Icon source: mingcute.com',
+      target: '_blank',
+      url: 'https://www.mingcute.com/',
+    },
+    {
+      type: 'iframe',
+      name: 'Icon use example',
+      url: 'https://codepen.io/dinael/full/vYmLVpa',
+    }
+  ]
 }
 
 Gallery.args = {

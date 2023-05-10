@@ -1,4 +1,3 @@
-import React from 'react'
 import { Button, ButtonProps } from '../../components/button/Button'
 
 export default {
@@ -51,20 +50,15 @@ export default {
     iconSize: { name: 'Icon size', control: 'text' },
     url: { name: 'url', control: 'text' },
     id: { name: 'id', control: 'text' },
-    className: { name: 'className', control: 'text' },
-    // TODO: loading: { name: 'Loading', control: 'boolean' },
-    // loading: { name: 'loading', control: 'boolean' }
+    className: { name: 'className', control: 'text' }
   }
 }
 
+// TODO: loading: { name: 'Loading', control: 'boolean' },
+// loading: { name: 'loading', control: 'boolean' }
+
 export const Default = (args: ButtonProps) => ([
   <Button {...args} />
-])
-
-export const States = (args: ButtonProps) => ([
-    <Button {...args} id="one" text="Hover"/>,
-    <Button {...args} id="two" text="Hover focus"/>,
-    <Button {...args} id="three" text="Hover focus active"/>
 ])
 
 Default.args = {
@@ -81,20 +75,30 @@ Default.args = {
   iconPosition: 'left',
   disabled: false,
   className: '',
+  id: ''
 }
 
 Default.parameters = {
-  pseudo: { hover: false },
-  design: {
-    type: "figma",
-    url: "https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File",
-  }
+  design: [
+    {
+      name: 'Spec',
+      type: 'figspec',
+      url: 'https://www.figma.com/file/Cx0sZBqrc7kGW72bcmy90S/tokens?type=design&node-id=19-5&t=IBEPJAbiF7MqV5vr-4',
+      accessToken: import.meta.env.VITE_STORYBOOK_FIGMA_ACCESS_TOKEN
+    },
+    {
+      name: 'Prototype',
+      type: 'figma',
+      url: 'https://www.figma.com/proto/Cx0sZBqrc7kGW72bcmy90S/tokens?page-id=19%3A2&type=design&node-id=19-5&scaling=min-zoom',
+    },
+    {
+      type: 'link',
+      name: 'Doc URL',
+      label: 'Figma file source',
+      target: '_blank',
+      url: 'https://www.figma.com/proto/Cx0sZBqrc7kGW72bcmy90S/tokens?page-id=19%3A2&type=design&node-id=19-5&scaling=min-zoom',
+    }
+  ]
 }
 
-States.parameters = {
-  pseudo: {
-    hover: ["#one", "#two", "#three"],
-    focus: ["#two", "#three"],
-    active: "#three",
-  },
-}
+
