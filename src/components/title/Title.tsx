@@ -6,15 +6,15 @@ export type TitleProps = {
   level: 0 | 1 | 2 | 3 | 4 | 5 | 6
   size: 'xs' |'s' | 'm' | 'l' | 'xl' | 'xxl'
   text: string
-  children: any
+  children?: any
   ellipsis?: boolean
   a11yLength?: boolean
   className?: string
 }
 export const Title: FC<TitleProps> = ({
-  level = 1,
+  level,
   size = 'm',
-  text = '',
+  text,
   children,
   ellipsis = false,
   a11yLength = false,
