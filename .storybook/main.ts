@@ -1,7 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite"
-import type { AddonOptionsVite } from '@storybook/addon-coverage';
 
-const coverageConfig: AddonOptionsBabel = {
+const coverageConfig = {
   include: ['**/stories/**'],
   exclude: ['**/exampleDirectory/**'],
   excludeNodeModules: true,
@@ -18,6 +17,8 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@storybook/addon-mdx-gfm",
     "@storybook/addon-a11y",
+    "addon-screen-reader",
+    "aria-live-storybook-addon",
     "@whitespace/storybook-addon-html",
     "storybook-addon-designs",
     "@storybook/addon-styling",
@@ -30,7 +31,7 @@ const config: StorybookConfig = {
           ...coverageConfig,
         },
       },
-    },
+    }
   ],
   framework: {
     name: "@storybook/react-vite",

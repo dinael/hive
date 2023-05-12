@@ -18,7 +18,8 @@
     "types": ["uuid"],
   },
   "include": [
-    "src"
+    "src",
+    ".storybook/test-runner.js"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
