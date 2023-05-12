@@ -83,7 +83,7 @@ Default.parameters = {
     {
       name: 'Spec',
       type: 'figspec',
-      url: 'https://www.figma.com/file/Cx0sZBqrc7kGW72bcmy90S/tokens?type=design&node-id=19-5&t=IBEPJAbiF7MqV5vr-4',
+      url: 'https://www.figma.com/file/Cx0sZBqrc7kGW72bcmy90S/tokens?type=design&node-id=3-27&t=ThF1FKZYYApN4drF-4',
       accessToken: import.meta.env.VITE_STORYBOOK_FIGMA_ACCESS_TOKEN
     },
     {

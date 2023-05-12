@@ -37,18 +37,14 @@ Default.args = {
 }
 
 Flat.args = {
+  ...Default.args,
   title: 'Quote title',
-  children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae illo eveniet ab culpa. Labore tempora quisquam magni. Consequatur, perferendis, laudantium quod ipsa nam delectus numquam dolore officiis nemo et vitae!',
   footer: 'Quote footer',
   variant: 'flat',
-  className: '',
 }
 
 Fancy.args = {
-  title: 'Quote title',
-  children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae illo eveniet ab culpa. Labore tempora quisquam magni. Consequatur, perferendis, laudantium quod ipsa nam delectus numquam dolore officiis nemo et vitae!',
-  footer: 'Quote footer',
+  ...Flat.args,
   variant: 'fancy',
-  className: '',
 }
 

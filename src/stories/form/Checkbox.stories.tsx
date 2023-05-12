@@ -49,23 +49,12 @@ Default.args = {
 }
 
 Switch.args = {
-  label: 'Switch',
-  id: '',
-  checked: false,
-  disabled: false,
-  className: '',
-  error: false,
-  errorText: 'This is a error'
+  ...Default.args,
+  label: 'Switch'
 }
 
 Chip.args = {
-  label: 'Chip',
-  id: '',
-  checked: false,
-  disabled: false,
-  className: '',
-  error: false,
-  errorText: 'This is a error'
+  ...Default.args,
 }
 
 

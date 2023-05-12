@@ -4,7 +4,7 @@ import { Paragraph, ParagraphProps } from '../../components/paragraph/Paragraph'
 export default {
   title: 'Basic/Paragraph',
   component: Paragraph,
-  tags: ['autodocs'], 
+  tags: ['autodocs'],
   argsType: {
     children: {name: 'Text', control: 'text'},
     ellipsis: {name: 'Ellipsis', control: 'boolean'},

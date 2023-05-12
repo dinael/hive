@@ -56,13 +56,7 @@ Default.args = {
 }
 
 srcSet.args = {
+  ...Default.args,
   src: imageSet[0].src,
   srcSet: imageSet,
-  alt: 'Imagen description for accessibility',
-  width: '',
-  height: '',
-  ratio: 'none',
-  fit: 'cover',
-  disabled: 'false',
-  className: '',
 }

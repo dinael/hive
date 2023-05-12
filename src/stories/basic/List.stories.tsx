@@ -55,7 +55,6 @@ Ordered.args = {
   nameList: 'Ordered list',
   ordered: true,
   className:'',
-  disabled: false,
   bullet: 'decimal',
 }
 
@@ -65,11 +64,9 @@ export const Unordered = (args: ListProps) => (
 )
 
 Unordered.args = {
-  items: itemsDemo,
-  nameList: 'Demo list',
+  ...Ordered.args,
+  nameList: 'Unordered list',
   ordered: false,
-  className:'',
-  disabled: false,
   bullet: 'circle',
 }
 
@@ -79,10 +76,8 @@ export const None = (args: ListProps) => (
 )
 
 None.args = {
-  items: itemsDemo,
-  nameList: 'Demo list',
+  ...Ordered.args,
+  nameList: 'None list',
   ordered: false,
-  className:'',
-  disabled: false,
   bullet: 'none',
 }

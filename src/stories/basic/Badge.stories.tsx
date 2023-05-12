@@ -29,9 +29,8 @@ Default.args = {
 }
 
 Spot.args = {
-  text: '+9999',
+  ...Default.args,
   length: 5,
-  spot: true,
-  className: ''
+  spot: true
 }
 

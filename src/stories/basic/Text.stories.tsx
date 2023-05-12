@@ -8,7 +8,7 @@ export default {
   argTypes: {
     children: { name: 'Text', control: 'text' },
     block: { name: 'Block', control: 'boolean' },
-    ellispsis: {name: 'Ellipsis', control: 'boolean' },
+    ellipsis: {name: 'Ellipsis', control: 'boolean' },
     className: {name: 'className', control: 'text'},
   }
 }
@@ -25,12 +25,12 @@ Default.args = {
   children: 'Hello World',
   block: false,
   ellipsis: false,
+  a11yLength: false,
   className: '',
 }
 
 Block.args = {
+  ...Default.args,
   children: 'Hello World, this a text block is a tag p',
   block: true,
-  ellipsis: false,
-  className: '',
 }
