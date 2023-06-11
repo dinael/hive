@@ -15,6 +15,7 @@
     outline-color: transparent;
     text-decoration: var(--anchor-text-decoration, underline);
     transition: color 0.35s ease-in-out;
+    text-decoration-color: var(--anchor-decoration-color, var(--anchor-color));
 
     &:hover {
         --anchor-color: var(--anchor-color-hover);
@@ -28,7 +29,6 @@
     // TODO states
     // &:active {
     //     --anchor-color: var(--anchor-color-active);
-
     //     &:hover {
     //         --anchor-color: var(--anchor-color-active-hover);
     //     }
@@ -40,7 +40,6 @@
     //     &:hover {
     //         --anchor-color: var(--anchor-color-visited-hover);
     //     }
-
     //     &:active {
     //         --anchor-color: var(--anchor-color-visited-active);
     //     }
@@ -72,6 +71,6 @@
     &.disabled {
         color: var(--anchor-color-disabled);
 
-        @include form.disabled
+        @include form.disabled;
     }
 }
