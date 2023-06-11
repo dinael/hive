@@ -5,6 +5,9 @@
 }
 
 :where(li) {
+    list-style-position: var(--list-style-position, outside);
+    list-style-image: var(--list-style-image, none); //url("star.gif")
+
     &::marker {
         color: var(--list-style-color, var(--color-primary));
     }
