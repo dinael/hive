@@ -1,24 +1,32 @@
 @use '../../scss/03-modules/texts' as text;
 @use '../../scss/03-modules/titles' as title;
 
+// TODO: que funcione como título
+
 .paragraph-component {
-  display: block;
-  font-family: var(--font-family);
-  font-size: var(---paragraph-font-size, clamp(1rem, 0.0201612903rem + 0.9997983871vw, 1.125rem));
-  line-height: var(--paragraph-line-height);
-  max-inline-size: var(--paragraph-max-width, 100%);
-  padding: var(--paragraph-padding, 0 0 1rem 0);
-  margin: var(--paragraph-margin, 0);
-  column-count: var(--paragraph-column);
-  column-gap: 1rem;
+  display: var(--paragraph-component-display, block);
+  font-family: var(--paragraph-component-font-family, var(--font-family));
+  font-size: var(--paragraph-component-font-size, clamp(1rem, 0.0201612903rem + 0.9997983871vw, 1.125rem));
+  line-height: var(--paragraph-component-line-height);
+  inline-size: var(--paragraph-component-inline-size, min-content);
+  max-inline-size: var(--paragraph-component-max-width, 100%);
+  padding: var(--paragraph-component-padding, 0 0 1rem 0);
+  margin: var(--paragraph-component-margin, 0);
+  column-count: var(--paragraph-component-column);
+  column-gap: var(--paragraph-component-column-gap ,1rem);
+  text-wrap: var(--paragraph-component-text-wrap, balance);
+  word-break: var(--paragraph-component-word-break, break-all);
+  overflow-wrap: var(--paragraph-component-overflow-wrap, break-word);
+  hyphens: var(--paragraph-component-hyphens, auto);
+  line-break: var(--paragraph-component-line-break, auto)
 }
 
 .flat {
-  --paragraph-padding: 0;
+  --paragraph-component-padding: 0;
 }
 
 .a11y-length {
-  --paragraph-max-width: 65ch;
+  --paragraph-component-max-width: 65ch;
 }
 
 .ellipsis {
@@ -32,6 +40,6 @@
 
 @media (orientation: portrait) {
   .a11y-length {
-    --paragraph-max-width: 100%;
+    --paragraph-component-max-width: 100%;
   }
 }
