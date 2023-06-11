@@ -1,0 +1,17 @@
+:where(p) {
+  display: var(--paragraph-display, block);
+  font-family: var(--paragraph-font-family);
+  font-size: var(--paragraph-font-size, clamp(1rem, 0.0201612903rem + 0.9997983871vw, 1.125rem));
+  line-height: var(--paragraph-line-height);
+  inline-size: var(--paragraph-inline-size, min-content);
+  max-inline-size: var(--paragraph-max-width, 100%);
+  padding: var(--paragraph-padding, 0);
+  margin: var(--paragraph-margin, 0);
+  column-count: var(--paragraph-column);
+  column-gap: var(--paragraph-column-gap, 1em);
+  text-wrap: var(--paragraph-text-wrap, balance);
+  word-break: var(--paragraph-word-break, break-all);
+  overflow-wrap: var(--paragraph-overflow-wrap, break-word);
+  hyphens: var(--paragraph-hyphens, auto);
+  line-break: var(--paragraph-line-break, auto);
+}
