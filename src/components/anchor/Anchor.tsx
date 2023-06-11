@@ -46,4 +46,3 @@ export const Anchor: FC<AnchorProps> = ({
 }
 
 export default Anchor
-
