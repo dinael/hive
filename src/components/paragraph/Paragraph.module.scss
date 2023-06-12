@@ -8,7 +8,7 @@
   font-family: var(--paragraph-component-font-family, var(--font-family));
   font-size: var(--paragraph-component-font-size, clamp(1rem, 0.0201612903rem + 0.9997983871vw, 1.125rem));
   line-height: var(--paragraph-component-line-height);
-  inline-size: var(--paragraph-component-inline-size, min-content);
+  inline-size: var(--paragraph-component-inline-size, auto);
   max-inline-size: var(--paragraph-component-max-width, 100%);
   padding: var(--paragraph-component-padding, 0 0 1rem 0);
   margin: var(--paragraph-component-margin, 0);

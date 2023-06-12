@@ -3,7 +3,7 @@
   font-family: var(--paragraph-font-family);
   font-size: var(--paragraph-font-size, clamp(1rem, 0.0201612903rem + 0.9997983871vw, 1.125rem));
   line-height: var(--paragraph-line-height);
-  inline-size: var(--paragraph-inline-size, min-content);
+  inline-size: var(--paragraph-inline-size, auto);
   max-inline-size: var(--paragraph-max-width, 100%);
   padding: var(--paragraph-padding, 0);
   margin: var(--paragraph-margin, 0);
