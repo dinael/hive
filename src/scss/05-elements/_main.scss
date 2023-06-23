@@ -1,9 +1,16 @@
 // ## Main html tag
+
+main .container {
+  --main-inline-size: min(65ch, 100% - 4rem);
+
+  margin-inline: auto;
+}
+
 @mixin main-styles {
     main {
         block-size: auto;
         min-block-size: 100%;
-        inline-size: 100%;
+        inline-size: var(--main-inline-size, 100%);
 
         @content;
     }

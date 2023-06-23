@@ -1,5 +1,4 @@
 // ## Images tags
-
 :where(img) {
     block-size: var(--img-block-size, auto);
     display: var(--img-display, block);
@@ -27,17 +26,14 @@
     inline-size: var(--figure-width, 100%);
 }
 
-
 :where(figcaption) {
     display: var(--figcaption-display, block);
 }
-
 
 :where(svg) {
     display: var(--svg-display, block);
     overflow: hidden;
     fill: currentColor;
-    vertical-align: middle;
     block-size: var(--svg-height, auto);
     inline-size: var(--svg-width, 100%);
 
@@ -50,4 +46,3 @@
         overflow: hidden;
     }
 }
-
