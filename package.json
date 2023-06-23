@@ -15,13 +15,16 @@
     "coverage": "vitest run --coverage",
     "test-ui": "vitest --ui",
     "tokens": "token-transformer src/tokens/tokens.json src/tokens/tokens-output.json --resolveReferences --expandTypography --expandShadow --expandComposition --expandBorder --throwErrorWhenNotResolved",
-    "styles": "style-dictionary build"
+    "styles": "style-dictionary build",
+    "chromatic": "npx chromatic --project-token=chpt_fd120dd1b170bcb"
   },
   "dependencies": {
+    "chromatic": "^6.19.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@etchteam/storybook-addon-status": "^4.2.4",
     "@storybook/addon-a11y": "^7.0.2",
     "@storybook/addon-coverage": "^0.0.8",
     "@storybook/addon-essentials": "^7.0.2",
@@ -41,12 +44,12 @@
     "@vitejs/plugin-react": "^3.1.0",
     "@vitest/coverage-c8": "^0.30.0",
     "@vitest/ui": "^0.30.0",
-    "@whitespace/storybook-addon-html": "^5.1.4",
+    "@whitespace/storybook-addon-html": "^5.1.6",
     "addon-screen-reader": "^1.8.6",
     "aria-live-storybook-addon": "^0.0.6",
     "axe-playwright": "^1.2.3",
     "happy-dom": "^9.1.9",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "react-syntax-highlighter": "^15.5.0",
     "sass": "^1.61.0",
     "storybook": "^7.0.2",
@@ -57,5 +60,7 @@
     "vite": "^4.2.0",
     "vite-plugin-istanbul": "^4.0.1",
     "vitest": "^0.30.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "hive@0.0.0"
 }
