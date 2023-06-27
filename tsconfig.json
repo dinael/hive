@@ -15,7 +15,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["uuid"],
+    "types": [
+      "uuid",
+      "vitest/globals"
+    ],
   },
   "include": [
     "src",

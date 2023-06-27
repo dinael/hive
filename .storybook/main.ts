@@ -17,12 +17,15 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@storybook/addon-mdx-gfm",
     "@whitespace/storybook-addon-html",
+    "storybook-addon-pseudo-states",
     "@storybook/addon-a11y",
     "addon-screen-reader",
     "aria-live-storybook-addon",
     "storybook-addon-designs",
     "@storybook/addon-styling",
+    "storybook-addon-performance",
     "@storybook/addon-coverage",
+    "storybook_vitest_addon",
     {
       name: "@storybook/addon-coverage",
       options: {

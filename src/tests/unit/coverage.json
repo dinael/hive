@@ -1,0 +1,1033 @@
+{
+  "numTotalTestSuites": 38,
+  "numPassedTestSuites": 38,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 77,
+  "numPassedTests": 77,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1687873390281,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "InputRadio"
+          ],
+          "fullName": " InputRadio renders with the correct label",
+          "status": "passed",
+          "title": "renders with the correct label",
+          "duration": 17,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "InputRadio"
+          ],
+          "fullName": " InputRadio renders with the correct value",
+          "status": "passed",
+          "title": "renders with the correct value",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "InputRadio"
+          ],
+          "fullName": " InputRadio calls onChange handler when clicked",
+          "status": "passed",
+          "title": "calls onChange handler when clicked",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "InputRadio"
+          ],
+          "fullName": " InputRadio calls onChange handler when clicked",
+          "status": "passed",
+          "title": "calls onChange handler when clicked",
+          "duration": 2,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873393160,
+      "endTime": 1687873393185,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/radio/Radio.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 24,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with correct text and href",
+          "status": "passed",
+          "title": "renders link with correct text and href",
+          "duration": 6,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with target attribute",
+          "status": "passed",
+          "title": "renders link with target attribute",
+          "duration": 0,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with rel attribute",
+          "status": "passed",
+          "title": "renders link with rel attribute",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with safe area class",
+          "status": "passed",
+          "title": "renders link with safe area class",
+          "duration": 15,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with disabled class",
+          "status": "passed",
+          "title": "renders link with disabled class",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with custom class",
+          "status": "passed",
+          "title": "renders link with custom class",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with children",
+          "status": "passed",
+          "title": "renders link with children",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Anchor"
+          ],
+          "fullName": " Anchor renders link with a11yText",
+          "status": "passed",
+          "title": "renders link with a11yText",
+          "duration": 0,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873392360,
+      "endTime": 1687873392414,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/anchor/test/Anchor.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Badge"
+          ],
+          "fullName": " Badge renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 10,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Badge"
+          ],
+          "fullName": " Badge renders with correct text",
+          "status": "passed",
+          "title": "renders with correct text",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Badge"
+          ],
+          "fullName": " Badge shortens the text correctly",
+          "status": "passed",
+          "title": "shortens the text correctly",
+          "duration": 0,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Badge"
+          ],
+          "fullName": " Badge applies the spot class when prop is set to true",
+          "status": "passed",
+          "title": "applies the spot class when prop is set to true",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Badge"
+          ],
+          "fullName": " Badge applies the spot class when prop is set to true check text a11y",
+          "status": "passed",
+          "title": "applies the spot class when prop is set to true check text a11y",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Badge"
+          ],
+          "fullName": " Badge renders link with custom class",
+          "status": "passed",
+          "title": "renders link with custom class",
+          "duration": 0,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873392351,
+      "endTime": 1687873392367,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/badge/test/Badge.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Checkbox"
+          ],
+          "fullName": " Checkbox renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 38,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Checkbox"
+          ],
+          "fullName": " Checkbox renders with the correct label",
+          "status": "passed",
+          "title": "renders with the correct label",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Checkbox"
+          ],
+          "fullName": " Checkbox calls onChecked handler when clicked",
+          "status": "passed",
+          "title": "calls onChecked handler when clicked",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Checkbox"
+          ],
+          "fullName": " Checkbox calls onChecked handler when clicked",
+          "status": "passed",
+          "title": "calls onChecked handler when clicked",
+          "duration": 2,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873391372,
+      "endTime": 1687873391416,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/checkbox/test/Checkbox.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Blockquote"
+          ],
+          "fullName": " Blockquote renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 21,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Blockquote"
+          ],
+          "fullName": " Blockquote renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 5,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Blockquote"
+          ],
+          "fullName": " Blockquote renders title correctly",
+          "status": "passed",
+          "title": "renders title correctly",
+          "duration": 5,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Blockquote"
+          ],
+          "fullName": " Blockquote renders quote correctly",
+          "status": "passed",
+          "title": "renders quote correctly",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Blockquote"
+          ],
+          "fullName": " Blockquote renders footer correctly",
+          "status": "passed",
+          "title": "renders footer correctly",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Blockquote"
+          ],
+          "fullName": " Blockquote renders with a custom class",
+          "status": "passed",
+          "title": "renders with a custom class",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873391473,
+      "endTime": 1687873391508,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/blockquote/test/Bloququote.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Button"
+          ],
+          "fullName": " Button renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 26,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Button"
+          ],
+          "fullName": " Button renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Button"
+          ],
+          "fullName": " Button renders text correctly",
+          "status": "passed",
+          "title": "renders text correctly",
+          "duration": 7,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Button"
+          ],
+          "fullName": " Button renders icon correctly",
+          "status": "passed",
+          "title": "renders icon correctly",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Button"
+          ],
+          "fullName": " Button renders kind link correctly",
+          "status": "passed",
+          "title": "renders kind link correctly",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Button"
+          ],
+          "fullName": " Button onClick",
+          "status": "passed",
+          "title": "onClick",
+          "duration": 8,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873391360,
+      "endTime": 1687873391409,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/button/test/Button.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Fieldset"
+          ],
+          "fullName": " Fieldset renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 14,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Fieldset"
+          ],
+          "fullName": " Fieldset renders fieldset with correctly",
+          "status": "passed",
+          "title": "renders fieldset with correctly",
+          "duration": 4,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Fieldset"
+          ],
+          "fullName": " Fieldset renders legend with correctly",
+          "status": "passed",
+          "title": "renders legend with correctly",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Fieldset"
+          ],
+          "fullName": " Fieldset renders with a custom class",
+          "status": "passed",
+          "title": "renders with a custom class",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Fieldset"
+          ],
+          "fullName": " Fieldset renders legend hidden",
+          "status": "passed",
+          "title": "renders legend hidden",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873392460,
+      "endTime": 1687873392483,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/fieldset/test/Fieldset.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Icon"
+          ],
+          "fullName": " Icon renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 14,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Icon"
+          ],
+          "fullName": " Icon renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Icon"
+          ],
+          "fullName": " Icon renders correctly viewBox",
+          "status": "passed",
+          "title": "renders correctly viewBox",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Icon"
+          ],
+          "fullName": " Icon renders correctly svg title",
+          "status": "passed",
+          "title": "renders correctly svg title",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Icon"
+          ],
+          "fullName": " Icon renders with a custom class",
+          "status": "passed",
+          "title": "renders with a custom class",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873391352,
+      "endTime": 1687873391372,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/icon/test/Icon.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Image"
+          ],
+          "fullName": " Image renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 14,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Image"
+          ],
+          "fullName": " Image renders correctly",
+          "status": "passed",
+          "title": "renders correctly",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Image"
+          ],
+          "fullName": " Image renders correctly with imgSet",
+          "status": "passed",
+          "title": "renders correctly with imgSet",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Image"
+          ],
+          "fullName": " Image renders correctly className",
+          "status": "passed",
+          "title": "renders correctly className",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Image"
+          ],
+          "fullName": " Image renders correctly disabled",
+          "status": "passed",
+          "title": "renders correctly disabled",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873392433,
+      "endTime": 1687873392453,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/image/test/Image.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Inputfield"
+          ],
+          "fullName": " Inputfield renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 16,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873393136,
+      "endTime": 1687873393152,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/inputfield/test/Inputfleild.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Inputselect"
+          ],
+          "fullName": " Inputselect renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 33,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Inputselect"
+          ],
+          "fullName": " Inputselect renders snapshot with group options",
+          "status": "passed",
+          "title": "renders snapshot with group options",
+          "duration": 5,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873392410,
+      "endTime": 1687873392448,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/inputselect/test/Inputselect.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "LabelText"
+          ],
+          "fullName": " LabelText renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 13,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873391346,
+      "endTime": 1687873391359,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/labeltext/test/labelText.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "List"
+          ],
+          "fullName": " List renders an unordered list by default",
+          "status": "passed",
+          "title": "renders an unordered list by default",
+          "duration": 11,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "List"
+          ],
+          "fullName": " List renders an ordered list when `ordered` prop is true",
+          "status": "passed",
+          "title": "renders an ordered list when `ordered` prop is true",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "List"
+          ],
+          "fullName": " List renders the list items",
+          "status": "passed",
+          "title": "renders the list items",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "List"
+          ],
+          "fullName": " List renders with a custom bullet style",
+          "status": "passed",
+          "title": "renders with a custom bullet style",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "List"
+          ],
+          "fullName": " List renders with a custom class",
+          "status": "passed",
+          "title": "renders with a custom class",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873393093,
+      "endTime": 1687873393109,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/list/test/list.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Paragraph"
+          ],
+          "fullName": " Paragraph renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 24,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873393007,
+      "endTime": 1687873393031,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/paragraph/test/Paragraph.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "InputRadio"
+          ],
+          "fullName": " InputRadio renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 25,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873392386,
+      "endTime": 1687873392411,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/radio/test/radio.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Text"
+          ],
+          "fullName": " Text renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 19,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Text"
+          ],
+          "fullName": " Text renders with the correct tag name",
+          "status": "passed",
+          "title": "renders with the correct tag name",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Text"
+          ],
+          "fullName": " Text renders with the correct text",
+          "status": "passed",
+          "title": "renders with the correct text",
+          "duration": 3,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Text"
+          ],
+          "fullName": " Text renders with the correct extra className",
+          "status": "passed",
+          "title": "renders with the correct extra className",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Text"
+          ],
+          "fullName": " Text renders as a block element",
+          "status": "passed",
+          "title": "renders as a block element",
+          "duration": 1,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873391353,
+      "endTime": 1687873391378,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/text/test/Text.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 15,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct tag name",
+          "status": "passed",
+          "title": "renders with the correct tag name",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct tag name when level is 0",
+          "status": "passed",
+          "title": "renders with the correct tag name when level is 0",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct tag name when level is out range",
+          "status": "passed",
+          "title": "renders with the correct tag name when level is out range",
+          "duration": 0,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct text",
+          "status": "passed",
+          "title": "renders with the correct text",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct extra class name",
+          "status": "passed",
+          "title": "renders with the correct extra class name",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct size",
+          "status": "passed",
+          "title": "renders with the correct size",
+          "duration": 2,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct ellipsis",
+          "status": "passed",
+          "title": "renders with the correct ellipsis",
+          "duration": 1,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            "",
+            "Title"
+          ],
+          "fullName": " Title renders with the correct text length to a11y",
+          "status": "passed",
+          "title": "renders with the correct text length to a11y",
+          "duration": 0,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873391350,
+      "endTime": 1687873391373,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/title/test/Title.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "Textarea"
+          ],
+          "fullName": " Textarea renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 18,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873393158,
+      "endTime": 1687873393176,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/textarea/test/Textareaa.test.tsx"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+            "ValidationMessage"
+          ],
+          "fullName": " ValidationMessage renders snapshot",
+          "status": "passed",
+          "title": "renders snapshot",
+          "duration": 22,
+          "failureMessages": []
+        }
+      ],
+      "startTime": 1687873392400,
+      "endTime": 1687873392422,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/validationmessage/test/ValidaionMessage.test.tsx"
+    }
+  ]
+}

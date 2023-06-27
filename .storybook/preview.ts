@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react"
 import { withThemeByClassName } from "@storybook/addon-styling"
+import { withPerformance } from 'storybook-addon-performance'
 import "../src/scss/04-generic/_root.scss"
 import "../src/scss/04-generic/_reset.scss"
 import "../src/scss/styles.scss"
@@ -17,6 +18,7 @@ const preview: Preview = {
 };
 
 export const decorators = [
+  withPerformance,
   withThemeByClassName({
     themes: {
       light: "light",
@@ -28,3 +30,5 @@ export const decorators = [
 ];
 
 export default preview;
+
+
