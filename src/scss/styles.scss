@@ -2,15 +2,38 @@ body {
     //background: yellowgreen;
 }
 
-.gallery-icons {
-  display: flex;
-  gap: 1%;
+#storybook-docs {
+  details {
+    --details-summary-icon-open: "🔽";
+    --details-summary-icon: "▶️";
 
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
+    margin-block-end: 2rem;
+
+    summary {
+      padding-block: 0.5rem 1rem;
+      font-weight: bold;
+
+      &[open] {
+        &>summary {
+          list-style-type: var(--details-summary-icon-open, none);
+        }
+      }
+
+      &>summary {
+        list-style-type: var(--details-summary-icon, none);
+      }
+
+      &::marker {
+        position: absolute;
+        padding-right: 1rem;
+      }
+    }
   }
 }
+
+.docblock-icongallery {
+  display: block;
+  padding: 1rem;
+  border: 1px solid hsla(203, 50%, 30%, 0.15);
+}
+

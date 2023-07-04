@@ -1,0 +1,78 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Tokens/Typography" />
+
+export const typography = {
+  type: {
+    text: '"Open Sans", sans-serif',
+    title: '"Roboto", sans-serif',
+  },
+  weight: {
+    regular: '400',
+    bold: '700',
+    extrabold: '800',
+    black: '900',
+  },
+  textSize: {
+    xxs: 8,
+    xs: 12,
+    s: 14,
+    m: 16,
+    l: 18,
+    xl: 20,
+    xxl: 22,
+  },
+  titleSize: {
+    xxl: 48,
+    xl: 44,
+    l: 40,
+    m: 36,
+    s: 32,
+    xs: 28,
+    xxs: 24,
+  },
+};
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+<section>
+  ## Text font sizes
+  **Font:** Open Sans
+
+**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
+  <Typeset
+  fontSizes={[
+    Number(typography.textSize.xxs),
+    Number(typography.textSize.xs),
+    Number(typography.textSize.s),
+    Number(typography.textSize.m),
+    Number(typography.textSize.l),
+    Number(typography.textSize.xl),
+    Number(typography.textSize.xxl),
+  ]}
+  fontWeight={typography.weight.regular}
+  sampleText={SampleText}
+  fontFamily={typography.type.text}
+/>
+
+</section>
+<section>
+  ## Title font sizes
+  <Typeset
+  fontSizes={[
+    Number(typography.titleSize.xxl),
+    Number(typography.titleSize.xl),
+    Number(typography.titleSize.l),
+    Number(typography.titleSize.m),
+    Number(typography.titleSize.s),
+    Number(typography.titleSize.xs),
+    Number(typography.titleSize.xxs),
+  ]}
+  fontWeight={typography.weight.bold}
+  sampleText={SampleText}
+  fontFamily={typography.type.title}
+/>
+
+</section>

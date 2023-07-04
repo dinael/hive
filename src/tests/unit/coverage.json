@@ -373,7 +373,7 @@
       "endTime": 1687873391508,
       "status": "passed",
       "message": "",
-      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/blockquote/test/Bloququote.test.tsx"
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/blockquote/test/Blockquote.test.tsx"
     },
     {
       "assertionResults": [
@@ -512,7 +512,7 @@
       "endTime": 1687873392483,
       "status": "passed",
       "message": "",
-      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/fieldset/test/Fieldset.test.tsx"
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/fieldset/test/Inputfield.test.tsx"
     },
     {
       "assertionResults": [
@@ -698,9 +698,9 @@
         {
           "ancestorTitles": [
             "",
-            "LabelText"
+            "Label"
           ],
-          "fullName": " LabelText renders snapshot",
+          "fullName": " Label renders snapshot",
           "status": "passed",
           "title": "renders snapshot",
           "duration": 13,
@@ -711,7 +711,7 @@
       "endTime": 1687873391359,
       "status": "passed",
       "message": "",
-      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/labeltext/test/labelText.test.tsx"
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/Label/test/Label.test.tsx"
     },
     {
       "assertionResults": [
@@ -775,7 +775,7 @@
       "endTime": 1687873393109,
       "status": "passed",
       "message": "",
-      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/list/test/list.test.tsx"
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/list/test/List.test.tsx"
     },
     {
       "assertionResults": [
@@ -1007,7 +1007,7 @@
       "endTime": 1687873393176,
       "status": "passed",
       "message": "",
-      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/textarea/test/Textareaa.test.tsx"
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/textarea/test/Textarea.test.tsx"
     },
     {
       "assertionResults": [
@@ -1027,7 +1027,7 @@
       "endTime": 1687873392422,
       "status": "passed",
       "message": "",
-      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/validationmessage/test/ValidaionMessage.test.tsx"
+      "name": "/Users/kairosds/Documents/proyectos-propios/hive/src/components/validationmessage/test/ValidationMessage.test.tsx"
     }
   ]
 }
