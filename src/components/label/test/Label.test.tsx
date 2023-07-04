@@ -1,9 +1,9 @@
 import { describe, test, expect, vi } from 'vitest'
 import { fireEvent, render, screen } from '@testing-library/react'
-import { LabelText, LabelTextProps } from '../LabelText'
+import { Label, LabelProps } from '../Label'
 
-describe('LabelText', ()=> {
-  const defaultProps: LabelTextProps = {
+describe('Label', ()=> {
+  const defaultProps: LabelProps = {
     text: 'text-test',
     required: false,
     isRequiredText: 'isRequiredText-test',
@@ -13,7 +13,7 @@ describe('LabelText', ()=> {
   }
 
   test('renders snapshot', () => {
-    const { container } = render(<LabelText {...defaultProps} />)
+    const { container } = render(<Label {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 

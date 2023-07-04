@@ -2,7 +2,7 @@ import React, {FC, useState, ChangeEvent, FocusEvent } from 'react'
 import styles from './Inputfield.module.scss'
 import Icon from '../icon/Icon'
 import ValidationMessage from '../validationmessage/ValidationMessage'
-import LabelText from '../labeltext/LabelText'
+import Label from '../Label/Label'
 
 export type InputfieldProps = {
   label: string
@@ -75,7 +75,7 @@ export const Inputfield: FC<InputfieldProps> = ({
         ${error ? styles['has-error'] : ''}
       `}
       {...props}>
-      <LabelText
+      <Label
         className={`${styles['inputfiled-label']}`}
         text={label}
         required={required}

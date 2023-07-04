@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react'
 import styles from './Textarea.module.scss'
 import Icon from '../icon/Icon'
 import ValidationMessage from '../validationmessage/ValidationMessage'
-import LabelText from '../labeltext/LabelText'
+import Label from '../Label/Label'
 
 export type TextareaProps = {
   label: string
@@ -73,7 +73,7 @@ export const Textarea: FC<TextareaProps> = ({
         ${className ? className : ''}
       `}
       {...props}>
-      <LabelText
+      <Label
         className={`${styles['textarea-label']}`}
         text={label}
         required={required}

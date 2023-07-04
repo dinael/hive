@@ -15,8 +15,8 @@ describe('InputRadio', () => {
 
   test('renders with the correct label', () => {
     const { container } = render(<InputRadio {...defaultProps}/>)
-    const labelTextElement = container.querySelector('label > span')
-    expect(labelTextElement?.textContent).toBe('Example label')
+    const LabelElement = container.querySelector('label > span')
+    expect(LabelElement?.textContent).toBe('Example label')
   })
 
   test('renders with the correct value', () => {

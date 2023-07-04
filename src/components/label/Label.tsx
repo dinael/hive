@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
-import styles from './LabelText.module.scss'
+import styles from './Label.module.scss'
 
-export type LabelTextProps = {
+export type LabelProps = {
   text: string
   required?: boolean
   isRequiredText: string
@@ -10,14 +10,14 @@ export type LabelTextProps = {
   className?: string
 }
 
-export const LabelText: FC<LabelTextProps> = ({
+export const Label: FC<LabelProps> = ({
   text,
   required = false,
   isRequiredText,
   labelHidden = false,
   disabled,
   className,
-}: LabelTextProps) => {
+}: LabelProps) => {
   return (
     <span className={`
       ${styles['label-text-component']}
@@ -38,4 +38,4 @@ export const LabelText: FC<LabelTextProps> = ({
   )
 }
 
-export default LabelText
+export default Label

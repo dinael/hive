@@ -19,8 +19,8 @@ describe('Checkbox', () => {
 
   test('renders with the correct label', () => {
     const { container } = render(<Checkbox {...defaultProps} />)
-    const labelTextElement = container.querySelector('label > span')
-    expect(labelTextElement?.textContent).toBe('Example label')
+    const LabelElement = container.querySelector('label > span')
+    expect(LabelElement?.textContent).toBe('Example label')
     expect(container).toMatchSnapshot()
   })
 

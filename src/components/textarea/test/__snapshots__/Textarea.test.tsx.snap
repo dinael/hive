@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Textarea > renders snapshot 1`] = `
+<div>
+  <label
+    class="
+        textarea-component
+        
+        
+        className-test
+      "
+    for="id-test"
+  >
+    <span
+      class="
+      label-text-component
+      
+      
+      
+      textarea-label
+      "
+    >
+      label-test:
+    </span>
+    <textarea
+      aria-describedby=""
+      class=""
+      id="id-test"
+      placeholder="placeholder-test"
+    />
+  </label>
+</div>
+`;
