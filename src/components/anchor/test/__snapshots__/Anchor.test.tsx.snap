@@ -1,5 +1,186 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Anchor > Anchor renders link with a11yText 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders link with children 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+    Child Element
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders link with correct text and href 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders link with custom class 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders link with disabled class 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders link with rel attribute 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders link with safe area class 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders link with target attribute 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
+exports[`Anchor > Anchor renders snapshot 1`] = `
+<div>
+  <a
+    aria-label="Link Description"
+    class="
+        anchor-component
+        disabled
+        safe-area
+        disabled
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noreferrer"
+    target="_self"
+  >
+    Link Text
+  </a>
+</div>
+`;
+
 exports[`Anchor > renders link with a11yText 1`] = `
 <div>
   <a

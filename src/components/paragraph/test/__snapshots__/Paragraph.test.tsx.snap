@@ -1,5 +1,155 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Paragraph > Paragraph renders content composition 1`] = `
+<div>
+  <p
+    class="
+        paragraph-component
+        
+        
+        
+        className-test
+      "
+  >
+    <strong>
+      This a composition text:
+    </strong>
+    <br />
+    Lorem ipsum dolor sit amet, 
+    <abbr
+      aria-label="HyperText Markup Language"
+      class="tooltip"
+    >
+      HTML
+    </abbr>
+     adipisicing elit. Ad 
+    <a
+      href="javascript:void(0)"
+    >
+      architecto
+    </a>
+     dolor eaque error esse fugiat, laboriosam 
+    <strong>
+      Possimus  natus assumenda
+    </strong>
+     maiores 
+    <em>
+      mollitia natus pariatur rem
+    </em>
+      repudiandae sed tempora! Ab aliquam 
+    <sup>
+      distinctio
+    </sup>
+     dolor
+    <sub>
+      doloremque
+    </sub>
+     unde! Lorem ipsum dolor sit amet 
+    <dfn
+      aria-label="Definition text"
+      class="tooltip"
+    >
+      consectetur adipisicing elit
+    </dfn>
+    consectetur adipisicing elit. Dolor deserunt aperiam excepturi. 
+    <strong>
+      Deleniti consequatur reiciendis
+    </strong>
+    , rerum ducimus, 
+    <ins>
+      architecto obcaecati
+    </ins>
+     corrupti nulla eos optio quasi fuga veniam libero minus mollitia impedit?
+    <q>
+      Officiis repudiandae cumque non 
+    </q>
+    <code>
+      hic eaque iusto rerum
+    </code>
+    , consectetur accusamus exercitationem. 
+    <samp>
+      Laboriosam corrupti
+    </samp>
+    , pariatur atque 
+    <mark>
+      consectetur eligendi
+    </mark>
+     exercitationem, 
+    <del>
+      saepe nam esse
+    </del>
+     natus earum 
+    <big>
+      praesentium
+    </big>
+     ducimus 
+    <small>
+      tempora
+    </small>
+     expedita eos cum magni!
+    <br />
+    <br />
+    <span
+      class="text:xxl"
+    >
+      Lorem ipsum dolor sit amet
+    </span>
+    , 
+    <span
+      class="text:xl"
+    >
+      consectetur adipisicing elit
+    </span>
+    . 
+    <span
+      class="text:l"
+    >
+      Deleniti nemo distinctio cumque sit
+    </span>
+     
+    <span
+      class="text:m"
+    >
+      sapiente rem expedita illo tempora
+    </span>
+     
+    <span
+      class="text:m"
+    >
+      cupiditate perspiciatis mollitia vitae nisi
+    </span>
+    , 
+    <span
+      class="text:s"
+    >
+      facilis ut architecto
+    </span>
+     
+    <span
+      class="text:xs"
+    >
+      pariatur minus placeat iste!
+    </span>
+  </p>
+</div>
+`;
+
+exports[`Paragraph > Paragraph renders snapshot 1`] = `
+<div>
+  <p
+    class="
+        paragraph-component
+        
+        
+        
+        className-test
+      "
+  >
+    children-test
+  </p>
+</div>
+`;
+
 exports[`Paragraph > renders snapshot 1`] = `
 <div>
   <p

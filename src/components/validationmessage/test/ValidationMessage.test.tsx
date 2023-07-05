@@ -12,7 +12,7 @@ describe('ValidationMessage', () => {
     className: 'className-Text',
   }
 
-  test('renders snapshot', () => {
+  test('ValidationMessage renders snapshot', () => {
     const { container } = render(<ValidationMessage {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })

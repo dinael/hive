@@ -11,19 +11,19 @@ describe('Blockquote', () => {
     children: 'Blockquote body'
   }
 
-  test('renders snapshot', () => {
+  test('Blockquote renders snapshot', () => {
     const { container } = render(<Blockquote {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly', () => {
+  test('Blockquote renders correctly', () => {
     const { container } = render(<Blockquote {...defaultProps} />)
     const blockquoteElement = container.querySelector('blockquote')
     expect(blockquoteElement?.tagName).toBe('BLOCKQUOTE')
     expect(container).toMatchSnapshot()
   })
 
-  test('renders title correctly', () => {
+  test('Blockquote renders title correctly', () => {
     const { container } = render(<Blockquote {...defaultProps} />)
     const blockquoteElement = container.querySelector('blockquote > header > .blockquote-title')
     expect(blockquoteElement?.textContent).toBe(defaultProps.title)
@@ -31,7 +31,7 @@ describe('Blockquote', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders quote correctly', () => {
+  test('Blockquote renders quote correctly', () => {
     const { container } = render(<Blockquote {...defaultProps} />)
     const blockquoteElement = container.querySelector('blockquote > .blockquote-content')
     expect(blockquoteElement?.textContent).toBe(defaultProps.children)
@@ -39,7 +39,7 @@ describe('Blockquote', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders footer correctly', () => {
+  test('Blockquote renders footer correctly', () => {
     const { container } = render(<Blockquote {...defaultProps} />)
     const blockquoteElement = container.querySelector('blockquote > footer')
     expect(blockquoteElement?.textContent).toBe(defaultProps.footer)
@@ -47,7 +47,7 @@ describe('Blockquote', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders with a custom class', () => {
+  test('Blockquote renders with a custom class', () => {
     const { container } = render(<Blockquote {...defaultProps} />)
     const blockquoteElement = container.querySelector('blockquote')
     expect(blockquoteElement?.className).toContain(defaultProps.className)

@@ -1,5 +1,154 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Inputselect > Inputselect renders snapshot 1`] = `
+<div>
+  <label
+    class="
+        inputselect-component
+        
+        className-test
+      "
+    for="id-test"
+  >
+    <span
+      class="
+      label-text-component
+      
+      
+      
+      inputselect-label
+      "
+    >
+      label-test:
+    </span>
+    <select
+      aria-describedby="validation-message-id-test"
+      id="id-test"
+      name="name-test"
+    >
+      <option
+        value="1"
+      >
+        Opción 1
+      </option>
+      <option
+        value="2"
+      >
+        Opción 2
+      </option>
+      <option
+        value="3"
+      >
+        Opción 3
+      </option>
+    </select>
+    <span
+      aria-hidden="true"
+      class="
+        icon-component
+        xs
+        icon
+      "
+      style="--icon-color: currentColor;"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <title>
+          chevron-down
+        </title>
+        <use
+          xlink:href="/src/assets/sprite.svg#chevron-down"
+        />
+      </svg>
+    </span>
+  </label>
+</div>
+`;
+
+exports[`Inputselect > Inputselect renders snapshot with group options 1`] = `
+<div>
+  <label
+    class="
+        inputselect-component
+        
+        className-test
+      "
+    for="id-test"
+  >
+    <span
+      class="
+      label-text-component
+      
+      
+      
+      inputselect-label
+      "
+    >
+      label-test:
+    </span>
+    <select
+      aria-describedby="validation-message-id-test"
+      id="id-test"
+      name="name-test"
+    >
+      <optgroup
+        label="Grupo 1"
+      >
+        <option
+          value="4"
+        >
+          Opción 4
+        </option>
+        <option
+          value="5"
+        >
+          Opción 5
+        </option>
+      </optgroup>
+      <optgroup
+        label="Grupo 2"
+      >
+        <option
+          value="6"
+        >
+          Opción 6
+        </option>
+        <option
+          value="7"
+        >
+          Opción 7
+        </option>
+      </optgroup>
+    </select>
+    <span
+      aria-hidden="true"
+      class="
+        icon-component
+        xs
+        icon
+      "
+      style="--icon-color: currentColor;"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <title>
+          chevron-down
+        </title>
+        <use
+          xlink:href="/src/assets/sprite.svg#chevron-down"
+        />
+      </svg>
+    </span>
+  </label>
+</div>
+`;
+
 exports[`Inputselect > renders snapshot 1`] = `
 <div>
   <label

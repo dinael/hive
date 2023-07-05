@@ -12,12 +12,12 @@ describe('Icon', () => {
     className: 'className-test'
   }
 
-  test('renders snapshot', () => {
+  test('Icon renders snapshot', () => {
     const { container } = render(<Icon {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly', () => {
+  test('Icon renders correctly', () => {
     const { container } = render(<Icon {...defaultProps} />)
     const iconElement = container.querySelector('span')
     expect(iconElement?.className).toContain('icon-component')
@@ -25,21 +25,21 @@ describe('Icon', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly viewBox', () => {
+  test('Icon renders correctly viewBox', () => {
     const { container } = render(<Icon {...defaultProps} />)
     const iconElement = container.querySelector('span > svg')
     expect(iconElement?.getAttribute('viewBox')).toBe('0 0 24 24')
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly svg title', () => {
+  test('Icon renders correctly svg title', () => {
     const { container } = render(<Icon {...defaultProps} />)
     const iconElement = container.querySelector('span > svg > title')
     expect(iconElement?.textContent).toBe(defaultProps.title)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders with a custom class', () => {
+  test('Icon renders with a custom class', () => {
     const { container } = render(<Icon {...defaultProps} />)
     const blockquoteElement = container.querySelector('span')
     expect(blockquoteElement?.className).toContain(defaultProps.className)

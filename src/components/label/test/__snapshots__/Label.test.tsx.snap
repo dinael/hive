@@ -1,6 +1,102 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Label > Label renders snapshot 1`] = `
+<div>
+  <label
+    class="
+      label-text-component
+      
+      
+      
+      className-test
+      "
+  >
+    text-test:
+  </label>
+</div>
+`;
+
+exports[`Label > Label renders with the correct tag name: label 1`] = `
+<div>
+  <label
+    class="
+      label-text-component
+      
+      
+      
+      className-test
+      "
+  >
+    text-test:
+  </label>
+</div>
+`;
+
+exports[`Label > Label renders with the correct tag name: span 1`] = `
+<div>
+  <span
+    class="
+      label-text-component
+      
+      
+      
+      className-test
+      "
+  >
+    text-test:
+  </span>
+</div>
+`;
+
 exports[`Label > renders snapshot 1`] = `
+<div>
+  <label
+    class="
+      label-text-component
+      
+      
+      
+      className-test
+      "
+  >
+    text-test:
+  </label>
+</div>
+`;
+
+exports[`Label > renders with the correct tag name 1`] = `
+<div>
+  <span
+    class="
+      label-text-component
+      
+      
+      
+      className-test
+      "
+  >
+    text-test:
+  </span>
+</div>
+`;
+
+exports[`Label > renders with the correct tag name: label 1`] = `
+<div>
+  <label
+    class="
+      label-text-component
+      
+      
+      
+      className-test
+      "
+  >
+    text-test:
+  </label>
+</div>
+`;
+
+exports[`Label > renders with the correct tag name: span 1`] = `
 <div>
   <span
     class="

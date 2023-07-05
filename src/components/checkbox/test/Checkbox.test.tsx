@@ -12,19 +12,20 @@ describe('Checkbox', () => {
     onChecked: vi.fn(),
   }
 
-  test('renders snapshot', () => {
+  test('Checkbox renders snapshot', () => {
     const { container } = render(<Checkbox {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders with the correct label', () => {
+  test('Checkbox renders with the correct label', () => {
     const { container } = render(<Checkbox {...defaultProps} />)
     const LabelElement = container.querySelector('label > span')
-    expect(LabelElement?.textContent).toBe('Example label')
+    expect(LabelElement?.textContent).toContain('Example label')
+    expect(LabelElement?.className).toContain('label-text-component')
     expect(container).toMatchSnapshot()
   })
 
-  test('calls onChecked handler when clicked', () => {
+  test('Checkbox calls onChecked handler when clicked', () => {
     const onCheckedMock = vi.fn()
     const { container } = render(<Checkbox {...defaultProps} onChecked={onCheckedMock} />)
     const checkboxElement = container.querySelector('input')
@@ -35,7 +36,7 @@ describe('Checkbox', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('calls onChecked handler when clicked', () => {
+  test('Checkbox calls onChecked handler when clicked', () => {
     const onCheckedMock = vi.fn()
     const { container } = render(<Checkbox {...defaultProps} onChecked={onCheckedMock} />)
     const checkboxElement = container.querySelector('input')

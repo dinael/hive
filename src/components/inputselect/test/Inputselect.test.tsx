@@ -34,12 +34,12 @@ describe('Inputselect', () => {
     className: 'className-test'
   }
 
-  test('renders snapshot', () => {
+  test('Inputselect renders snapshot', () => {
     const { container } = render(<Inputselect {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders snapshot with group options', () => {
+  test('Inputselect renders snapshot with group options', () => {
     const { container } = render(<Inputselect {...defaultProps} options={groupOptions} />)
     expect(container).toMatchSnapshot()
   })

@@ -20,19 +20,19 @@ describe('Button', () => {
     onClick: vi.fn(),
   }
 
-  test('renders snapshot', () => {
+  test('Button renders snapshot', () => {
     const { container } = render(<Button {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly', () => {
+  test('Button renders correctly', () => {
     const { container } = render(<Button {...defaultProps} />)
     const buttonElement = container.querySelector('button')
     expect(buttonElement?.tagName).toBe('BUTTON')
     expect(container).toMatchSnapshot()
   })
 
-  test('renders text correctly', () => {
+  test('Button renders text correctly', () => {
     const { container } = render(<Button {...defaultProps} />)
     const buttonElement = container.querySelector('button span:nth-child(2)')
     expect(buttonElement?.textContent).toBe(defaultProps.text)
@@ -40,14 +40,14 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders icon correctly', () => {
+  test('Button renders icon correctly', () => {
     const { container } = render(<Button {...defaultProps} />)
     const buttonElement = container.querySelector('button span')
     expect(buttonElement?.className).toContain('icon-component')
     expect(container).toMatchSnapshot()
   })
 
-  test('renders kind link correctly', () => {
+  test('Button renders kind link correctly', () => {
     const { container } = render(<Button {...defaultProps} type={'link'} url={defaultProps.url} />)
     const buttonElement = container.querySelector('a')
     expect(buttonElement?.tagName).toBe('A')
@@ -55,7 +55,7 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('onClick', () => {
+  test('Button onClick', () => {
     const onClick = vi.fn()
     const { container } = render(<Button {...defaultProps} onClick={onClick} />)
     const buttonElement = container.querySelector('button');

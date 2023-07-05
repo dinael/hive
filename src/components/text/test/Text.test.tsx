@@ -10,19 +10,19 @@ describe('Text', () => {
     className: 'className-test',
   }
 
-  test('renders snapshot', () => {
+  test('Text renders snapshot', () => {
     const { container } = render(<Text {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders with the correct tag name', () => {
+  test('Text renders with the correct tag name', () => {
     const { container } = render(<Text {...defaultProps} />)
     const textElement = container.querySelector('span')
     expect(textElement?.tagName).toBe('SPAN')
     expect(container).toMatchSnapshot()
   });
 
-  test('renders with the correct text', () => {
+  test('Text renders with the correct text', () => {
     const { container } = render(<Text {...defaultProps} />)
     const textElement = container.querySelector('span')
     expect(textElement?.textContent).toBe('Example text')
@@ -30,14 +30,14 @@ describe('Text', () => {
     expect(container).toMatchSnapshot()
   });
 
-  test('renders with the correct extra className', () => {
+  test('Text renders with the correct extra className', () => {
     const { container } = render(<Text {...defaultProps} />)
     const textElement = container.querySelector('span')
     expect(textElement?.className).toContain('className-test')
     expect(container).toMatchSnapshot()
   });
 
-  test('renders as a block element', () => {
+  test('Text renders as a block element', () => {
     const { container } = render(<Text {...defaultProps} block={true} />)
     const textElement = container.querySelector('p')
     expect(textElement).not.toBeNull()

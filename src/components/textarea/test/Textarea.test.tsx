@@ -17,7 +17,7 @@ describe('Textarea', () => {
     className: 'className-test',
   }
 
-  test('renders snapshot', () => {
+  test('Textarea renders snapshot', () => {
     const { container } = render(<Textarea {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })

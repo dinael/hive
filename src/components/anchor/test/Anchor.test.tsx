@@ -14,12 +14,12 @@ describe('Anchor', () => {
     children: null,
   }
 
-  test('renders snapshot', () => {
+  test('Anchor renders snapshot', () => {
     const { container } = render(<Anchor {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with correct text and href', () => {
+  test('Anchor renders link with correct text and href', () => {
     const { container } = render(<Anchor {...defaultProps} />)
     const linkElement = container.querySelector('a')
     expect(linkElement?.getAttribute('href')).toBe('https://www.example.com')
@@ -28,42 +28,42 @@ describe('Anchor', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with target attribute', () => {
+  test('Anchor renders link with target attribute', () => {
     const { container } = render(<Anchor {...defaultProps} />)
     const linkElement = container.querySelector('a')
     expect(linkElement?.getAttribute('target')).toBe(defaultProps.target)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with rel attribute', () => {
+  test('Anchor renders link with rel attribute', () => {
     const { container } = render(<Anchor {...defaultProps} />)
     const linkElement = container.querySelector('a')
     expect(linkElement?.getAttribute('rel')).toBe(defaultProps.rel)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with safe area class', () => {
+  test('Anchor renders link with safe area class', () => {
     const { container } = render(<Anchor {...defaultProps} />)
     const linkElement = container.querySelector('a')
     expect(linkElement?.className).toContain('safe-area')
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with disabled class', () => {
+  test('Anchor renders link with disabled class', () => {
     const { container } = render(<Anchor {...defaultProps} />)
     const linkElement = container.querySelector('a')
     expect(linkElement?.className).toContain('disabled')
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with custom class', () => {
+  test('Anchor renders link with custom class', () => {
     const { container } = render(<Anchor {...defaultProps} />)
     const linkElement = container.querySelector('a')
     expect(linkElement?.className).toContain(defaultProps.className)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with children', () => {
+  test('Anchor renders link with children', () => {
     const { container } = render(<Anchor {...defaultProps}>Child Element</Anchor>)
     const linkElement = container.querySelector('a')
     expect(linkElement?.textContent).toBe('Link TextChild Element')
@@ -71,7 +71,7 @@ describe('Anchor', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders link with a11yText', () => {
+  test('Anchor renders link with a11yText', () => {
     const { container } = render(<Anchor {...defaultProps}  />)
     const linkElement = container.querySelector('a')
     expect(linkElement?.getAttribute('aria-label')).toBe(defaultProps.a11yText)

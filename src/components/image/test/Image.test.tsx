@@ -20,12 +20,12 @@ describe('Image', () => {
     { src: 'https://picsum.photos/800/200?random=3', size:'640w' },
   ]
 
-  test('renders snapshot', () => {
+  test('Image renders snapshot', () => {
     const { container } = render(<Image {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly', () => {
+  test('Image renders correctly', () => {
     const { container } = render(<Image {...defaultProps} />)
     const imageElement = container.querySelector('img')
     expect(imageElement?.tagName).toBe('IMG')
@@ -35,7 +35,7 @@ describe('Image', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly with imgSet', () => {
+  test('Image renders correctly with imgSet', () => {
     const { container } = render(<Image {...defaultProps} srcSet={imageSet} />)
     const imageElement = container.querySelector('img')
     expect(imageElement?.tagName).toBe('IMG')
@@ -45,14 +45,14 @@ describe('Image', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly className', () => {
+  test('Image renders correctly className', () => {
     const { container } = render(<Image {...defaultProps} />)
     const imageElement = container.querySelector('img')
     expect(imageElement?.className).contain(defaultProps.className)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders correctly disabled', () => {
+  test('Image renders correctly disabled', () => {
     const { container } = render(<Image {...defaultProps} />)
     const imageElement = container.querySelector('img')
     expect(imageElement?.className).contain('disabled')

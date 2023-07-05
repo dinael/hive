@@ -12,12 +12,12 @@ describe('Fieldset', () => {
     className: 'className-test'
   }
 
-  test('renders snapshot', () => {
+  test('Fieldset renders snapshot', () => {
     const { container } = render(<Fieldset {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders fieldset with correctly', () => {
+  test('Fieldset renders fieldset with correctly', () => {
     const { container } = render(<Fieldset {...defaultProps} />)
     const fieldsetElement = container.querySelector('fieldset')
     expect(fieldsetElement?.className).toContain('fieldset-component')
@@ -25,7 +25,7 @@ describe('Fieldset', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('renders legend with correctly', () => {
+  test('Fieldset renders legend with correctly', () => {
     const { container } = render(<Fieldset {...defaultProps} />)
     const fieldsetElement = container.querySelector('fieldset > legend')
     expect(fieldsetElement?.tagName).toBe('LEGEND')
@@ -33,14 +33,14 @@ describe('Fieldset', () => {
   })
 
 
-  test('renders with a custom class', () => {
+  test('Fieldset renders with a custom class', () => {
     const { container } = render(<Fieldset {...defaultProps} />)
     const fieldsetElement = container.querySelector('fieldset')
     expect(fieldsetElement?.className).toContain(defaultProps.className)
     expect(container).toMatchSnapshot()
   })
 
-  test('renders legend hidden', () => {
+  test('Fieldset renders legend hidden', () => {
     const { container } = render(<Fieldset {...defaultProps} />)
     const fieldsetElement = container.querySelector('fieldset > legend')
     expect(fieldsetElement?.className).not.toContain('is-hidden')

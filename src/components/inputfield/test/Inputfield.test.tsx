@@ -24,7 +24,7 @@ describe('Inputfield', () => {
     className: 'className-test',
   }
 
-  test('renders snapshot', () => {
+  test('Inputfield renders snapshot', () => {
     const { container } = render(<Inputfield {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })

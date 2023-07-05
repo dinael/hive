@@ -10,11 +10,26 @@ describe('Label', ()=> {
     labelHidden: false,
     disabled: false,
     className: 'className-test',
+    onlyText: false,
   }
 
-  test('renders snapshot', () => {
+  test('Label renders snapshot', () => {
     const { container } = render(<Label {...defaultProps} />)
     expect(container).toMatchSnapshot()
   })
+
+  test('Label renders with the correct tag name: label', () => {
+    const { container } = render(<Label {...defaultProps} />)
+    const textElement = container.querySelector('label')
+    expect(textElement?.tagName).toBe('LABEL')
+    expect(container).toMatchSnapshot()
+  });
+
+  test('Label renders with the correct tag name: span', () => {
+    const { container } = render(<Label {...defaultProps} onlyText />)
+    const textElement = container.querySelector('span')
+    expect(textElement?.tagName).toBe('SPAN')
+    expect(container).toMatchSnapshot()
+  });
 
 })

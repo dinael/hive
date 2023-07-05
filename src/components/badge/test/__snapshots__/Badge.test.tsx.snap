@@ -1,5 +1,125 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Badge > Badge applies the spot class when prop is set to true 1`] = `
+<div>
+  <span
+    class="
+        badge-component
+        spot
+        className-test
+      "
+  >
+    <strong
+      aria-hidden="true"
+      class="badge-text sr-only"
+      role="presentation"
+    >
+      +9999
+    </strong>
+  </span>
+</div>
+`;
+
+exports[`Badge > Badge applies the spot class when prop is set to true check text a11y 1`] = `
+<div>
+  <span
+    class="
+        badge-component
+        spot
+        className-test
+      "
+  >
+    <strong
+      aria-hidden="true"
+      class="badge-text sr-only"
+      role="presentation"
+    >
+      +9999
+    </strong>
+  </span>
+</div>
+`;
+
+exports[`Badge > Badge renders link with custom class 1`] = `
+<div>
+  <span
+    class="
+        badge-component
+        spot
+        className-test
+      "
+  >
+    <strong
+      aria-hidden="true"
+      class="badge-text sr-only"
+      role="presentation"
+    >
+      +9999
+    </strong>
+  </span>
+</div>
+`;
+
+exports[`Badge > Badge renders snapshot 1`] = `
+<div>
+  <span
+    class="
+        badge-component
+        
+        className-test
+      "
+  >
+    <strong
+      aria-hidden="true"
+      class="badge-text "
+      role="presentation"
+    >
+      +9999
+    </strong>
+  </span>
+</div>
+`;
+
+exports[`Badge > Badge renders with correct text 1`] = `
+<div>
+  <span
+    class="
+        badge-component
+        
+        className-test
+      "
+  >
+    <strong
+      aria-hidden="true"
+      class="badge-text "
+      role="presentation"
+    >
+      +9999
+    </strong>
+  </span>
+</div>
+`;
+
+exports[`Badge > Badge shortens the text correctly 1`] = `
+<div>
+  <span
+    class="
+        badge-component
+        
+        className-test
+      "
+  >
+    <strong
+      aria-hidden="true"
+      class="badge-text "
+      role="presentation"
+    >
+      +99
+    </strong>
+  </span>
+</div>
+`;
+
 exports[`Badge > applies the spot class when prop is set to true 1`] = `
 <div>
   <span
