@@ -27,7 +27,6 @@ const config: StorybookConfig = {
     "aria-live-storybook-addon",
     "storybook-addon-designs",
     "@storybook/addon-styling",
-    "storybook-addon-performance",
     "@storybook/addon-coverage",
     "storybook_vitest_addon",
     {
