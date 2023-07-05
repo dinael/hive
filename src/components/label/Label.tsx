@@ -1,25 +1,30 @@
-import React, {FC} from 'react'
+import { FC } from 'react'
 import styles from './Label.module.scss'
 
 export type LabelProps = {
   text: string
   required?: boolean
-  isRequiredText: string
+  isRequiredText?: string
   labelHidden?: boolean
   disabled?: boolean
   className?: string
+  onlyText?: boolean
 }
 
 export const Label: FC<LabelProps> = ({
   text,
+  onlyText = false,
   required = false,
   isRequiredText,
   labelHidden = false,
   disabled,
   className,
 }: LabelProps) => {
+
+  const Tag = `${onlyText ? 'span' : 'label'}` as keyof JSX.IntrinsicElements
+
   return (
-    <span className={`
+    <Tag className={`
       ${styles['label-text-component']}
       ${styles[disabled ? 'is-disabled' : '']}
       ${styles[required ? 'is-required' : '']}
@@ -34,7 +39,7 @@ export const Label: FC<LabelProps> = ({
           *
         </em>
         : null}
-    </span>
+    </Tag>
   )
 }
 

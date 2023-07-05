@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react'
+import { FC, useState, ChangeEvent } from 'react'
+import { Label as LabelText } from '../label/Label'
 
 export type InputRadioProps = {
   value: string
@@ -26,7 +27,7 @@ export const InputRadio: FC<InputRadioProps> = ({
   const [isSelected, setTouched] = useState(false)
   const [hasError, setError] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value)
   }
 
@@ -39,7 +40,10 @@ export const InputRadio: FC<InputRadioProps> = ({
       htmlFor={id}
       className={`${className ? className : ''}`}
       {...props}>
-      <span>{label}</span>
+      <LabelText
+        onlyText
+        text={label}
+      />
       <input
         id={id}
         type="radio"

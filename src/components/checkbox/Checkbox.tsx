@@ -1,5 +1,6 @@
-import React, { FC, useState } from 'react'
+import { FC, useState, ChangeEvent } from 'react'
 import styles from './Checkbox.module.scss'
+import { Label as LabelText } from '../label/Label'
 import { Icon } from '../icon/Icon'
 
 export type CheckboxProps = {
@@ -31,7 +32,7 @@ export const Checkbox: FC<CheckboxProps> = ({
   const [isChecked, setIsChecked] = useState(false)
   const [hasError, setHasError] = useState(false)
 
-  const handleChecked = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChecked = (e: ChangeEvent<HTMLInputElement>) => {
     setIsChecked(e.target.checked)
     onChecked && onChecked(e.target.checked)
   }
@@ -63,7 +64,10 @@ export const Checkbox: FC<CheckboxProps> = ({
           required={required}
           aria-aria-describedby={`validation-message-${id}`}
         />
-      <span>{label}</span>
+      <LabelText
+        onlyText
+        text={label}
+      />
       {error ?
         <span
           className={styles['validation-message']}

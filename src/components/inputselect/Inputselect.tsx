@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styles from './Inputselect.module.scss'
 import { Icon } from '../icon/Icon'
 import { ValidationMessage } from '../validationmessage/ValidationMessage'
-import Label from '../Label/Label'
+import { Label as LabelText } from '../label/Label'
 
 export type Option = {
   id?: string
@@ -81,7 +81,8 @@ export const Inputselect: FC<InputselectProps> = ({
       `}
       htmlFor={id}
       {...props}>
-      <Label
+      <LabelText
+        onlyText
         className={`${styles['inputselect-label']}`}
         text={label}
         required={required}

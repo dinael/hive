@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Fieldset.module.scss'
-import Label from '../Label/Label'
+import { Label as LabelText } from '../label/Label'
 
 // /**
 // Uso de fieldset y legend
@@ -42,13 +42,13 @@ export const Fieldset: FC<FieldsetProps> = ({
       {...props }>
       {legend ?
         <legend>
-          <Label
+          <LabelText
+            onlyText
             className={`${styles['inputfiled-label']}`}
             text={`${legend}`}
             required={required}
             isRequiredText={`${isRequiredText}`}
-            labelHidden={legendHidden}>
-          </Label>
+            labelHidden={legendHidden}/>
         </legend>
         : null}
         {children}
