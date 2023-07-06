@@ -6,7 +6,7 @@ export default {
   component: Image,
   parameters: {
     vitest: {
-      testFile: "Button.test.tsx",
+      testFile: "Image.test.tsx",
       testResults: vitestResults
     }
   },

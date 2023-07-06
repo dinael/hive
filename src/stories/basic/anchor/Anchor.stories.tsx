@@ -12,14 +12,18 @@ export default {
   },
   tags: ['autodocs'],
   argTypes: {
-    text: { name: 'Text', control: 'text' },
-    className: { name: 'className', control: 'text' },
+    text: {
+      name: 'Text',
+      control: 'text'
+    },
+    className: {
+      name: 'className',
+      control: 'text'
+   },
   }
 }
 
-export const Default = (args: AnchorProps) => (
-  <Anchor {...args}></Anchor>
-)
+export const Default = (args: AnchorProps) => <Anchor {...args}></Anchor>
 
 Default.args = {
   text: 'This is a Anchor',
@@ -31,4 +35,3 @@ Default.args = {
   a11yText: 'This text is accessible',
   className: ''
 }
-

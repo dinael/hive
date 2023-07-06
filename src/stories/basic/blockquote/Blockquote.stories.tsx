@@ -12,9 +12,18 @@ export default {
   },
   tags: ['autodocs'],
   argTypes: {
-    title: { name: 'Title', control: 'text' },
-    children: { name: 'Quote', control: 'text' },
-    footer: { name: 'Footer', control: 'text' },
+    title: {
+      name: 'Title',
+      control: 'text'
+    },
+    children: {
+      name: 'Quote',
+      control: 'text'
+    },
+    footer: {
+      name: 'Footer',
+      control: 'text'
+    },
     variant: {
       name: 'Variant',
       control: { type: 'radio' },
@@ -25,17 +34,11 @@ export default {
   }
 }
 
-export const Default = (args: BlockquoteProps) => ([
-  <Blockquote {...args}></Blockquote>
-])
+export const Default = (args: BlockquoteProps) => <Blockquote {...args}></Blockquote>
 
-export const Flat = (args: BlockquoteProps) => ([
-  <Blockquote {...args}></Blockquote>
-])
+export const Flat = (args: BlockquoteProps) => <Blockquote {...args}></Blockquote>
 
-export const Fancy = (args: BlockquoteProps) => ([
-  <Blockquote {...args}></Blockquote>
-])
+export const Fancy = (args: BlockquoteProps) => <Blockquote {...args}></Blockquote>
 
 Default.args = {
   children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae illo eveniet ab culpa. Labore tempora quisquam magni. Consequatur, perferendis, laudantium quod ipsa nam delectus numquam dolore officiis nemo et vitae!',

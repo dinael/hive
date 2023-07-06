@@ -12,20 +12,28 @@ export default {
   },
   tags: ['autodocs'],
   argTypes: {
-    text: { name: 'Text', control: 'text' },
-    length: { name: 'Length', control: 'number' },
-    spot: { name: 'Spot', control: 'boolean' },
-    className: { name: 'className', control: 'text' },
+    text: {
+      name: 'Text',
+      control: 'text'
+    },
+    length: {
+      name: 'Length',
+      control: 'number'
+    },
+    spot: {
+      name: 'Spot',
+      control: 'boolean'
+    },
+    className: {
+      name: 'className',
+      control: 'text'
+    },
   }
 }
 
-export const Default = (args: BadgeProps) => ([
-  <Badge {...args} />
-])
+export const Default = (args: BadgeProps) => <Badge {...args} />
 
-export const Spot = (args: BadgeProps) => ([
-  <Badge {...args} />
-])
+export const Spot = (args: BadgeProps) =>  <Badge {...args} />
 
 Default.args = {
   text: '+9999',

@@ -6,7 +6,7 @@ export default {
   component: Checkbox,
   parameters: {
     vitest: {
-      testFile: "Button.test.tsx",
+      testFile: "Checkbox.test.tsx",
       testResults: vitestResults
     },
     docs: {
