@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react'
+import { FC, MouseEventHandler } from 'react'
 import styles from './Button.module.scss'
 import Icon from '../icon/Icon'
 

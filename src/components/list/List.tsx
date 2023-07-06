@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { v4 as uuid } from 'uuid'
 import styles from './List.module.scss'
 
@@ -30,6 +30,7 @@ export const List: FC<ListProps> = ({
 
   // TODO: un parametro para pasar los custom bullet
   // TODO: Listas anidadas
+  // TODO: usar uuid para las key por defecto
 
   const Tag = `${ordered ? 'ol' : 'ul' }`
 

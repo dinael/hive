@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Paragraph.module.scss'
 
 export type ParagraphProps = {
@@ -6,11 +6,12 @@ export type ParagraphProps = {
   ellipsis?: boolean
   a11yLength?: boolean
   flat?: boolean
+  className: string
   /**
    *  **\*Experimental feature**
    */
   column?: number | null
-  className: string
+
 }
 
 export const Paragraph: FC<ParagraphProps> = ({

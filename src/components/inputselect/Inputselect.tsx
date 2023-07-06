@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Inputselect.module.scss'
 import { Icon } from '../icon/Icon'
 import { ValidationMessage } from '../validationmessage/ValidationMessage'

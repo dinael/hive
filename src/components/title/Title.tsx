@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Title.module.scss'
-
 
 export type TitleProps = {
   level: 0 | 1 | 2 | 3 | 4 | 5 | 6
@@ -11,6 +10,7 @@ export type TitleProps = {
   a11yLength?: boolean
   className?: string
 }
+
 export const Title: FC<TitleProps> = ({
   level,
   size = 'm',
