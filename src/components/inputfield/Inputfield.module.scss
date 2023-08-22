@@ -142,19 +142,19 @@ $input-field-error-message-padding-inline: 0.25em;
     &:required {}
 
     &:invalid {
-      --input-border-color: var(--color-validation-error) !important;
-      --color-focus: var(--color-validation-error) !important;
-      --input-background: #{$-input-field-invalid-background} !important;
+      // --input-border-color: var(--color-validation-error) !important;
+      // --color-focus: var(--color-validation-error) !important;
+      // --input-background: #{$-input-field-invalid-background} !important;
 
-      &:not(:placeholder-shown) {
-        --input-placeholder-shown-color: var(--color-validation-error);
-        --input-placeholder-shown-border-color: var(--color-validation-error);
-        --input-placeholder-shown-background: #{$-input-field-invalid-background} !important;
-      }
+      // &:not(:placeholder-shown) {
+      //   --input-placeholder-shown-color: var(--color-validation-error);
+      //   --input-placeholder-shown-border-color: var(--color-validation-error);
+      //   --input-placeholder-shown-background: #{$-input-field-invalid-background} !important;
+      // }
 
-      @include form.placeholder {
-        --input-placeholder-color: var(--color-validation-error);
-      }
+      // @include form.placeholder {
+      //   --input-placeholder-color: var(--color-validation-error);
+      // }
     }
 
     //Valid

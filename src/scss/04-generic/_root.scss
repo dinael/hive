@@ -24,6 +24,7 @@ $-font-sizes: fonts.$font-sizes;
 	--color-text-primary: #{swatch.brand(text)};
 	--color-text-secondary: #{swatch.brand(text, 'secondary')};
 	--color-background: #{swatch.brand(background)};
+	--color-background-secondary: #{swatch.brand(background, 'secondary')};
 	// Brand swatches
 	--color-basic-positive: #{swatch.brand(positive)};
 	--color-basic-negative: #{swatch.brand(negative)};

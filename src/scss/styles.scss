@@ -1,39 +1,23 @@
-body {
-    //background: yellowgreen;
-}
+// ITCSS architecture
 
-#storybook-docs {
-  details {
-    --details-summary-icon-open: "🔽";
-    --details-summary-icon: "▶️";
+// ## Tools
+// Don't import here
+// ## modules
+// Don't import here
+// ## Generic
+@forward '04-generic/root';
+@forward '04-generic/reset';
+@forward '04-generic/shame';
+@forward '04-generic/scroll';
+@forward '04-generic/selection';
+@forward '04-generic/keyframes';
 
-    margin-block-end: 2rem;
+// ## Elements
+@forward '05-elements/00-elements';
 
-    summary {
-      padding-block: 0.5rem 1rem;
-      font-weight: bold;
+// ## Objects
+@forward '06-objects/grid-layout';
 
-      &[open] {
-        &>summary {
-          list-style-type: var(--details-summary-icon-open, none);
-        }
-      }
-
-      &>summary {
-        list-style-type: var(--details-summary-icon, none);
-      }
-
-      &::marker {
-        position: absolute;
-        padding-right: 1rem;
-      }
-    }
-  }
-}
-
-.docblock-icongallery {
-  display: block;
-  padding: 1rem;
-  border: 1px solid hsla(203, 50%, 30%, 0.15);
-}
+// ## Utilities
+@forward '08-utilities/utilities';
 

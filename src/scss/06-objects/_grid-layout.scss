@@ -33,152 +33,154 @@ $-gap-flow-column: global.$gap-flow-column !default;
 		}
 	}
 
+  [class*="grid\@system"] {
+    display: grid;
+    grid-auto-flow: var(--grid-flow, row);
+    grid-template-rows: var(--grid-template-row, repeat(auto-fill, 1fr));
+    grid-template-columns: repeat(var(--grid-system-columns, #{$-grid-columns}), 1fr);
+    column-gap: var(--grid-gap-column, 0);
+    row-gap: var(--grid-gap-row, 0);
+
+    @include breakpoint.screen(mobile) {
+      .col{
+        grid-column-start: 1;
+        grid-column-end: -1;
+      }
+
+    }
+
+    &.gap {
+      --grid-gap-row: #{$-gap-flow-row};
+      --grid-gap-column: #{$-gap-flow-column};
+    }
+
+    // TODO: darle una vuelta a esto
+    .col\:started {
+      grid-column-start: -1;
+    }
+
+    .col\:ended {
+      grid-column-end: -1;
+    }
+
+    .col\:wide {
+      grid-column-end: span $-grid-columns;
+    }
+
+    @for $i from 1 through $-grid-columns {
+      .grid-start\:#{$i} {
+        grid-column-start: #{$i};
+      }
+    }
+
+    @for $i from 1+1 through $-grid-columns {
+      .grid-end\:#{$i} {
+        grid-column-end: #{$i + 1};
+      }
+    }
+
+    // $$ Main grid system
+    @for $i from 1 through $-grid-columns {
+      .grid\@default\:#{$i} {
+        grid-column-end: span #{$i};
+      }
+    }
+
+    // ## Responsive
+    // $$ QHD
+    @include breakpoint.screen(QHD) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@qhd\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ HD
+    @include breakpoint.screen(HD) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@hd\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ Desktop
+    @include breakpoint.screen(desktop) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@desktop\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ standard
+    @include breakpoint.screen(standard) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@standard\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ laptop
+    @include breakpoint.screen(laptop) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@laptop\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ Tablet
+    @include breakpoint.screen(tablet-landscape) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@tablet-landscape\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ Tablet portrait
+    @include breakpoint.screen(tablet-portrait) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@tablet\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ Mobile landscape
+    @include breakpoint.screen(mobile-landscape) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@mobile-landscape\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+
+    // $$ Mobile portrait
+    @include breakpoint.screen(mobile) {
+      @for $i from 1 through $-grid-columns {
+        .grid\@mobile\:#{$i} {
+          grid-column-end: span #{$i};
+        }
+      }
+    }
+  }
+
 	.grid {
 		display: var(--grid-display, grid);
 
-		&\@system {
-			display: grid;
-			grid-auto-flow: var(--grid-flow, row);
-			grid-template-rows: var(--grid-template-row, repeat(auto-fill, 1fr));
-			grid-template-columns: var(--grid-template-column, repeat(#{$-grid-columns}, 1fr));
-			column-gap: var(--grid-gap-column, 0);
-			row-gap: var(--grid-gap-row, 0);
-
-			& > * {
-				grid-column-start: 1;
-				grid-column-end: -1;
-			}
-
-			@include breakpoint.screen(mobile-portrait) {
-				& > * {
-					grid-column-start: auto;
-					grid-column-end: auto;
-				}
-
-			}
-
-			&.column {
-				grid-auto-flow: column;
-			}
-
-			&.gap {
-				--grid-gap-row: #{$-gap-flow-row};
-				--grid-gap-column: #{$-gap-flow-column};
-			}
-			// TODO: darle una vuelta a esto
-			.col\:started {
-				grid-column-start: -1;
-			}
-
-			.col\:ended {
-				grid-column-end: -1;
-			}
-
-			.col\:wide {
-				grid-column-end: span $-grid-columns;
-			}
-
-			@for $i from 1 through $-grid-columns {
-				.grid-start\:#{$i} {
-					grid-column-start: #{$i};
-				}
-			}
-
-			@for $i from 1 + 1 through $-grid-columns {
-				.grid-end\:#{$i} {
-					grid-column-end: #{$i + 1};
-				}
-			}
-
-			// $$ Main grid system
-			@for $i from 1 through $-grid-columns {
-				.grid\@default\:#{$i} {
-					grid-column-end: span #{$i};
-				}
-			}
-
-			// ## Responsive
-			// $$ QHD
-			@include breakpoint.screen(QHD) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@qhd\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ HD
-			@include breakpoint.screen(HD) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@hd\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ Desktop
-			@include breakpoint.screen(desktop) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@desktop\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ standard
-			@include breakpoint.screen(standard) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@standard\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ laptop
-			@include breakpoint.screen(laptop) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@laptop\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ Tablet
-			@include breakpoint.screen(tablet-landscape) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@tablet-landscape\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ Tablet portrait
-			@include breakpoint.screen(tablet-portrait) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@tablet\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ Mobile landscape
-			@include breakpoint.screen(mobile-landscape) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@mobile-landscape\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-
-			// $$ Mobile portrait
-			@include breakpoint.screen(mobile-portrait) {
-				@for $i from 1 through $-grid-columns {
-					.grid\@mobile\:#{$i} {
-						grid-column-end: span #{$i};
-					}
-				}
-			}
-		}
+    // Device base
+    &\@system {
+      &\:tablet {
+        --grid-system-columns: 8;
+      }
+      &\:mobile {
+        --grid-system-columns: 4;
+      }
+    }
 	}
 
 	// ## Responsive utilities
