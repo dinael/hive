@@ -56,7 +56,7 @@ export const Button: FC<ButtonProps> = ({
           ${styles[size]}
           ${styles[kind]}
           ${styles[iconPosition]}
-          ${className ? className : ''}
+          ${className && className}
         `}
         onClick={handleClick}
         {...props}>
@@ -86,7 +86,7 @@ export const Button: FC<ButtonProps> = ({
         ${styles[kind]}
         ${styles[iconPosition]}
         ${disabled ? styles['disabled'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       onClick={handleClick}
       {...props}>

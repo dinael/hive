@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ChangeEvent } from 'react'
 import styles from './Inputselect.module.scss'
 import { Icon } from '../icon/Icon'
 import { ValidationMessage } from '../validationmessage/ValidationMessage'
@@ -18,6 +18,8 @@ export type InputselectProps = {
   labelHidden?: boolean
   id?: string
   name?: string
+  value: string
+  onChange: (event: ChangeEvent<HTMLSelectElement>) => void
   options: Option[] | { [groupName: string]: Option[] }
   error?: boolean
   errorText?: string
@@ -32,6 +34,8 @@ export const Inputselect: FC<InputselectProps> = ({
   labelHidden = false,
   id,
   name,
+  value,
+  onChange,
   options,
   error,
   errorText,
@@ -76,8 +80,8 @@ export const Inputselect: FC<InputselectProps> = ({
     <label
       className={`
         ${styles['inputselect-component']}
-        ${error ? styles['has-error'] : ''}
-        ${className ? className : ''}
+        ${error ? 'has-error' : ''}
+        ${className && className}
       `}
       htmlFor={id}
       {...props}>
@@ -91,6 +95,8 @@ export const Inputselect: FC<InputselectProps> = ({
       <select
         name={name}
         id={id}
+        value={value}
+        onChange={onChange}
         required={required}
         disabled={disabled}
         aria-describedby={`validation-message-${id}`}>

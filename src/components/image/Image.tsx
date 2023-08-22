@@ -33,7 +33,7 @@ export const Image: FC<ImageProps> = ({
           ${disabled === true ? styles['disabled'] : ''}
           ${ratio && styles[ratio]}
           ${fit && styles[fit]}
-          ${className ? className : ''}
+          ${className && className}
         `}
         src={src}
         alt={alt}

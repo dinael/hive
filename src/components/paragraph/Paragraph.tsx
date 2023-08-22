@@ -30,7 +30,7 @@ export const Paragraph: FC<ParagraphProps> = ({
         ${ellipsis ? styles['ellipsis'] : ''}
         ${a11yLength ? styles['a11y-length'] : ''}
         ${flat ? styles['flat'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       style={column && column > 1 ? { '--paragraph-column': `${column}` } : undefined}
       {...props}>

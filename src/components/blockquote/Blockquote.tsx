@@ -47,7 +47,7 @@ export const Blockquote: FC<BlockquoteProps> = ({
       className={
         `${styles['blockquote-component']}
           ${styles[variant]}
-          ${className ? className : ''}`
+          ${className && className}`
       }
       {...props}>
       {title ?

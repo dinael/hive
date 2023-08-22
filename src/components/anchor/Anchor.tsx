@@ -33,7 +33,7 @@ export const Anchor: FC<AnchorProps> = ({
         ${disabled ? styles['disabled'] : ''}
         ${safeArea ? styles['safe-area'] : ''}
         ${disabled ? styles['disabled'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       href={href}
       target={target}

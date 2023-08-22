@@ -49,7 +49,7 @@ export const Checkbox: FC<CheckboxProps> = ({
         className={`
           ${styles['checkbox-component']}
           ${disabled ? styles['disabled'] : ''}
-          ${className ? className : ''}
+          ${className && className}
         `}
         {...props}>
         <input

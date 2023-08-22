@@ -70,7 +70,7 @@ export const Textarea: FC<TextareaProps> = ({
         ${styles['textarea-component']}
         ${hasError ? styles['has-error'] : ''}
         ${isFocused ? styles['is-focus'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       {...props}>
       <LabelText

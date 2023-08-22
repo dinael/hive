@@ -27,7 +27,7 @@ export const ValidationMessage: FC<ValidationMessageProps> = ({
       className={`
         ${styles['validation-message']}
         ${styles[kind]}
-        ${className ? className : ''}}
+        ${className && className}}
       `}
       role={role ? role : ''}
       {...props}>

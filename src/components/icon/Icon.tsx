@@ -26,8 +26,8 @@ export const Icon: FC<IconProps> = ({
       aria-hidden="true"
       className={`
         ${styles['icon-component']}
-        ${styles[size]}
-        ${className ? className : ''}
+        ${styles[size ? size : 'm']}
+        ${className && className}
       `}
       style={color ? { '--icon-color': `${color}` } : undefined}
       {...props}>

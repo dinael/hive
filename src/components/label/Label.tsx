@@ -26,11 +26,10 @@ export const Label: FC<LabelProps> = ({
   return (
     <Tag className={`
       ${styles['label-text-component']}
-      ${styles[disabled ? 'is-disabled' : '']}
-      ${styles[required ? 'is-required' : '']}
+      ${disabled ? 'is-disabled' : ''}
+      ${required ? 'is-required' : ''}
       ${labelHidden ? 'sr-only' : ''}
-      ${className ? className : ''}
-      `}>
+      ${className ? className : ''}`}>
       {text + ':'}
       {required ?
         <em
