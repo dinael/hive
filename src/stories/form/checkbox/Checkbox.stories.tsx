@@ -1,13 +1,11 @@
 import {Checkbox, CheckboxProps} from "../../../components/checkbox/Checkbox"
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Form/Checkbox',
   component: Checkbox,
   parameters: {
     vitest: {
-      testFile: "Checkbox.test.tsx",
-      testResults: vitestResults
+      testFile: "Checkbox.test.tsx"
     },
     docs: {
       description: {

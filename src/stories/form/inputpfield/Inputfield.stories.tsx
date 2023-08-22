@@ -1,5 +1,4 @@
 import { Inputfield, InputfieldProps } from '../../../components/inputfield/Inputfield'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Form/InputField',
@@ -7,8 +6,7 @@ export default {
   tags: ['autodocs'],
   parameters: {
     vitest: {
-      testFile: "Inputfield.test.tsx",
-      testResults: vitestResults
+      testFile: "Inputfield.test.tsx"
     },
     docs: {
       description: {

@@ -1,5 +1,4 @@
 import { Fieldset, FieldsetProps } from '../../../components/fieldset/Fieldset'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Form/Fieldset',
@@ -7,8 +6,7 @@ export default {
   tags: ['autodocs'],
   parameters: {
     vitest: {
-      testFile: "Fieldset.test.tsx",
-      testResults: vitestResults
+      testFile: "Fieldset.test.tsx"
     },
     docs: {
       description: {

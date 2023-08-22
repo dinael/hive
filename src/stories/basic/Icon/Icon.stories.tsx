@@ -1,13 +1,11 @@
 import { Icon, IconProps } from '../../../components/icon/Icon'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Icon',
   component: Icon,
   parameters: {
     vitest: {
-      testFile: "Icon.test.tsx",
-      testResults: vitestResults
+      testFile: "Icon.test.tsx"
     }
   },
   tags: ['autodocs'],

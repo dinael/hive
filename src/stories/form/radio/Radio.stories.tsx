@@ -1,13 +1,11 @@
 import { InputRadio, InputRadioProps } from '../../../components/radio/Radio'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Form/Radio',
   component: InputRadio,
   parameters: {
     vitest: {
-      testFile: "Radio.test.tsx",
-      testResults: vitestResults
+      testFile: "Radio.test.tsx"
     },
     docs: {
       description: {

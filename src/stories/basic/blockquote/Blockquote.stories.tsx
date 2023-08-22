@@ -1,13 +1,11 @@
 import { Blockquote, BlockquoteProps } from '../../../components/blockquote/Blockquote'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Blockquote',
   component: Blockquote,
   parameters: {
     vitest: {
-      testFile: "Blockquote.test.tsx",
-      testResults: vitestResults
+      testFile: "Blockquote.test.tsx"
     }
   },
   tags: ['autodocs'],

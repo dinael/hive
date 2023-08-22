@@ -1,13 +1,11 @@
 import { Badge, BadgeProps } from '../../../components/badge/Badge'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Badge',
   component: Badge,
   parameters: {
     vitest: {
-      testFile: "Badge.test.tsx",
-      testResults: vitestResults
+      testFile: "Badge.test.tsx"
     }
   },
   tags: ['autodocs'],

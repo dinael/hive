@@ -1,13 +1,12 @@
 import { Button, ButtonProps } from '../../../components/button/Button'
-import vitestResults from '../../../tests/unit/coverage.json';
+
 
 export default {
   title: 'Components/Basic/Button',
   component: Button,
   parameters: {
     vitest: {
-      testFile: "Button.test.tsx",
-      testResults: vitestResults
+      testFile: "Button.test.tsx"
     },
     docs: {
       description: {

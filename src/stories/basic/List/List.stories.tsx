@@ -1,13 +1,11 @@
 import { List, ListProps } from '../../../components/list/List'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/List',
   component: List,
   parameters: {
     vitest: {
-      testFile: "List.test.tsx",
-      testResults: vitestResults
+      testFile: "List.test.tsx"
     }
   },
   tags: ['autodocs'],

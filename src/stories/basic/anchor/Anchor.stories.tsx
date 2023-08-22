@@ -1,13 +1,11 @@
 import { Anchor, AnchorProps } from '../../../components/anchor/Anchor'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Anchor',
   component: Anchor,
   parameters: {
     vitest: {
-      testFile: "Anchor.test.tsx",
-      testResults: vitestResults
+      testFile: "Anchor.test.tsx"
     }
   },
   tags: ['autodocs'],

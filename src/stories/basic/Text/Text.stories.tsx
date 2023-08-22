@@ -1,5 +1,4 @@
 import { Text, TextProps } from '../../../components/text/Text'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Text',
@@ -7,8 +6,7 @@ export default {
   tags: ['autodocs'],
   parameters: {
     vitest: {
-      testFile: "Text.test.tsx",
-      testResults: vitestResults
+      testFile: "Text.test.tsx"
     }
   },
   argTypes: {

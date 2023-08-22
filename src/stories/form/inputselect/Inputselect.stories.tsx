@@ -1,5 +1,4 @@
 import { Inputselect, InputselectProps} from '../../../components/inputselect/Inputselect'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Form/Inputselect',
@@ -7,8 +6,7 @@ export default {
   tags: ['autodocs'],
   parameters: {
     vitest: {
-      testFile: "Inputselect.test.tsx",
-      testResults: vitestResults
+      testFile: "Inputselect.test.tsx"
     },
     docs: {
       description: {
