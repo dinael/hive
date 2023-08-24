@@ -6,6 +6,7 @@ exports[`Inputfield > Inputfield renders snapshot 1`] = `
     class="
         inputfiled-component
         
+        className-test
       "
     for="id-test"
   >
@@ -15,41 +16,7 @@ exports[`Inputfield > Inputfield renders snapshot 1`] = `
       
       
       
-      inputfiled-label
-      "
-    >
-      Label:
-    </span>
-    <input
-      aria-describedby="validation-message-id-test"
-      class=""
-      id="id-test"
-      name="name"
-      placeholder="Placeholder"
-      type="text"
-      value=""
-    />
-  </label>
-</div>
-`;
-
-exports[`Inputfield > renders snapshot 1`] = `
-<div>
-  <label
-    class="
-        inputfiled-component
-        
-      "
-    for="id-test"
-  >
-    <span
-      class="
-      label-text-component
-      
-      
-      
-      inputfiled-label
-      "
+      inputfiled-label"
     >
       Label:
     </span>

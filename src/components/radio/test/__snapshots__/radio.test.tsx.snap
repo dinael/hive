@@ -1,51 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`InputRadio  > InputRadio renders snapshot 1`] = `
-<div>
-  <label
-    class=""
-    for="radio-test"
-  >
-    <span
-      class="
-      label-text-component
-      
-      
-      
-      
-      "
-    >
-      Example label::
-    </span>
-    <input
-      aria-describedby="validation-message-radio-test"
-      id="radio-test"
-      name="inputRadio"
-      type="radio"
-      value="example-value"
-    />
-    <span
-      aria-atomic="true"
-      aria-live="assertive"
-      id="validation-message-radio-test"
-      role="alert"
-    >
-      Error text
-    </span>
-  </label>
-</div>
-`;
-
 exports[`InputRadio > InputRadio renders snapshot 1`] = `
 <div>
   <label
-    class=""
+    class="undefined"
     for="radio-test"
   >
     <span
       class="
       label-text-component
-      
       
       
       

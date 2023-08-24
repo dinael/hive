@@ -11,7 +11,8 @@ exports[`Badge > Badge applies the spot class when prop is set to true 1`] = `
   >
     <strong
       aria-hidden="true"
-      class="badge-text sr-only"
+      class="badge-text
+            sr-only"
       role="presentation"
     >
       +9999
@@ -31,7 +32,8 @@ exports[`Badge > Badge applies the spot class when prop is set to true check tex
   >
     <strong
       aria-hidden="true"
-      class="badge-text sr-only"
+      class="badge-text
+            sr-only"
       role="presentation"
     >
       +9999
@@ -51,7 +53,8 @@ exports[`Badge > Badge renders link with custom class 1`] = `
   >
     <strong
       aria-hidden="true"
-      class="badge-text sr-only"
+      class="badge-text
+            sr-only"
       role="presentation"
     >
       +9999
@@ -71,7 +74,8 @@ exports[`Badge > Badge renders snapshot 1`] = `
   >
     <strong
       aria-hidden="true"
-      class="badge-text "
+      class="badge-text
+            "
       role="presentation"
     >
       +9999
@@ -91,7 +95,8 @@ exports[`Badge > Badge renders with correct text 1`] = `
   >
     <strong
       aria-hidden="true"
-      class="badge-text "
+      class="badge-text
+            "
       role="presentation"
     >
       +9999
@@ -111,127 +116,8 @@ exports[`Badge > Badge shortens the text correctly 1`] = `
   >
     <strong
       aria-hidden="true"
-      class="badge-text "
-      role="presentation"
-    >
-      +99
-    </strong>
-  </span>
-</div>
-`;
-
-exports[`Badge > applies the spot class when prop is set to true 1`] = `
-<div>
-  <span
-    class="
-        badge-component
-        spot
-        className-test
-      "
-  >
-    <strong
-      aria-hidden="true"
-      class="badge-text sr-only"
-      role="presentation"
-    >
-      +9999
-    </strong>
-  </span>
-</div>
-`;
-
-exports[`Badge > applies the spot class when prop is set to true check text a11y 1`] = `
-<div>
-  <span
-    class="
-        badge-component
-        spot
-        className-test
-      "
-  >
-    <strong
-      aria-hidden="true"
-      class="badge-text sr-only"
-      role="presentation"
-    >
-      +9999
-    </strong>
-  </span>
-</div>
-`;
-
-exports[`Badge > renders link with custom class 1`] = `
-<div>
-  <span
-    class="
-        badge-component
-        spot
-        className-test
-      "
-  >
-    <strong
-      aria-hidden="true"
-      class="badge-text sr-only"
-      role="presentation"
-    >
-      +9999
-    </strong>
-  </span>
-</div>
-`;
-
-exports[`Badge > renders snapshot 1`] = `
-<div>
-  <span
-    class="
-        badge-component
-        
-        className-test
-      "
-  >
-    <strong
-      aria-hidden="true"
-      class="badge-text "
-      role="presentation"
-    >
-      +9999
-    </strong>
-  </span>
-</div>
-`;
-
-exports[`Badge > renders with correct text 1`] = `
-<div>
-  <span
-    class="
-        badge-component
-        
-        className-test
-      "
-  >
-    <strong
-      aria-hidden="true"
-      class="badge-text "
-      role="presentation"
-    >
-      +9999
-    </strong>
-  </span>
-</div>
-`;
-
-exports[`Badge > shortens the text correctly 1`] = `
-<div>
-  <span
-    class="
-        badge-component
-        
-        className-test
-      "
-  >
-    <strong
-      aria-hidden="true"
-      class="badge-text "
+      class="badge-text
+            "
       role="presentation"
     >
       +99
