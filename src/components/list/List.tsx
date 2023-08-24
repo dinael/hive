@@ -17,7 +17,7 @@ export type ListProps = {
   nameList?: string
   className?: string
   disabled?: boolean
-
+  unstyled?: boolean
   bullet?: 'none' | 'auto' | 'disc' | 'circle' | 'square' | 'decimal' | 'decimal-leading-zero' | 'lower-roman' | 'upper-roman' | 'lower-greek' | 'lower-latin' | 'upper-latin' | 'armenian' | 'georgian' | 'lower-alpha' | 'upper-alpha'
 }
 
@@ -27,7 +27,8 @@ export const List: FC<ListProps> = ({
   nameList,
   disabled = false,
   className = '',
-  bullet,
+  bullet = 'none',
+  unstyled = false,
   ...props
 }) => {
   const Tag: FC<{ children: React.ReactNode }> = ({
@@ -35,10 +36,9 @@ export const List: FC<ListProps> = ({
   }) => {
     const tagProps = {
       className: `
-        ${styles['list-component']}
+        ${styles[!unstyled ? 'list-component' : 'list-unstyled']}
         ${styles[bullet ? bullet : 'none']}
-        ${styles[bullet === 'none' ? 'flat' : '']}
-        ${className && className}`,
+        ${className ? className : ''}`,
       role: "list",
       "aria-label": nameList ? nameList : ''
     }

@@ -9,7 +9,7 @@
     list-style-image: var(--list-style-image, none); //url("star.gif")
 
     &::marker {
-        color: var(--list-style-color, var(--color-primary));
+        color: var(--list-style-color);
     }
 }
 
@@ -40,6 +40,4 @@
             padding-inline: var(--dd-padding-inline, 0 0.75em);
         }
     }
-
-
 }
