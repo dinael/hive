@@ -9,12 +9,13 @@ import { v4 as uuid } from 'uuid'
 
 import styles from './ListFiltered.module.scss'
 
-import ListFilter from './ListFilter'
+import ListFilters from './ListFilters'
 import ListFilteredNotFound from './listFilteredNotFund'
+import List from '../list/List'
 
 export type ListFilteredItem = {
   id?: string | number
-  title: string
+  text: string
 }
 
 export type ListFilteredProps = {
@@ -23,6 +24,9 @@ export type ListFilteredProps = {
   direction?: 'vertical' | 'horizontal'
   className?: string
   children?: ReactNode
+  OnlySearch?: boolean
+  OnlySort?: boolean
+  bulletList?: 'none' | 'auto' | 'disc' | 'circle' | 'square' | 'decimal' | 'decimal-leading-zero' | 'lower-roman' | 'upper-roman' | 'lower-greek' | 'lower-latin' | 'upper-latin' | 'armenian' | 'georgian' | 'lower-alpha' | 'upper-alpha'
 }
 
 export const ListFiltered: FC<ListFilteredProps> = ({
@@ -30,6 +34,9 @@ export const ListFiltered: FC<ListFilteredProps> = ({
   nameList,
   direction ='vertical',
   className = '',
+  OnlySearch = false,
+  OnlySort = false,
+  bulletList,
   children,
   ...props
 }) => {
@@ -44,14 +51,14 @@ export const ListFiltered: FC<ListFilteredProps> = ({
 
   const filteredItems = items.filter(
     (item) =>
-      item.title.toLowerCase().includes(searchQuery.toLowerCase())
+      item.text.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   const sortedItems = [...filteredItems].sort((a, b) => {
     if (sortOption === 'alphabetically_asc') {
-      return a.title.localeCompare(b.title)
+      return a.text.localeCompare(b.text)
     } else if (sortOption === 'alphabetically_desc') {
-      return b.title.localeCompare(a.title)
+      return b.text.localeCompare(a.text)
     }
     return 0
   })
@@ -81,8 +88,9 @@ export const ListFiltered: FC<ListFilteredProps> = ({
         ${styles['list-filtered-component']}
         ${direction === 'horizontal' ? styles.horizontal : ''}
         ${className && className}
-      `}>
-      <ListFilter
+      `}
+      {...props}>
+      <ListFilters
         className={`${styles['list-filter']}`}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -91,33 +99,23 @@ export const ListFiltered: FC<ListFilteredProps> = ({
         optionsSelect={optionsSelect}
         inputLabel='Search'
         selectLabel='Order by'
+        title={nameList}
+        onlySearch={OnlySearch}
+        onlySort={OnlySort}
       />
       {sortedItems.length > 0
-        ? <ol
-            className={`
-              ${styles['list']}
-            `}
-            role='list'
-            aria-live='polite'
-            aria-label={nameList ? nameList : `list-${uuid()}`}>
-            {sortedItems.map((item) => (
-              <li
-                className={`${styles['list-item']}`}
-                key={item.id ? item.id : uuid()}
-                role="listitem">
-              {children
-                ? children
-                  : <div className={`${styles['list-item-default']}`}>
-                      {item.title} - {item.id}
-                    </div>
-              }
-              </li>
-            ))}
-          </ol>
+        ? <List
+          items={sortedItems}
+          aria-live='polite'
+          ordered
+          nameList={nameList ? nameList : `list-${uuid()}`}
+          bullet={bulletList ? bulletList : 'none'}
+        />
         : <ListFilteredNotFound
-            className={`${styles['list-not-found']}`}
-            message='Search not found'
-          />
+          className={`${styles['list-not-found']}`}
+          message='Search not found'
+        />
+
       }
     </div>
   );

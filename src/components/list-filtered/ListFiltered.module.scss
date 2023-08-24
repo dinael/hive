@@ -1,52 +1,40 @@
 @use '../../scss/02-tools/functions' as *;
+@use '../../scss/03-modules/texts' as text;
 
 .list-filtered-component {
-  --list-filtered-border-color: var(--color-primary-light);
-  --list-filtered-border-radius: #{radius(XXS)};
-  --list-filtered-border-width: max(0.125rem, 1px);
-  --list-filtered-not-found-background: var(--color-background-secondary);
+  display: grid;
+  block-size: 100%;
+  grid-template-rows: auto 1fr;
+  row-gap: 1rem;
+  position: relative;
+  overflow-y: auto;
 
-    display: grid;
-    block-size: 100%;
-    grid-template-rows: 4.5rem 1fr;
-    row-gap: 1rem;
+  &.horizontal {
+    --list-filtered-display: grid;
 
-    &.horizontal {
-      --list-filtered-display: grid;
-
-      .list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-        gap: 1rem;
-      }
-
-
-
+    .list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+      gap: 1rem;
     }
-
-
+  }
 }
 
 .list {
   display: var(--list-filtered-display, column);
   flex-direction: column;
+  padding-block-end: 1rem;
 
   &-item  {
     .list-item-default {
-        padding-block: 0.5rem;
-        border-block-start: var(--list-filtered-border-width) solid var(--list-filtered-border-color);
+        padding: 0.5rem;
+        border-block-start: var(--list-filtered-border-width, max(0.125rem, 1px)) solid var(--list-filtered-border-color, var(--color-primary-light));
       }
     &:last-child {
       .list-item-default {
-        border-block-end: var(--list-filtered-border-width) solid var(--list-filtered-border-color);
+        border-block-end: var(--list-filtered-border-width, max(0.125rem, 1px)) solid;
       }
     }
-  }
-
-  &-filter {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 12rem;
   }
 
   &-not-found {
@@ -56,8 +44,49 @@
     align-items: center;
     block-size: 100%;
     padding: 1rem;
-    border-radius: var(--list-filtered-border-radius);
-    background: var(--list-filtered-not-found-background);
+    border-radius: var(--list-filtered-border-radius, #{radius(XXS)});
+    background: var(--list-filtered-not-found-background, var(--color-background-secondary));
+  }
+}
+
+
+.list-filter {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: index(default);
+  background: var(--list-filtered-background, var(--color-background));
+
+  &-title {
+    display: flex;
+    margin-block-start: auto;
+    margin-inline-start: auto;
+    padding-block-end: 0.5rem;
+    padding-inline-end: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    inline-size: 100%;
+    max-inline-size: calc(100% - 4ch);
+    @include text.ellipsis;
+
+    + .list-filter-input {
+      max-inline-size: 20rem;
+      min-inline-size: 12rem;
+    }
+  }
+
+  &-input {
+    flex: 3 1 auto;
+    //max-inline-size: 18.75rem;
+  }
+
+  &-select {
+    flex: 1 1 auto;
+    max-inline-size: 10rem;
   }
 }
 
