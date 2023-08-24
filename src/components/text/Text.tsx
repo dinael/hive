@@ -28,7 +28,7 @@ export const Text: FC<TextProps> = ({
         ${className && className}
       `}
       {...props}>
-      { children }
+        { children }
     </Tag>
   )
 }
