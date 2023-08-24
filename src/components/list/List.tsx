@@ -19,6 +19,7 @@ export type ListProps = {
   disabled?: boolean
   unstyled?: boolean
   bullet?: 'none' | 'auto' | 'disc' | 'circle' | 'square' | 'decimal' | 'decimal-leading-zero' | 'lower-roman' | 'upper-roman' | 'lower-greek' | 'lower-latin' | 'upper-latin' | 'armenian' | 'georgian' | 'lower-alpha' | 'upper-alpha'
+  customBullet?: string;
 }
 
 export const List: FC<ListProps> = ({
@@ -28,6 +29,7 @@ export const List: FC<ListProps> = ({
   disabled = false,
   className = '',
   bullet = 'none',
+  customBullet = '',
   unstyled = false,
   ...props
 }) => {
@@ -40,7 +42,8 @@ export const List: FC<ListProps> = ({
         ${styles[bullet ? bullet : 'none']}
         ${className ? className : ''}`,
       role: "list",
-      "aria-label": nameList ? nameList : ''
+      "aria-label": nameList ? nameList : '',
+      ...props
     }
 
     return ordered
@@ -53,7 +56,8 @@ export const List: FC<ListProps> = ({
       {items.map((item) => (
         <li
           key={item.id ? item.id : uuid()}
-          role="listitem">
+          role="listitem"
+          style={customBullet ? { listStyle: customBullet } : {}}>
           {item.text}
         </li>
       ))}
