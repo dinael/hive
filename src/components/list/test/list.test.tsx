@@ -2,7 +2,7 @@ import { describe, test, expect } from 'vitest'
 import { render } from '@testing-library/react'
 import List, { ListProps } from '../List'
 
-const listObj = [
+const mockItems = [
   { id: '1', text: 'Item 1' },
   { id: '2', text: 'Item 2' },
   { id: '3', text: 'Item 3' }
@@ -13,7 +13,7 @@ describe('List', () => {
     bullet: "circle",
     className: "className-test",
     ordered: false,
-    items: listObj
+    items: mockItems
   }
 
   test('List renders an unordered list by default', () => {
