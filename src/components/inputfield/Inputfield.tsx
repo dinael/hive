@@ -72,7 +72,8 @@ export const Inputfield: FC<InputfieldProps> = ({
       htmlFor={id}
       className={`
         ${styles['inputfiled-component']}
-        ${error? styles['has-error'] : ''}
+        ${error ? styles['has-error'] : ''}
+        ${className ? className : ''}
       `}
       {...props}>
       <LabelText
