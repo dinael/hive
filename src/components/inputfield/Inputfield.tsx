@@ -1,4 +1,4 @@
-import React, {FC, useState, ChangeEvent, FocusEvent } from 'react'
+import {FC, useState, ChangeEvent, FocusEvent } from 'react'
 import styles from './Inputfield.module.scss'
 import Icon from '../icon/Icon'
 import ValidationMessage from '../validationmessage/ValidationMessage'
@@ -73,6 +73,7 @@ export const Inputfield: FC<InputfieldProps> = ({
       className={`
         ${styles['inputfiled-component']}
         ${error ? styles['has-error'] : ''}
+        ${className ? className : ''}
       `}
       {...props}>
       <LabelText

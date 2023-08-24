@@ -1,25 +1,27 @@
 import { Anchor, AnchorProps } from '../../../components/anchor/Anchor'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Anchor',
   component: Anchor,
   parameters: {
     vitest: {
-      testFile: "Anchor.test.tsx",
-      testResults: vitestResults
+      testFile: "Anchor.test.tsx"
     }
   },
   tags: ['autodocs'],
   argTypes: {
-    text: { name: 'Text', control: 'text' },
-    className: { name: 'className', control: 'text' },
+    text: {
+      name: 'Text',
+      control: 'text'
+    },
+    className: {
+      name: 'className',
+      control: 'text'
+   },
   }
 }
 
-export const Default = (args: AnchorProps) => (
-  <Anchor {...args}></Anchor>
-)
+export const Default = (args: AnchorProps) => <Anchor {...args}></Anchor>
 
 Default.args = {
   text: 'This is a Anchor',
@@ -31,4 +33,3 @@ Default.args = {
   a11yText: 'This text is accessible',
   className: ''
 }
-

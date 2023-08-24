@@ -37,7 +37,7 @@ export const Fieldset: FC<FieldsetProps> = ({
       className={`
         ${styles['fieldset-component']}
         ${flat ? styles['flat'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       {...props }>
       {legend ?

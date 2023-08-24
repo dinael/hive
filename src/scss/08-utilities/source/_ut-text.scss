@@ -35,8 +35,79 @@ $-text-decoration: (
     overline,
 );
 
+$-font-variant-caps: (
+  normal,
+  small-caps,
+  all-small-caps,
+  petite-caps,
+  all-petite-caps,
+  unicase,
+  titling-caps,
+);
+
+$-font-variant-ligatures: (
+  normal,
+  none,
+  common-ligatures,
+  no-common-ligatures,
+  discretionary-ligatures,
+  no-discretionary-ligatures,
+  historical-ligatures,
+  no-historical-ligatures,
+  contextual,
+  no-contextual,
+);
+
+$-font-variant-numeric: (
+  normal,
+  ordinal,
+  slashed-zero,
+  lining-nums,
+  oldstyle-nums,
+  proportional-nums,
+  tabular-nums,
+  diagonal-fractions,
+  stacked-fractions
+);
+
+$-font-variant-settings: (
+  liga,
+  dlig,
+  onum,
+  lnum,
+  tnum,
+  zero,
+  frac,
+  sups,
+  subs,
+  smcp,
+  c2sc,
+  case,
+  hlig,
+  calt,
+  swsh,
+  hist,
+  'ss**',
+  kern,
+  locl,
+  rlig,
+  medi,
+  init,
+  isol,
+  fina,
+  mark,
+  'mark-to-mark',
+  positioning,
+  'wght',
+  'wdth',
+  'slnt',
+  'ital',
+  'opsz',
+  'XHGT'
+);
+
 $-text-shadow: (
-S, M, L
+  S, M, L
 );
 
 @if $-ut-text {
@@ -73,6 +144,34 @@ S, M, L
             &\:#{$name} {
                 text-decoration: #{$name};
             }
+        }
+
+        // $$ Text variant caps
+        @each $name in $-font-variant-caps {
+          &\:font-variant-caps-#{$name} {
+            font-variant-caps: #{$name};
+          }
+        }
+
+        // $$ Text variant ligatures
+        @each $name in $-font-variant-ligatures {
+          &\:font-variant-ligatures-#{$name} {
+            font-variant-ligatures: #{$name};
+          }
+        }
+
+        // $$ Text variant numeric
+        @each $name in $-font-variant-numeric {
+          &\:font-variant-numeric-#{$name} {
+            font-variant-numeric: #{$name};
+          }
+        }
+
+        // $$ Text variant setting
+        @each $name in $-font-variant-settings {
+          &\:font-variant-settings-#{$name} {
+            font-variant-settings: #{$name};
+          }
         }
 
         &\:no-underline {
@@ -149,6 +248,7 @@ S, M, L
         &\:primary {
             color: var(--color-text-primary);
         }
+
         &\:secondary {
             color: var(--color-text-secondary);
         }

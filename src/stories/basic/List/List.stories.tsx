@@ -1,13 +1,11 @@
 import { List, ListProps } from '../../../components/list/List'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/List',
   component: List,
   parameters: {
     vitest: {
-      testFile: "List.test.tsx",
-      testResults: vitestResults
+      testFile: "List.test.tsx"
     }
   },
   tags: ['autodocs'],
@@ -15,6 +13,7 @@ export default {
     nameList: {name: 'List name', control: 'text'},
     items: {name: 'Items', control: 'object' },
     ordered: {name:'Ordered', control: 'boolean'},
+    unstyled: {name:'Unstyled', control: 'boolean'},
     disabled: {name:'Disabled', control: 'boolean'},
     className: { name: 'className', control: 'boolean' },
     bullet: {
@@ -45,22 +44,37 @@ export default {
 }
 
 const itemsDemo = [
-  { id: 'item-1', text: 'Item 1' },
-  { id: 'item-2', text: 'Item 2' },
-  { id: 'item-3', text: 'Item 3' },
+  { id: 'item-1', text: 'Item A' },
+  { id: 'item-2', text: 'Item B' },
+  { id: 'item-3', text: 'Item C' },
+  { id: 'item-4', text: 'Item D' },
+  { id: 'item-5', text: 'Item E' },
+  { id: 'item-6', text: 'Item F' },
+  { id: 'item-7', text: 'Item G' },
+  { id: 'item-8', text: 'Item H' },
+  { id: 'item-9', text: 'Item I' },
+  { id: 'item-10', text: 'Item J' }
 ]
 
-// ## Ordered
+//## Default
+export const Default = (args: ListProps) => (
+  [<List {...args} />]
+)
 
+Default.args = {
+  items: itemsDemo,
+  nameList: 'Ordered list',
+}
+
+// ## Ordered
 export const Ordered = (args: ListProps) => (
   [<List {...args} />]
 )
 
 Ordered.args = {
-  items: itemsDemo,
+  ...Default.args,
   nameList: 'Ordered list',
   ordered: true,
-  className:'',
   bullet: 'decimal',
 }
 
@@ -70,20 +84,21 @@ export const Unordered = (args: ListProps) => (
 )
 
 Unordered.args = {
-  ...Ordered.args,
+  ...Default.args,
   nameList: 'Unordered list',
   ordered: false,
   bullet: 'circle',
 }
 
-// ## None
-export const None = (args: ListProps) => (
+// ## Unstyled
+export const Unstyled = (args: ListProps) => (
   [<List {...args} />]
 )
 
-None.args = {
+Unstyled.args = {
   ...Ordered.args,
   nameList: 'None list',
   ordered: false,
   bullet: 'none',
+  unstyled: true,
 }

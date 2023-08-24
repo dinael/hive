@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Icon.module.scss'
 import sprite from '../../assets/sprite.svg'
 
@@ -26,8 +26,8 @@ export const Icon: FC<IconProps> = ({
       aria-hidden="true"
       className={`
         ${styles['icon-component']}
-        ${styles[size]}
-        ${className ? className : ''}
+        ${styles[size ? size : 'm']}
+        ${className && className}
       `}
       style={color ? { '--icon-color': `${color}` } : undefined}
       {...props}>

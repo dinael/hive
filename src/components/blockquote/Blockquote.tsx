@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Blockquote.module.scss'
 
 export type BlockquoteProps = {
@@ -47,7 +47,7 @@ export const Blockquote: FC<BlockquoteProps> = ({
       className={
         `${styles['blockquote-component']}
           ${styles[variant]}
-          ${className ? className : ''}`
+          ${className && className}`
       }
       {...props}>
       {title ?

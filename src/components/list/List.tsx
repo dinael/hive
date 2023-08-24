@@ -1,9 +1,13 @@
-import React, { FC } from 'react'
+// TODO: un parametro para pasar los custom bullet
+// TODO: Listas anidadas
+
+import { FC } from 'react'
 import { v4 as uuid } from 'uuid'
+
 import styles from './List.module.scss'
 
 export type ListItem = {
-  id?: string
+  id?: string | number,
   text: string
 }
 
@@ -13,8 +17,9 @@ export type ListProps = {
   nameList?: string
   className?: string
   disabled?: boolean
-  children?: any
+  unstyled?: boolean
   bullet?: 'none' | 'auto' | 'disc' | 'circle' | 'square' | 'decimal' | 'decimal-leading-zero' | 'lower-roman' | 'upper-roman' | 'lower-greek' | 'lower-latin' | 'upper-latin' | 'armenian' | 'georgian' | 'lower-alpha' | 'upper-alpha'
+  customBullet?: string;
 }
 
 export const List: FC<ListProps> = ({
@@ -23,32 +28,37 @@ export const List: FC<ListProps> = ({
   nameList,
   disabled = false,
   className = '',
-  children = null,
-  bullet,
+  bullet = 'none',
+  customBullet = '',
+  unstyled = false,
   ...props
 }) => {
+  const Tag: FC<{ children: React.ReactNode }> = ({
+    children
+  }) => {
+    const tagProps = {
+      className: `
+        ${styles[!unstyled ? 'list-component' : 'list-unstyled']}
+        ${styles[bullet ? bullet : 'none']}
+        ${className ? className : ''}`,
+      role: "list",
+      "aria-label": nameList ? nameList : '',
+      ...props
+    }
 
-  // TODO: un parametro para pasar los custom bullet
-  // TODO: Listas anidadas
-
-  const Tag = `${ordered ? 'ol' : 'ul' }`
+    return ordered
+      ? <ol {...tagProps}>{children}</ol>
+      : <ul {...tagProps}>{children}</ul>
+  }
 
   return (
-    <Tag
-      className={`
-        ${styles['list-component']}
-        ${styles[bullet ? bullet : '']}
-        ${styles[bullet == 'none' ? 'flat' : '']}
-        ${className ? className : ''}`}
-      role="list"
-      aria-label={nameList ? nameList : ''}
-      {...props}>
+    <Tag>
       {items.map((item) => (
         <li
-          key={item.id}
-          role="listitem">
+          key={item.id ? item.id : uuid()}
+          role="listitem"
+          style={customBullet ? { listStyle: customBullet } : {}}>
           {item.text}
-          {children}
         </li>
       ))}
     </Tag>

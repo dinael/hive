@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useState, ChangeEvent } from 'react'
 import styles from './Textarea.module.scss'
 import Icon from '../icon/Icon'
 import ValidationMessage from '../validationmessage/ValidationMessage'
@@ -57,11 +57,10 @@ export const Textarea: FC<TextareaProps> = ({
     setIsFocused(false)
   }
 
-  const handleChange = (e) => {
-    const inputValue = e.target.value
-
-    setValue(inputValue)
-  }
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const inputValue = e.target.value;
+    setValue(inputValue);
+  };
 
   return (
     <label
@@ -70,7 +69,7 @@ export const Textarea: FC<TextareaProps> = ({
         ${styles['textarea-component']}
         ${hasError ? styles['has-error'] : ''}
         ${isFocused ? styles['is-focus'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       {...props}>
       <LabelText

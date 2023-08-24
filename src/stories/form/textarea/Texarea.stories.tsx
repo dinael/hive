@@ -1,14 +1,12 @@
 import { Textarea, TextareaProps } from "../../../components/textarea/Textarea"
-import vitestResults from '../../../tests/unit/coverage.json';
+
 
 export default {
   title: 'Components/Form/Textarea',
   component: Textarea,
   parameters: {
     vitest: {
-      testFile: "Textarea.test.tsx",
-      testResults: vitestResults
-    },
+      testFile: "Textarea.test.tsx"},
     docs: {
       description: {
         component: 'El componente **Textarea** es...',

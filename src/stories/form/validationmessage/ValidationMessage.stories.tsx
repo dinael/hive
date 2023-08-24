@@ -1,13 +1,11 @@
 import { ValidationMessage, ValidationMessageProps } from '../../../components/validationmessage/ValidationMessage'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Form/ValidationMessage',
   component: ValidationMessage,
   parameters: {
     vitest: {
-      testFile: "ValidationMessage.test.tsx",
-      testResults: vitestResults
+      testFile: "ValidationMessage.test.tsx"
     },
     docs: {
       description: {

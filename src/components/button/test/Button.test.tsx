@@ -47,7 +47,7 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('Button renders kind link correctly', () => {
+  test('Button renders as link correctly', () => {
     const { container } = render(<Button {...defaultProps} type={'link'} url={defaultProps.url} />)
     const buttonElement = container.querySelector('a')
     expect(buttonElement?.tagName).toBe('A')

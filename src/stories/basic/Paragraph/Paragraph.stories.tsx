@@ -1,13 +1,11 @@
 import { Paragraph, ParagraphProps } from '../../../components/paragraph/Paragraph'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Paragraph',
   component: Paragraph,
   parameters: {
     vitest: {
-      testFile: "Paragraph.test.tsx",
-      testResults: vitestResults
+      testFile: "Paragraph.test.tsx"
     }
   },
   tags: ['autodocs'],

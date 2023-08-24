@@ -38,7 +38,7 @@ export const InputRadio: FC<InputRadioProps> = ({
   return (
     <label
       htmlFor={id}
-      className={`${className ? className : ''}`}
+      className={`${className && className}`}
       {...props}>
       <LabelText
         onlyText

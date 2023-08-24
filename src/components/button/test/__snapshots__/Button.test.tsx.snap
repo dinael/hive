@@ -49,6 +49,54 @@ exports[`Button > Button onClick 1`] = `
 </div>
 `;
 
+exports[`Button > Button renders as link correctly 1`] = `
+<div>
+  <a
+    aria-label="Text for a11y"
+    class="
+        button-component
+        primary
+        xs
+        default
+        left
+        
+        className-test
+      "
+    href="https://www.example.com"
+    rel="noopener noreferrer"
+    target="_self"
+  >
+    <span
+      aria-hidden="true"
+      class="
+        icon-component
+        xs
+        
+      "
+      style="--icon-color: currentColor;"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <title>
+          close
+        </title>
+        <use
+          xlink:href="/src/assets/sprite.svg#close"
+        />
+      </svg>
+    </span>
+    <span
+      class="text "
+    >
+      Button text
+    </span>
+  </a>
+</div>
+`;
+
 exports[`Button > Button renders correctly 1`] = `
 <div>
   <button

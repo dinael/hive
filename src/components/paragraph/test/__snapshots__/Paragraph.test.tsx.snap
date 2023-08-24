@@ -149,19 +149,3 @@ exports[`Paragraph > Paragraph renders snapshot 1`] = `
   </p>
 </div>
 `;
-
-exports[`Paragraph > renders snapshot 1`] = `
-<div>
-  <p
-    class="
-        paragraph-component
-        
-        
-        
-        className-test
-      "
-  >
-    children-test
-  </p>
-</div>
-`;

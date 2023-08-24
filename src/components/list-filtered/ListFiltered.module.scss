@@ -1,0 +1,64 @@
+@use '../../scss/02-tools/functions' as *;
+
+.list-filtered-component {
+  --list-filtered-border-color: var(--color-primary-light);
+  --list-filtered-border-radius: #{radius(XXS)};
+  --list-filtered-border-width: max(0.125rem, 1px);
+  --list-filtered-not-found-background: var(--color-background-secondary);
+
+    display: grid;
+    block-size: 100%;
+    grid-template-rows: 4.5rem 1fr;
+    row-gap: 1rem;
+
+    &.horizontal {
+      --list-filtered-display: grid;
+
+      .list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+        gap: 1rem;
+      }
+
+
+
+    }
+
+
+}
+
+.list {
+  display: var(--list-filtered-display, column);
+  flex-direction: column;
+
+  &-item  {
+    .list-item-default {
+        padding-block: 0.5rem;
+        border-block-start: var(--list-filtered-border-width) solid var(--list-filtered-border-color);
+      }
+    &:last-child {
+      .list-item-default {
+        border-block-end: var(--list-filtered-border-width) solid var(--list-filtered-border-color);
+      }
+    }
+  }
+
+  &-filter {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 12rem;
+  }
+
+  &-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    block-size: 100%;
+    padding: 1rem;
+    border-radius: var(--list-filtered-border-radius);
+    background: var(--list-filtered-not-found-background);
+  }
+}
+
+

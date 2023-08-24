@@ -1,7 +1,8 @@
 {
     "cSpell.words": [
         "figma",
-        "figspec"
+        "figspec",
+        "Inputfile"
     ],
     "files.exclude": {
         "**/.git": true,

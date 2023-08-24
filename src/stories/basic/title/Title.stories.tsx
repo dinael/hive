@@ -1,14 +1,12 @@
 
 import { Title, TitleProps } from '../../../components/title/Title'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Title',
   component: Title,
   parameters: {
     vitest: {
-      testFile: "Title.test.tsx",
-      testResults: vitestResults
+      testFile: "Title.test.tsx"
     }
   },
   tags: ['autodocs'],

@@ -25,14 +25,16 @@ export const Badge: FC<BadgeProps> = ({
       className={`
         ${styles['badge-component']}
         ${spot ? styles.spot : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       {...props}>
       {text ?
         <strong
+          className={
+            `${styles['badge-text']}
+            ${spot ? 'sr-only' : ''}`}
           aria-hidden="true"
-          role="presentation"
-          className={`${styles['badge-text']} ${spot ? 'sr-only' : ''}`}>
+          role="presentation">
           {textShorten}
         </strong>
       : null}

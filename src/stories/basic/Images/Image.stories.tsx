@@ -1,13 +1,11 @@
 import { Image, ImageProps } from '../../../components/image/Image'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Basic/Image',
   component: Image,
   parameters: {
     vitest: {
-      testFile: "Button.test.tsx",
-      testResults: vitestResults
+      testFile: "Image.test.tsx"
     }
   },
   tags: ['autodocs'],

@@ -1,7 +1,9 @@
 <svg
   version="1.1"
   xmlns="http://www.w3.org/2000/svg"
-  fill="currentColor">
+  fill="currentColor"
+  height="0"
+  width="0">
   <!-- Icon close -->
   <symbol
     id="close"

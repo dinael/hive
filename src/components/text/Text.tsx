@@ -25,10 +25,10 @@ export const Text: FC<TextProps> = ({
       className={`
         ${styles['text-component']}
         ${ellipsis ? styles['ellipsis'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       {...props}>
-      { children }
+        { children }
     </Tag>
   )
 }

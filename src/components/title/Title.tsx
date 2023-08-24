@@ -1,16 +1,16 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './Title.module.scss'
-
 
 export type TitleProps = {
   level: 0 | 1 | 2 | 3 | 4 | 5 | 6
-  size: 'xs' |'s' | 'm' | 'l' | 'xl' | 'xxl'
+  size?: 'xs' |'s' | 'm' | 'l' | 'xl' | 'xxl'
   text: string
   children?: any
   ellipsis?: boolean
   a11yLength?: boolean
   className?: string
 }
+
 export const Title: FC<TitleProps> = ({
   level,
   size = 'm',
@@ -31,7 +31,7 @@ export const Title: FC<TitleProps> = ({
       className={`
         ${styles['title-component']}
         ${styles[size]}
-        ${className ? className : ''}
+        ${className && className}
         ${ellipsis ? styles['ellipsis'] : ''}
         ${a11yLength ? styles['a11y-length'] : ''}
       `}

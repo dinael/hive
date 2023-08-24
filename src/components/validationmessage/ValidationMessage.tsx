@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import styles from './ValidationMessage.module.scss'
 import Icon from '../icon/Icon'
 
@@ -27,7 +27,7 @@ export const ValidationMessage: FC<ValidationMessageProps> = ({
       className={`
         ${styles['validation-message']}
         ${styles[kind]}
-        ${className ? className : ''}}
+        ${className && className}}
       `}
       role={role ? role : ''}
       {...props}>

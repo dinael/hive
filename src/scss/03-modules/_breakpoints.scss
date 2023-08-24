@@ -30,31 +30,31 @@ $-screens: screen.$screen;
 	}
 
 	@if $device==mobile-small {
-		@media screen and (min-width: device(mobile-small)) {
+		@media screen and (max-width: device(mobile-small)) {
 			@content;
 		}
 	}
 
-	@if $device==mobile-portrait {
-		@media screen and (min-width: device(mobile-portrait)) {
+	@if $device==mobile{
+		@media screen and (max-width: device(mobile-portrait)) {
 			@content;
 		}
 	}
 
 	@if $device==mobile-landscape {
-		@media screen and (min-width: device(mobile-landscape)) {
+		@media screen and (max-width: device(mobile-landscape)) {
 			@content;
 		}
 	}
 
 	@if $device==tablet {
-		@media screen and (min-width: device(tablet-portrait)) {
+		@media screen and (max-width: device(tablet-portrait)) {
 			@content;
 		}
 	}
 
 	@if $device==tablet-landscape {
-		@media screen and (min-width: device(tablet-landscape)) {
+		@media screen and (max-width: device(tablet-landscape)) {
 			@content;
 		}
 	}

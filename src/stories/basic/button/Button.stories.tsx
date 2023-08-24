@@ -1,17 +1,16 @@
 import { Button, ButtonProps } from '../../../components/button/Button'
-import vitestResults from '../../../tests/unit/coverage.json';
+
 
 export default {
   title: 'Components/Basic/Button',
   component: Button,
   parameters: {
     vitest: {
-      testFile: "Button.test.tsx",
-      testResults: vitestResults
+      testFile: "Button.test.tsx"
     },
     docs: {
       description: {
-        component: 'El componente **Button** es...',
+        component: `${'<dl><dt>Version</dt> <dd>0.00.1</dd></dl>'} The **Button** is...`,
         story: 'Another description on the story, overriding the comments',
       },
     },
@@ -53,6 +52,7 @@ export default {
     href: { name: 'Href', control: 'text' },
     target: { name: 'Target', control: 'text' },
     icon: { name: 'Icon', control: 'text' },
+    iconOnly: {name: 'Icon only', control: 'boolean'},
     iconPosition: {
       name: 'Icon position',
       control: {
@@ -70,9 +70,9 @@ export default {
 // TODO: loading: { name: 'Loading', control: 'boolean' },
 // loading: { name: 'loading', control: 'boolean' }
 
-export const Default = (args: ButtonProps) => ([
-  <Button {...args} />
-])
+export const Default = (args: ButtonProps) => <Button {...args} />
+
+export const AsLink = (args: ButtonProps) => <Button {...args} />
 
 Default.args = {
   type: 'submit',
@@ -89,6 +89,11 @@ Default.args = {
   disabled: false,
   className: '',
   id: ''
+}
+
+AsLink.args = {
+  ...Default.args,
+  type: 'link',
 }
 
 Default.parameters = {
@@ -112,4 +117,8 @@ Default.parameters = {
       url: 'https://www.figma.com/proto/Cx0sZBqrc7kGW72bcmy90S/tokens?page-id=19%3A2&type=design&node-id=19-5&scaling=min-zoom',
     }
   ]
+}
+
+AsLink.parameters = {
+  ...Default.parameters
 }

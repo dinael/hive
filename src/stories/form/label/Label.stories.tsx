@@ -1,13 +1,11 @@
 import { Label, LabelProps } from '../../../components/label/Label'
-import vitestResults from '../../../tests/unit/coverage.json';
 
 export default {
   title: 'Components/Form/Label',
   component: Label,
   parameters: {
     vitest: {
-      testFile: "Label.test.tsx",
-      testResults: vitestResults
+      testFile: "Label.test.tsx"
     },
     docs: {
       description: {

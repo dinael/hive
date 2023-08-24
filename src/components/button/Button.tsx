@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react'
+import { FC, MouseEventHandler } from 'react'
 import styles from './Button.module.scss'
 import Icon from '../icon/Icon'
 
@@ -56,7 +56,7 @@ export const Button: FC<ButtonProps> = ({
           ${styles[size]}
           ${styles[kind]}
           ${styles[iconPosition]}
-          ${className ? className : ''}
+          ${className && className}
         `}
         onClick={handleClick}
         {...props}>
@@ -86,7 +86,7 @@ export const Button: FC<ButtonProps> = ({
         ${styles[kind]}
         ${styles[iconPosition]}
         ${disabled ? styles['disabled'] : ''}
-        ${className ? className : ''}
+        ${className && className}
       `}
       onClick={handleClick}
       {...props}>
