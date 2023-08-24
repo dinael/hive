@@ -1,6 +1,3 @@
-// TODO: un parametro para pasar los custom bullet
-// TODO: Listas anidadas
-
 import { FC } from 'react'
 import { v4 as uuid } from 'uuid'
 
