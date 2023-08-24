@@ -10,7 +10,7 @@ export default {
     },
     docs: {
       description: {
-        component: 'El componente **Button** es...',
+        component: `${'<dl><dt>Version</dt> <dd>0.00.1</dd></dl>'} The **Button** is...`,
         story: 'Another description on the story, overriding the comments',
       },
     },
@@ -52,6 +52,7 @@ export default {
     href: { name: 'Href', control: 'text' },
     target: { name: 'Target', control: 'text' },
     icon: { name: 'Icon', control: 'text' },
+    iconOnly: {name: 'Icon only', control: 'boolean'},
     iconPosition: {
       name: 'Icon position',
       control: {

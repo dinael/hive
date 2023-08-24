@@ -2,7 +2,12 @@
 @use '../../02-tools/functions' as *;
 @use '../../02-tools/mixins' as *;
 
-:is(button, input[type="button"], input[type="submit"], input[type="reset"]) {
+:is(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"]
+  ) {
     align-items: center;
     background: var(--button-background, buttonface);
     border-color: var(--button-border-color, buttonborder);
