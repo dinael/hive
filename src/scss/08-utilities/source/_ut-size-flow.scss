@@ -11,12 +11,12 @@ $-percentage-h-interval: global.$percentage-h-interval !default;
 $-percentage-h-end: global.$percentage-h-end !default;
 
 $-sizes-flow-names: (
-    auto,
-    inherit,
-    initial,
-    max-content,
-    min-content,
-    fit-content
+  auto,
+  inherit,
+  initial,
+  max-content,
+  min-content,
+  fit-content
 );
 
 @if $-ut-size-flow {

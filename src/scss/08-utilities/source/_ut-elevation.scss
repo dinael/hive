@@ -1,0 +1,24 @@
+@use '../../setup' as setup;
+@use '../../03-modules/shadows' as shadow;
+
+$-shadow: (
+  XXS,
+  XS,
+  S,
+  M,
+  L,
+  XL,
+  XXL,
+  pop
+);
+
+.elevation {
+  box-shadow: shadow.elevation(S);
+
+  @each $shadow-size in $-shadow {
+      &\:#{to-lower-case($shadow-size)} {
+        box-shadow: shadow.elevation($shadow-size);
+      }
+    }
+}
+

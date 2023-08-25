@@ -1,0 +1,25 @@
+@use '../../setup' as setup;
+@use '../../01-setting/radius' as radius;
+@use '../../../scss/02-tools/functions' as *;
+
+$-radius: (
+  rounded,
+  mini,
+  XXL,
+  XL,
+  L,
+  M,
+  S,
+  XS,
+  XXS,
+);
+
+.radius {
+  border-radius: radius(XS);
+
+  @each $radius-size in $-radius {
+    &\:#{to-lower-case($radius-size)} {
+      border-radius: radius($radius-size);
+    }
+  }
+}
