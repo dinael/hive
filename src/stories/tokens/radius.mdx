@@ -1,0 +1,70 @@
+import { Canvas, Meta, Title, IconGallery, IconItem } from '@storybook/blocks'
+
+<Meta title="Tokens/Radius" />
+
+<style>
+  {`
+    .radius-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+      gap: 1rem;
+    }
+    .radius-list-item {
+      display: grid;
+      place-items: center;
+      block-size: 12rem;
+      inline-size: 100%;
+      max-inline-size: 12rem;
+      color: white;
+      background: black;
+    }
+    .radius-list-item p{
+      color: white;
+    }
+  `}
+</style>
+
+# Radius
+
+<section class="storybook-container">
+## Radius styles by names:
+  <ol
+    class="radius-list"
+    aria-label="radius styles by names">
+    <li class="radius-list-item radius">
+      Default
+    </li>
+    <li class="radius-list-item radius:rounded">
+      rounded
+    </li>
+  </ol>
+## radius styles by sizes:
+  <ol
+    class="radius-list"
+    aria-label="radius styles by size">
+    <li class="radius-list-item radius:xxs">
+      XXS
+    </li>
+    <li class="radius-list-item radius:xs">
+      XS
+    </li>
+    <li class="radius-list-item radius:s">
+      S
+    </li>
+    <li class="radius-list-item radius:m">
+      M
+    </li>
+    <li class="radius-list-item radius:l">
+      L
+    </li>
+    <li class="radius-list-item radius:xl">
+      XL
+    </li>
+    <li class="radius-list-item radius:xxl">
+      XXL
+    </li>
+    <li class="radius-list-item radius:xxl">
+      XXL
+    </li>
+  </ol>
+</section>

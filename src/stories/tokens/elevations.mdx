@@ -1,0 +1,61 @@
+import { Canvas, Meta, Title, IconGallery, IconItem } from '@storybook/blocks'
+
+<Meta title="Tokens/Elevations" />
+
+<style>
+  {`
+    .elevation-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+      gap: 1rem;
+    }
+    .elevation-list-item {
+      display: grid;
+      place-items: center;
+      block-size: 12rem;
+      inline-size: 100%;
+    }
+  `}
+</style>
+
+# Elevations
+
+<section class="storybook-container">
+  ## Elevation styles by names:
+  <ol
+    class="elevation-list"
+    aria-label="Elevation styles by names">
+    <li class="elevation-list-item elevation">
+      Default
+    </li>
+    <li class="elevation-list-item elevation:pop">
+      Pop
+    </li>
+  </ol>
+  ## Elevation styles by sizes:
+  <ol
+    class="elevation-list"
+    aria-label="Elevation styles by size">
+    <li class="elevation-list-item elevation:xxs">
+      XXS
+    </li>
+    <li class="elevation-list-item elevation:xs">
+      XS
+    </li>
+    <li class="elevation-list-item elevation:s">
+      S
+    </li>
+    <li class="elevation-list-item elevation:m">
+      M
+    </li>
+    <li class="elevation-list-item elevation:l">
+      L
+    </li>
+    <li class="elevation-list-item elevation:xl">
+      XL
+    </li>
+    <li class="elevation-list-item elevation:xxl">
+      XXL
+    </li>
+  </ol>
+</section>
