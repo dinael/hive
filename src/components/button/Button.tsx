@@ -43,6 +43,31 @@ export const Button: FC<ButtonProps> = ({
     console.log('You clicked submit.')
   }
 
+  const buttonStyles = `
+    ${styles['button-component']}
+    ${styles[variant]}
+    ${styles[size]}
+    ${styles[kind]}
+    ${styles[iconPosition]}
+    ${className || ''}
+  `
+
+  const textStyles = `
+    ${styles.text}
+    ${ellipsis ? styles['ellipsis'] : ''}
+    ${iconOnly || kind === 'rounded' ? 'sr-only' : ''}
+  `
+
+  const buttonAsLinkStyles = `
+    ${styles['button-component']}
+    ${styles[variant]}
+    ${styles[size]}
+    ${styles[kind]}
+    ${styles[iconPosition]}
+    ${disabled ? styles['disabled'] : ''}
+    ${className || ''}
+  `
+
   if (type !== 'link') {
     return (
       <button
@@ -50,22 +75,11 @@ export const Button: FC<ButtonProps> = ({
         type={type}
         aria-label={a11yText}
         disabled={disabled}
-        className={`
-          ${styles['button-component']}
-          ${styles[variant]}
-          ${styles[size]}
-          ${styles[kind]}
-          ${styles[iconPosition]}
-          ${className && className}
-        `}
+        className={buttonStyles}
         onClick={handleClick}
         {...props}>
         {icon && <Icon name={icon} size={size} />}
-        <span className={`
-          ${styles.text}
-          ${ellipsis ? styles['ellipsis'] : ''}
-          ${iconOnly || kind === 'rounded' ? 'sr-only' : ''}
-          `}>
+        <span className={textStyles}>
           {text}
         </span>
       </button>
@@ -79,20 +93,12 @@ export const Button: FC<ButtonProps> = ({
       target="_self"
       rel="noopener noreferrer"
       aria-label={a11yText}
-      className={`
-        ${styles['button-component']}
-        ${styles[variant]}
-        ${styles[size]}
-        ${styles[kind]}
-        ${styles[iconPosition]}
-        ${disabled ? styles['disabled'] : ''}
-        ${className && className}
-      `}
+      className={buttonAsLinkStyles}
       onClick={handleClick}
       {...props}>
       {icon && <Icon name={icon} size={size} />}
       {!iconOnly && kind !== 'rounded' ? (
-        <span className={`${styles.text} ${ellipsis ? styles['ellipsis'] : ''}`}>
+        <span className={textStyles}>
           {text}
         </span>
       ) : null}

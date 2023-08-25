@@ -24,17 +24,19 @@ export const Anchor: FC<AnchorProps> = ({
   children,
   className = '',
   ...props
-} : AnchorProps) => {
+}: AnchorProps) => {
+
+  const anchorStyles = `
+    ${styles['anchor-component']}
+    ${disabled ? styles['disabled'] : ''}
+    ${safeArea ? styles['safe-area'] : ''}
+    ${disabled ? styles['disabled'] : ''}
+    ${className || ''}
+  `
 
   return (
     <a
-      className={`
-        ${styles['anchor-component']}
-        ${disabled ? styles['disabled'] : ''}
-        ${safeArea ? styles['safe-area'] : ''}
-        ${disabled ? styles['disabled'] : ''}
-        ${className && className}
-      `}
+      className={anchorStyles}
       href={href}
       target={target}
       rel={rel}

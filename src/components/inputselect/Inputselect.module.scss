@@ -1,7 +1,7 @@
 @use '../../scss/02-tools/functions' as *;
 @use '../../scss/03-modules/forms' as form;
 
-.inputselect-component {
+.input-select-component {
   --select-block-size: 2.75rem;
   --select-border-radius: #{radius(XXS)};
   --select-border-width: max(0.125rem, 1px);

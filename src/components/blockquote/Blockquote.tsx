@@ -18,6 +18,11 @@ export const Blockquote: FC<BlockquoteProps> = ({
   ...props
 }: BlockquoteProps) => {
 
+  const blockquoteStyles = `
+    ${styles['blockquote-component']}
+    ${styles[variant]}
+    ${className || ''}
+  `
   const BlockquoteTitle = ({children}:BlockquoteProps) => (
     <p className={styles['blockquote-title']}>
       {children}
@@ -44,11 +49,7 @@ export const Blockquote: FC<BlockquoteProps> = ({
 
   const BlockquoteItem = () => (
     <blockquote
-      className={
-        `${styles['blockquote-component']}
-          ${styles[variant]}
-          ${className && className}`
-      }
+      className={blockquoteStyles}
       {...props}>
       {title ?
         <BlockquoteHeader variant={'fancy'}>

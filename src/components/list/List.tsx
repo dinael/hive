@@ -30,14 +30,18 @@ export const List: FC<ListProps> = ({
   unstyled = false,
   ...props
 }) => {
+
+  const listStyles = `
+    ${styles[!unstyled ? 'list-component' : 'list-unstyled']}
+    ${styles[bullet ? bullet : 'none']}
+    ${className ? className : ''}
+  `
+
   const Tag: FC<{ children: React.ReactNode }> = ({
     children
   }) => {
     const tagProps = {
-      className: `
-        ${styles[!unstyled ? 'list-component' : 'list-unstyled']}
-        ${styles[bullet ? bullet : 'none']}
-        ${className ? className : ''}`,
+      className: listStyles,
       role: "list",
       "aria-label": nameList ? nameList : '',
       ...props

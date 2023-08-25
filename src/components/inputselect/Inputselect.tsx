@@ -46,6 +46,12 @@ export const Inputselect: FC<InputselectProps> = ({
   ...props
 }) => {
 
+  const selectStyles = `
+    ${styles['input-select-component']}
+    ${error ? 'has-error' : ''}
+    ${className || ''}
+  `
+
   const renderOptions = (options: InputselectProps['options']) => {
     if (Array.isArray(options)) {
       return options.map((option) => (
@@ -78,16 +84,12 @@ export const Inputselect: FC<InputselectProps> = ({
 
   return (
     <label
-      className={`
-        ${styles['inputselect-component']}
-        ${error ? 'has-error' : ''}
-        ${className && className}
-      `}
+      className={selectStyles}
       htmlFor={id}
       {...props}>
       <LabelText
         onlyText
-        className={`${styles['inputselect-label']}`}
+        className={`${styles['input-select-label']}`}
         text={label}
         required={required}
         isRequiredText={'Este elemento es requerido'}
@@ -102,7 +104,11 @@ export const Inputselect: FC<InputselectProps> = ({
         aria-describedby={`validation-message-${id}`}>
         {renderOptions(options)}
       </select>
-      <Icon className={styles.icon} name="chevron-down" size="xs" title={''} />
+      <Icon
+        className={styles.icon}
+        name="chevron-down"
+        size="xs"
+        title={''} />
       {error && !isFocused ?
         <ValidationMessage
           className={styles['input-select-validation-message']}

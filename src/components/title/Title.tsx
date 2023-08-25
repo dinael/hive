@@ -26,15 +26,17 @@ export const Title: FC<TitleProps> = ({
 
   const Tag = level === 0 ? 'p' : 'h' + level as keyof JSX.IntrinsicElements
 
+  const titleStyles = `
+    ${styles['title-component']}
+    ${styles[size]}
+    ${className || ''}
+    ${ellipsis ? styles['ellipsis'] : ''}
+    ${a11yLength ? styles['a11y-length'] : ''}
+  `
+
   return (
     <Tag
-      className={`
-        ${styles['title-component']}
-        ${styles[size]}
-        ${className && className}
-        ${ellipsis ? styles['ellipsis'] : ''}
-        ${a11yLength ? styles['a11y-length'] : ''}
-      `}
+      className={titleStyles}
       {...props}>
         {text}
       {children}

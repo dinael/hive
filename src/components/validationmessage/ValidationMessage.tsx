@@ -21,14 +21,16 @@ export const ValidationMessage: FC<ValidationMessageProps> = ({
   ...props
 }: ValidationMessageProps) => {
 
+  const validationMessageStyles = `
+    ${styles['validation-message']}
+    ${styles[kind]}
+    ${className || ''}}
+  `
+
   return (
     <span
       id={id ? id : ''}
-      className={`
-        ${styles['validation-message']}
-        ${styles[kind]}
-        ${className && className}}
-      `}
+      className={validationMessageStyles}
       role={role ? role : ''}
       {...props}>
       {icon ? <Icon name={icon} size={'m'} /> : null}

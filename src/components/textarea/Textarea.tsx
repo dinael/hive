@@ -60,17 +60,19 @@ export const Textarea: FC<TextareaProps> = ({
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = e.target.value;
     setValue(inputValue);
-  };
+  }
+
+  const textareaStyles = `
+    ${styles['textarea-component']}
+    ${hasError ? styles['has-error'] : ''}
+    ${isFocused ? styles['is-focus'] : ''}
+    ${className || ''}
+  `
 
   return (
     <label
       htmlFor={id}
-      className={`
-        ${styles['textarea-component']}
-        ${hasError ? styles['has-error'] : ''}
-        ${isFocused ? styles['is-focus'] : ''}
-        ${className && className}
-      `}
+      className={textareaStyles}
       {...props}>
       <LabelText
         onlyText

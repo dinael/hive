@@ -22,21 +22,26 @@ export const Label: FC<LabelProps> = ({
   ...props
 }: LabelProps) => {
 
+  const labelStyles = `
+    ${styles['label-text-component']}
+    ${disabled ? 'is-disabled' : ''}
+    ${required ? 'is-required' : ''}
+    ${labelHidden ? 'sr-only' : ''}
+    ${className ? className : ''}
+  `
+
+  const isRequired = isRequiredText ? `${isRequiredText}` : 'is required'
+
   const Tag = `${onlyText ? 'span' : 'label'}` as keyof JSX.IntrinsicElements
 
   return (
-    <Tag className={`
-      ${styles['label-text-component']}
-      ${disabled ? 'is-disabled' : ''}
-      ${required ? 'is-required' : ''}
-      ${labelHidden ? 'sr-only' : ''}
-      ${className ? className : ''}`}
+    <Tag className={labelStyles}
       {...props}>
         {text + ':'}
         {required ?
           <em
             className={styles['required-text']}
-            title={isRequiredText? `${isRequiredText}` : 'is required'}>
+            title={isRequired}>
             *
           </em>
           : null}

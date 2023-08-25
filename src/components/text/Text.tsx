@@ -16,18 +16,18 @@ export const Text: FC<TextProps> = ({
   a11yLength = false,
   className,
   ...props
-}: TextProps ) => {
+}: TextProps) => {
+
+  const textStyles = `
+    ${styles['text-component']}
+    ${ellipsis ? styles['ellipsis'] : ''}
+    ${className || ''}
+  `
 
   const Tag = `${!block ? 'span' : 'p' }` as keyof JSX.IntrinsicElements
 
   return (
-    <Tag
-      className={`
-        ${styles['text-component']}
-        ${ellipsis ? styles['ellipsis'] : ''}
-        ${className && className}
-      `}
-      {...props}>
+    <Tag className={textStyles} {...props}>
         { children }
     </Tag>
   )

@@ -25,16 +25,19 @@ export const Image: FC<ImageProps> = ({
   className,
   ...props
 }: ImageProps) => {
+
+  const imageStyles = `
+    ${styles['image-component']}
+    ${disabled === true ? styles['disabled'] : ''}
+    ${ratio && styles[ratio]}
+    ${fit && styles[fit]}
+    ${className || ''}
+  `
+
   if (!srcSet || !Array.isArray(srcSet) || srcSet.length === 0) {
     return (
       <img
-        className={`
-          ${styles['image-component']}
-          ${disabled === true ? styles['disabled'] : ''}
-          ${ratio && styles[ratio]}
-          ${fit && styles[fit]}
-          ${className && className}
-        `}
+        className={imageStyles}
         src={src}
         alt={alt}
         width={width}
@@ -51,18 +54,12 @@ export const Image: FC<ImageProps> = ({
 // TODO: Add responsive sizes into sizes parameter
   return (
     <img
-      className={`
-        ${styles['image-component']}
-        ${disabled === true ? styles['disabled'] : ''}
-        ${ratio && styles[ratio]}
-        ${fit && styles[fit]}
-        ${className && className}
-      `}
+      className={imageStyles}
       src={imageDefault}
       srcSet={srcSetString}
       alt={alt}
-      width={width ? width : ''}
-      height={height ? height : ''}
+      width={width || ''}
+      height={height || ''}
       loading="lazy"
       {...props} />
   )

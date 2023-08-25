@@ -24,15 +24,21 @@ export const Paragraph: FC<ParagraphProps> = ({
   ...props
 }) => {
 
+  const paragraphStyles = `
+      ${styles['paragraph-component']}
+      ${ellipsis ? styles['ellipsis'] : ''}
+      ${a11yLength ? styles['a11y-length'] : ''}
+      ${flat ? styles['flat'] : ''}
+      ${className || ''}
+  `
+
+  const paragraphInlineStyles: CSSProperties = {
+    '--paragraph-column': column,
+  };
+
   return (
-    <p className={`
-        ${styles['paragraph-component']}
-        ${ellipsis ? styles['ellipsis'] : ''}
-        ${a11yLength ? styles['a11y-length'] : ''}
-        ${flat ? styles['flat'] : ''}
-        ${className && className}
-      `}
-      style={column && column > 1 ? { '--paragraph-column': `${column}` } : undefined}
+    <p className={paragraphStyles}
+      style={column && column > 1 ? paragraphInlineStyles : undefined}
       {...props}>
         {children}
     </p>

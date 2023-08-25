@@ -32,13 +32,15 @@ export const Fieldset: FC<FieldsetProps> = ({
   ...props
 }: FieldsetProps) => {
 
+  const fieldsetStyles = `
+    ${styles['fieldset-component']}
+    ${flat ? styles['flat'] : ''}
+    ${className || ''}
+  `
+
   return (
     <fieldset
-      className={`
-        ${styles['fieldset-component']}
-        ${flat ? styles['flat'] : ''}
-        ${className && className}
-      `}
+      className={fieldsetStyles}
       {...props }>
       {legend ?
         <legend>

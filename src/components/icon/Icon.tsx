@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC , CSSProperties} from 'react'
 import styles from './Icon.module.scss'
 import sprite from '../../assets/sprite.svg'
 
@@ -21,15 +21,21 @@ export const Icon: FC<IconProps> = ({
   ...props
 }: IconProps) => {
 
+  const iconStyles = `
+    ${styles['icon-component']}
+    ${styles[size ? size : 'm']}
+    ${className || ''}
+  `
+
+  const iconInlineStyles: CSSProperties = {
+    '--icon-color': color,
+  };
+
   return (
     <span
       aria-hidden="true"
-      className={`
-        ${styles['icon-component']}
-        ${styles[size ? size : 'm']}
-        ${className && className}
-      `}
-      style={color ? { '--icon-color': `${color}` } : undefined}
+      className={iconStyles}
+      style={iconInlineStyles}
       {...props}>
       <svg
         viewBox={`0 0 ${viewBox} ${viewBox}`}

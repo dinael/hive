@@ -20,19 +20,24 @@ export const Badge: FC<BadgeProps> = ({
 
   const textShorten = text.slice(0, MAX_LENGTH)
 
+  const badgeStyles = `
+    ${styles['badge-component']}
+    ${spot ? styles.spot : ''}
+    ${className || ''}
+  `
+
+  const badgeTextStyles = `
+    ${styles['badge-text']}
+    ${spot ? 'sr-only' : ''}
+  `
+
   return (
     <span
-      className={`
-        ${styles['badge-component']}
-        ${spot ? styles.spot : ''}
-        ${className && className}
-      `}
+      className={badgeStyles}
       {...props}>
       {text ?
         <strong
-          className={
-            `${styles['badge-text']}
-            ${spot ? 'sr-only' : ''}`}
+          className={badgeTextStyles}
           aria-hidden="true"
           role="presentation">
           {textShorten}

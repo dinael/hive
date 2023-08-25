@@ -42,15 +42,17 @@ export const Checkbox: FC<CheckboxProps> = ({
     onError && onError(error)
   }
 
+  const checkboxStyles = `
+    ${styles['checkbox-component']}
+    ${disabled ? styles['disabled'] : ''}
+    ${className || ''}
+  `
+
   return (
       <label
         key={id}
         htmlFor={id}
-        className={`
-          ${styles['checkbox-component']}
-          ${disabled ? styles['disabled'] : ''}
-          ${className && className}
-        `}
+      className={checkboxStyles}
         {...props}>
         <input
           id={id}
