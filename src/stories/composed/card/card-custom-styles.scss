@@ -1,0 +1,57 @@
+.my-custom-card-styles {
+  inline-size: 20rem;
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    block-size: 4rem;
+    padding-inline: 1rem;
+  }
+
+  .card-title {
+    inline-size: 100%;
+    justify-content: center;
+  }
+
+  .card-actions {
+    inline-size: 100%;
+    padding-inline: 0.75rem;
+  }
+
+  .card-actions-contented {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .main-action,
+  .alt-action {
+    inline-size: 50%;
+  }
+
+  .card-content-contented {
+    padding-block: 0.75rem;
+    padding-inline: 0.75rem;
+  }
+
+  .card-footer-contented {
+    display: flex;
+    inline-size: 100%;
+    padding-block-start: 0.75rem;
+    padding-inline: 0.5rem;
+  }
+
+  .card-footer-legal {
+    --paragraph-component-font-size: var(--font-size-xs);
+
+    inline-size: 100%;
+    text-align: center;
+    color: var(--color-text-secondary);
+  }
+
+}
+
+.card-img {
+  order: -1;
+}
