@@ -83,10 +83,9 @@ export const ListFiltered: FC<ListFilteredProps> = ({
   return (
     <div
       className={`
-      ${styles['list-filtered-component']}
-      ${className && className}
-    `}
-      {...props}>
+        ${styles['list-filtered-component']}
+        ${className || className}`}
+        {...props}>
       <ListFilters
         className={`${styles['list-filter']}`}
         searchQuery={searchQuery}

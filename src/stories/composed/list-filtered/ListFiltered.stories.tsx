@@ -58,23 +58,19 @@ const itemsDemo = [
 ]
 
 export const Default = (args: ListFilteredProps) => (
-  <ListFiltered {...args}>
-  </ListFiltered>
+  <ListFiltered {...args} />
 )
 
 export const WithoutTitle = (args: ListFilteredProps) => (
-  <ListFiltered {...args}>
-  </ListFiltered>
+  <ListFiltered {...args} />
 )
 
 export const OnlySearch = (args: ListFilteredProps) => (
-  <ListFiltered {...args}>
-  </ListFiltered>
+  <ListFiltered {...args} />
 )
 
 export const OnlySort = (args: ListFilteredProps) => (
-  <ListFiltered {...args}>
-  </ListFiltered>
+  <ListFiltered {...args} />
 )
 
 Default.args = {

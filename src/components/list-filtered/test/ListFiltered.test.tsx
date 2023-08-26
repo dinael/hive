@@ -1,39 +1,71 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import ListFiltered from '../ListFiltered';
+import { describe, test, expect } from 'vitest'
+import { render, fireEvent } from '@testing-library/react'
+import ListFiltered, {ListFilteredProps} from '../ListFiltered';
 
-describe('ListFiltered component', () => {
-  const mockItems = [
-    { id: 1, text: 'Item 1' },
-    { id: 2, text: 'Item 2' },
-    { id: 3, text: 'Item 3' },
-  ];
+// Mock data for testing
+const mockItems = [
+  { id: 1, text: 'Item 1' },
+  { id: 2, text: 'Item 2' },
+  { id: 3, text: 'Item 3' },
+];
 
-  const renderComponent = (props = {}) => {
-    render(<ListFiltered items={mockItems} {...props} />);
-  };
+describe('ListFiltered', () => {
+  const defaultProps: ListFilteredProps = {
+    bullet: "circle",
+    className: "className-test",
+    nameList: 'List filtered',
+    items: mockItems
+  }
 
-  it('renders list items', () => {
-    renderComponent();
+  test('renders correctly', () => {
+    const { container } = render(<ListFiltered {...defaultProps} />)
+    expect(container).toMatchSnapshot()
+  })
+})
 
-    const item1 = screen.getByText('Item 1');
-    const item2 = screen.getByText('Item 2');
-    const item3 = screen.getByText('Item 3');
+// test('renders correctly with filter', () => {
+//   const { container } = render(<ListFiltered items={mockItems} filter="2" />)
+//   expect(container).toMatchSnapshot()
+// })
 
-    expect(item1).toBeDefined();
-    expect(item2).toBeDefined();
-    expect(item3).toBeDefined();
-  });
+// test('renders correctly with filter and no items', () => {
+//   const { container } = render(<ListFiltered items={[]} filter="2" />)
+//   expect(container).toMatchSnapshot()
+// })
 
-  // it('displays "Search not found" message when no items match the search', () => {
-  //   renderComponent();
+// test('renders correctly with filter and no items', () => {
+//   const { container } = render(<ListFiltered items={[]} filter="2" />)
+//   expect(container).toMatchSnapshot()
+// })
 
-  //   const searchInput = screen.getByLabelText('Search') as HTMLInputElement;
-  //   searchInput.value = 'Non-existing item';
-  //   searchInput.dispatchEvent(new Event('input'));
+// test('ListFiltered renders loading when no items are provided', () => {
+//   const { container } = render(<ListFiltered items={[]} />);
+//   const loadingElement = container.querySelector('div:contains("Loading...")');
+//   assert.ok(loadingElement);
+// });
 
-  //   const notFoundMessage = screen.getByText('Search not found');
-  //   expect(notFoundMessage).toBeDefined();
-  // });
+// test('ListFiltered renders filtered and sorted items', () => {
+//   const { container, getByText, getByLabelText } = render(<ListFiltered items={mockItems} />);
 
-});
+//   // Test initial rendering
+//   assert.ok(getByText('Item 1'));
+//   assert.ok(getByText('Item 2'));
+//   assert.ok(getByText('Item 3'));
+
+//   // Test searching
+//   const searchInput = getByLabelText('Search');
+//   searchInput.value = 'Item 2';
+//   fireEvent.change(searchInput);
+//   assert.notOk(container.querySelector('div:contains("Item 1")'));
+//   assert.ok(getByText('Item 2'));
+//   assert.notOk(container.querySelector('div:contains("Item 3")'));
+
+//   // Test sorting
+//   const sortSelect = getByLabelText('Order by');
+//   sortSelect.value = 'alphabetically_desc';
+//   fireEvent.change(sortSelect);
+//   assert.ok(getByText('Item 3'));
+//   assert.ok(getByText('Item 2'));
+//   assert.ok(getByText('Item 1'));
+// });
+

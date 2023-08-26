@@ -1,0 +1,133 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ListFiltered > renders correctly 1`] = `
+<div>
+  <div
+    class="
+      list-filtered-component
+      className-test
+    "
+  >
+    <div
+      class="list-filter"
+    >
+      <p
+        class="list-filter-title"
+      >
+        List filtered
+      </p>
+      <label
+        class="
+        inputfiled-component
+        
+        list-filter-input
+      "
+      >
+        <span
+          class="
+      label-text-component
+      
+      
+      
+      inputfiled-label"
+        >
+          Search:
+        </span>
+        <input
+          aria-describedby="validation-message-undefined"
+          class=""
+          placeholder="Search"
+          type="search"
+          value=""
+        />
+      </label>
+      <label
+        class="
+        inputselect-component
+        
+        list-filter-select
+      "
+        for=""
+      >
+        <span
+          class="
+      label-text-component
+      
+      
+      
+      inputselect-label"
+        >
+          Order by:
+        </span>
+        <select
+          aria-describedby="validation-message-"
+          id=""
+        >
+          <option
+            value="default"
+          >
+            Default
+          </option>
+          <option
+            value="alphabetically_asc"
+          >
+            A to Z
+          </option>
+          <option
+            value="alphabetically_desc"
+          >
+            Z to A
+          </option>
+        </select>
+        <span
+          aria-hidden="true"
+          class="
+        icon-component
+        xs
+        icon
+      "
+          style="--icon-color: currentColor;"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <title>
+              chevron-down
+            </title>
+            <use
+              xlink:href="/src/assets/sprite.svg#chevron-down"
+            />
+          </svg>
+        </span>
+      </label>
+    </div>
+    <ol
+      aria-label="List filtered"
+      aria-live="polite"
+      class="
+        list-component
+        circle
+        "
+      role="list"
+    >
+      <li
+        role="listitem"
+      >
+        Item 1
+      </li>
+      <li
+        role="listitem"
+      >
+        Item 2
+      </li>
+      <li
+        role="listitem"
+      >
+        Item 3
+      </li>
+    </ol>
+  </div>
+</div>
+`;
