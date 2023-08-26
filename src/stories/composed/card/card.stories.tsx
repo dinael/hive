@@ -1,4 +1,3 @@
-import { CSSProperties, ReactNode } from 'react';
 import { Card, CardProps } from '../../../components/card/Card'
 
 import './card-custom-styles.scss'
@@ -13,13 +12,13 @@ export default {
   component: Card,
   parameters: {
     vitest: {
-      // testFile: "ListComposed.test.tsx"
+      // testFile: "Card.test.tsx"
     }
   },
   tags: ['autodocs'],
   argType: {
     className: {
-      name: 'className',
+      name: 'className:',
       control: 'text'
     },
   },
