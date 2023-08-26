@@ -1,17 +1,18 @@
 import { FC } from 'react'
 import styles from './Paragraph.module.scss'
 
+
+// TODO: Ellipsis lines
 export type ParagraphProps = {
   children: any
   ellipsis?: boolean
   a11yLength?: boolean
   flat?: boolean
-  className: string
+  className?: string
   /**
    *  **\*Experimental feature**
    */
   column?: number | null
-
 }
 
 export const Paragraph: FC<ParagraphProps> = ({

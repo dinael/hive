@@ -16,7 +16,7 @@ export type ButtonProps = {
   description?: string
   disabled?: boolean
   id?: string
-  className: string
+  className?: string
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
 }
 
