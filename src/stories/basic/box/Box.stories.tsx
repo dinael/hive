@@ -67,6 +67,12 @@ export default {
         ]
       }
     },
+    paper: {
+      name: 'Paper:',
+      control: {
+        type: 'boolean'
+      }
+    },
     className: { name: 'className', control: 'text' }
   },
 }
@@ -76,10 +82,20 @@ export const Default = (args: BoxProps) => ([
     style={{ width: "400px", height: '400px' }}
     {...args}>
   </Box>
-  ])
+])
 
 Default.args = {
-  // border: 'primary',
-  // elevation: 'xl',
-  // className: 'my-custom-styles'
+  className: 'my-custom-styles'
+}
+
+export const Paper = (args: BoxProps) => ([
+  <Box
+    style={{ width: "400px", height: '400px' }}
+    {...args}>
+  </Box>
+])
+
+Paper.args = {
+  paper: true,
+  className: 'my-custom-styles'
 }

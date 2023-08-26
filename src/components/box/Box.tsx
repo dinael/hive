@@ -7,6 +7,7 @@ export type BoxProps = {
   elevation?: 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl' | 'pop' | 'default' | 'none';
   border?: 'none' | 'primary' | 'alt' | 'dark';
   radius?: 'none' | 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
+  paper?: boolean
   className?: string
   children?: ReactNode
 }
@@ -14,9 +15,10 @@ export type BoxProps = {
 export const Box: FC<BoxProps> = ({
   tag,
   space = 'none',
-  elevation = 'm',
+  elevation,
   border = 'primary',
   radius = 's',
+  paper = false,
   className,
   children,
   ...props
@@ -29,9 +31,10 @@ export const Box: FC<BoxProps> = ({
   const BoxStyles = `
     ${styles['box-component']}
     ${border ? styles[borderClass] : 'border:primary'}
-    ${elevation ? `elevation:${elevation}` : 'elevation'}
+    ${elevation ? `elevation:${elevation}` : ''}
     ${radius ? `radius:${radius}` : ''}
     ${space ? `p:${space}` : 'space:none'}
+    ${paper? styles.paper : ''}
     ${className || ''}
   `
 

@@ -1,15 +1,20 @@
 .box-component {
   --box-component-border-width: max(0.0625rem, 1px);
 
-  overflow: hidden;
+  overflow: var(--box-component-overflow, hidden);
+  background: var(--box-component-background);
+
+  &.paper {
+    --box-component-background: var(--color-background-secondary);
+  }
 
   &.border {
     &\:primary {
-      border: var(--box-component-border-width) solid var(--box-component-border-color, var(--color-primary-extra-light))
+      border: var(--box-component-border-width) solid var(--box-component-border-color, var(--color-primary))
     }
 
     &\:alt {
-      border: var(--box-component-border-width) solid var(--box-component-border-color, var(--color-primary-light))
+      border: var(--box-component-border-width) solid var(--box-component-border-color, var(--color-primary-extra-light))
     }
 
     &\:dark {
