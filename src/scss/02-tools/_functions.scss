@@ -47,7 +47,7 @@ $-layer: layer.$layer;
 @function get-clamp($min-size, $max-size, $min-screen, $max-screen) {
     $slope: math.div((($max-size - $min-size)), ($max-screen - $min-screen));
     $vw: -$min-size * $slope + $min-size;
-    $clamp-size: clamp(#{rem($min-size)}, #{$slope * 100rem } + #{$vw * 1vw}, #{rem($max-size * 1rem)});
+    $clamp-size: clamp(#{rem($min-size)}, #{$slope * 100rem } + #{$vw * 1vw}, #{rem($max-size * 1)});
 
     @return  $clamp-size;
 }
