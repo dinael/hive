@@ -15,8 +15,11 @@
     @include focus;
   }
 
-  &.disabled{
-    color: var(--anchor-color-disabled);
+  &.disabled,
+  &:disabled {
+    color: var(--anchor-color-disabled) !important;
+    text-decoration-color: var(--anchor-color-disabled) !important;
+    text-decoration-style: dotted;
 
     @include disabled
   }

@@ -52,6 +52,7 @@ $-font-sizes: fonts.$font-sizes;
    	--anchor-color: var(--color-secondary);
 	--anchor-color-hover: var(--color-primary-light);
 	--anchor-color-focus: var(--color-focus); // as focus default
+  --anchor-color-disabled: var(--color-text-primary);
 	// --anchor-color-visited: #{swatch.palette(violet, '400')};
 	// --anchor-color-active: #{swatch.palette(violet, '400')};
 	// --anchor-color-disabled: #{swatch.gray(reddish, '400')};

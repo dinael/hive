@@ -30,7 +30,6 @@ export const Anchor: FC<AnchorProps> = ({
     ${styles['anchor-component']}
     ${disabled ? styles['disabled'] : ''}
     ${safeArea ? styles['safe-area'] : ''}
-    ${disabled ? styles['disabled'] : ''}
     ${className || ''}
   `
 
