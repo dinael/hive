@@ -8,6 +8,8 @@ export type PlayControlsProps = {
   duration?: number
   elapsed?: number
   isPlaying?: boolean
+  isRepeating?: boolean
+  isShuffling?: boolean
   isFirstTrack?: boolean
   isLastTrack?: boolean
   togglePlay?: () => void
@@ -16,12 +18,15 @@ export type PlayControlsProps = {
   toggleSkipBackward?: () => void
   toggleSkipForward?: () => void
   toggleShuffle?: () => void
+  toggleRepeat?: () => void
 }
 
 export const PlayControls: FC<PlayControlsProps> = ({
   duration,
   elapsed,
   isPlaying,
+  isRepeating,
+  isShuffling,
   isFirstTrack,
   isLastTrack,
   togglePlay,
@@ -30,6 +35,7 @@ export const PlayControls: FC<PlayControlsProps> = ({
   toggleSkipBackward,
   toggleSkipForward,
   toggleShuffle,
+  toggleRepeat,
   ...props
 }) => {
 
@@ -40,7 +46,7 @@ export const PlayControls: FC<PlayControlsProps> = ({
       className='player-controls'
       {...props}>
       <Button
-        className='player-button backward'
+        className={`player-button backward`}
         description="Skip previous track"
         icon='backward'
         size="l"
@@ -60,7 +66,7 @@ export const PlayControls: FC<PlayControlsProps> = ({
         disabled={!isPlaying}
         onClick={toggleBackward} />
       <Button
-        className='player-button play'
+        className={`player-button play ${isPlaying && 'active'}`}
         description={isPlaying ? 'Pause' : 'Playing'}
         icon={isPlaying ? 'pause' : 'play'}
         size="l"
@@ -89,7 +95,7 @@ export const PlayControls: FC<PlayControlsProps> = ({
         disabled={isLastTrack}
         onClick={toggleSkipForward} />
       <Button
-        className='player-button shuffle'
+        className={`player-button shuffle`}
         description='Shuffle'
         icon='shuffle'
         size="l"
@@ -97,6 +103,16 @@ export const PlayControls: FC<PlayControlsProps> = ({
         variant={buttonVariant}
         kind='rounded'
         onClick={toggleShuffle} />
+      <Button
+        className={`player-button repeat ${isRepeating && 'active'}`}
+        description='Repeat'
+        icon='repeat'
+        size="l"
+        text='Repeat'
+        variant={buttonVariant}
+        kind='rounded'
+        disabled={!isPlaying}
+        onClick={toggleRepeat} />
     </div>
   );
 };

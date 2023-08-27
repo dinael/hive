@@ -1,20 +1,18 @@
-.player-controls {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  inline-size: 100%;
-}
-
-.volume-controls {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  inline-size: 100%;
-}
-
+.player-controls,
+.volume-controls,
 .track-controls {
   display: flex;
   gap: 1rem;
   align-items: center;
   inline-size: 100%;
 }
+
+.player-button,
+.volumen-button {
+  &:active,
+  &.active {
+    --button-border-color: var(--color-primary);
+    --button-background: var(--color-accent);
+  }
+}
+

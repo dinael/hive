@@ -1,7 +1,7 @@
 interface TrackControlsProps {
   duration: number
   progress: number
-  handleProgress: (event: Event, newValue: number | number[]) => void
+  handleProgress: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const TrackControls: React.FC<TrackControlsProps> = ({

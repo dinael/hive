@@ -31,7 +31,7 @@ export const VolumeControls: FC<VolumeControlsProps> = ({
       className='volume-controls'
       {...props}>
       <Button
-        className='volumen-button'
+        className={`volumen-button ${mute && 'active'}`}
         description={ mute ? 'unmute' : 'mute' }
         icon={getVolumeIcon()}
         size="l"

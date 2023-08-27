@@ -11,14 +11,14 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ trackList }) => {
   const audioPlayer = useRef<HTMLAudioElement | null>(null)
   const [playlist, setPlaylist] = useState(trackList)
   const [index, setIndex] = useState(0)
-  const [currentSong, setCurrentSong] = useState<string>(playlist[index])
+  const [currentSong, setCurrentSong] = useState<string>(playlist ? playlist[index] : '')
   const [isPlaying, setIsPlaying] = useState(false)
-  const [volume, setVolume] = useState(30)
-  const [mute, setMute] = useState(false)
   const [isShuffling, setIsShuffling] = useState(false)
+  const [isRepeating, setIsRepeating] = useState(false)
   const [elapsed, setElapsed] = useState(0)
   const [duration, setDuration] = useState(0)
-  const [currentPlayingSong, setCurrentPlayingSong] = useState<string>('');
+  const [volume, setVolume] = useState(30)
+  const [mute, setMute] = useState(false)
 
   useEffect(() => {
     if (audioPlayer.current) {
@@ -41,29 +41,38 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ trackList }) => {
   useEffect(() => {
     setElapsed(0)
     const handleSongEnd = () => {
-      let newIndex = index + 1
+      let newIndex = index + 1;
 
-      if (isShuffling) {
-        newIndex = Math.floor(Math.random() * playlist.length)
+      if (playlist) {
+
+        if (isShuffling) {
+          newIndex = Math.floor(Math.random() * playlist.length)
+        }
+
+        if (newIndex >= playlist.length) {
+          newIndex = 0;
+        }
+
+        setIndex(newIndex)
+
+        if (isRepeating) {
+          audioPlayer.current!.currentTime = 0;
+          audioPlayer.current!.play();
+        } else {
+          audioPlayer.current!.src = playlist[index]
+          audioPlayer.current!.play();
+
+          setCurrentSong(playlist[newIndex])
+        }
       }
-
-      if (newIndex >= playlist.length) {
-        newIndex = 0
-      }
-
-      setIndex(newIndex)
-      audioPlayer.current!.src = playlist[newIndex]
-      audioPlayer.current!.play()
-
-      setCurrentSong(playlist[newIndex])
-    }
+    };
 
     audioPlayer.current!.addEventListener('ended', handleSongEnd)
 
     return () => {
       audioPlayer.current!.removeEventListener('ended', handleSongEnd)
     }
-  }, [index, playlist, isShuffling])
+  }, [index, playlist, isShuffling, isRepeating])
 
   const togglePlay = () => {
     !isPlaying ? audioPlayer.current!.play() : audioPlayer.current!.pause()
@@ -80,51 +89,63 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ trackList }) => {
 
   const toggleSkipForward = () => {
     let newIndex = index + 1
-    newIndex = newIndex >= playlist.length ? (isShuffling ? 0 : playlist.length - 1) : newIndex;
+    if (playlist) {
+      newIndex = newIndex >= playlist.length ? (isShuffling ? 0 : playlist.length - 1) : newIndex;
 
-    setIndex(newIndex)
-    audioPlayer.current!.src = playlist[newIndex]
-    audioPlayer.current!.play()
+      setIndex(newIndex)
+      audioPlayer.current!.src = playlist ? playlist[newIndex] : ''
+      audioPlayer.current!.play()
 
-    setIsPlaying(true)
+      setIsPlaying(true)
+    }
   }
 
   const toggleSkipBackward = () => {
     let newIndex = index - 1
-    newIndex = newIndex < 0 ? (isShuffling ? playlist.length - 1 : 0) : newIndex;
+    if (playlist) {
+      newIndex = newIndex < 0 ? (isShuffling ? playlist.length - 1 : 0) : newIndex;
 
-    setIndex(newIndex)
-    audioPlayer.current!.src = playlist[newIndex]
-    audioPlayer.current!.play()
+      setIndex(newIndex)
+      audioPlayer.current!.src = playlist ? playlist[newIndex] : ''
+      audioPlayer.current!.play()
 
-    setIsPlaying(true)
+      setIsPlaying(true)
+    }
   }
 
   const toggleShuffle = () => {
     setIsShuffling(prev => !prev)
 
     if (!isShuffling) {
+      if (playlist) {
       const shuffledPlaylist = [...playlist]
-      for (let i = shuffledPlaylist.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1))
-        const temp = shuffledPlaylist[i]
-        shuffledPlaylist[i] = shuffledPlaylist[j]
-        shuffledPlaylist[j] = temp
+        for (let i = shuffledPlaylist.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1))
+          const temp = shuffledPlaylist[i]
+          shuffledPlaylist[i] = shuffledPlaylist[j]
+          shuffledPlaylist[j] = temp
+        }
+
+        setIndex(0)
+        audioPlayer.current!.src = shuffledPlaylist[0]
+        setPlaylist(shuffledPlaylist)
+
+        audioPlayer.current!.play()
+      } else {
+        setIndex(0)
+        if (playlist) {
+          audioPlayer.current!.src = playlist[0]
+          setPlaylist([playlist[0]])
+
+          audioPlayer.current!.play()
+        }
       }
-
-      setIndex(0)
-      audioPlayer.current!.src = shuffledPlaylist[0]
-      setPlaylist(shuffledPlaylist)
-
-      audioPlayer.current!.play()
-    } else {
-      setIndex(0)
-      audioPlayer.current!.src = playlist[0]
-      setPlaylist([playlist[0]])
-
-      audioPlayer.current!.play()
     }
   }
+
+  const toggleRepeat = () => {
+    setIsRepeating(prev => !prev);
+  };
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value, 10)
@@ -143,6 +164,8 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ trackList }) => {
   }
 
   const currentFileName = playlist?.[index]?.split('/').pop()?.replace(/\.[^/.]+$/, '') || '';
+  const isFirstTrack = index === 0
+  const isLastTrack = playlist && index === playlist.length - 1
 
   return (
     <figure>
@@ -160,14 +183,17 @@ export const AudioPlayer: FC<AudioPlayerProps> = ({ trackList }) => {
       <div className=''>
         <PlayerControls
           isPlaying={isPlaying}
+          isRepeating={isRepeating}
+          isShuffling={isShuffling}
           togglePlay={togglePlay}
           toggleBackward={toggleBackward}
           toggleForward={toggleForward}
           toggleSkipBackward={toggleSkipBackward}
           toggleSkipForward={toggleSkipForward}
+          toggleRepeat={toggleRepeat}
           toggleShuffle={toggleShuffle}
-          isFirstTrack={index === 0}
-          isLastTrack={index === playlist.length - 1}
+          isFirstTrack={isFirstTrack}
+          isLastTrack={isLastTrack}
           duration={duration}
           elapsed={elapsed}
         />
