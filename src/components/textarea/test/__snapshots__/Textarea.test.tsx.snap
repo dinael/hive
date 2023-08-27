@@ -4,20 +4,21 @@ exports[`Textarea > Textarea renders snapshot 1`] = `
 <div>
   <label
     class="
-        textarea-component
-        
-        
-        className-test
-      "
+    textarea-component
+    
+    
+    className-test
+  "
     for="id-test"
   >
     <span
       class="
-      label-text-component
-      
-      
-      
-      textarea-label"
+    label-text-component
+    
+    
+    
+    textarea-label
+  "
     >
       label-test:
     </span>

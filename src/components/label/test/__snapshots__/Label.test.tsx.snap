@@ -4,11 +4,12 @@ exports[`Label > Label renders snapshot 1`] = `
 <div>
   <label
     class="
-      label-text-component
-      
-      
-      
-      className-test"
+    label-text-component
+    
+    
+    
+    className-test
+  "
   >
     text-test:
   </label>
@@ -19,11 +20,12 @@ exports[`Label > Label renders with the correct tag name: label 1`] = `
 <div>
   <label
     class="
-      label-text-component
-      
-      
-      
-      className-test"
+    label-text-component
+    
+    
+    
+    className-test
+  "
   >
     text-test:
   </label>
@@ -34,11 +36,12 @@ exports[`Label > Label renders with the correct tag name: span 1`] = `
 <div>
   <span
     class="
-      label-text-component
-      
-      
-      
-      className-test"
+    label-text-component
+    
+    
+    
+    className-test
+  "
   >
     text-test:
   </span>

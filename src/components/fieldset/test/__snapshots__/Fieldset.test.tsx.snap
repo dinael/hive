@@ -4,19 +4,20 @@ exports[`Fieldset > Fieldset renders fieldset with correctly 1`] = `
 <div>
   <fieldset
     class="
-        fieldset-component
-        
-        className-test
-      "
+    fieldset-component
+    
+    className-test
+  "
   >
     <legend>
       <span
         class="
-      label-text-component
-      
-      is-required
-      
-      inputfiled-label"
+    label-text-component
+    
+    is-required
+    
+    inputfiled-label
+  "
       >
         Legend Text:
         <em
@@ -35,19 +36,20 @@ exports[`Fieldset > Fieldset renders legend hidden 1`] = `
 <div>
   <fieldset
     class="
-        fieldset-component
-        
-        className-test
-      "
+    fieldset-component
+    
+    className-test
+  "
   >
     <legend>
       <span
         class="
-      label-text-component
-      
-      is-required
-      
-      inputfiled-label"
+    label-text-component
+    
+    is-required
+    
+    inputfiled-label
+  "
       >
         Legend Text:
         <em
@@ -66,19 +68,20 @@ exports[`Fieldset > Fieldset renders legend with correctly 1`] = `
 <div>
   <fieldset
     class="
-        fieldset-component
-        
-        className-test
-      "
+    fieldset-component
+    
+    className-test
+  "
   >
     <legend>
       <span
         class="
-      label-text-component
-      
-      is-required
-      
-      inputfiled-label"
+    label-text-component
+    
+    is-required
+    
+    inputfiled-label
+  "
       >
         Legend Text:
         <em
@@ -97,19 +100,20 @@ exports[`Fieldset > Fieldset renders snapshot 1`] = `
 <div>
   <fieldset
     class="
-        fieldset-component
-        
-        className-test
-      "
+    fieldset-component
+    
+    className-test
+  "
   >
     <legend>
       <span
         class="
-      label-text-component
-      
-      is-required
-      
-      inputfiled-label"
+    label-text-component
+    
+    is-required
+    
+    inputfiled-label
+  "
       >
         Legend Text:
         <em
@@ -128,19 +132,20 @@ exports[`Fieldset > Fieldset renders with a custom class 1`] = `
 <div>
   <fieldset
     class="
-        fieldset-component
-        
-        className-test
-      "
+    fieldset-component
+    
+    className-test
+  "
   >
     <legend>
       <span
         class="
-      label-text-component
-      
-      is-required
-      
-      inputfiled-label"
+    label-text-component
+    
+    is-required
+    
+    inputfiled-label
+  "
       >
         Legend Text:
         <em

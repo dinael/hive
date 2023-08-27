@@ -5,9 +5,10 @@ exports[`List > List renders an ordered list when \`ordered\` prop is true 1`] =
   <ol
     aria-label=""
     class="
-        list-component
-        circle
-        className-test"
+    list-component
+    circle
+    className-test
+  "
     role="list"
   >
     <li
@@ -34,9 +35,10 @@ exports[`List > List renders an unordered list by default 1`] = `
   <ul
     aria-label=""
     class="
-        list-component
-        circle
-        className-test"
+    list-component
+    circle
+    className-test
+  "
     role="list"
   >
     <li

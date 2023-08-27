@@ -4,12 +4,12 @@ exports[`Paragraph > Paragraph renders content composition 1`] = `
 <div>
   <p
     class="
-        paragraph-component
-        
-        
-        
-        className-test
-      "
+      paragraph-component
+      
+      
+      
+      className-test
+  "
   >
     <strong>
       This a composition text:
@@ -138,12 +138,12 @@ exports[`Paragraph > Paragraph renders snapshot 1`] = `
 <div>
   <p
     class="
-        paragraph-component
-        
-        
-        
-        className-test
-      "
+      paragraph-component
+      
+      
+      
+      className-test
+  "
   >
     children-test
   </p>

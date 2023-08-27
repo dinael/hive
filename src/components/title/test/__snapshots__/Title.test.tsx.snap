@@ -4,12 +4,12 @@ exports[`Title > Title renders snapshot 1`] = `
 <div>
   <h3
     class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
+    title-component
+    xxl
+    title-component
+    ellipsis
+    a11y-length
+  "
   >
     Example title
   </h3>
@@ -20,12 +20,12 @@ exports[`Title > Title renders with the correct tag name 1`] = `
 <div>
   <h3
     class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
+    title-component
+    xxl
+    title-component
+    ellipsis
+    a11y-length
+  "
   >
     Example title
   </h3>
@@ -36,12 +36,12 @@ exports[`Title > Title renders with the correct tag name when level is 0 1`] = `
 <div>
   <p
     class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
+    title-component
+    xxl
+    title-component
+    ellipsis
+    a11y-length
+  "
   >
     Example title
   </p>
@@ -52,76 +52,12 @@ exports[`Title > Title renders with the correct tag name when level is out range
 <div>
   <h2
     class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
-  >
-    Example title
-  </h2>
-</div>
-`;
-
-exports[`Title > renders snapshot 1`] = `
-<div>
-  <h3
-    class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
-  >
-    Example title
-  </h3>
-</div>
-`;
-
-exports[`Title > renders with the correct tag name 1`] = `
-<div>
-  <h3
-    class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
-  >
-    Example title
-  </h3>
-</div>
-`;
-
-exports[`Title > renders with the correct tag name when level is 0 1`] = `
-<div>
-  <p
-    class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
-  >
-    Example title
-  </p>
-</div>
-`;
-
-exports[`Title > renders with the correct tag name when level is out range 1`] = `
-<div>
-  <h2
-    class="
-        title-component
-        xxl
-        title-component
-        ellipsis
-        a11y-length
-      "
+    title-component
+    xxl
+    title-component
+    ellipsis
+    a11y-length
+  "
   >
     Example title
   </h2>

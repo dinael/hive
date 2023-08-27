@@ -5,10 +5,10 @@ exports[`Icon > Icon renders correctly 1`] = `
   <span
     aria-hidden="true"
     class="
-        icon-component
-        xl
-        className-test
-      "
+    icon-component
+    xl
+    className-test
+  "
     style="--icon-color: currentColor;"
   >
     <svg
@@ -32,10 +32,10 @@ exports[`Icon > Icon renders correctly svg title 1`] = `
   <span
     aria-hidden="true"
     class="
-        icon-component
-        xl
-        className-test
-      "
+    icon-component
+    xl
+    className-test
+  "
     style="--icon-color: currentColor;"
   >
     <svg
@@ -59,10 +59,10 @@ exports[`Icon > Icon renders correctly viewBox 1`] = `
   <span
     aria-hidden="true"
     class="
-        icon-component
-        xl
-        className-test
-      "
+    icon-component
+    xl
+    className-test
+  "
     style="--icon-color: currentColor;"
   >
     <svg
@@ -86,10 +86,10 @@ exports[`Icon > Icon renders snapshot 1`] = `
   <span
     aria-hidden="true"
     class="
-        icon-component
-        xl
-        className-test
-      "
+    icon-component
+    xl
+    className-test
+  "
     style="--icon-color: currentColor;"
   >
     <svg
@@ -113,145 +113,10 @@ exports[`Icon > Icon renders with a custom class 1`] = `
   <span
     aria-hidden="true"
     class="
-        icon-component
-        xl
-        className-test
-      "
-    style="--icon-color: currentColor;"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <title>
-        This is a title for a test
-      </title>
-      <use
-        xlink:href="/src/assets/sprite.svg#close"
-      />
-    </svg>
-  </span>
-</div>
-`;
-
-exports[`Icon > renders correctly 1`] = `
-<div>
-  <span
-    aria-hidden="true"
-    class="
-        icon-component
-        xl
-        className-test
-      "
-    style="--icon-color: currentColor;"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <title>
-        This is a title for a test
-      </title>
-      <use
-        xlink:href="/src/assets/sprite.svg#close"
-      />
-    </svg>
-  </span>
-</div>
-`;
-
-exports[`Icon > renders correctly svg title 1`] = `
-<div>
-  <span
-    aria-hidden="true"
-    class="
-        icon-component
-        xl
-        className-test
-      "
-    style="--icon-color: currentColor;"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <title>
-        This is a title for a test
-      </title>
-      <use
-        xlink:href="/src/assets/sprite.svg#close"
-      />
-    </svg>
-  </span>
-</div>
-`;
-
-exports[`Icon > renders correctly viewBox 1`] = `
-<div>
-  <span
-    aria-hidden="true"
-    class="
-        icon-component
-        xl
-        className-test
-      "
-    style="--icon-color: currentColor;"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <title>
-        This is a title for a test
-      </title>
-      <use
-        xlink:href="/src/assets/sprite.svg#close"
-      />
-    </svg>
-  </span>
-</div>
-`;
-
-exports[`Icon > renders snapshot 1`] = `
-<div>
-  <span
-    aria-hidden="true"
-    class="
-        icon-component
-        xl
-        className-test
-      "
-    style="--icon-color: currentColor;"
-  >
-    <svg
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <title>
-        This is a title for a test
-      </title>
-      <use
-        xlink:href="/src/assets/sprite.svg#close"
-      />
-    </svg>
-  </span>
-</div>
-`;
-
-exports[`Icon > renders with a custom class 1`] = `
-<div>
-  <span
-    aria-hidden="true"
-    class="
-        icon-component
-        xl
-        className-test
-      "
+    icon-component
+    xl
+    className-test
+  "
     style="--icon-color: currentColor;"
   >
     <svg

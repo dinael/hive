@@ -5,22 +5,22 @@ exports[`Button > Button onClick 1`] = `
   <button
     aria-label="Text for a11y"
     class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
+    button-component
+    primary
+    xs
+    default
+    left
+    className-test
+  "
     type="button"
   >
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        
-      "
+    icon-component
+    xs
+    
+  "
       style="--icon-color: currentColor;"
     >
       <svg
@@ -38,10 +38,10 @@ exports[`Button > Button onClick 1`] = `
     </span>
     <span
       class="
-          text
-          
-          
-          "
+    text
+    
+    
+  "
     >
       Button text
     </span>
@@ -54,14 +54,14 @@ exports[`Button > Button renders as link correctly 1`] = `
   <a
     aria-label="Text for a11y"
     class="
-        button-component
-        primary
-        xs
-        default
-        left
-        
-        className-test
-      "
+    button-component
+    primary
+    xs
+    default
+    left
+    
+    className-test
+  "
     href="https://www.example.com"
     rel="noopener noreferrer"
     target="_self"
@@ -69,10 +69,10 @@ exports[`Button > Button renders as link correctly 1`] = `
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        
-      "
+    icon-component
+    xs
+    
+  "
       style="--icon-color: currentColor;"
     >
       <svg
@@ -89,7 +89,11 @@ exports[`Button > Button renders as link correctly 1`] = `
       </svg>
     </span>
     <span
-      class="text "
+      class="
+    text
+    
+    
+  "
     >
       Button text
     </span>
@@ -102,22 +106,22 @@ exports[`Button > Button renders correctly 1`] = `
   <button
     aria-label="Text for a11y"
     class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
+    button-component
+    primary
+    xs
+    default
+    left
+    className-test
+  "
     type="button"
   >
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        
-      "
+    icon-component
+    xs
+    
+  "
       style="--icon-color: currentColor;"
     >
       <svg
@@ -135,10 +139,10 @@ exports[`Button > Button renders correctly 1`] = `
     </span>
     <span
       class="
-          text
-          
-          
-          "
+    text
+    
+    
+  "
     >
       Button text
     </span>
@@ -151,22 +155,22 @@ exports[`Button > Button renders icon correctly 1`] = `
   <button
     aria-label="Text for a11y"
     class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
+    button-component
+    primary
+    xs
+    default
+    left
+    className-test
+  "
     type="button"
   >
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        
-      "
+    icon-component
+    xs
+    
+  "
       style="--icon-color: currentColor;"
     >
       <svg
@@ -184,62 +188,14 @@ exports[`Button > Button renders icon correctly 1`] = `
     </span>
     <span
       class="
-          text
-          
-          
-          "
+    text
+    
+    
+  "
     >
       Button text
     </span>
   </button>
-</div>
-`;
-
-exports[`Button > Button renders kind link correctly 1`] = `
-<div>
-  <a
-    aria-label="Text for a11y"
-    class="
-        button-component
-        primary
-        xs
-        default
-        left
-        
-        className-test
-      "
-    href="https://www.example.com"
-    rel="noopener noreferrer"
-    target="_self"
-  >
-    <span
-      aria-hidden="true"
-      class="
-        icon-component
-        xs
-        
-      "
-      style="--icon-color: currentColor;"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          xlink:href="/src/assets/sprite.svg#close"
-        />
-      </svg>
-    </span>
-    <span
-      class="text "
-    >
-      Button text
-    </span>
-  </a>
 </div>
 `;
 
@@ -248,22 +204,22 @@ exports[`Button > Button renders snapshot 1`] = `
   <button
     aria-label="Text for a11y"
     class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
+    button-component
+    primary
+    xs
+    default
+    left
+    className-test
+  "
     type="button"
   >
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        
-      "
+    icon-component
+    xs
+    
+  "
       style="--icon-color: currentColor;"
     >
       <svg
@@ -281,10 +237,10 @@ exports[`Button > Button renders snapshot 1`] = `
     </span>
     <span
       class="
-          text
-          
-          
-          "
+    text
+    
+    
+  "
     >
       Button text
     </span>
@@ -297,22 +253,22 @@ exports[`Button > Button renders text correctly 1`] = `
   <button
     aria-label="Text for a11y"
     class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
+    button-component
+    primary
+    xs
+    default
+    left
+    className-test
+  "
     type="button"
   >
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        
-      "
+    icon-component
+    xs
+    
+  "
       style="--icon-color: currentColor;"
     >
       <svg
@@ -330,303 +286,10 @@ exports[`Button > Button renders text correctly 1`] = `
     </span>
     <span
       class="
-          text
-          
-          
-          "
-    >
-      Button text
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button > onClick 1`] = `
-<div>
-  <button
-    aria-label="Text for a11y"
-    class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-      class="
-        icon-component
-        xs
-        
-      "
-      style="--icon-color: currentColor;"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          xlink:href="/src/assets/sprite.svg#close"
-        />
-      </svg>
-    </span>
-    <span
-      class="
-          text
-          
-          
-          "
-    >
-      Button text
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button > renders correctly 1`] = `
-<div>
-  <button
-    aria-label="Text for a11y"
-    class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-      class="
-        icon-component
-        xs
-        
-      "
-      style="--icon-color: currentColor;"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          xlink:href="/src/assets/sprite.svg#close"
-        />
-      </svg>
-    </span>
-    <span
-      class="
-          text
-          
-          
-          "
-    >
-      Button text
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button > renders icon correctly 1`] = `
-<div>
-  <button
-    aria-label="Text for a11y"
-    class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-      class="
-        icon-component
-        xs
-        
-      "
-      style="--icon-color: currentColor;"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          xlink:href="/src/assets/sprite.svg#close"
-        />
-      </svg>
-    </span>
-    <span
-      class="
-          text
-          
-          
-          "
-    >
-      Button text
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button > renders kind link correctly 1`] = `
-<div>
-  <a
-    aria-label="Text for a11y"
-    class="
-        button-component
-        primary
-        xs
-        default
-        left
-        
-        className-test
-      "
-    href="https://www.example.com"
-    rel="noopener noreferrer"
-    target="_self"
-  >
-    <span
-      aria-hidden="true"
-      class="
-        icon-component
-        xs
-        
-      "
-      style="--icon-color: currentColor;"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          xlink:href="/src/assets/sprite.svg#close"
-        />
-      </svg>
-    </span>
-    <span
-      class="text "
-    >
-      Button text
-    </span>
-  </a>
-</div>
-`;
-
-exports[`Button > renders snapshot 1`] = `
-<div>
-  <button
-    aria-label="Text for a11y"
-    class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-      class="
-        icon-component
-        xs
-        
-      "
-      style="--icon-color: currentColor;"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          xlink:href="/src/assets/sprite.svg#close"
-        />
-      </svg>
-    </span>
-    <span
-      class="
-          text
-          
-          
-          "
-    >
-      Button text
-    </span>
-  </button>
-</div>
-`;
-
-exports[`Button > renders text correctly 1`] = `
-<div>
-  <button
-    aria-label="Text for a11y"
-    class="
-          button-component
-          primary
-          xs
-          default
-          left
-          className-test
-        "
-    type="button"
-  >
-    <span
-      aria-hidden="true"
-      class="
-        icon-component
-        xs
-        
-      "
-      style="--icon-color: currentColor;"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-      >
-        <title>
-          close
-        </title>
-        <use
-          xlink:href="/src/assets/sprite.svg#close"
-        />
-      </svg>
-    </span>
-    <span
-      class="
-          text
-          
-          
-          "
+    text
+    
+    
+  "
     >
       Button text
     </span>

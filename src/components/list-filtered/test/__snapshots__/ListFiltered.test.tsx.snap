@@ -4,9 +4,8 @@ exports[`ListFiltered > renders correctly 1`] = `
 <div>
   <div
     class="
-      list-filtered-component
-      className-test
-    "
+        list-filtered-component
+        className-test"
   >
     <div
       class="list-filter"
@@ -25,11 +24,12 @@ exports[`ListFiltered > renders correctly 1`] = `
       >
         <span
           class="
-      label-text-component
-      
-      
-      
-      inputfiled-label"
+    label-text-component
+    
+    
+    
+    inputfiled-label
+  "
         >
           Search:
         </span>
@@ -43,19 +43,20 @@ exports[`ListFiltered > renders correctly 1`] = `
       </label>
       <label
         class="
-        inputselect-component
-        
-        list-filter-select
-      "
+    input-select-component
+    
+    list-filter-select
+  "
         for=""
       >
         <span
           class="
-      label-text-component
-      
-      
-      
-      inputselect-label"
+    label-text-component
+    
+    
+    
+    input-select-label
+  "
         >
           Order by:
         </span>
@@ -82,10 +83,10 @@ exports[`ListFiltered > renders correctly 1`] = `
         <span
           aria-hidden="true"
           class="
-        icon-component
-        xs
-        icon
-      "
+    icon-component
+    xs
+    icon
+  "
           style="--icon-color: currentColor;"
         >
           <svg
@@ -107,9 +108,10 @@ exports[`ListFiltered > renders correctly 1`] = `
       aria-label="List filtered"
       aria-live="polite"
       class="
-        list-component
-        circle
-        "
+    list-component
+    circle
+    
+  "
       role="list"
     >
       <li

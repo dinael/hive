@@ -3,16 +3,17 @@
 exports[`InputRadio > InputRadio renders snapshot 1`] = `
 <div>
   <label
-    class="undefined"
+    class=""
     for="radio-test"
   >
     <span
       class="
-      label-text-component
-      
-      
-      
-      "
+    label-text-component
+    
+    
+    
+    
+  "
     >
       Example label::
     </span>

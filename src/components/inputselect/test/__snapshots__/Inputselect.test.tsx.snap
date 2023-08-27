@@ -4,19 +4,20 @@ exports[`Inputselect > Inputselect renders snapshot 1`] = `
 <div>
   <label
     class="
-        inputselect-component
-        
-        className-test
-      "
+    input-select-component
+    
+    className-test
+  "
     for="id-test"
   >
     <span
       class="
-      label-text-component
-      
-      
-      
-      inputselect-label"
+    label-text-component
+    
+    
+    
+    input-select-label
+  "
     >
       label-test:
     </span>
@@ -44,10 +45,10 @@ exports[`Inputselect > Inputselect renders snapshot 1`] = `
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        icon
-      "
+    icon-component
+    xs
+    icon
+  "
       style="--icon-color: currentColor;"
     >
       <svg
@@ -71,19 +72,20 @@ exports[`Inputselect > Inputselect renders snapshot with group options 1`] = `
 <div>
   <label
     class="
-        inputselect-component
-        
-        className-test
-      "
+    input-select-component
+    
+    className-test
+  "
     for="id-test"
   >
     <span
       class="
-      label-text-component
-      
-      
-      
-      inputselect-label"
+    label-text-component
+    
+    
+    
+    input-select-label
+  "
     >
       label-test:
     </span>
@@ -124,10 +126,10 @@ exports[`Inputselect > Inputselect renders snapshot with group options 1`] = `
     <span
       aria-hidden="true"
       class="
-        icon-component
-        xs
-        icon
-      "
+    icon-component
+    xs
+    icon
+  "
       style="--icon-color: currentColor;"
     >
       <svg

@@ -1,101 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Blockquote > Blockquote component renders correctly 1`] = `
-<div>
-  <blockquote
-    class="blockquote-component
-          flat
-          className-test"
-  >
-    <header
-      class="blockquote-header"
-    >
-      <p
-        class="blockquote-title"
-      >
-        Blockquote component title
-      </p>
-    </header>
-    <div
-      class="blockquote-content"
-    >
-      Blockquote component body
-    </div>
-    <footer
-      class="blockquote-footer"
-    >
-      Blockquote component footer
-    </footer>
-  </blockquote>
-</div>
-`;
-
-exports[`Blockquote > Blockquote component renders snapshot 1`] = `
-<div>
-  <blockquote
-    class="blockquote-component
-          flat
-          className-test"
-  >
-    <header
-      class="blockquote-header"
-    >
-      <p
-        class="blockquote-title"
-      >
-        Blockquote component title
-      </p>
-    </header>
-    <div
-      class="blockquote-content"
-    >
-      Blockquote component body
-    </div>
-    <footer
-      class="blockquote-footer"
-    >
-      Blockquote component footer
-    </footer>
-  </blockquote>
-</div>
-`;
-
-exports[`Blockquote > Blockquote component renders with a custom class 1`] = `
-<div>
-  <blockquote
-    class="blockquote-component
-          flat
-          className-test"
-  >
-    <header
-      class="blockquote-header"
-    >
-      <p
-        class="blockquote-title"
-      >
-        Blockquote component title
-      </p>
-    </header>
-    <div
-      class="blockquote-content"
-    >
-      Blockquote component body
-    </div>
-    <footer
-      class="blockquote-footer"
-    >
-      Blockquote component footer
-    </footer>
-  </blockquote>
-</div>
-`;
-
 exports[`Blockquote > Blockquote renders correctly 1`] = `
 <div>
   <blockquote
-    class="blockquote-component
-          flat
-          className-test"
+    class="
+    blockquote-component
+    flat
+    className-test
+  "
   >
     <header
       class="blockquote-header"
@@ -123,9 +35,11 @@ exports[`Blockquote > Blockquote renders correctly 1`] = `
 exports[`Blockquote > Blockquote renders footer correctly 1`] = `
 <div>
   <blockquote
-    class="blockquote-component
-          flat
-          className-test"
+    class="
+    blockquote-component
+    flat
+    className-test
+  "
   >
     <header
       class="blockquote-header"
@@ -153,9 +67,11 @@ exports[`Blockquote > Blockquote renders footer correctly 1`] = `
 exports[`Blockquote > Blockquote renders quote correctly 1`] = `
 <div>
   <blockquote
-    class="blockquote-component
-          flat
-          className-test"
+    class="
+    blockquote-component
+    flat
+    className-test
+  "
   >
     <header
       class="blockquote-header"
@@ -183,9 +99,11 @@ exports[`Blockquote > Blockquote renders quote correctly 1`] = `
 exports[`Blockquote > Blockquote renders snapshot 1`] = `
 <div>
   <blockquote
-    class="blockquote-component
-          flat
-          className-test"
+    class="
+    blockquote-component
+    flat
+    className-test
+  "
   >
     <header
       class="blockquote-header"
@@ -213,9 +131,11 @@ exports[`Blockquote > Blockquote renders snapshot 1`] = `
 exports[`Blockquote > Blockquote renders title correctly 1`] = `
 <div>
   <blockquote
-    class="blockquote-component
-          flat
-          className-test"
+    class="
+    blockquote-component
+    flat
+    className-test
+  "
   >
     <header
       class="blockquote-header"
@@ -243,9 +163,11 @@ exports[`Blockquote > Blockquote renders title correctly 1`] = `
 exports[`Blockquote > Blockquote renders with a custom class 1`] = `
 <div>
   <blockquote
-    class="blockquote-component
-          flat
-          className-test"
+    class="
+    blockquote-component
+    flat
+    className-test
+  "
   >
     <header
       class="blockquote-header"
