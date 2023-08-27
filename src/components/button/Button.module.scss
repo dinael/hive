@@ -3,6 +3,7 @@
 @use '../../scss/03-modules/texts' as text;
 
 .button-component {
+  --button-direction: row
   --button-gap: 0 0.5rem;
   --button-background: var(--color-primary);
   --button-border-width: max(2px, 0.125rem);
@@ -12,7 +13,7 @@
   --button-padding-inline: 1em;
 
   font-size: var(--button-font-size);
-  flex-direction: var(--button-direction, row);
+  flex-direction: var(--button-direction);
   transition: background .35s ease-in-out;
   cursor: pointer;
 
@@ -21,10 +22,12 @@
     @include focus;
   }
   // TODO: tinted color
-  &:disabled {
-    --button-color: hsl(0 0% 40%);
-    --button-border-color: hsl(0 0% 40%);
-    --button-background: hsl(0 0% 80%);
+  &:disabled,
+  &[disabled] {
+    --button-color: hsl(0 0% 40%) !important;
+    --button-border-color: hsl(0 0% 40%) !important;
+    --button-background: hsl(0 0% 80%) !important;
+
     pointer-events: none;
     cursor: not-allowed;
   }
@@ -34,7 +37,7 @@
   }
 }
 
-// ## Kind
+// ## Anchor
 a.button-component {
   --anchor-color: var(--button-color);
   --anchor-background: var(--color-primary);
@@ -55,10 +58,11 @@ a.button-component {
   border-radius: var(--button-border-radius);
   background: var(--button-background);
 
+  &:disabled,
   &[disabled] {
-    --button-color: hsl(0 0% 40%);
-    --button-border-color: hsl(0 0% 40%);
-    --button-background: hsl(0 0% 80%);
+    --button-color: hsl(0 0% 40%) !important;
+    --button-border-color: hsl(0 0% 40%) !important;
+    --button-background: hsl(0 0% 80%) !important;
 
     pointer-events: none;
     cursor: not-allowed;
