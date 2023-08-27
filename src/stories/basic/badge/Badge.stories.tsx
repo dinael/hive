@@ -18,6 +18,10 @@ export default {
       name: 'Length',
       control: 'number'
     },
+    alt: {
+      name: 'Alt',
+      control: 'boolean'
+    },
     spot: {
       name: 'Spot',
       control: 'boolean'
@@ -37,6 +41,7 @@ Default.args = {
   text: '+9999',
   length: 3,
   spot: false,
+  alt: false,
   className: ''
 }
 

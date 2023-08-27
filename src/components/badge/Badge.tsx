@@ -5,6 +5,7 @@ export type BadgeProps = {
   text: string
   length?: number
   spot?: boolean
+  alt: boolean
   className?: string
 }
 
@@ -12,6 +13,7 @@ export const Badge: FC<BadgeProps> = ({
   text = '',
   length = 0,
   spot = false,
+  alt,
   className = '',
   ...props
 }: BadgeProps) => {
@@ -23,6 +25,7 @@ export const Badge: FC<BadgeProps> = ({
   const badgeStyles = `
     ${styles['badge-component']}
     ${spot ? styles.spot : ''}
+    ${alt ? styles['alt'] : ''}
     ${className || ''}
   `
 

@@ -27,6 +27,11 @@ $badge-column-gap: 0.5ch;
     max-inline-size: var(--badge-component-height);
   }
 
+  &.alt {
+    color: var(--badge-alt-color, var(--color-basic-negative));
+    background: var(--badge-alt-background, var(--color-accent));
+  }
+
   &.spot {
     --badge-component-height: #{$badge-spot-size};
     --badge-component-min-width: #{$badge-spot-size};
