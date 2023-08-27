@@ -32,18 +32,25 @@ describe('Badge', () => {
     expect(container).toMatchSnapshot()
   })
 
-  test('Badge applies the spot class when prop is set to true', () => {
+  test('Badge applies spot classes when prop is set to true', () => {
     const { container } = render(<Badge {...defaultProps} spot />)
     const badgeElement = container.querySelector('span')
     expect(badgeElement?.className).toContain('spot')
     expect(container).toMatchSnapshot()
   })
 
-  test('Badge applies the spot class when prop is set to true check text a11y', () => {
+  test('Badge applies spot classes when prop is set to true check text a11y', () => {
     const { container } = render(<Badge {...defaultProps} spot />)
     const badgeTextElement = container.querySelector('span > strong')
     expect(badgeTextElement?.textContent).toBe(defaultProps.text)
     expect(badgeTextElement?.className).toContain('sr-only')
+    expect(container).toMatchSnapshot()
+  })
+
+  test('Badge applies alt classes when alt is true', () => {
+    const { container } = render(<Badge {...defaultProps} alt={true} />)
+    const badgeElement = container.querySelector('span')
+    expect(badgeElement?.className).toContain('alt')
     expect(container).toMatchSnapshot()
   })
 

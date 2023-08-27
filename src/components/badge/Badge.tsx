@@ -5,7 +5,7 @@ export type BadgeProps = {
   text: string
   length?: number
   spot?: boolean
-  alt: boolean
+  alt?: boolean
   className?: string
 }
 

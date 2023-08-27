@@ -1,5 +1,29 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Badge > Badge applies alt classes when alt is true 1`] = `
+<div>
+  <span
+    class="
+    badge-component
+    
+    alt
+    className-test
+  "
+  >
+    <strong
+      aria-hidden="true"
+      class="
+    badge-text
+    
+  "
+      role="presentation"
+    >
+      +9999
+    </strong>
+  </span>
+</div>
+`;
+
 exports[`Badge > Badge applies the spot class when prop is set to true 1`] = `
 <div>
   <span
