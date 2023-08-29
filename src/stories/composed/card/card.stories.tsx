@@ -44,7 +44,7 @@ export const Default = (args: CardProps) => (
 Default.args = {
   title: 'a card',
   titleLevel: 4,
-  imgSrc: 'https://picsum.photos/300/100?random=1',
+  imgSrc: 'https://picsum.photos/300/500?random=1',
   imgAlt: 'A random picture',
   className: 'my-custom-styles'
 }
@@ -54,6 +54,7 @@ export const CompositionExample = (args: CardProps) => ([
     <Card {...args}>
       <div slot="CardHeader">
         <Button
+          className='menu-alt'
           description="Menu alt"
           icon="dots-vertical"
           iconOnly
@@ -61,7 +62,7 @@ export const CompositionExample = (args: CardProps) => ([
           onClick={() => { }}
           size="m"
           text="Button"
-          variant="ghost"
+          variant="primary"
         />
       </div>
       <div slot="CardContent">
