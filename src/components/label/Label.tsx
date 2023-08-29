@@ -37,7 +37,7 @@ export const Label: FC<LabelProps> = ({
   return (
     <Tag className={labelStyles}
       {...props}>
-        {text + ':'}
+        {text}
         {required ?
           <em
             className={styles['required-text']}

@@ -11,7 +11,7 @@ exports[`Label > Label renders snapshot 1`] = `
     className-test
   "
   >
-    text-test:
+    text-test
   </label>
 </div>
 `;
@@ -27,7 +27,7 @@ exports[`Label > Label renders with the correct tag name: label 1`] = `
     className-test
   "
   >
-    text-test:
+    text-test
   </label>
 </div>
 `;
@@ -43,7 +43,7 @@ exports[`Label > Label renders with the correct tag name: span 1`] = `
     className-test
   "
   >
-    text-test:
+    text-test
   </span>
 </div>
 `;
