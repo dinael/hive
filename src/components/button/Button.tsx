@@ -40,15 +40,15 @@ export const Button: FC<ButtonProps> = ({
 
   function handleClick(e:any) {
     e.preventDefault()
-    console.log('You clicked submit.')
   }
 
   const buttonStyles = `
     ${styles['button-component']}
-    ${styles[variant]}
-    ${styles[size]}
-    ${styles[kind]}
-    ${styles[iconPosition]}
+    ${styles[variant ? variant : 'primary']}
+    ${styles[size ? size : 'm']}
+    ${styles[kind ? kind : 'default']}
+    ${styles[iconPosition ? iconPosition : 'left']}
+    ${disabled ? styles['disabled'] : ''}
     ${className || ''}
   `
 
@@ -56,16 +56,6 @@ export const Button: FC<ButtonProps> = ({
     ${styles.text}
     ${ellipsis ? styles['ellipsis'] : ''}
     ${iconOnly || kind === 'rounded' ? 'sr-only' : ''}
-  `
-
-  const buttonAsLinkStyles = `
-    ${styles['button-component']}
-    ${styles[variant]}
-    ${styles[size]}
-    ${styles[kind]}
-    ${styles[iconPosition]}
-    ${disabled ? styles['disabled'] : ''}
-    ${className || ''}
   `
 
   if (type !== 'link') {
@@ -79,9 +69,11 @@ export const Button: FC<ButtonProps> = ({
         onClick={handleClick}
         {...props}>
         {icon && <Icon name={icon} size={size} />}
-        <span className={textStyles}>
-          {text}
-        </span>
+        {!iconOnly && kind !== 'rounded' ? (
+          <span className={textStyles}>
+            {text}
+          </span>
+        ) : null}
       </button>
     )
   }
@@ -93,7 +85,7 @@ export const Button: FC<ButtonProps> = ({
       target="_self"
       rel="noopener noreferrer"
       aria-label={a11yText}
-      className={buttonAsLinkStyles}
+      className={buttonStyles}
       onClick={handleClick}
       {...props}>
       {icon && <Icon name={icon} size={size} />}
