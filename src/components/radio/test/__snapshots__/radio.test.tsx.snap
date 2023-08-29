@@ -15,7 +15,7 @@ exports[`InputRadio > InputRadio renders snapshot 1`] = `
     
   "
     >
-      Example label::
+      Example label:
     </span>
     <input
       aria-describedby="validation-message-radio-test"

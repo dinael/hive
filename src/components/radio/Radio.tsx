@@ -2,9 +2,9 @@ import { FC, useState, ChangeEvent } from 'react'
 import { Label as LabelText } from '../label/Label'
 
 export type InputRadioProps = {
-  value: string
+  value?: string
   id?: string,
-  onChange: (value: string) => void
+  onChange?: (value: string) => void
   label: string
   required?: boolean
   error?: boolean
