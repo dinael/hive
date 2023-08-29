@@ -13,7 +13,7 @@ export type CheckboxProps = {
   name?: string
   value?: string
   indeterminate?: boolean
-  checked?: boolean
+  isChecked?: boolean
   required?: boolean
   disabled?: boolean
   variant?: 'default' | 'switch' | 'chip'
@@ -31,7 +31,6 @@ export const Checkbox: FC<CheckboxProps> = ({
   name,
   value,
   indeterminate = false,
-  checked,
   required = false,
   disabled = false,
   variant = 'default',

@@ -37,26 +37,24 @@ export default {
 }
 
 export const Default = (args: CheckboxProps) => (
-  <Checkbox {...args} />
+  <>
+    <Checkbox {...args} label='Checkbox'/>
+  </>
 )
 
-export const Indeterminate = (args: CheckboxProps) => {
-  const [isChecked, setChecked] = useState(false);
-
-  const handleChange = () => {
-    setChecked(!isChecked);
-  };
-
-  return (
-    <Checkbox
-      {...args}
-      onChange={handleChange}
-      indeterminate/>
-  )
-}
+export const Status = (args: CheckboxProps) => (
+  <>
+    <Checkbox {...args} label='Unchecked'/>
+    <Checkbox {...args} label="Checked" isChecked/>
+    <Checkbox {...args} label="Indeterminate" indeterminate/>
+    <Checkbox {...args} label="Disabled" disabled/>
+  </>
+)
 
 export const Switch = (args: CheckboxProps) => (
-  [<Checkbox {...args} />]
+  <>
+    <Checkbox {...args} label="Switch" />
+  </>
 )
 
 export const Chip = (args: CheckboxProps) => (
@@ -70,11 +68,6 @@ Default.args = {
   className: '',
   error: false,
   errorText: 'This is a error'
-}
-
-Indeterminate.args = {
-  ...Default.args,
-  label: 'Indeterminate',
 }
 
 Switch.args = {
