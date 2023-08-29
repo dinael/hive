@@ -6,7 +6,7 @@
     min-block-size: var(--textarea-min-block-size, 2.75rem);
     border-color: var(--textarea-border-color);
     border-style: var(--textarea-border-style, solid);
-    border-width: var(--textarea-border-width);
+    border-width: var(--textarea-border-width, max(0.125rem, 2px));
     border-radius: var(--textarea-border-radius);
     color: var(--textarea-color, inherit);
     inline-size: var(--textarea-inline-size, 100%);

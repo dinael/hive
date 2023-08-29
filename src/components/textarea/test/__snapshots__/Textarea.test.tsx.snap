@@ -20,7 +20,7 @@ exports[`Textarea > Textarea renders snapshot 1`] = `
     textarea-label
   "
     >
-      label-test:
+      label-test
     </span>
     <textarea
       aria-describedby=""

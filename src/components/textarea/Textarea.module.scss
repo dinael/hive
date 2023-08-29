@@ -2,11 +2,12 @@
 @use '../../scss/03-modules/forms' as form;
 
 .textarea-component{
-  position: static;
+  --textarea-border-radius: #{radius(XXS)};
+  --textarea-background: var(--color-basic-positive);
+  --textarea-block-padding: 0.5rem;
+  --textarea-inline-padding: 0.5rem;
 
   textarea {
-    padding: 0.5rem;
-    border-radius: radius(XXS);
     transition: background-color .35s ease-in-out;
 
     &:focus {
