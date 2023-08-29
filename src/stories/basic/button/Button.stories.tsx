@@ -31,18 +31,18 @@ export default {
         options: ['primary','secondary','alt','ghost','success','danger']
       }
     },
-    kind: {
-      name: 'Kind',
-      control: {
-        type: 'radio',
-        options: ['default','rounded','fullwidth']
-      }
-    },
     size: {
       name: 'Size',
       control: {
         type: 'select',
         options: ['xs','s','m','l']
+      }
+    },
+    kind: {
+      name: 'Kind',
+      control: {
+        type: 'radio',
+        options: ['default','rounded','fullwidth']
       }
     },
     text: {name: 'Text', control: 'text'},
