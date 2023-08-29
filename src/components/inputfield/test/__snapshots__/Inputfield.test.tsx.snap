@@ -19,7 +19,7 @@ exports[`Inputfield > Inputfield renders snapshot 1`] = `
     inputfiled-label
   "
     >
-      Label:
+      Label
     </span>
     <input
       aria-describedby="validation-message-id-test"
@@ -27,6 +27,7 @@ exports[`Inputfield > Inputfield renders snapshot 1`] = `
       id="id-test"
       name="name"
       placeholder="Placeholder"
+      spellcheck="false"
       type="text"
       value=""
     />

@@ -42,10 +42,11 @@ export default {
         ],
       },
     },
-    error: false,
-    errorText: 'This is a error',
-    disabled: false,
-    required: false,
+    error: { name: 'Error', control: 'boolean' },
+    errorText: { name: 'Error text', control: 'text' },
+    disabled: { name: 'Disabled', control: 'boolean' },
+    required: { name: 'Required', control: 'boolean' },
+    spellcheck: { name: 'Spellcheck', control: 'boolean' },
   }
 }
 

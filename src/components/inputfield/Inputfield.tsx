@@ -12,17 +12,18 @@ export type InputfieldProps = {
   type?: 'text' | 'email' | 'password' | 'search' | 'number' | 'tel' | 'url' | 'date' | 'datetime-local' | 'time' | 'datetime' | 'mouth' | 'week' | 'year'
   placeholder?: string
   value?: string | number
-  onBlur?: (event: FocusEvent<HTMLInputElement>) => void
-  onFocus?: (event: FocusEvent<HTMLInputElement>) => void
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
   error?: boolean
   errorText?: string
   readOnly?: boolean
   disabled?: boolean
+  spellcheck?: boolean
   required?: boolean
   isRequiredText?: string
   maxLength?: number
   className?: string
+  onBlur?: (event: FocusEvent<HTMLInputElement>) => void
+  onFocus?: (event: FocusEvent<HTMLInputElement>) => void
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Inputfield: FC<InputfieldProps> = ({
@@ -33,17 +34,18 @@ export const Inputfield: FC<InputfieldProps> = ({
   type = 'text',
   placeholder = '',
   value,
-  onBlur,
-  onFocus,
-  onChange,
   error = false,
-  errorText,
-  readOnly,
-  disabled,
+  errorText = 'This field has a error',
+  readOnly = false,
+  disabled = false,
+  spellcheck = false,
   required = false,
   isRequiredText,
   maxLength,
   className,
+  onBlur,
+  onFocus,
+  onChange,
   ...props
 }: InputfieldProps) => {
 
@@ -97,6 +99,7 @@ export const Inputfield: FC<InputfieldProps> = ({
         maxLength={maxLength}
         readOnly={readOnly}
         disabled={disabled}
+        spellCheck={spellcheck}
         aria-describedby={`validation-message-${id}`}
       />
       {error && !isFocused ?
