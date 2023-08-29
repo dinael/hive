@@ -6,7 +6,7 @@ import { Label as LabelText } from '../label/Label'
 
 export type Option = {
   id?: string
-  value: string
+  value?: string
   disabled?: boolean
   hidden?: boolean
   select?: boolean

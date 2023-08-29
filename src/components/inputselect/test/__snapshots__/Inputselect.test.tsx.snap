@@ -19,7 +19,7 @@ exports[`Inputselect > Inputselect renders snapshot 1`] = `
     input-select-label
   "
     >
-      label-test:
+      label-test
     </span>
     <select
       aria-describedby="validation-message-id-test"
@@ -87,7 +87,7 @@ exports[`Inputselect > Inputselect renders snapshot with group options 1`] = `
     input-select-label
   "
     >
-      label-test:
+      label-test
     </span>
     <select
       aria-describedby="validation-message-id-test"
