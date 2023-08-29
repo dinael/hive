@@ -1,0 +1,14 @@
+.breadcrumb-component{
+  display: flex;
+
+  .breadcrumb-item {
+    &:not(:first-child){
+      margin-inline-start: 0.5rem;
+
+      &::before {
+        content: "/";
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
