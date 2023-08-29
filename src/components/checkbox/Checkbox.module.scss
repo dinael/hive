@@ -3,21 +3,6 @@
 @use '../../scss/03-modules/accessibility' as a11y;
 @use '../../scss/03-modules/forms' as form;
 
-// ## Input checkbox
-$input-checkbox-background: var(--color-primary) !default;
-$input-checkbox-border-color: var(--color-primary) !default;
-$input-checkbox-size: 1.25rem !default;
-$input-checkbox-size-action: 2.75rem;
-
-// $$ State:
-// Checked
-$input-checkbox-checked-label-color: var(--color-primary) !default;
-// Disabled
-$input-checkbox-disabled-color: red !default;
-$input-checkbox-disabled-background: var(--anchor-color-disabled);
-$input-checkbox-disabled-border-color: var(--anchor-color-disabled);
-$input-checkbox-disabled-placeholder-color: orange !default;
-
 .checkbox-component {
   --checkbox-component-flex-direction: row-reverse;
   --checkbox-background: var(--color-basic-positive);
@@ -30,7 +15,6 @@ $input-checkbox-disabled-placeholder-color: orange !default;
 
   --checkbox-switch-width: 2.65rem;
   --checkbox-switch-height: 1.5rem;
-
 
   display: inline-flex;
   flex-direction: var(--checkbox-component-flex-direction);
@@ -48,17 +32,9 @@ $input-checkbox-disabled-placeholder-color: orange !default;
     position: relative;
     cursor: pointer;
 
-
     &::before,
     &::after {
       cursor: pointer;
-    }
-
-    // Save area
-    &::before {
-      content: " ";
-      block-size: var(--checkbox-action-size);
-      inline-size: var(--checkbox-action-size);
     }
 
     &::after {
@@ -74,14 +50,11 @@ $input-checkbox-disabled-placeholder-color: orange !default;
       transition: transform .25s ease-in-out, background 0.25s ease-in-out;
     }
 
-    //$$ State:
-    // Checked
     &:checked {
       --input-checkbox-check-scale: scale(0.5);
       --checkbox-background: var(--color-accent);
     }
 
-    // Disabled
     &:disabled,
     &.disabled {
       --checkbox-color: var(--color-text);
@@ -237,9 +210,9 @@ $input-checkbox-disabled-placeholder-color: orange !default;
     // Disabled
     &:disabled,
     &.disabled {
-      --input-chip-color: #{$input-checkbox-disabled-border-color};
-      --input-chip-background: #{$input-checkbox-disabled-background};
-      --input-chip-border-color: #{$input-checkbox-disabled-border-color};
+      --input-chip-color: var(--anchor-color-disabled);
+      --input-chip-background: var(--anchor-color-disabled);
+      --input-chip-border-color: var(--anchor-color-disabled);
 
       @include form.disabled;
     }
@@ -249,20 +222,9 @@ $input-checkbox-disabled-placeholder-color: orange !default;
     }
   }
 
-  &.default {}
-
   &.right {
     fill: azure;
   }
-
-  &.disabled {
-    fill: azure;
-  }
-
-  &.checked {
-    fill: azure;
-  }
-
   &.error {
     fill: azure;
   }
