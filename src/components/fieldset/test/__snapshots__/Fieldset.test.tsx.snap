@@ -19,7 +19,7 @@ exports[`Fieldset > Fieldset renders fieldset with correctly 1`] = `
     inputfiled-label
   "
       >
-        Legend Text:
+        Legend Text
         <em
           class="required-text"
           title="Required text"
@@ -51,7 +51,7 @@ exports[`Fieldset > Fieldset renders legend hidden 1`] = `
     inputfiled-label
   "
       >
-        Legend Text:
+        Legend Text
         <em
           class="required-text"
           title="Required text"
@@ -83,7 +83,7 @@ exports[`Fieldset > Fieldset renders legend with correctly 1`] = `
     inputfiled-label
   "
       >
-        Legend Text:
+        Legend Text
         <em
           class="required-text"
           title="Required text"
@@ -115,7 +115,7 @@ exports[`Fieldset > Fieldset renders snapshot 1`] = `
     inputfiled-label
   "
       >
-        Legend Text:
+        Legend Text
         <em
           class="required-text"
           title="Required text"
@@ -147,7 +147,7 @@ exports[`Fieldset > Fieldset renders with a custom class 1`] = `
     inputfiled-label
   "
       >
-        Legend Text:
+        Legend Text
         <em
           class="required-text"
           title="Required text"
