@@ -31,12 +31,13 @@ exports[`ListFiltered > renders correctly 1`] = `
     inputfiled-label
   "
         >
-          Search:
+          Search
         </span>
         <input
           aria-describedby="validation-message-undefined"
           class=""
           placeholder="Search"
+          spellcheck="false"
           type="search"
           value=""
         />
@@ -58,7 +59,7 @@ exports[`ListFiltered > renders correctly 1`] = `
     input-select-label
   "
         >
-          Order by:
+          Order by
         </span>
         <select
           aria-describedby="validation-message-"

@@ -13,28 +13,35 @@ export type ListProps = {
   ordered?: boolean
   nameList?: string
   className?: string
-  disabled?: boolean
   unstyled?: boolean
   bullet?: 'none' | 'auto' | 'disc' | 'circle' | 'square' | 'decimal' | 'decimal-leading-zero' | 'lower-roman' | 'upper-roman' | 'lower-greek' | 'lower-latin' | 'upper-latin' | 'armenian' | 'georgian' | 'lower-alpha' | 'upper-alpha'
-  customBullet?: string;
+  customBullet?: string
+  even: boolean
+  odd: boolean
 }
 
 export const List: FC<ListProps> = ({
   items,
   ordered = false,
   nameList,
-  disabled = false,
   className = '',
   bullet = 'none',
   customBullet = '',
   unstyled = false,
+  even= false,
+  odd = false,
   ...props
 }) => {
+
+  const getListItemClass = (even: boolean, odd: boolean) => {
+    return even && !odd ? 'even' : odd && !even ? 'odd' : '';
+  };
 
   const listStyles = `
     ${styles[!unstyled ? 'list-component' : 'list-unstyled']}
     ${styles[bullet ? bullet : 'none']}
-    ${className ? className : ''}
+    ${className || ''}
+    ${styles[getListItemClass(even, odd)]}
   `
 
   const Tag: FC<{ children: React.ReactNode }> = ({
@@ -59,7 +66,9 @@ export const List: FC<ListProps> = ({
           key={item.id ? item.id : uuid()}
           role="listitem"
           style={customBullet ? { listStyle: customBullet } : {}}>
-          {item.text}
+          <div>
+            {item.text}
+          </div>
         </li>
       ))}
     </Tag>

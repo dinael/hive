@@ -39,7 +39,8 @@ export default {
           'upper-alpha'
         ]
       }
-    }
+    },
+    even: { name: 'Event', control: 'radio'}
   }
 }
 
@@ -58,17 +59,18 @@ const itemsDemo = [
 
 //## Default
 export const Default = (args: ListProps) => (
-  [<List {...args} />]
+  <List {...args} />
 )
 
 Default.args = {
   items: itemsDemo,
   nameList: 'Ordered list',
+  odd: true
 }
 
 // ## Ordered
 export const Ordered = (args: ListProps) => (
-  [<List {...args} />]
+  <List {...args} />
 )
 
 Ordered.args = {
@@ -80,7 +82,7 @@ Ordered.args = {
 
 // ## Unordered
 export const Unordered = (args: ListProps) => (
-  [<List {...args} />]
+  <List {...args} />
 )
 
 Unordered.args = {
@@ -92,7 +94,7 @@ Unordered.args = {
 
 // ## Unstyled
 export const Unstyled = (args: ListProps) => (
-  [<List {...args} />]
+  <List {...args} />
 )
 
 Unstyled.args = {
