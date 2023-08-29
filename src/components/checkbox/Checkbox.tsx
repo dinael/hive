@@ -1,89 +1,133 @@
-import { FC, useState, ChangeEvent } from 'react'
+import { FC, useState, ChangeEvent, useRef, useEffect } from 'react'
+import { v4 as uuid } from 'uuid'
+
 import styles from './Checkbox.module.scss'
+
 import { Label as LabelText } from '../label/Label'
+import ValidationMessage from '../validationmessage/ValidationMessage'
 import { Icon } from '../icon/Icon'
 
 export type CheckboxProps = {
-  value?: string
   label: string
   id?: string
+  name?: string
+  value?: string
+  indeterminate?: boolean
+  checked?: boolean
   required?: boolean
   disabled?: boolean
+  variant?: 'default' | 'switch' | 'chip'
+  checkPosition?: 'right' | 'left'
   className?: string
-  onChecked?: (isChecked: boolean) => void
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
   onError?: (error: boolean) => void
-  error: boolean
+  error?: boolean
   errorText?: string
 }
 
 export const Checkbox: FC<CheckboxProps> = ({
-  label= '',
+  label,
   id,
+  name,
+  value,
+  indeterminate = false,
+  checked,
   required = false,
   disabled = false,
-  className = '',
-  onChecked,
+  variant = 'default',
+  checkPosition = 'right',
+  className,
+  onChange,
   onError,
-  error,
+  error = false,
   errorText,
   ...props
 }) => {
-
   const [isChecked, setIsChecked] = useState(false)
+  const [isIndeterminate, setIsIndeterminate] = useState(indeterminate);
   const [hasError, setHasError] = useState(false)
 
+  const cRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (cRef.current) {
+      cRef.current.indeterminate = indeterminate
+    }
+  }, [indeterminate])
+
   const handleChecked = (e: ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(e.target.checked)
-    onChecked && onChecked(e.target.checked)
+    const newCheckedValue = e.target.checked;
+    setIsChecked(newCheckedValue);
+
+    if (newCheckedValue && isIndeterminate) {
+      setIsIndeterminate(false);
+    }
+
+    if (onChange) {
+      onChange(e);
+    }
   }
 
-  const handleOnError = () => {
-    setHasError(true)
-    onError && onError(error)
+  const handleBlur = () => {
+    if (hasError && onError) {
+      onError(true);
+    }
   }
+
+  const Id = id ? id : uuid();
 
   const checkboxStyles = `
     ${styles['checkbox-component']}
+    ${styles[variant]}
+    ${checkPosition ? styles[checkPosition] : 'right'}
     ${disabled ? styles['disabled'] : ''}
+    ${hasError ? styles['error'] : ''}
+    ${styles[indeterminate ? 'indeterminate' : '']}
     ${className || ''}
   `
 
+  const iconName = isChecked ? 'less-circle' : 'add-circle'
+
   return (
-      <label
-        key={id}
-        htmlFor={id}
-      className={checkboxStyles}
-        {...props}>
-        <input
-          id={id}
-          type="checkbox"
-          checked={isChecked}
-          onChange={handleChecked}
-          onError={handleOnError}
-          disabled={disabled}
-          aria-checked={isChecked}
-          role="checkbox"
-          required={required}
-          aria-aria-describedby={`validation-message-${id}`}
-        />
+    <label
+      key={`checkbox-${Id}`}
+      htmlFor={`checkbox-${Id}`}
+      className={checkboxStyles}>
       <LabelText
+        className={styles['checkbox-component-label']}
         onlyText
         text={label}
       />
-      {error ?
-        <span
-          className={styles['validation-message']}
+      <input
+        className={styles['checkbox-component-input']}
+        id={`checkbox-${Id}`}
+        name={name}
+        type="checkbox"
+        checked={isChecked}
+        onChange={handleChecked}
+        onBlur={handleBlur}
+        disabled={disabled}
+        required={required}
+        aria-aria-describedby={`checkbox-validation-message-${Id}`}
+        ref={cRef}
+        {...props}
+      />
+      {variant === 'chip' &&
+        <Icon
+          size={'l'}
+          name={iconName} />
+      }
+      {error &&
+        <ValidationMessage
+          className={styles['checkbox-validation-message']}
+          message={errorText || ''}
+          kind='error'
           role="alert"
           aria-live="assertive"
           aria-atomic="true"
-          id={`validation-message-${id}`}>
-          <Icon
-            name="close"
-            size="xs"/>
-          {errorText}
-        </span>
-      : null}
-      </label>
+          id={`validation-message-${Id}`} />
+      }
+    </label>
   )
 }
 

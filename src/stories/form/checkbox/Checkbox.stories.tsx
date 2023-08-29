@@ -1,4 +1,6 @@
-import {Checkbox, CheckboxProps} from "../../../components/checkbox/Checkbox"
+import { useState } from 'react'
+
+import { Checkbox, CheckboxProps } from "../../../components/checkbox/Checkbox"
 
 export default {
   title: 'Components/Form/Checkbox',
@@ -25,38 +27,66 @@ export default {
     onChange: { name: 'onChange', control: 'action' },
     onChecked: { name: 'onChecked', control: 'action' },
     onError: { name: 'onError', control: 'action' },
+    variant: {
+      name: 'Variant',
+      control: { type: 'radio' },
+      options: ['Default', 'Switch', 'chip'],
+      defaultValue: 'Default',
+    },
   }
 }
 
 export const Default = (args: CheckboxProps) => (
-  [<Checkbox {...args} />]
+  <Checkbox {...args} />
 )
+
+export const Indeterminate = (args: CheckboxProps) => {
+  const [isChecked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(!isChecked);
+  };
+
+  return (
+    <Checkbox
+      {...args}
+      onChange={handleChange}
+      indeterminate/>
+  )
+}
 
 export const Switch = (args: CheckboxProps) => (
   [<Checkbox {...args} />]
 )
 
 export const Chip = (args: CheckboxProps) => (
-  [<Checkbox {...args} />]
+  <Checkbox {...args} indeterminate/>
 )
 
 Default.args = {
   label: 'Label',
   id: '',
-  checked: false,
   disabled: false,
   className: '',
   error: false,
   errorText: 'This is a error'
 }
 
+Indeterminate.args = {
+  ...Default.args,
+  label: 'Indeterminate',
+}
+
 Switch.args = {
   ...Default.args,
-  label: 'Switch'
+  label: 'Switch',
+  variant: 'switch'
 }
 
 Chip.args = {
   ...Default.args,
+  label: 'Chip',
+  variant: 'chip'
 }
 
 

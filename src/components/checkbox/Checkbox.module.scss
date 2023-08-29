@@ -1,6 +1,269 @@
+@use '../../scss/02-tools/functions' as *;
+@use '../../scss/02-tools/mixins' as *;
+@use '../../scss/03-modules/accessibility' as a11y;
+@use '../../scss/03-modules/forms' as form;
+
+// ## Input checkbox
+$input-checkbox-background: var(--color-primary) !default;
+$input-checkbox-border-color: var(--color-primary) !default;
+$input-checkbox-size: 1.25rem !default;
+$input-checkbox-size-action: 2.75rem;
+
+// $$ State:
+// Checked
+$input-checkbox-checked-label-color: var(--color-primary) !default;
+// Disabled
+$input-checkbox-disabled-color: red !default;
+$input-checkbox-disabled-background: var(--anchor-color-disabled);
+$input-checkbox-disabled-border-color: var(--anchor-color-disabled);
+$input-checkbox-disabled-placeholder-color: orange !default;
+
 .checkbox-component {
+  --checkbox-component-flex-direction: row-reverse;
+  --checkbox-background: var(--color-basic-positive);
+  --checkbox-block-size: 1.25rem;
+  --checkbox-inline-size: 1.25rem;
+  --checkbox-border-width: 0.125rem;
+  --checkbox-border-color: var(--color-primary);
+
+  --checkbox-action-size: 2.75rem;
+
+  --checkbox-switch-width: 2.65rem;
+  --checkbox-switch-height: 1.5rem;
+
+
   display: inline-flex;
+  flex-direction: var(--checkbox-component-flex-direction);
   align-items: center;
-  flex-direction: var(--checkbox-flex-direction, row-reverse);
-  gap: 0.5em;
+
+  .checkbox-component-label {
+    padding-inline: 0.5em;
+  }
+
+  input[type="checkbox"] {
+    --checkbox-background: var(--color-basic-positive);
+
+    @include form.appearance-none;
+
+    position: relative;
+    cursor: pointer;
+
+
+    &::before,
+    &::after {
+      cursor: pointer;
+    }
+
+    // Save area
+    &::before {
+      content: " ";
+      block-size: var(--checkbox-action-size);
+      inline-size: var(--checkbox-action-size);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block-start: var(--input-checkbox-check-inset-block-start, -0.125rem);
+      inset-inline-start: var(--input-checkbox-check-inset-inline-start, -0.125rem);
+      block-size: var(--input-checkbox-check-block-size, var(--checkbox-block-size));
+      inline-size: var(--input-checkbox-check-inline-size, var(--checkbox-inline-size));
+      transform: var(--input-checkbox-check-scale, scale(0));
+      background: var(--input-checkbox-check-background, var(--color-primary));
+      transform-origin: center center;
+      transition: transform .25s ease-in-out, background 0.25s ease-in-out;
+    }
+
+    //$$ State:
+    // Checked
+    &:checked {
+      --input-checkbox-check-scale: scale(0.5);
+      --checkbox-background: var(--color-accent);
+    }
+
+    // Disabled
+    &:disabled,
+    &.disabled {
+      --checkbox-color: var(--color-text);
+      --checkbox-background: var(--color-primary-light);
+      --checkbox-border-color: var(--color-primary);
+
+      cursor: default !important;
+      @include form.disabled;
+
+      &::before,
+      &::after {
+        cursor: default !important;
+      }
+    }
+  }
+
+  &.indeterminate {
+    --input-checkbox-check-inset-block-start: 0.25rem;
+    --input-checkbox-check-scale: scale(0.5);
+    --input-checkbox-check-block-size: 50%;
+
+    input[type="checkbox"] {
+      --checkbox-background: var(--color-accent) !important;
+    }
+
+    &::after {
+      transform: rotate(45deg) !important;
+    }
+  }
+
+  &.switch {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      --checkbox-inline-size: var(--checkbox-switch-width);
+      --checkbox-background: transparent;
+
+      @include form.appearance-none;
+
+      border: none;
+      margin-block-start: max(-0.1875rem, -3px);
+      z-index: index(under);
+
+      &:focus {
+        @include focus {
+          --focus-outline-offset: 0.15rem;
+
+          border-radius: radius(rounded);
+        }
+      }
+
+      &::before,
+      &::after {
+        cursor: pointer;
+      }
+
+      &::before {
+        position: relative;
+        content: "";
+        display: inline-block;
+        border-radius: radius(rounded);
+        min-inline-size: var(--checkbox-switch-width);
+        block-size: var(--checkbox-switch-height);
+        border: max(0.125rem, 1px) solid var(--input-switch-border-color, var(--color-primary));
+        background: var(--input-switch-background, var(--color-basic-positive));
+        transition: background .35s ease-in-out;
+      }
+
+      &::after {
+        position: absolute;
+        inset-block-start: 0.25em;
+        display: inline-block;
+        content: "";
+        block-size: 1em;
+        inline-size: 1em;
+        border-radius: radius(rounded);
+        transition: all 0.35s ease;
+        background: var(--input-switch-background, var(--color-primary));
+        transform: var(--input-switch-state-position, translateX(0.5em));
+      }
+
+      &:checked {
+        &::before {
+          --input-switch-border-color: var(--color-primary);
+          --input-switch-background: var(--color-accent);
+        }
+
+        &::after {
+          --input-switch-state-position: translateX(1.5em);
+          --input-switch-background: var(--color-primary);
+        }
+      }
+    }
+
+    .form-label {
+      margin-inline: 0 0.5em;
+    }
+  }
+
+  &.chip {
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--font-size-chip, var(--font-size-s));
+    justify-content: center;
+    border-radius: radius(rounded);
+    block-size: 2rem;
+    max-inline-size: fit-content;
+    cursor: pointer;
+    padding-inline: max(0.125rem, 2px);
+    user-select: none;
+    color: var(--input-chip-color, var(--color-primary));
+    border: max(0.125rem, 1px) solid var(--input-chip-border-color, var(--color-primary));
+    background: var(--input-chip-background, var(--color-basic-positive));
+    transition: background .3s ease-in-out, color .3s ease-in-out;
+
+    &:hover {
+      --input-chip-color: var(--color-basic-positive);
+      --input-chip-background: var(--color-primary);
+      --input-chip-before-border-color: var(--color-basic-positive);
+    }
+
+    &:active {}
+
+    &:has(input[type="checkbox"]:checked) {
+      --input-chip-color: var(--color-primary);
+      --input-chip-background: var(--color-accent);
+    }
+
+    &:has(input[type="checkbox"]:focus) {
+      @include focus;
+    }
+
+    input[type="checkbox"] {
+      @include form.appearance-none;
+      @include a11y.sr-only;
+
+      border: 0;
+      margin: 0;
+
+      &:focus {
+        @include focus(none);
+      }
+
+      &:active {
+        margin: -1px;
+      }
+    }
+
+    // Disabled
+    &:disabled,
+    &.disabled {
+      --input-chip-color: #{$input-checkbox-disabled-border-color};
+      --input-chip-background: #{$input-checkbox-disabled-background};
+      --input-chip-border-color: #{$input-checkbox-disabled-border-color};
+
+      @include form.disabled;
+    }
+
+    .checkbox-component-label {
+      padding-inline: 0.25rem 0.75rem;
+    }
+  }
+
+  &.default {}
+
+  &.right {
+    fill: azure;
+  }
+
+  &.disabled {
+    fill: azure;
+  }
+
+  &.checked {
+    fill: azure;
+  }
+
+  &.error {
+    fill: azure;
+  }
 }

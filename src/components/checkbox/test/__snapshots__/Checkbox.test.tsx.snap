@@ -5,60 +5,44 @@ exports[`Checkbox > Checkbox calls onChecked handler when clicked 1`] = `
   <label
     class="
     checkbox-component
+    default
+    right
+    
+    
     
     
   "
-    for="id-test"
-    value="example-value"
+    for="checkbox-id-test"
   >
-    <input
-      aria-aria-describedby="validation-message-id-test"
-      aria-checked="false"
-      id="id-test"
-      role="checkbox"
-      type="checkbox"
-      value="example-value"
-    />
     <span
       class="
     label-text-component
     
     
     
-    
+    checkbox-component-label
   "
     >
-      Example label:
+      Example label
     </span>
+    <input
+      aria-aria-describedby="checkbox-validation-message-id-test"
+      class="checkbox-component-input"
+      id="checkbox-id-test"
+      type="checkbox"
+      value="example-value"
+    />
     <span
       aria-atomic="true"
       aria-live="assertive"
-      class="validation-message"
+      class="
+    validation-message
+    error
+    checkbox-validation-message}
+  "
       id="validation-message-id-test"
       role="alert"
     >
-      <span
-        aria-hidden="true"
-        class="
-    icon-component
-    xs
-    
-  "
-        style="--icon-color: currentColor;"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <title>
-            close
-          </title>
-          <use
-            xlink:href="/src/assets/sprite.svg#close"
-          />
-        </svg>
-      </span>
       Error text
     </span>
   </label>
@@ -70,60 +54,44 @@ exports[`Checkbox > Checkbox calls onChecked handler when clicked 2`] = `
   <label
     class="
     checkbox-component
+    default
+    right
+    
+    
     
     
   "
-    for="id-test"
-    value="example-value"
+    for="checkbox-id-test"
   >
-    <input
-      aria-aria-describedby="validation-message-id-test"
-      aria-checked="false"
-      id="id-test"
-      role="checkbox"
-      type="checkbox"
-      value="example-value"
-    />
     <span
       class="
     label-text-component
     
     
     
-    
+    checkbox-component-label
   "
     >
-      Example label:
+      Example label
     </span>
+    <input
+      aria-aria-describedby="checkbox-validation-message-id-test"
+      class="checkbox-component-input"
+      id="checkbox-id-test"
+      type="checkbox"
+      value="example-value"
+    />
     <span
       aria-atomic="true"
       aria-live="assertive"
-      class="validation-message"
+      class="
+    validation-message
+    error
+    checkbox-validation-message}
+  "
       id="validation-message-id-test"
       role="alert"
     >
-      <span
-        aria-hidden="true"
-        class="
-    icon-component
-    xs
-    
-  "
-        style="--icon-color: currentColor;"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <title>
-            close
-          </title>
-          <use
-            xlink:href="/src/assets/sprite.svg#close"
-          />
-        </svg>
-      </span>
       Error text
     </span>
   </label>
@@ -135,59 +103,43 @@ exports[`Checkbox > Checkbox renders snapshot 1`] = `
   <label
     class="
     checkbox-component
+    default
+    right
+    
+    
     
     
   "
-    for="id-test"
-    value="example-value"
+    for="checkbox-id-test"
   >
-    <input
-      aria-aria-describedby="validation-message-id-test"
-      aria-checked="false"
-      id="id-test"
-      role="checkbox"
-      type="checkbox"
-    />
     <span
       class="
     label-text-component
     
     
     
-    
+    checkbox-component-label
   "
     >
-      Example label:
+      Example label
     </span>
+    <input
+      aria-aria-describedby="checkbox-validation-message-id-test"
+      class="checkbox-component-input"
+      id="checkbox-id-test"
+      type="checkbox"
+    />
     <span
       aria-atomic="true"
       aria-live="assertive"
-      class="validation-message"
+      class="
+    validation-message
+    error
+    checkbox-validation-message}
+  "
       id="validation-message-id-test"
       role="alert"
     >
-      <span
-        aria-hidden="true"
-        class="
-    icon-component
-    xs
-    
-  "
-        style="--icon-color: currentColor;"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <title>
-            close
-          </title>
-          <use
-            xlink:href="/src/assets/sprite.svg#close"
-          />
-        </svg>
-      </span>
       Error text
     </span>
   </label>
@@ -199,59 +151,43 @@ exports[`Checkbox > Checkbox renders with the correct label 1`] = `
   <label
     class="
     checkbox-component
+    default
+    right
+    
+    
     
     
   "
-    for="id-test"
-    value="example-value"
+    for="checkbox-id-test"
   >
-    <input
-      aria-aria-describedby="validation-message-id-test"
-      aria-checked="false"
-      id="id-test"
-      role="checkbox"
-      type="checkbox"
-    />
     <span
       class="
     label-text-component
     
     
     
-    
+    checkbox-component-label
   "
     >
-      Example label:
+      Example label
     </span>
+    <input
+      aria-aria-describedby="checkbox-validation-message-id-test"
+      class="checkbox-component-input"
+      id="checkbox-id-test"
+      type="checkbox"
+    />
     <span
       aria-atomic="true"
       aria-live="assertive"
-      class="validation-message"
+      class="
+    validation-message
+    error
+    checkbox-validation-message}
+  "
       id="validation-message-id-test"
       role="alert"
     >
-      <span
-        aria-hidden="true"
-        class="
-    icon-component
-    xs
-    
-  "
-        style="--icon-color: currentColor;"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <title>
-            close
-          </title>
-          <use
-            xlink:href="/src/assets/sprite.svg#close"
-          />
-        </svg>
-      </span>
       Error text
     </span>
   </label>
