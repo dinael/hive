@@ -85,7 +85,7 @@ export const Checkbox: FC<CheckboxProps> = ({
     ${className || ''}
   `
 
-  const iconName = isChecked ? 'less-circle' : 'add-circle'
+  const iconName = disabled ? 'forbid-circle' : isChecked ? 'less-circle' : 'add-circle'
 
   return (
     <label

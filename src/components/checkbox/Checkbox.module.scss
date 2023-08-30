@@ -211,7 +211,7 @@
     &:disabled,
     &.disabled {
       --input-chip-color: var(--anchor-color-disabled);
-      --input-chip-background: var(--anchor-color-disabled);
+      --input-chip-background: var(--color-primary-extra-light) !important;
       --input-chip-border-color: var(--anchor-color-disabled);
 
       @include form.disabled;
