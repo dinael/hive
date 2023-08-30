@@ -1,4 +1,4 @@
-import { Icon, IconProps } from '@components/icon/Icon'
+import { Icon, IconProps } from '@/components/icon/Icon'
 
 export default {
   title: 'Components/Basic/Icon',

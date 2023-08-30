@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbProps } from '@components/breadcrumb/Breadcrumb'
+import { Breadcrumb, BreadcrumbProps } from '@/components/breadcrumb/Breadcrumb'
 
 export default {
   title: 'Components/Basic/Breadcrumb',
