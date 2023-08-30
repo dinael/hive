@@ -1,4 +1,4 @@
-import { Inputselect, InputselectProps} from '../../../components/inputselect/Inputselect'
+import { Inputselect, InputselectProps} from '@/components/inputselect/Inputselect'
 
 export default {
   title: 'Components/Form/Inputselect',

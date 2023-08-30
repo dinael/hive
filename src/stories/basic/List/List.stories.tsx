@@ -1,4 +1,4 @@
-import { List, ListProps } from '../../../components/list/List'
+import { List, ListProps } from '@components/list/List'
 
 export default {
   title: 'Components/Basic/List',

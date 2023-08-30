@@ -1,6 +1,6 @@
 import { FC, ChangeEvent } from 'react';
-import Input from '../inputfield/Inputfield';
-import Select from '../inputselect/Inputselect';
+import Input from '@/components/inputfield/Inputfield';
+import Select from '@/components/inputselect/Inputselect';
 
 interface ListFilterProps {
   setSearchQuery: (query: string) => void;

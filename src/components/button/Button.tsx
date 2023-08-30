@@ -1,6 +1,6 @@
 import { FC, MouseEventHandler } from 'react'
 import styles from './Button.module.scss'
-import Icon from '../icon/Icon'
+import Icon from '@/components/icon/Icon'
 
 export type ButtonProps = {
   type?: 'button' | 'submit' | 'reset' | 'link'
@@ -24,7 +24,7 @@ export const Button: FC<ButtonProps> = ({
   type = 'button',
   variant = 'primary',
   kind = 'default',
-  size = 'm',
+  size,
   text,
   ellipsis = false,
   icon,

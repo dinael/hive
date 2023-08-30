@@ -1,8 +1,10 @@
 import {FC, useState, ChangeEvent, FocusEvent } from 'react'
+
 import styles from './Inputfield.module.scss'
-import Icon from '../icon/Icon'
-import ValidationMessage from '../validationmessage/ValidationMessage'
-import { Label as LabelText } from '../label/Label'
+
+import Icon from '@/components/icon/Icon'
+import ValidationMessage from '@/components/validationmessage/ValidationMessage'
+import { Label as LabelText } from '@/components/label/Label'
 
 export type InputfieldProps = {
   label: string

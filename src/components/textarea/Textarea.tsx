@@ -1,8 +1,10 @@
 import { FC, useState, ChangeEvent } from 'react'
+
 import styles from './Textarea.module.scss'
-import Icon from '../icon/Icon'
-import ValidationMessage from '../validationmessage/ValidationMessage'
-import { Label as LabelText } from '../label/Label'
+
+import Icon from '@/components/icon/Icon'
+import ValidationMessage from '@/components/validationmessage/ValidationMessage'
+import { Label as LabelText } from '@/components/label/Label'
 
 export type TextareaProps = {
   label: string

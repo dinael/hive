@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import Icon from '../icon/Icon'
+import Icon from '@/components/icon/Icon'
 
 export type ListFilteredNotFoundProps = {
   message: string

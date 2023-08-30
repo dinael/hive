@@ -1,8 +1,10 @@
 import { FC, ChangeEvent } from 'react';
-import Input from '../inputfield/Inputfield';
-import Select from '../inputselect/Inputselect';
 
 import styles from './ListFiltered.module.scss'
+
+import Input from '@/components/inputfield/Inputfield';
+import Select from '@/components/inputselect/Inputselect';
+
 
 interface ListFiltersProps {
   setSearchQuery: (query: string) => void;

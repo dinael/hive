@@ -1,6 +1,8 @@
 import { FC } from 'react'
+
 import styles from './ValidationMessage.module.scss'
-import Icon from '../icon/Icon'
+
+import Icon from '@/components/icon/Icon'
 
 export type ValidationMessageProps = {
   message: string

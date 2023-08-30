@@ -9,9 +9,9 @@ import { v4 as uuid } from 'uuid'
 
 import styles from './ListFiltered.module.scss'
 
+import List from '@/components/list/List'
 import ListFilters from './ListFilters'
 import ListFilteredNotFound from './listFilteredNotFund'
-import List from '../list/List'
 
 export type ListFilteredItem = {
   id?: string | number

@@ -1,11 +1,11 @@
-import { Card, CardProps } from '../../../components/card/Card'
+import { Card, CardProps } from '@/components/card/Card'
 
 import './card-custom-styles.scss'
 
 //  Imports to composition example
-import Box from '../../../components/box/Box'
-import Button from '../../../components/button/Button'
-import Paragraph from '../../../components/paragraph/Paragraph'
+import Box from '@/components/box/Box'
+import Button from '@/components/button/Button'
+import Paragraph from '@/components/paragraph/Paragraph'
 
 export default {
   title: 'Components/Composed/Card',

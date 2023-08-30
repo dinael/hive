@@ -1,4 +1,4 @@
-import { Label, LabelProps } from '../../../components/label/Label'
+import { Label, LabelProps } from '@/components/label/Label'
 
 export default {
   title: 'Components/Form/Label',

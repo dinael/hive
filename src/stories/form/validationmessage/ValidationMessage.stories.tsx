@@ -1,4 +1,4 @@
-import { ValidationMessage, ValidationMessageProps } from '../../../components/validationmessage/ValidationMessage'
+import { ValidationMessage, ValidationMessageProps } from '@/components/validationmessage/ValidationMessage'
 
 export default {
   title: 'Components/Form/ValidationMessage',

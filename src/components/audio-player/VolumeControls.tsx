@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Button from '../button/Button';
+import Button from '@/components/button/Button';
 
 export type VolumeControlsProps = {
   volume: number;

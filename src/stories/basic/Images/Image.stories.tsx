@@ -1,4 +1,4 @@
-import { Image, ImageProps } from '../../../components/image/Image'
+import { Image, ImageProps } from '@/components/image/Image'
 
 export default {
   title: 'Components/Basic/Image',

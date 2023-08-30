@@ -1,4 +1,4 @@
-import { Box, BoxProps } from '../../../components/box/Box'
+import { Box, BoxProps } from '@/components/box/Box'
 
 export default {
   title: 'Components/Basic/Box',

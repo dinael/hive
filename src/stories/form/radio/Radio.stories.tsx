@@ -1,4 +1,4 @@
-import { InputRadio, InputRadioProps } from '../../../components/radio/Radio'
+import { InputRadio, InputRadioProps } from '@/components/radio/Radio'
 
 export default {
   title: 'Components/Form/Radio',

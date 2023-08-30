@@ -1,4 +1,4 @@
-import { AudioPlayer, AudioPlayerProps } from '../../../components/audio-player/AudioPlayer'
+import { AudioPlayer, AudioPlayerProps } from '@/components/audio-player/AudioPlayer'
 
 export default {
   title: 'Components/Composed/Audio-player',

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
-import { Fieldset, FieldsetProps } from '../../../components/fieldset/Fieldset'
+import { Fieldset, FieldsetProps } from '@/components/fieldset/Fieldset'
 
-import Inputfield from '../../../components/inputfield/Inputfield'
-import Inputselect from '../../../components/inputselect/Inputselect';
-import Checkbox from '../../../components/checkbox/Checkbox';
-import Textarea from '../../../components/textarea/Textarea';
-import InputRadio from '../../../components/radio/Radio';
-import Button from '../../../components/button/Button';
+import Inputfield from '@/components/inputfield/Inputfield'
+import Inputselect from '@/components/inputselect/Inputselect';
+import Checkbox from '@/components/checkbox/Checkbox';
+import Textarea from '@/components/textarea/Textarea';
+import InputRadio from '@/components/radio/Radio';
+import Button from '@/components/button/Button';
 
 export default {
   title: 'Components/Form/Fieldset',

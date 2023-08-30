@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite'
 import istanbul from 'vite-plugin-istanbul';
 import react from '@vitejs/plugin-react'
+import * as path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,4 +18,13 @@ export default defineConfig({
       requireEnv: true,
     }),
   ],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src/"),
+      components: `${path.resolve(__dirname, "./src/components/")}`,
+      public: `${path.resolve(__dirname, "./public/")}`,
+      pages: path.resolve(__dirname, "./src/pages"),
+      types: `${path.resolve(__dirname, "./src/@types")}`,
+    },
+  },
 })

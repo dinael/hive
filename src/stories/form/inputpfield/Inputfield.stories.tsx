@@ -1,4 +1,4 @@
-import { Inputfield, InputfieldProps } from '../../../components/inputfield/Inputfield'
+import { Inputfield, InputfieldProps } from '@/components/inputfield/Inputfield'
 
 export default {
   title: 'Components/Form/InputField',

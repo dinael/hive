@@ -1,4 +1,4 @@
-import { Blockquote, BlockquoteProps } from '../../../components/blockquote/Blockquote'
+import { Blockquote, BlockquoteProps } from '@/components/blockquote/Blockquote'
 
 export default {
   title: 'Components/Basic/Blockquote',

@@ -1,5 +1,4 @@
-import { Button, ButtonProps } from '../../../components/button/Button'
-
+import { Button, ButtonProps } from '@/components/button/Button'
 
 export default {
   title: 'Components/Basic/Button',
@@ -76,24 +75,15 @@ export const AsLink = (args: ButtonProps) => <Button {...args} />
 
 Default.args = {
   type: 'submit',
-  variant: 'primary',
-  kind: 'default',
-  size: 'm',
   text: 'Button',
-  url: '#',
   description: 'This text is for accessibility',
-  ellipsis: false,
   icon: 'close',
-  iconOnly: false,
-  iconPosition: 'left',
-  disabled: false,
-  className: '',
-  id: ''
 }
 
 AsLink.args = {
   ...Default.args,
   type: 'link',
+  url: '#',
 }
 
 Default.parameters = {

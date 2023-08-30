@@ -1,5 +1,5 @@
 
-import { Title, TitleProps } from '../../../components/title/Title'
+import { Title, TitleProps } from '@/components/title/Title'
 
 export default {
   title: 'Components/Basic/Title',

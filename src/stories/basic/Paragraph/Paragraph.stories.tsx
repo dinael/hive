@@ -1,4 +1,4 @@
-import { Paragraph, ParagraphProps } from '../../../components/paragraph/Paragraph'
+import { Paragraph, ParagraphProps } from '@/components/paragraph/Paragraph'
 
 export default {
   title: 'Components/Basic/Paragraph',

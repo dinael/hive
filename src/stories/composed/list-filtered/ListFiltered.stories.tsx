@@ -1,4 +1,5 @@
-import { ListFiltered, ListFilteredProps } from '../../../components/list-filtered/ListFiltered'
+import { ListFiltered, ListFilteredProps } from '@/components/list-filtered/ListFiltered'
+
 export default {
   title: 'Components/Composed/List Filtered',
   component: ListFiltered,

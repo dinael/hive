@@ -2,8 +2,8 @@ import { FC, ReactNode, isValidElement, Children } from 'react';
 
 import styles from './Card.module.scss'
 
-import CardTitle from '../title/Title'
-import CardImg from '../image/Image'
+import CardTitle from '@/components/title/Title'
+import CardImg from '@/components/image/Image'
 
 type SlotMap = {
   [key: string]: ReactNode[];

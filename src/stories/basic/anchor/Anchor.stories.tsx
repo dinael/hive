@@ -1,4 +1,4 @@
-import { Anchor, AnchorProps } from '../../../components/anchor/Anchor'
+import { Anchor, AnchorProps } from '@/components/anchor/Anchor'
 
 export default {
   title: 'Components/Basic/Anchor',

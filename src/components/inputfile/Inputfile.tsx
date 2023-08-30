@@ -1,5 +1,5 @@
 import { FC, ChangeEvent, FocusEvent, useState } from 'react'
-import { Label as LabelText } from '../label/Label'
+import { Label as LabelText } from '@/components/label/Label'
 //import styles from './Inputfile.module.scss'
 // TODO: dar estilos
 export type InputFileProps = {
