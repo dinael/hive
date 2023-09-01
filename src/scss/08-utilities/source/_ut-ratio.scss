@@ -2,7 +2,7 @@
 
 // ## flex
 $-ut-ratio: setup.$ut-ratio;
-// TODO: naming convention
+
 @if $-ut-ratio {
     .ratio {
         &-1\:1 {

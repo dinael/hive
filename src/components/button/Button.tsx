@@ -6,7 +6,7 @@ export type ButtonProps = {
   type?: 'button' | 'submit' | 'reset' | 'link'
   variant: 'primary' | 'secondary' | 'alt' | 'ghost' | 'success' | 'danger'
   kind?: 'default' | 'rounded' | 'fullwidth'
-  size?: 'xs' | 's' | 'm' | 'l'
+  size?: 'default' | 'xs' | 's' | 'm' | 'l'
   text: string
   ellipsis?: boolean
   icon?: string
@@ -45,7 +45,7 @@ export const Button: FC<ButtonProps> = ({
   const buttonStyles = `
     ${styles['button-component']}
     ${styles[variant ? variant : 'primary']}
-    ${styles[size ? size : 'm']}
+    ${styles[size ? size : 'default']}
     ${styles[kind ? kind : 'default']}
     ${styles[iconPosition ? iconPosition : 'left']}
     ${disabled ? styles['disabled'] : ''}

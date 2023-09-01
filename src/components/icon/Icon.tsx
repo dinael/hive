@@ -4,7 +4,7 @@ import sprite from '../../assets/sprite.svg'
 
 export type IconProps = {
   name: string
-  size?: 'xs' | 's' | 'm' | 'l' | 'xl'
+  size?: 'default' | 'xs' | 's' | 'm' | 'l' | 'xl'
   color?: string
   title?: string
   viewBox?: number
@@ -13,7 +13,7 @@ export type IconProps = {
 
 export const Icon: FC<IconProps> = ({
   name = 'info',
-  size  = 'm',
+  size  = 'default',
   color  = 'currentColor',
   title = '',
   viewBox = 24,

@@ -76,7 +76,6 @@ export const CompositionExample = (args: CardProps) => ([
         <Button
           description="Menu alt"
           onClick={() => { }}
-          size="m"
           text="main action"
           className="main-action"
           variant="primary"
@@ -84,7 +83,6 @@ export const CompositionExample = (args: CardProps) => ([
         <Button
           description="Menu alt"
           onClick={() => { }}
-          size="m"
           text="alt action"
           className="alt-action"
           variant="alt"
@@ -103,7 +101,7 @@ export const CompositionExample = (args: CardProps) => ([
 
 CompositionExample.args = {
   unstyled: true,
-  title: 'a card',
+  title: 'a title card',
   titleLevel: 4,
   imgSrc: 'https://picsum.photos/800/300?random=1',
   imgAlt: 'A random picture',

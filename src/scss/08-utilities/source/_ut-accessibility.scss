@@ -21,7 +21,7 @@ $-ut-accessibility: setup.$ut-accessibility;
 	[tabindex],
 	[contentEditable="true"] {
 		&:not([tabindex='-1']) {
-			// TODO: your SCSS for focusable elements goes here
+			// your SCSS for focusable elements goes here
 		}
 	}
 

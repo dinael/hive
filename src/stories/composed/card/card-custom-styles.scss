@@ -17,6 +17,9 @@
   }
 
   .card-title {
+    --title-size: 1.5rem;
+    --title-font-weigh: 600;
+
     inline-size: 100%;
     justify-content: center;
   }
@@ -38,6 +41,8 @@
   }
 
   .card-content-contented {
+    --paragraph-component-font-size: var(--font-size-s);
+
     padding-inline: 0.75rem;
   }
 

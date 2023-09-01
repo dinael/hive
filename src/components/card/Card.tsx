@@ -12,6 +12,7 @@ type SlotMap = {
 export type CardProps = {
   title: string
   titleLevel: 2 | 3 | 4 | 5 | 6
+  titleSize?: 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
   imgSrc?: string
   imgAlt?: string
   className: string
@@ -22,6 +23,7 @@ export type CardProps = {
 export const Card: FC<CardProps> = ({
   title,
   titleLevel = 3,
+  titleSize = 'l',
   imgSrc,
   imgAlt = '',
   className,
@@ -50,6 +52,7 @@ export const Card: FC<CardProps> = ({
         <CardTitle
           text={title}
           level={titleLevel}
+          size={titleSize}
           className={'card-title'}/>
         {slotMap['CardHeader']}
       </header>

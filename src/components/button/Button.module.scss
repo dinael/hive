@@ -14,6 +14,7 @@
 
   font-size: var(--button-font-size);
   flex-direction: var(--button-direction);
+  min-inline-size: var(--button-inline-size, fit-content);
   transition: background .35s ease-in-out;
   cursor: pointer;
 
@@ -21,7 +22,7 @@
     filter: none;
     @include focus;
   }
-  // TODO: tinted color
+
   &:disabled,
   &[disabled] {
     --button-color: hsl(0 0% 40%) !important;
@@ -37,7 +38,7 @@
   }
 }
 
-// ## Anchor
+// ## As anchor
 a.button-component {
   --anchor-color: var(--button-color);
   --anchor-background: var(--color-primary);
@@ -48,7 +49,7 @@ a.button-component {
   gap: var(--button-gap);
   justify-content: center;
   block-size: var(--button-block-size);
-  min-inline-size: var(--button-inline-size);
+  min-inline-size: var(--button-inline-size, fit-content);
   padding-block: var(--button-padding-block);
   padding-inline: var(--button-padding-inline);
   text-decoration: none;
@@ -139,15 +140,18 @@ a.button-component {
 }
 
 // ## Sizes
+.default {
+  --button-block-size: 2.75rem;
+  --button-font-size: var(--font-size);
+}
+
 .xs {
-  --button-inline-size: fit-content;
   --button-block-size: 1.5rem;
   --button-font-size: var(--font-size-xs);
   --button-padding-inline: 0.5em;
 }
 
 .s {
-  --button-inline-size: fit-content;
   --button-block-size: 2rem;
   --button-font-size: var(--font-size-s);
   --button-padding-inline: 0.75em;
@@ -165,6 +169,10 @@ a.button-component {
   --button-padding-inline: 1.5em;
 }
 
+.fullwidth {
+  --button-inline-size: 100% !important;
+}
+
 // ## Kind
 .default {
   --botton-display: inline-flex;
@@ -176,10 +184,6 @@ a.button-component {
   --button-padding-inline: 0;
   --button-inline-size: var(--button-block-size);
   --button-flex-basis: var(--button-inline-size);
-}
-
-.fullwidth {
-  --button-inline-size: 100% !important;
 }
 
 // ## Text properties
