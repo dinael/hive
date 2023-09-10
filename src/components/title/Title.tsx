@@ -38,8 +38,7 @@ export const Title: FC<TitleProps> = ({
     <Tag
       className={titleStyles}
       {...props}>
-        {text}
-      {children}
+      {children || text}
     </Tag>
   )
 }

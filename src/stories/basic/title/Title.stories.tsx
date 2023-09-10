@@ -47,108 +47,108 @@ Default.args = {
 }
 
 export const Levels = () => ([
-    <section>
-      <div className={''}>
-          <p>Ascendent Ordered:</p>
-          <Title
-            level={1}
-            size={'xxl'}
-            text={'Title H1 / Size XXL'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={2}
-            size={'xl'}
-            text={'Title H2 / Size XL'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={3}
-            size={'l'}
-            text={'Title H3 / Size L'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={4}
-            size={'m'}
-            text={'Title H4 / Size M'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={5}
-            size={'s'}
-            text={'Title H5 / Size S'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={6}
-            size={'xs'}
-            text={'Title H6 / Size XS'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-        </div>
-        <div className={''}>
-          <p>Descendent Ordered:</p>
-          <Title
-            level={1}
-            size={'xs'}
-            text={'Title H1 / Size XS'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={2}
-            size={'s'}
-            text={'Title H2 / Size S'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={3}
-            size={'m'}
-            text={'Title H3 / Size M'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={4}
-            size={'l'}
-            text={'Title H4 / Size L'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={5}
-            size={'xl'}
-            text={'Title H5 / Size XL'}
-            elipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-          <Title
-            level={6}
-            size={'xl'}
-            text={'Title H6 / Size XXL'}
-            ellipsis={false}
-            a11yLength={false}
-            className={''}
-          />
-      </div>
-    </section>
+  <section>
+    <div className="p-y:2">
+      <p className="p-b:1">Descendent Ordered:</p>
+      <Title
+        level={1}
+        size={'xxl'}
+        text={'Title H1 / Size XXL'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={2}
+        size={'xl'}
+        text={'Title H2 / Size XL'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={3}
+        size={'l'}
+        text={'Title H3 / Size L'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={4}
+        size={'m'}
+        text={'Title H4 / Size M'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={5}
+        size={'s'}
+        text={'Title H5 / Size S'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={6}
+        size={'xs'}
+        text={'Title H6 / Size XS'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+    </div>
+    <div className="p-y:2 border:t">
+      <p className="p-b:1">Ascendent Ordered:</p>
+      <Title
+        level={1}
+        size={'xs'}
+        text={'Title H1 / Size XS'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={2}
+        size={'s'}
+        text={'Title H2 / Size S'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={3}
+        size={'m'}
+        text={'Title H3 / Size M'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={4}
+        size={'l'}
+        text={'Title H4 / Size L'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={5}
+        size={'xl'}
+        text={'Title H5 / Size XL'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+      <Title
+        level={6}
+        size={'xl'}
+        text={'Title H6 / Size XXL'}
+        ellipsis={false}
+        a11yLength={false}
+        className={''}
+      />
+    </div>
+  </section>
 ])
