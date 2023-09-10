@@ -1,26 +1,23 @@
-import { FC } from 'react'
+import { CSSProperties, FC } from 'react'
 import styles from './Paragraph.module.scss'
 
 
 // TODO: Ellipsis lines
 export type ParagraphProps = {
-  children: any
+  text?: string
+  children?: any
   ellipsis?: boolean
   a11yLength?: boolean
   flat?: boolean
   className?: string
-  /**
-   *  **\*Experimental feature**
-   */
-  column?: number | null
 }
 
 export const Paragraph: FC<ParagraphProps> = ({
+  text,
   children,
   ellipsis = false,
   a11yLength = false,
   flat = false,
-  column = null,
   className = '',
   ...props
 }) => {
@@ -32,16 +29,11 @@ export const Paragraph: FC<ParagraphProps> = ({
       ${flat ? styles['flat'] : ''}
       ${className || ''}
   `
-
-  const paragraphInlineStyles: CSSProperties = {
-    '--paragraph-column': column,
-  };
-
   return (
-    <p className={paragraphStyles}
-      style={column && column > 1 ? paragraphInlineStyles : undefined}
+    <p
+      className={paragraphStyles}
       {...props}>
-        {children}
+        {children || text}
     </p>
   )
 }

@@ -22,7 +22,7 @@ export const Default = (args: ParagraphProps) => ([
   <Paragraph {...args} />, <Paragraph {...args} />
 ])
 
-export const Composition = (args: ParagraphProps) => ([
+export const withChildren = (args: ParagraphProps) => ([
   <Paragraph {...args}>
     <strong>This a composition text:</strong><br/>
     Lorem ipsum dolor sit amet, <abbr className="tooltip" aria-label="HyperText Markup Language">HTML</abbr> adipisicing elit. Ad <a href="javascript:void(0)">architecto</a> dolor eaque error esse
@@ -36,17 +36,15 @@ export const Composition = (args: ParagraphProps) => ([
 ])
 
 Default.args = {
-  children: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus natus assumenda beatae sapiente quis sed! Ducimus asperiores, excepturi magni eligendi magnam, natus officiis inventore, accusamus accusantium nihil nam temporibus beatae! Dolore qui molestias id accusantium',
+  text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus natus assumenda beatae sapiente quis sed! Ducimus asperiores, excepturi magni eligendi magnam, natus officiis inventore, accusamus accusantium nihil nam temporibus beatae! Dolore qui molestias id accusantium',
   ellipsis: false,
   a11yLength: false,
-  column: null,
   flat: false
 }
 
-Composition.args = {
+withChildren.args = {
   ellipsis: false,
   a11yLength: false,
-  column: null,
   flat: false
 }
 
