@@ -11,62 +11,63 @@ $separator-border-style: solid !default;
 $separator-border-color: var(--decorator-border-color) !default;
 
 @if $-ut-decorator {
-    .separator {
-        position: relative;
+  .separator {
+    position: relative;
 
-        &::after {
-            --separator-height: #{$separator-height};
+    &::after {
+      --separator-height: #{$separator-height};
 
-            content: "";
-            border-block-end-width: var(--separator-border-width, #{$separator-border-width});
-            border-block-end-style: var(--separator-border-style, #{$separator-border-style});
-            border-block-end-color: var(--separator-border-color, #{$separator-border-color});
-            margin-block: (calc(var(--separator-height) / 1.3333));
-        }
+      content: "";
+      border-block-end-width: var(--separator-border-width, #{$separator-border-width});
+      border-block-end-style: var(--separator-border-style, #{$separator-border-style});
+      border-block-end-color: var(--separator-border-color, #{$separator-border-color});
+      margin-block: (calc(var(--separator-height) / 1.3333));
+    }
+  }
+
+  .border {
+    &\:set {
+      border: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
     }
 
-    .border {
-        &\:set {
-            border: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
-        }
-
-        &\:t,
-        &\:top {
-            border-block-start: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
-        }
-
-        &\:r,
-        &\:right {
-            border-inline-end: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
-        }
-
-        &\:b,
-        &\:bottom {
-            border-block-end: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
-        }
-
-        &\:l,
-        &\:left {
-            border-inline-start: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
-        }
+    &\:t,
+    &\:top {
+      border-block-start: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
     }
 
-    [class*="stripes"] {
-        background-image: repeating-linear-gradient(-45deg, transparent, transparent 0.5rem, var(--stripes-color, currentcolor) 0.5rem, var(--stripes-color, currentcolor) 0.75rem);
-        block-size: var(--stripes-block-size, 10rem);
+    &\:r,
+    &\:right {
+      border-inline-end: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
     }
-    .stripes {
-        &\:neutral {
-            --stripes-color: var(--color-gray-default);
-        }
 
-        &\:primary {
-            --stripes-color: var(--color-primary);
-        }
-
-        &\:secondary {
-            --stripes-color: var(--color-secondary);
-        }
+    &\:b,
+    &\:bottom {
+      border-block-end: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
     }
+
+    &\:l,
+    &\:left {
+      border-inline-start: var(--separator-border, #{$separator-border-width} #{$separator-border-style} #{$separator-border-color});
+    }
+  }
+
+  [class*="stripes"] {
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 0.5rem, var(--stripes-color, currentcolor) 0.5rem, var(--stripes-color, currentcolor) 0.75rem);
+    block-size: var(--stripes-block-size, 10rem);
+  }
+
+  .stripes {
+    &\:neutral {
+      --stripes-color: var(--color-gray-default);
+    }
+
+    &\:primary {
+      --stripes-color: var(--color-primary);
+    }
+
+    &\:secondary {
+      --stripes-color: var(--color-secondary);
+    }
+  }
 
 }
