@@ -17,12 +17,6 @@ export default {
     vitest: {
       testFile: "Fieldset.test.tsx"
     },
-    docs: {
-      description: {
-        component: 'El componente **Fieldset** es...',
-        story: 'Another description on the story, overriding the comments',
-      },
-    },
   },
   argType: {
     legend: { name: 'Legend', control: 'text' },
@@ -91,6 +85,19 @@ export const Example = (args: FieldsetProps) => {
           <Checkbox label='Checked' isChecked />
           <Checkbox label='Indeterminate' indeterminate />
           <Checkbox label='Disabled' disabled />
+        </div>
+        <br />
+        <div>
+        <p>Checkbox switch:</p>
+          <Checkbox variant="switch" label='Turn on options' />
+        </div>
+        <br />
+        <div>
+          <p>Checkbox states:</p>
+          <Checkbox variant='chip' label='Option 1' />
+          <Checkbox variant='chip' label='Option 2' />
+          <Checkbox variant='chip' label='Option 3'/>
+          <Checkbox variant='chip' label='Option 4' />
         </div>
       </Fieldset>
       <Fieldset legend={'Fieldset nested:'}>
