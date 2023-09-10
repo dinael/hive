@@ -56,7 +56,7 @@
 .fancy{
   --blockquote-content-after-content: null;
   --blockquote-background: var(--color-basic-positive);
-  --blockquote-border-width: max(2px, 0.125rem);
+  --blockquote-border-width: max(0.125rem, 2px);
 }
 
 .blockquote {

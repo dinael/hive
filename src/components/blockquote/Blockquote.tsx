@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import styles from './Blockquote.module.scss'
 
 export type BlockquoteProps = {
@@ -6,7 +6,7 @@ export type BlockquoteProps = {
   footer?: string
   variant: 'fancy' | 'flat'
   className?: string
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const Blockquote: FC<BlockquoteProps> = ({
@@ -51,23 +51,25 @@ export const Blockquote: FC<BlockquoteProps> = ({
     <blockquote
       className={blockquoteStyles}
       {...props}>
-      {title ?
+      {title &&
         <BlockquoteHeader variant={'fancy'}>
-          {title ?
+          {title &&
             <BlockquoteTitle variant={'fancy'}>
               {title}
             </BlockquoteTitle>
-          : null}
+          }
         </BlockquoteHeader>
-      : null}
+      }
       {children &&
         <BlockquoteContent variant={'fancy'}>
           {children}
-        </BlockquoteContent>}
+        </BlockquoteContent>
+      }
       {footer &&
         <BlockquoteFooter variant={'fancy'}>
           {footer}
-        </BlockquoteFooter>}
+        </BlockquoteFooter>
+      }
     </blockquote>
   )
 
