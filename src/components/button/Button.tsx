@@ -7,7 +7,7 @@ export type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'alt' | 'ghost' | 'success' | 'danger'
   kind?: 'default' | 'rounded' | 'fullwidth'
   size?: 'default' | 'xs' | 's' | 'm' | 'l'
-  text: string
+  text?: string
   ellipsis?: boolean
   icon?: string
   iconOnly?: boolean
@@ -26,7 +26,7 @@ export const Button: FC<ButtonProps> = ({
   variant = 'primary',
   kind = 'default',
   size,
-  text,
+  text = 'button',
   ellipsis = false,
   icon,
   iconOnly = false,

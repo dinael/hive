@@ -40,6 +40,11 @@ describe('Button', () => {
     expect(container).toMatchSnapshot()
   })
 
+  test('Button renders children element correctly', () => {
+    const { container } = render(<Button>text</Button>)
+    expect(container).toMatchSnapshot()
+  })
+
   test('Button renders icon correctly', () => {
     const { container } = render(<Button {...defaultProps} />)
     const buttonElement = container.querySelector('button span')

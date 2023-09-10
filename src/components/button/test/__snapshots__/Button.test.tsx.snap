@@ -96,6 +96,26 @@ exports[`Button > Button renders as link correctly 1`] = `
 </div>
 `;
 
+exports[`Button > Button renders children element correctly 1`] = `
+<div>
+  <button
+    aria-label="a11y Button"
+    class="
+    button-component
+    primary
+    default
+    default
+    left
+    
+    
+  "
+    type="button"
+  >
+    text
+  </button>
+</div>
+`;
+
 exports[`Button > Button renders correctly 1`] = `
 <div>
   <button
