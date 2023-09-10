@@ -18,12 +18,9 @@ exports[`ValidationMessage > ValidationMessage renders snapshot 1`] = `
     m
     
   "
-      style="--icon-color: currentColor;"
     >
       <svg
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <title>
           close
