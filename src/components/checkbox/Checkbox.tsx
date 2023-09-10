@@ -85,12 +85,13 @@ export const Checkbox: FC<CheckboxProps> = ({
     ${className || ''}
   `
 
+  const checkboxID = id ? `checkbox-${Id}` : `checkbox-${uuid()}`
   const iconName = disabled ? 'forbid-circle' : isChecked ? 'less-circle' : 'add-circle'
 
   return (
     <label
-      key={`checkbox-${Id}`}
-      htmlFor={`checkbox-${Id}`}
+      key={checkboxID}
+      htmlFor={checkboxID}
       className={checkboxStyles}>
       <LabelText
         className={styles['checkbox-component-label']}
@@ -99,7 +100,7 @@ export const Checkbox: FC<CheckboxProps> = ({
       />
       <input
         className={styles['checkbox-component-input']}
-        id={`checkbox-${Id}`}
+        id={checkboxID}
         name={name}
         type="checkbox"
         checked={isChecked}
@@ -124,7 +125,7 @@ export const Checkbox: FC<CheckboxProps> = ({
           role="alert"
           aria-live="assertive"
           aria-atomic="true"
-          id={`validation-message-${Id}`} />
+          id={`checkbox-validation-message${Id}`} />
       }
     </label>
   )

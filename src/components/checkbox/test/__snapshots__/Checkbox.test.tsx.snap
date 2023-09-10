@@ -40,7 +40,7 @@ exports[`Checkbox > Checkbox calls onChecked handler when clicked 1`] = `
     error
     checkbox-validation-message}
   "
-      id="validation-message-id-test"
+      id="checkbox-validation-messageid-test"
       role="alert"
     >
       Error text
@@ -89,7 +89,7 @@ exports[`Checkbox > Checkbox calls onChecked handler when clicked 2`] = `
     error
     checkbox-validation-message}
   "
-      id="validation-message-id-test"
+      id="checkbox-validation-messageid-test"
       role="alert"
     >
       Error text
@@ -137,7 +137,7 @@ exports[`Checkbox > Checkbox renders snapshot 1`] = `
     error
     checkbox-validation-message}
   "
-      id="validation-message-id-test"
+      id="checkbox-validation-messageid-test"
       role="alert"
     >
       Error text
@@ -185,7 +185,7 @@ exports[`Checkbox > Checkbox renders with the correct label 1`] = `
     error
     checkbox-validation-message}
   "
-      id="validation-message-id-test"
+      id="checkbox-validation-messageid-test"
       role="alert"
     >
       Error text

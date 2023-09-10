@@ -22,10 +22,15 @@
 
   .checkbox-component-label {
     padding-inline: 0.5em;
+    line-height: 0;
   }
 
   input[type="checkbox"] {
     --checkbox-background: var(--color-basic-positive);
+    --checkbox-block-size: 1.25rem;
+    --checkbox-inline-size: 1.25rem;
+    --checkbox-border-width: 0.125rem;
+    --checkbox-border-color: var(--color-primary);
 
     @include form.appearance-none;
 
@@ -48,6 +53,12 @@
       background: var(--input-checkbox-check-background, var(--color-primary));
       transform-origin: center center;
       transition: transform .25s ease-in-out, background 0.25s ease-in-out;
+    }
+
+    &:focus {
+      @include focus {
+        --focus-outline-offset: 0.25rem;
+      }
     }
 
     &:checked {
@@ -97,12 +108,11 @@
       @include form.appearance-none;
 
       border: none;
-      margin-block-start: max(-0.1875rem, -3px);
       z-index: index(under);
 
       &:focus {
         @include focus {
-          --focus-outline-offset: 0.15rem;
+          --focus-outline-offset: 0.25rem;
 
           border-radius: radius(rounded);
         }
@@ -150,10 +160,6 @@
         }
       }
     }
-
-    .form-label {
-      margin-inline: 0 0.5em;
-    }
   }
 
   &.chip {
@@ -168,6 +174,7 @@
     max-inline-size: fit-content;
     cursor: pointer;
     padding-inline: max(0.125rem, 2px);
+    margin-inline: 0 0.5rem;
     user-select: none;
     color: var(--input-chip-color, var(--color-primary));
     border: max(0.125rem, 1px) solid var(--input-chip-border-color, var(--color-primary));
