@@ -88,12 +88,9 @@ exports[`ListFiltered > renders correctly 1`] = `
     xs
     icon
   "
-          style="--icon-color: currentColor;"
         >
           <svg
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
           >
             <title>
               chevron-down
@@ -111,6 +108,7 @@ exports[`ListFiltered > renders correctly 1`] = `
       class="
     list-component
     circle
+    
     
   "
       role="list"
