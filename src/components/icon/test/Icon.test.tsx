@@ -6,7 +6,6 @@ describe('Icon', () => {
   const defaultProps: IconProps = {
     name: 'close',
     size : 'xl',
-    color : 'currentColor',
     title: 'This is a title for a test',
     viewBox: 24,
     className: 'className-test'

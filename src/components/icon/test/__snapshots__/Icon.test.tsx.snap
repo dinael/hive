@@ -9,12 +9,9 @@ exports[`Icon > Icon renders correctly 1`] = `
     xl
     className-test
   "
-    style="--icon-color: currentColor;"
   >
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <title>
         This is a title for a test
@@ -36,12 +33,9 @@ exports[`Icon > Icon renders correctly svg title 1`] = `
     xl
     className-test
   "
-    style="--icon-color: currentColor;"
   >
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <title>
         This is a title for a test
@@ -63,12 +57,9 @@ exports[`Icon > Icon renders correctly viewBox 1`] = `
     xl
     className-test
   "
-    style="--icon-color: currentColor;"
   >
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <title>
         This is a title for a test
@@ -90,12 +81,9 @@ exports[`Icon > Icon renders snapshot 1`] = `
     xl
     className-test
   "
-    style="--icon-color: currentColor;"
   >
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <title>
         This is a title for a test
@@ -117,12 +105,9 @@ exports[`Icon > Icon renders with a custom class 1`] = `
     xl
     className-test
   "
-    style="--icon-color: currentColor;"
   >
     <svg
       viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
     >
       <title>
         This is a title for a test

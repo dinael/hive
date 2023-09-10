@@ -1,9 +1,9 @@
 .icon-component {
   display: inline-flex;
   overflow: hidden;
-  block-size: var(--icon-size);
-  inline-size: var(--icon-size);
-  color: var(--icon-color);
+  block-size: var(--icon-size, 1rem);
+  inline-size: var(--icon-size, 1rem);
+  color: var(--icon-color, currentColor);
 
   svg {
       color: inherit;

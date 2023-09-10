@@ -1,11 +1,10 @@
-import { FC , CSSProperties} from 'react'
+import { FC } from 'react'
 import styles from './Icon.module.scss'
-import sprite from '../../assets/sprite.svg'
+import sprite from '@/assets/sprite.svg'
 
 export type IconProps = {
   name: string
   size?: 'default' | 'xs' | 's' | 'm' | 'l' | 'xl'
-  color?: string
   title?: string
   viewBox?: number
   className?: string
@@ -14,35 +13,29 @@ export type IconProps = {
 export const Icon: FC<IconProps> = ({
   name = 'info',
   size  = 'default',
-  color  = 'currentColor',
   title = '',
   viewBox = 24,
   className = '',
   ...props
 }: IconProps) => {
 
+  const iconViewBox = `0 0 ${viewBox} ${viewBox}`
+  const iconTitle = title || name
+  const iconName = `${sprite}#${name}`
+
   const iconStyles = `
     ${styles['icon-component']}
     ${styles[size ? size : 'm']}
     ${className || ''}
   `
-
-  const iconInlineStyles: CSSProperties = {
-    '--icon-color': color,
-  };
-
   return (
     <span
       aria-hidden="true"
       className={iconStyles}
-      style={iconInlineStyles}
       {...props}>
-      <svg
-        viewBox={`0 0 ${viewBox} ${viewBox}`}
-        xmlns="http://www.w3.org/2000/svg"
-        xmlnsXlink="http://www.w3.org/1999/xlink">
-        <title>{title ? title : name}</title>
-        <use xlinkHref={`${sprite}#${name}`} />
+      <svg viewBox={iconViewBox}>
+        <title>{ iconTitle }</title>
+        <use xlinkHref={iconName} />
       </svg>
     </span>
   )

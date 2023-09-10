@@ -18,10 +18,6 @@ export default {
       name: 'Size',
       control: 'text'
     },
-    color: {
-      name: 'Color',
-      control: 'color'
-    },
     title: {
       name: 'Title',
       control: 'text'
@@ -38,7 +34,6 @@ export const Default = (args: IconProps) => <Icon {...args} />
 Default.args = {
   name: 'close',
   size : 'm',
-  color : 'currentColor',
   title: '',
   viewBox: 24,
 }

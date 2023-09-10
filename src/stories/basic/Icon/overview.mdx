@@ -1,36 +1,40 @@
 import { Canvas, Meta, Title, IconGallery, IconItem } from '@storybook/blocks'
-import { Figma } from "storybook-addon-designs/blocks";
+import { Figma } from 'storybook-addon-designs/blocks';
+import Iconography from '@/stories/tokens/iconography.mdx'
 
 import { Icon as IconExample } from '@/components/icon/Icon'
 
 <Meta title="Components/Basic/Icon/Overview" />
+# Icon component
+The Icon component makes it easy to efficiently and accessibly incorporate icons into your user interface.
 
-# Iconography
-<IconGallery>
-  <IconItem name='close'>
-    <IconExample name='close' title='close'/>
-  </IconItem>
-  <IconItem name='check'>
-    <IconExample name='check' title='check'/>
-  </IconItem>
-  <IconItem name='chevron-down'>
-    <IconExample name='chevron-down' title='chevron-down'/>
-  </IconItem>
-  <IconItem name='warning-cicle'>
-    <IconExample name='warning-cicle' title='warning-cicle'/>
-  </IconItem>
-  <IconItem name='warning-safe'>
-    <IconExample name='warning-safe' title='warning-safe'/>
-  </IconItem>
-  <IconItem name='info-circle'>
-    <IconExample name='info-circle' title='info-circle'/>
-  </IconItem>
-</IconGallery>
+To use the Icon component, first ensure you have an **SVG sprite** file containing symbols for your icons. An icon is a visual representation of an object and can be used to represent actions or objects in the interface. Icons are created using **SVG**.
 
-# Changelog
-## v0.0.11 (Wed May 31 2023)
+**Note:** \
+Ensure that the **IDs** of the symbols in your **SVG sprite** file match the names of the icons you intend to use with the Icon component.
 
-# Figma source
+## How create a SVG sprite
+```html:
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="0" width="0">
+  <symbol id="chevron-up" viewBox="0 0 24 24">
+    <path d="..."/>
+  </symbol>
+  <symbol id="chevron-right" viewBox="0 0 24 24">
+    <path d="..."/>
+  </symbol>
+<svg/>
+```
+## Usage
+```
+<Icon name="icon-name" size="m" title="Optional description" />
+```
+
+<Iconography />
+
+## Changelog
+### v0.0.11 (Wed May 31 2023)
+
+## Figma source
 <Figma
   height="30%"
   collapsable
