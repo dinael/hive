@@ -1,10 +1,10 @@
-import { FC, MouseEventHandler } from 'react'
+import { FC, MouseEventHandler, Children, ReactNode } from 'react';
 import styles from './Button.module.scss'
 import Icon from '@/components/icon/Icon'
 
 export type ButtonProps = {
   type?: 'button' | 'submit' | 'reset' | 'link'
-  variant: 'primary' | 'secondary' | 'alt' | 'ghost' | 'success' | 'danger'
+  variant?: 'primary' | 'secondary' | 'alt' | 'ghost' | 'success' | 'danger'
   kind?: 'default' | 'rounded' | 'fullwidth'
   size?: 'default' | 'xs' | 's' | 'm' | 'l'
   text: string
@@ -17,6 +17,7 @@ export type ButtonProps = {
   disabled?: boolean
   id?: string
   className?: string
+  children?: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
 }
 
@@ -35,6 +36,7 @@ export const Button: FC<ButtonProps> = ({
   disabled = false,
   className,
   id,
+  children,
   ...props
 }: ButtonProps) => {
 
@@ -47,16 +49,29 @@ export const Button: FC<ButtonProps> = ({
     ${styles[variant ? variant : 'primary']}
     ${styles[size ? size : 'default']}
     ${styles[kind ? kind : 'default']}
-    ${styles[iconPosition ? iconPosition : 'left']}
+    ${styles[iconOnly || kind === 'rounded' ? 'icon-only' : iconPosition]}
     ${disabled ? styles['disabled'] : ''}
     ${className || ''}
   `
+
+  const iconStyles = `${styles['icon-button']}`
 
   const textStyles = `
     ${styles.text}
     ${ellipsis ? styles['ellipsis'] : ''}
     ${iconOnly || kind === 'rounded' ? 'sr-only' : ''}
   `
+
+  const buttonIcon = icon ? <Icon name={icon} size={size} className={iconStyles} /> : null
+
+  const buttonText = !iconOnly && kind !== 'rounded' ? (<span className={textStyles}>{text}</span>) : null
+
+  const buttonContent = (
+    <>
+      {buttonIcon}
+      {buttonText}
+    </>
+  );
 
   if (type !== 'link') {
     return (
@@ -68,12 +83,7 @@ export const Button: FC<ButtonProps> = ({
         className={buttonStyles}
         onClick={handleClick}
         {...props}>
-        {icon && <Icon name={icon} size={size} />}
-        {!iconOnly && kind !== 'rounded' ? (
-          <span className={textStyles}>
-            {text}
-          </span>
-        ) : null}
+        {children ? children : buttonContent}
       </button>
     )
   }
@@ -88,12 +98,7 @@ export const Button: FC<ButtonProps> = ({
       className={buttonStyles}
       onClick={handleClick}
       {...props}>
-      {icon && <Icon name={icon} size={size} />}
-      {!iconOnly && kind !== 'rounded' ? (
-        <span className={textStyles}>
-          {text}
-        </span>
-      ) : null}
+      {children ? children : buttonContent}
     </a>
   )
 }

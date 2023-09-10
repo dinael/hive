@@ -3,10 +3,10 @@
 @use '../../scss/03-modules/texts' as text;
 
 .button-component {
-  --button-direction: row
-  --button-gap: 0 0.5rem;
+  --button-direction: row;
+  --button-gap: 0;
   --button-background: var(--color-primary);
-  --button-border-width: max(2px, 0.125rem);
+  --button-border-width: max(0.125rem, 2px);
   --button-border-color: var(--color-primary);
   --button-border-radius: #{radius(XXS)};
   --button-padding-block: 0;
@@ -35,6 +35,10 @@
 
   .text {
     overflow: hidden;
+  }
+
+  .icon-button {
+    margin-inline: var(--icon-button-margin-inline, 0);
   }
 }
 
@@ -195,10 +199,17 @@ a.ellipsis {
 
 .left {
   --button-direction: row;
+  --icon-button-margin-inline: 0 0.5rem;
+
 }
 
 .right {
   --button-direction: row-reverse;
+  --icon-button-margin-inline: 0.5rem 0;
+}
+
+.icon-only {
+  --icon-button-margin-inline: auto;
 }
 
 

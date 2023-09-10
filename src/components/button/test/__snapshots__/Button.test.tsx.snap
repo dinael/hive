@@ -10,6 +10,7 @@ exports[`Button > Button onClick 1`] = `
     xs
     default
     left
+    
     className-test
   "
     type="button"
@@ -19,14 +20,11 @@ exports[`Button > Button onClick 1`] = `
       class="
     icon-component
     xs
-    
+    icon-button
   "
-      style="--icon-color: currentColor;"
     >
       <svg
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <title>
           close
@@ -71,14 +69,11 @@ exports[`Button > Button renders as link correctly 1`] = `
       class="
     icon-component
     xs
-    
+    icon-button
   "
-      style="--icon-color: currentColor;"
     >
       <svg
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <title>
           close
@@ -111,6 +106,7 @@ exports[`Button > Button renders correctly 1`] = `
     xs
     default
     left
+    
     className-test
   "
     type="button"
@@ -120,14 +116,11 @@ exports[`Button > Button renders correctly 1`] = `
       class="
     icon-component
     xs
-    
+    icon-button
   "
-      style="--icon-color: currentColor;"
     >
       <svg
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <title>
           close
@@ -160,6 +153,7 @@ exports[`Button > Button renders icon correctly 1`] = `
     xs
     default
     left
+    
     className-test
   "
     type="button"
@@ -169,14 +163,11 @@ exports[`Button > Button renders icon correctly 1`] = `
       class="
     icon-component
     xs
-    
+    icon-button
   "
-      style="--icon-color: currentColor;"
     >
       <svg
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <title>
           close
@@ -209,6 +200,7 @@ exports[`Button > Button renders snapshot 1`] = `
     xs
     default
     left
+    
     className-test
   "
     type="button"
@@ -218,14 +210,11 @@ exports[`Button > Button renders snapshot 1`] = `
       class="
     icon-component
     xs
-    
+    icon-button
   "
-      style="--icon-color: currentColor;"
     >
       <svg
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <title>
           close
@@ -258,6 +247,7 @@ exports[`Button > Button renders text correctly 1`] = `
     xs
     default
     left
+    
     className-test
   "
     type="button"
@@ -267,14 +257,11 @@ exports[`Button > Button renders text correctly 1`] = `
       class="
     icon-component
     xs
-    
+    icon-button
   "
-      style="--icon-color: currentColor;"
     >
       <svg
         viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
         <title>
           close

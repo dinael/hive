@@ -5,10 +5,10 @@ import { Button, ButtonProps } from '../Button'
 describe('Button', () => {
   const defaultProps: ButtonProps = {
     type: 'button',
+    text: 'Button text',
     variant: 'primary',
     kind: 'default',
     size: 'xs',
-    text: 'Button text',
     ellipsis: false,
     icon: 'close',
     iconOnly: false,

@@ -71,13 +71,24 @@ export default {
 
 export const Default = (args: ButtonProps) => <Button {...args} />
 
+export const withChildren = (args: ButtonProps) => [
+  <Button {...args}>
+    <span>This text is a children element</span>
+  </Button>
+]
+
+
 export const AsLink = (args: ButtonProps) => <Button {...args} />
 
 Default.args = {
-  type: 'submit',
+  type: 'button',
   text: 'Button',
   description: 'This text is for accessibility',
   icon: 'close',
+}
+
+withChildren.args = {
+  ...Default.args,
 }
 
 AsLink.args = {
