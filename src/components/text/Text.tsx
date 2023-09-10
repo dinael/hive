@@ -2,6 +2,7 @@ import { FC } from 'react'
 import styles from './Text.module.scss'
 
 export type TextProps = {
+  text: string
   children: any
   block?: boolean
   ellipsis?: boolean
@@ -10,6 +11,7 @@ export type TextProps = {
 }
 
 export const Text: FC<TextProps> = ({
+  text,
   children ='',
   block = false,
   ellipsis = false,
@@ -27,8 +29,10 @@ export const Text: FC<TextProps> = ({
   const Tag = `${!block ? 'span' : 'p' }` as keyof JSX.IntrinsicElements
 
   return (
-    <Tag className={textStyles} {...props}>
-        { children }
+    <Tag
+      className={textStyles}
+      {...props}>
+      {children || text}
     </Tag>
   )
 }

@@ -21,20 +21,34 @@ export const Default = (args: TextProps) => ([
   <Text {...args} />
 ])
 
+export const withChildren = (args: TextProps) => ([
+  <Text {...args}>
+    This text is a children element
+  </Text>
+])
+
 export const Block = (args: TextProps) => ([
   <Text {...args} />
 ])
 
 Default.args = {
-  children: 'Hello World',
+  text: 'Hello World',
   block: false,
   ellipsis: false,
   a11yLength: false,
   className: '',
 }
 
-Block.args = {
-  ...Default.args,
-  children: 'Hello World, this a text block is a tag p',
+withChildren.args = {
+  ellipsis: false,
+  a11yLength: false,
+  className: '',
   block: true,
 }
+
+Block.args = {
+  ...Default.args,
+  text: 'Hello World, this a text block is a tag p',
+  block: true,
+}
+
