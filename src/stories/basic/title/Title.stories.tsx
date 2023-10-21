@@ -11,18 +11,20 @@ export default {
   },
   tags: ['autodocs'],
   argType: {
-    level: { name: 'Level heading',
+    level: {
+      name: 'Level heading',
       control: {
-        type:'select',
+        type: 'select',
         options: [1, 2, 3, 4, 5, 6],
         min: 0,
         max: 6,
       },
     },
-    size: { name: 'Size',
+    size: {
+      name: 'Size',
       control: {
         type: 'select',
-        options: ['xs','s', 'm', 'l', 'xl', 'xxl'],
+        options: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
       },
     },
     text: { name: 'Text', control: 'text' },

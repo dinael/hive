@@ -1,133 +1,136 @@
 // ## Theme color shame
 
-// $$ Theme dark
-@mixin theme-dark {
-    @media (prefers-color-scheme: dark) {
-        @content;
-    }
-}
-
-// $$ Theme light
+// $$ Themes prefers-color-scheme
 @mixin theme($theme: light) {
-    @if $theme==dark {
-        @media (prefers-color-scheme: dark) {
-            @content;
-        }
+  @if $theme==dark {
+    @media (prefers-color-scheme: dark) {
+      @content;
     }
-    @else {
-        @media (prefers-color-scheme: light) {
-            @content;
-        }
+  }
+
+  @else {
+    @media (prefers-color-scheme: light) {
+      @content;
     }
+  }
 }
 
 // $$ High contrast mode active
 @mixin high-contrast {
-    @media (-ms-high-contrast: active) {
-        @content;
-    }
+  @media (-ms-high-contrast: active) {
+    @content;
+  }
 }
 
 // $$ High contrast mode with specific black on white theme
 @mixin high-contrast-black-on-white {
-    @media (-ms-high-contrast: black-on-white) {
-        @content;
-    }
+  @media (-ms-high-contrast: black-on-white) {
+    @content;
+  }
 }
 
 // $$ High contrast mode with specific white on black theme
 @mixin high-contrast-white-on-black {
-    @media (-ms-high-contrast: white-on-black) {
-        @content;
-    }
+  @media (-ms-high-contrast: white-on-black) {
+    @content;
+  }
 }
 
 // $$ Reduced data
 @mixin reduced-data($value: reduced) {
-    @media (prefers-reduced-data: $value) {
-        @content;
-    }
+  @media (prefers-reduced-data: $value) {
+    @content;
+  }
 }
 
 // $$ Reduced motion
-@mixin reduced-motion($value: no-preference ) {
-    @media (prefers-reduced-motion: $value) {
-        @content;
-    }
+@mixin reduced-motion($value: no-preference) {
+  @media (prefers-reduced-motion: $value) {
+    @content;
+  }
 }
+
+// TODO:
+
+// @media (forced-colors: active) {}
+// @media (inverted-colors: inverted) {}
+// @media (prefers-contrast: more) {}
+// @media (prefers-reduced-transparency: reduce) {}
+
 
 // $$ Print
 @mixin print {
-    @media print {
-        *,
-        *:before,
-        *::after,
-        *:first-letter,
-        p:first-line,
-        div:first-line,
-        blockquote:first-line,
-        li:first-line {
-            background: transparent;
-            color: #000;
-            box-shadow: none;
-            text-shadow: none;
-        }
+  @media print {
 
-        a,
-        a:visited {
-            text-decoration: underline;
-        }
-
-        a[href]::after {
-            content: "('attr(href)')";
-        }
-
-        abbr[title]:after {
-            content: "('attr(title)')";
-        }
-
-        a[href^="#"]::after,
-        a[href^="javascript:"]::after {
-            content: "";
-        }
-
-        pre {
-            white-space: pre-wrap;
-        }
-
-        pre,
-        blockquote {
-            border: 1px solid #999;
-            page-break-inside: avoid;
-        }
-
-        thead {
-            display: table-header-group;
-        }
-
-        tr,
-        img {
-            page-break-inside: avoid;
-        }
-
-        p,
-        h2,
-        h3 {
-            orphans: 3;
-            widows: 3;
-        }
-
-        h2,
-        h3 {
-            page-break-after: avoid;
-        }
-
-        @content;
+    *,
+    *:before,
+    *::after,
+    *:first-letter,
+    p:first-line,
+    div:first-line,
+    blockquote:first-line,
+    li:first-line {
+      background: transparent;
+      color: #000;
+      box-shadow: none;
+      text-shadow: none;
     }
+
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+
+    a[href]::after {
+      content: "('attr(href)')";
+    }
+
+    abbr[title]:after {
+      content: "('attr(title)')";
+    }
+
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+      content: "";
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
+
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+
+    @content;
+  }
 }
 
 @mixin print-simple {
-    @media print {
-        @content;
-    }
+  @media print {
+    @content;
+  }
 }

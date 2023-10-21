@@ -25,7 +25,6 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "addon-screen-reader",
     "aria-live-storybook-addon",
-    "storybook-addon-designs",
     "@storybook/addon-styling",
     "@storybook/addon-coverage",
     "storybook_vitest_addon",

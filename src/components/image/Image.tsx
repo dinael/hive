@@ -4,6 +4,7 @@ import styles from './Image.module.scss'
 export type ImageProps = {
   src: string
   srcSet?: { src: string; size: string }[]
+  fallbackSrc?: string
   alt: string
   width?: string
   height?: string
@@ -16,6 +17,7 @@ export type ImageProps = {
 export const Image: FC<ImageProps> = ({
   src,
   srcSet,
+  fallbackSrc = 'https://i.giphy.com/media/3o7bu3XilJ5BOiSGic/200w.webp',
   alt,
   width = undefined,
   height = undefined,
@@ -43,6 +45,11 @@ export const Image: FC<ImageProps> = ({
         width={width}
         height={height}
         loading="lazy"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = fallbackSrc;
+        }}
         {...props} />
     )
   }
@@ -51,7 +58,6 @@ export const Image: FC<ImageProps> = ({
 
   const srcSetString = srcSet
     .map((obj) => `${obj.src} ${obj.size}`).join(',')
-// TODO: Add responsive sizes into sizes parameter
   return (
     <img
       className={imageStyles}

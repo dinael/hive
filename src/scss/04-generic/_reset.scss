@@ -7,31 +7,31 @@
 *,
 ::before,
 ::after {
-    box-sizing: border-box;
-    padding-block: 0;
-    padding-inline: 0;
-    margin-block: 0;
-    margin-inline: 0;
-    min-inline-size: 0;
+  box-sizing: border-box;
+  padding-block: 0;
+  padding-inline: 0;
+  margin-block: 0;
+  margin-inline: 0;
+  min-inline-size: 0;
 }
 
 :where(html, body) {
-    height: 100%; // Fallback
+  height: 100%; // Fallback
 }
 
 :where(html) {
-    -webkit-text-size-adjust: none;
-    block-size: 100%;
-    // fallback Support iOS
-    block-size: -webkit-fill-available;
-    color-scheme: dark light;
-    inline-size: 100%;
-    overflow-anchor: auto;
-    overscroll-behavior: contain;
-    scroll-behavior: smooth;
-    scroll-margin-top: 0;
-    scrollbar-gutter: stable;
-    text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  block-size: 100%;
+  // fallback Support iOS
+  block-size: -webkit-fill-available;
+  color-scheme: dark light;
+  inline-size: 100%;
+  overflow-anchor: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  scroll-margin-top: 0;
+  scrollbar-gutter: stable;
+  text-size-adjust: 100%;
 }
 
 // $$ Body
@@ -40,69 +40,67 @@
 // $$ main
 @include element.main-styles;
 
-:where(
-    a,
-    area,
-    button,
-    input,
-    label[for],
-    select,
-    summary,
-    textarea,
-    [tabindex]) {
-        touch-action: manipulation;
+:where(a,
+  area,
+  button,
+  input,
+  label[for],
+  select,
+  summary,
+  textarea,
+  [tabindex]) {
+  touch-action: manipulation;
 }
 
-:where(
-    template,
-    [hidden]) {
-        display: none;
+:where(template,
+  [hidden]) {
+  display: none;
 }
 
-:where(
-    [role="button"],
-    [role="link"],
-    [role="option"],
-    [role="select"]){
-        cursor: var( --cursor, pointer);
+:where([role="button"],
+  [role="link"],
+  [role="option"],
+  [role="select"]) {
+  cursor: var(--cursor, pointer);
 }
 
 :where(:focus-visible) {
-    outline-width: max(0.125rem, 2px);
-    outline-style: solid;
-    outline-color: var(--color-focus, highlight);
+  outline-width: max(0.125rem, 2px);
+  outline-style: solid;
+  outline-color: var(--color-focus, highlight);
 }
 
 // $$ Media queries
 @media (prefers-reduced-motion: no-preference) {
-    :where(html:focus-within) {
-        scroll-behavior: smooth;
-    }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    @if not(setup.$ut-accessibility) {
-        *,
-        *::before,
-        *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            scroll-behavior: auto !important;
-            transition-duration: 0.01ms !important;
-        }
+  @if not(setup.$ut-accessibility) {
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
     }
+  }
 }
 
 @media (prefers-contrast: more) {
-    :root {
-        --contrast-target: 7;
-    }
+  :root {
+    --contrast-target: 7;
+  }
 }
 
 @media (prefers-contrast: less) {
-    :root {
-        --contrast-target: 3;
-    }
+  :root {
+    --contrast-target: 3;
+  }
 }
 
 .sr-only,

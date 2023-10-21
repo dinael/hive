@@ -95,7 +95,7 @@ export const Inputselect: FC<InputselectProps> = ({
         text={label}
         required={required}
         isRequiredText={'Este elemento es requerido'}
-        labelHidden={labelHidden}/>
+        labelHidden={labelHidden} />
       <select
         name={name}
         id={id}
@@ -119,8 +119,8 @@ export const Inputselect: FC<InputselectProps> = ({
           role="alert"
           aria-live="assertive"
           aria-atomic="true"
-          id={`validation-message-${id}`}/>
-      : null}
+          id={`validation-message-${id}`} />
+        : null}
     </label>
   )
 }

@@ -8,6 +8,7 @@ exports[`List > List renders an ordered list when \`ordered\` prop is true 1`] =
     list-component
     circle
     className-test
+    
   "
     role="list"
   >
@@ -38,6 +39,7 @@ exports[`List > List renders an unordered list by default 1`] = `
     list-component
     circle
     className-test
+    
   "
     role="list"
   >

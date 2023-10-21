@@ -15,22 +15,24 @@ export default {
     width: { name: 'Width', control: 'text' },
     height: { name: 'Height', control: 'text' },
     srcSet: { name: 'src set', control: 'array' },
-    fit: { name: 'Fit',
+    fit: {
+      name: 'Fit',
       control: {
-        type:'select',
+        type: 'select',
         options: [
-          'contain','cover','fill','none','scale-down','unset'
+          'contain', 'cover', 'fill', 'none', 'scale-down', 'unset'
         ],
       },
     },
-    ratio: { name: 'Ratio',
+    ratio: {
+      name: 'Ratio',
       control: {
-        type:'select',
-        options: ['none','ratio-1:1','ratio-1:2','ratio-2:1','ratio-2:3','ratio-3:1','ratio-3:2','ratio-3:4','ratio-4:3','ratio-4:5','ratio-5:4','ratio-9:16','ratio-16:9','ratio-16:9','ratio-21:9','ratio-72:25'],
+        type: 'select',
+        options: ['none', 'ratio-1:1', 'ratio-1:2', 'ratio-2:1', 'ratio-2:3', 'ratio-3:1', 'ratio-3:2', 'ratio-3:4', 'ratio-4:3', 'ratio-4:5', 'ratio-5:4', 'ratio-9:16', 'ratio-16:9', 'ratio-16:9', 'ratio-21:9', 'ratio-72:25'],
       },
     },
     disabled: { name: 'Disabled', control: 'boolean' },
-    className: {name: 'className', control: 'text'},
+    className: { name: 'className', control: 'text' },
   },
 }
 

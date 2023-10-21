@@ -6,7 +6,7 @@ import Icon from '@/components/icon/Icon'
 
 export type ValidationMessageProps = {
   message: string
-  kind:  'info' | 'warning' | 'error' | 'success' | 'help' | 'safe'
+  kind: 'info' | 'warning' | 'error' | 'success' | 'help' | 'safe'
   icon?: string
   id?: string
   role?: string
@@ -29,16 +29,16 @@ export const ValidationMessage: FC<ValidationMessageProps> = ({
     ${className || ''}}
   `
 
-  const validationMessageIcon = icon && <Icon name={ icon } size={ 'm' } />
+  const validationMessageIcon = icon && <Icon name={icon} size={'m'} />
 
   return (
     <span
-      id={ id ? id : '' }
-      className={ validationMessageStyles }
+      id={id ? id : ''}
+      className={validationMessageStyles}
       role={role ? role : ''}
-      { ...props }>
-      { validationMessageIcon }
-      { message }
+      {...props}>
+      {validationMessageIcon}
+      {message}
     </span>
   )
 }

@@ -21,17 +21,17 @@ $-gap-flow-column: global.$gap-flow-column !default;
 
 // ## Grid
 @if $-grid-system {
-	.wrapper {
-		padding-inline: var(--grid-wrapper-padding, 0.5rem);
-		margin-inline: auto;
-		inline-size: min(100%, #{maps($-screens, $-max-screen)});
-	}
+  .wrapper {
+    padding-inline: var(--grid-wrapper-padding, 0.5rem);
+    margin-inline: auto;
+    inline-size: min(100%, #{maps($-screens, $-max-screen)});
+  }
 
-	.out-wrapper {
-		@include breakpoint.screen(desktop) {
-			margin-inline: calc(var(--grid-wrapper-padding) * -1);
-		}
-	}
+  .out-wrapper {
+    @include breakpoint.screen(desktop) {
+      margin-inline: calc(var(--grid-wrapper-padding) * -1);
+    }
+  }
 
   [class*="grid\@system"] {
     display: grid;
@@ -42,7 +42,7 @@ $-gap-flow-column: global.$gap-flow-column !default;
     row-gap: var(--grid-gap-row, 0);
 
     @include breakpoint.screen(mobile) {
-      .col{
+      .col {
         grid-column-start: 1;
         grid-column-end: -1;
       }
@@ -73,7 +73,7 @@ $-gap-flow-column: global.$gap-flow-column !default;
       }
     }
 
-    @for $i from 1+1 through $-grid-columns {
+    @for $i from 1 + 1 through $-grid-columns {
       .grid-end\:#{$i} {
         grid-column-end: #{$i + 1};
       }
@@ -169,98 +169,101 @@ $-gap-flow-column: global.$gap-flow-column !default;
     }
   }
 
-	.grid {
-		display: var(--grid-display, grid);
+  .grid {
+    display: var(--grid-display, grid);
 
     // Device base
     &\@system {
       &\:tablet {
         --grid-system-columns: 8;
       }
+
       &\:mobile {
         --grid-system-columns: 4;
       }
     }
-	}
+  }
 
-	// ## Responsive utilities
-	// $$ QHD
-	@include breakpoint.screen(QHD) {
-		.grid\@qhd\:100 {
-			inline-size: 100%;
-		}
-	}
+  // ## Responsive utilities
+  // $$ QHD
+  @include breakpoint.screen(QHD) {
+    .grid\@qhd\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ HD
-	@include breakpoint.screen(HD) {
-		.grid\@hd\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ HD
+  @include breakpoint.screen(HD) {
+    .grid\@hd\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ Desktop
-	@include breakpoint.screen(desktop) {
-		.grid\@desktop\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ Desktop
+  @include breakpoint.screen(desktop) {
+    .grid\@desktop\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ standard
-	@include breakpoint.screen(standard) {
-		.grid\@standard\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ standard
+  @include breakpoint.screen(standard) {
+    .grid\@standard\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ laptop
-	@include breakpoint.screen(laptop) {
-		.grid\@laptop\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ laptop
+  @include breakpoint.screen(laptop) {
+    .grid\@laptop\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ Tablet
-	@include breakpoint.screen(tablet-landscape) {
-		.grid\@tablet\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ Tablet
+  @include breakpoint.screen(tablet-landscape) {
+    .grid\@tablet\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ Tablet portrait
-	@include breakpoint.screen(tablet-portrait) {
-		.grid\@tablet-portrait\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ Tablet portrait
+  @include breakpoint.screen(tablet-portrait) {
+    .grid\@tablet-portrait\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ Mobile landscape
-	@include breakpoint.screen(mobile-landscape) {
-		.grid\@mobile-landscape\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ Mobile landscape
+  @include breakpoint.screen(mobile-landscape) {
+    .grid\@mobile-landscape\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// $$ Mobile portrait
-	@include breakpoint.screen(mobile-portrait) {
-		.grid\@mobile-portrait\:100 {
-			inline-size: 100%;
-		}
-	}
+  // $$ Mobile portrait
+  @include breakpoint.screen(mobile-portrait) {
+    .grid\@mobile-portrait\:100 {
+      inline-size: 100%;
+    }
+  }
 
-	// ## Hide content responsive
+  // ## Hide content responsive
 
-	@include breakpoint.screen(mobile-portrait) {
-		// This is accessible
-		.grid\@mobile\:hidden {
-			overflow: hidden;
-			max-block-size: 1px !important;
-			max-inline-size: 1px !important;
-			margin: -1px 0 0 -1px !important;
-			padding: 0 !important;
-		}
-		// Non accessible
-		.grid\@mobile\:none {
-			display: none;
-		}
-	}
+  @include breakpoint.screen(mobile-portrait) {
+
+    // This is accessible
+    .grid\@mobile\:hidden {
+      overflow: hidden;
+      max-block-size: 1px !important;
+      max-inline-size: 1px !important;
+      margin: -1px 0 0 -1px !important;
+      padding: 0 !important;
+    }
+
+    // Non accessible
+    .grid\@mobile\:none {
+      display: none;
+    }
+  }
 }

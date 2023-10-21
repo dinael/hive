@@ -20,38 +20,38 @@ export default {
       name: 'Type',
       control: {
         type: 'select',
-        options: ['button','submit','reset','link']
+        options: ['button', 'submit', 'reset', 'link']
       }
     },
     variant: {
       name: 'Variant',
       control: {
         type: 'select',
-        options: ['primary','secondary','alt','ghost','success','danger']
+        options: ['primary', 'secondary', 'alt', 'ghost', 'success', 'danger']
       }
     },
     size: {
       name: 'Size',
       control: {
         type: 'select',
-        options: ['xs','s','m','l']
+        options: ['xs', 's', 'm', 'l']
       }
     },
     kind: {
       name: 'Kind',
       control: {
         type: 'radio',
-        options: ['default','rounded','fullwidth']
+        options: ['default', 'rounded', 'fullwidth']
       }
     },
-    text: {name: 'Text', control: 'text'},
+    text: { name: 'Text', control: 'text' },
     description: { name: 'Description text for a11y', control: 'text' },
     disabled: { name: 'Disabled', control: 'boolean' },
     onClick: { name: 'Click', action: 'onClick' },
     href: { name: 'Href', control: 'text' },
     target: { name: 'Target', control: 'text' },
     icon: { name: 'Icon', control: 'text' },
-    iconOnly: {name: 'Icon only', control: 'boolean'},
+    iconOnly: { name: 'Icon only', control: 'boolean' },
     iconPosition: {
       name: 'Icon position',
       control: {
@@ -97,29 +97,29 @@ AsLink.args = {
   url: '#',
 }
 
-Default.parameters = {
-  design: [
-    {
-      name: 'Spec',
-      type: 'figspec',
-      url: 'https://www.figma.com/file/Cx0sZBqrc7kGW72bcmy90S/tokens?type=design&node-id=3-27&t=ThF1FKZYYApN4drF-4',
-      accessToken: import.meta.env.VITE_STORYBOOK_FIGMA_ACCESS_TOKEN
-    },
-    {
-      name: 'Prototype',
-      type: 'figma',
-      url: 'https://www.figma.com/proto/Cx0sZBqrc7kGW72bcmy90S/tokens?page-id=19%3A2&type=design&node-id=19-5&scaling=min-zoom',
-    },
-    {
-      type: 'link',
-      name: 'Doc URL',
-      label: 'Figma file source',
-      target: '_blank',
-      url: 'https://www.figma.com/proto/Cx0sZBqrc7kGW72bcmy90S/tokens?page-id=19%3A2&type=design&node-id=19-5&scaling=min-zoom',
-    }
-  ]
-}
+// Default.parameters = {
+//   design: [
+//     {
+//       name: 'Spec',
+//       type: 'figspec',
+//       url: 'https://www.figma.com/file/Cx0sZBqrc7kGW72bcmy90S/tokens?type=design&node-id=3-27&t=ThF1FKZYYApN4drF-4',
+//       accessToken: import.meta.env.VITE_STORYBOOK_FIGMA_ACCESS_TOKEN
+//     },
+//     {
+//       name: 'Prototype',
+//       type: 'figma',
+//       url: 'https://www.figma.com/proto/Cx0sZBqrc7kGW72bcmy90S/tokens?page-id=19%3A2&type=design&node-id=19-5&scaling=min-zoom',
+//     },
+//     {
+//       type: 'link',
+//       name: 'Doc URL',
+//       label: 'Figma file source',
+//       target: '_blank',
+//       url: 'https://www.figma.com/proto/Cx0sZBqrc7kGW72bcmy90S/tokens?page-id=19%3A2&type=design&node-id=19-5&scaling=min-zoom',
+//     }
+//   ]
+// }
 
-AsLink.parameters = {
-  ...Default.parameters
-}
+// AsLink.parameters = {
+//   ...Default.parameters
+// }

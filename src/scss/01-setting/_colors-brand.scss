@@ -3,6 +3,16 @@
 @use '../02-tools/functions' as *;
 
 // ## Swatches
+// --primary-100:hsl(200, 6%, 10%);
+// --primary-200:hsl(215, 5%, 20%);
+// --primary-300:hsl(210, 38%, 95%);
+// --accent-100:hsl(85, 100%, 60%);
+// --accent-200:hsl(95, 100%, 30%);
+// --text-100:hsl(210, 5%, 15%);
+// --text-200:hsl(205, 10%, 40%);
+// --bg-100:hsl(0, 0%, 100%);
+// --bg-200:hsl(0, 0%, 96%);
+// --bg-300:hsl(0, 0%, 80%);
 // $$ Vars
 // Basic
 $_positive: hsl(0 0% 100%);
@@ -35,87 +45,69 @@ $_validation-warning-dark: hsl(60 80% 30%);
 
 // ## Maps color swatches
 $color-swatches: (
-    // $$ Basic
-    positive: ('default': $_positive),
-    negative: ('default': $_negative),
-    text: (
-        'default': $_brand-text,
-        'secondary': $_brand-text-secondary,
-    ),
-    focus: ('default': $_focus),
-    background: (
-        'default': $_brand-background,
-        'secondary': $_brand-background-secondary,
-    ),
-    // $$ brand colors
-    primary: (
-        'default': $_brand-primary,
-        'dark': $_brand-primary-dark,
-        'light': $_brand-primary-light,
-        'extra-dark': $_brand-primary-extra-dark,
-        'extra-light': $_brand-primary-extra-light,
-    ),
-    secondary: (
-        'default': $_brand-secondary,
-        'dark': $_brand-secondary-dark,
-        'light': $_brand-secondary-light,
-        'extra-dark': $_brand-secondary-extra-dark,
-        'extra-light': $_brand-secondary-extra-light,
-    ),
-    accent: (
-        'default': hsl(84, 100%, 59%),
-        'dark': $_brand-secondary-dark,
-        'light': $_brand-secondary-light,
-        'extra-dark': $_brand-secondary-extra-dark,
-        'extra-light': $_brand-secondary-extra-light,
-    ),
-    // $$ Validations
-    validation: (
-        'danger': $_validation-danger,
-        'danger-dark': $_validation-danger-dark,
-        'info': $_validation-info,
-        'info-dark': $_validation-info-dark,
-        'success': $_validation-success,
-        'success-dark': $_validation-success-dark,
-        'warning': $_validation-warning,
-        'warning-dark': $_validation-warning-dark,
-    ),
-    // $$ Debug
-    debug: (
-        'danger': red,
-        'warning': yellow,
-        'verify': blue,
-        'careful': gray,
-        'vertical-rhythm': gray,
-        'highlight': yellowgreen
-    ),
-    // $$ Grays scale
-    gray: (
-        'default': hsl(0 0% 65%),
-        'dark': hsl(0 0% 33%),
-        'light': hsl(0, 0%, 80%),
-        'extra-light': hsl(0, 0%, 95%)
-    )
-) !default;
+  // $$ Basic
+  positive: ('default': $_positive),
+  negative: ('default': $_negative),
+  text: ('default': $_brand-text,
+    'secondary': $_brand-text-secondary,
+  ),
+  focus: ('default': $_focus),
+  background: ('default': $_brand-background,
+    'secondary': $_brand-background-secondary,
+  ),
+  // $$ brand colors
+  primary: ('default': $_brand-primary,
+    'dark': $_brand-primary-dark,
+    'light': $_brand-primary-light,
+    'extra-dark': $_brand-primary-extra-dark,
+    'extra-light': $_brand-primary-extra-light,
+  ),
+  secondary: ('default': $_brand-secondary,
+    'dark': $_brand-secondary-dark,
+    'light': $_brand-secondary-light,
+    'extra-dark': $_brand-secondary-extra-dark,
+    'extra-light': $_brand-secondary-extra-light,
+  ),
+  accent: ('default': hsl(84, 100%, 60%),
+    'dark': $_brand-secondary-dark,
+    'light': $_brand-secondary-light,
+    'extra-dark': $_brand-secondary-extra-dark,
+    'extra-light': $_brand-secondary-extra-light,
+  ),
+  // $$ Validations
+  validation: ('danger': $_validation-danger,
+    'danger-dark': $_validation-danger-dark,
+    'info': $_validation-info,
+    'info-dark': $_validation-info-dark,
+    'success': $_validation-success,
+    'success-dark': $_validation-success-dark,
+    'warning': $_validation-warning,
+    'warning-dark': $_validation-warning-dark,
+  ),
+  // $$ Debug
+  debug: ('danger': red,
+    'warning': yellow,
+    'verify': blue,
+    'careful': gray,
+    'vertical-rhythm': gray,
+    'highlight': yellowgreen),
+  // $$ Grays scale
+  gray: ('default': hsl(0 0% 65%),
+    'dark': hsl(0 0% 33%),
+    'light': hsl(0, 0%, 80%),
+    'extra-light': hsl(0, 0%, 95%))) !default;
 
 // $$ Gradients
 $gradient-swatches: (
-    primary: (
-        start: var(--color-primary),
-        end: var(--color-primary-dark),
-        deg: 90
-    ),
-    secondary: (
-        start: var(--color-secondary),
-        end: var(--color-secondary-dark),
-        deg: 45
-    ),
-    pale: (
-        start:hsl(0, 0%, 20%),
-        end: hsl(0, 0%, 40%),
-        deg: 15
-    )
-) !default;
+  primary: (start: var(--color-primary),
+    end: var(--color-primary-dark),
+    deg: 90),
+  secondary: (start: var(--color-secondary),
+    end: var(--color-secondary-dark),
+    deg: 45),
+  pale: (start:hsl(0, 0%, 20%),
+    end: hsl(0, 0%, 40%),
+    deg: 15)) !default;
 
 /*
 "destination": "_tokens.scss",

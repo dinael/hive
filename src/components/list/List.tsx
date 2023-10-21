@@ -16,8 +16,8 @@ export type ListProps = {
   unstyled?: boolean
   bullet?: 'none' | 'auto' | 'disc' | 'circle' | 'square' | 'decimal' | 'decimal-leading-zero' | 'lower-roman' | 'upper-roman' | 'lower-greek' | 'lower-latin' | 'upper-latin' | 'armenian' | 'georgian' | 'lower-alpha' | 'upper-alpha'
   customBullet?: string
-  even: boolean
-  odd: boolean
+  even?: boolean
+  odd?: boolean
 }
 
 export const List: FC<ListProps> = ({
@@ -28,7 +28,7 @@ export const List: FC<ListProps> = ({
   bullet = 'none',
   customBullet = '',
   unstyled = false,
-  even= false,
+  even = false,
   odd = false,
   ...props
 }) => {
@@ -66,9 +66,7 @@ export const List: FC<ListProps> = ({
           key={item.id ? item.id : uuid()}
           role="listitem"
           style={customBullet ? { listStyle: customBullet } : {}}>
-          <div>
-            {item.text}
-          </div>
+          {item.text}
         </li>
       ))}
     </Tag>

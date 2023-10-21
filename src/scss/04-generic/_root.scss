@@ -8,111 +8,122 @@
 
 $-font-sizes: fonts.$font-sizes;
 
+
+
 // ## Root custom properties
 :root {
-	// ## Font
-	--font-family: #{fonts.family(default)};
-	--font-family-secondary: #{fonts.family(secondary)};
-	--font-line-height: #{fonts.line-height(default)};
-	--font-size: #{fonts.size(default)};
-	// Generate: --font-size-xxl, --font-size-xl, ....
-	@each $size, $value in $-font-sizes {
-		--font-size-#{to-lower-case($size)}: #{fonts.size($size)};
-	}
-	// $$ Colors palette
-	// Basic
-	--color-text-primary: #{swatch.brand(text)};
-	--color-text-secondary: #{swatch.brand(text, 'secondary')};
-	--color-background: #{swatch.brand(background)};
-	--color-background-secondary: #{swatch.brand(background, 'secondary')};
-	// Brand swatches
-	--color-basic-positive: #{swatch.brand(positive)};
-	--color-basic-negative: #{swatch.brand(negative)};
-	--color-primary: #{swatch.brand(primary, 'default')};
-	--color-primary-light: #{swatch.brand(primary, 'light')};
-	--color-primary-dark: #{swatch.brand(primary, 'dark')};
-	--color-primary-extra-dark: #{swatch.brand(primary, 'extra-dark')};
-	--color-primary-extra-light: #{swatch.brand(primary, 'extra-light')};
-	--color-secondary: #{swatch.brand(secondary, 'default')};
-	--color-secondary-dark: #{swatch.brand(secondary, 'dark')};
-	--color-secondary-light:#{swatch.brand(secondary, 'light')};
-	--color-secondary-extra-light: #{swatch.brand(secondary, 'light')};
-	--color-secondary-extra-dark: #{swatch.brand(secondary, 'extra-dark')};
-	--color-accent: #{swatch.brand(accent, 'default')};
-	--color-accent-dark: #{swatch.brand(accent, 'dark')};
-	--color-accent-light: #{swatch.brand(accent, 'light')};
-	--color-accent-extra-dark: #{swatch.brand(accent, 'extra-dark')};
-	--color-accent-extra-light: #{swatch.brand(accent, 'extra-light')};
-	--color-focus: #{swatch.brand(focus)};
-	// Gray scale
-	--color-gray-default: #{swatch.brand(gray, 'default')};
-	--color-gray-dark: #{swatch.brand(gray, 'dark')};
-	--color-gray-light: #{swatch.brand(gray, 'light')};
-	// $$ App colors variables
-   	--anchor-color: var(--color-secondary);
-	--anchor-color-hover: var(--color-primary-light);
-	--anchor-color-focus: var(--color-focus); // as focus default
+  // ## Font
+  --font-family: #{fonts.family(default)};
+  --font-family-secondary: #{fonts.family(secondary)};
+  --font-line-height: #{fonts.line-height(default)};
+  --font-size: #{fonts.size(default)};
+
+  // Generate: --font-size-xxl, --font-size-xl, ....
+  @each $size, $value in $-font-sizes {
+    --font-size-#{to-lower-case($size)}: #{fonts.size($size)};
+  }
+
+  // $$ Colors palette
+
+  // Basic
+  --color-text-primary: #{swatch.brand(text)};
+  --color-text-secondary: #{swatch.brand(text, 'secondary')};
+  --color-background: #{swatch.brand(background)};
+  --color-background-secondary: #{swatch.brand(background, 'secondary')};
+  // Brand swatches
+  --color-basic-positive: #{swatch.brand(positive)};
+  --color-basic-negative: #{swatch.brand(negative)};
+  --color-primary: #{swatch.brand(primary, 'default')};
+  --color-primary-light: #{swatch.brand(primary, 'light')};
+  --color-primary-dark: #{swatch.brand(primary, 'dark')};
+  --color-primary-extra-dark: #{swatch.brand(primary, 'extra-dark')};
+  --color-primary-extra-light: #{swatch.brand(primary, 'extra-light')};
+  --color-secondary: #{swatch.brand(secondary, 'default')};
+  --color-secondary-dark: #{swatch.brand(secondary, 'dark')};
+  --color-secondary-light:#{swatch.brand(secondary, 'light')};
+  --color-secondary-extra-light: #{swatch.brand(secondary, 'light')};
+  --color-secondary-extra-dark: #{swatch.brand(secondary, 'extra-dark')};
+  --color-accent: #{swatch.brand(accent, 'default')};
+  --color-accent-dark: #{swatch.brand(accent, 'dark')};
+  --color-accent-light: #{swatch.brand(accent, 'light')};
+  --color-accent-extra-dark: #{swatch.brand(accent, 'extra-dark')};
+  --color-accent-extra-light: #{swatch.brand(accent, 'extra-light')};
+  --color-focus: #{swatch.brand(focus)};
+  // Gray scale
+  --color-gray-default: #{swatch.brand(gray, 'default')};
+  --color-gray-dark: #{swatch.brand(gray, 'dark')};
+  --color-gray-light: #{swatch.brand(gray, 'light')};
+  // $$ App colors variables
+  --anchor-color: var(--color-secondary);
+  --anchor-color-hover: var(--color-primary-light);
+  --anchor-color-focus: var(--color-focus); // as focus default
   --anchor-color-disabled: var(--color-text-primary);
-	// --anchor-color-visited: #{swatch.palette(violet, '400')};
-	// --anchor-color-active: #{swatch.palette(violet, '400')};
-	// --anchor-color-disabled: #{swatch.gray(reddish, '400')};
-	// Shadow
-	@if setup.$shadow {
-		--elevation-soft: #{shadow.elevation(S)};
-		--elevation-medium: #{shadow.elevation(M)};
-		--elevation-hard: #{shadow.elevation(L)};
-		--elevation-hover: shadow.elevation(hover);
-	}
-	// Shadow text
-	@if setup.$shadow-text {
-		--elevation-text-soft: #{shadow.text(S)};
-		--elevation-text-medium: #{shadow.text(M)};
-		--elevation-text-hard: #{shadow.text(L)};
-		--elevation-text-hover: #{shadow.text(hover)};
-	}
-	// Validation
-	--color-validation-info: #{swatch.brand(validation, 'info')};
-	--color-validation-info-dark: #{swatch.brand(validation, 'info-dark')};
-	--color-validation-success: #{swatch.brand(validation, 'success')};
-	--color-validation-success-dark: #{swatch.brand(validation, 'success-dark')};
-	--color-validation-warning: #{swatch.brand(validation, 'warning')};
-	--color-validation-warning-dark: #{swatch.brand(validation, 'warning-dark')};
-	--color-validation-danger: #{swatch.brand(validation, 'danger')};
-	--color-validation-danger-dark: #{swatch.brand(validation, 'danger-dark')};
-	// Decorator
-	@if setup.$ut-decorator {
-		--decorator-border-width: max(0.0625rem, 1px);
-		--decorator-border-color: #{swatch.brand(gray)};
-	}
 
-	// ## Components
-    //....
-	// ## Utilities
-	// $$ Tittle
-	@if setup.$ut-title {
-		--title-font-family: #{fonts.$title};
-		--title-color: #{swatch.brand(text)};
-		--title-color-secondary: #{swatch.brand(text, 'secondary')};
-		--title-line-height: #{title.line-height(default)};
-	}
-	// $$ Paragraph
-	@if setup.$ut-paragraph {
-		--paragraph-font-size: #{fonts.size(paragraph)};
-		--paragraph-line-height: #{fonts.line-height(paragraph)};
-	}
+  // --anchor-color-visited: #{swatch.palette(violet, '400')};
+  // --anchor-color-active: #{swatch.palette(violet, '400')};
+  // --anchor-color-disabled: #{swatch.gray(reddish, '400')};
+  // Shadow
+  @if setup.$shadow {
+    --elevation-soft: #{shadow.elevation(S)};
+    --elevation-medium: #{shadow.elevation(M)};
+    --elevation-hard: #{shadow.elevation(L)};
+    --elevation-hover: shadow.elevation(hover);
+  }
 
-	// $$ Debug
-	@if setup.$debug {
-		--debug-error: #{swatch.brand(debug, 'error')};
-		--debug-warning: #{swatch.brand(debug, 'warning')};
-		--debug-careful: #{swatch.brand(debug, 'careful')};
-		--debug-verify: #{swatch.brand(debug, 'verify')};
-		--debug-vertical-rhythm: #{swatch.brand(debug, 'vertical-rhythm')};
-		--debug-highlight: #{swatch.brand(debug, 'highlight')};
-	}
-	@if setup.$theme-color-scheme {
-		color-scheme: light dark;
-	}
+  // Shadow text
+  @if setup.$shadow-text {
+    --elevation-text-soft: #{shadow.text(S)};
+    --elevation-text-medium: #{shadow.text(M)};
+    --elevation-text-hard: #{shadow.text(L)};
+    --elevation-text-hover: #{shadow.text(hover)};
+  }
+
+  // Validation
+  --color-validation-info: #{swatch.brand(validation, 'info')};
+  --color-validation-info-dark: #{swatch.brand(validation, 'info-dark')};
+  --color-validation-success: #{swatch.brand(validation, 'success')};
+  --color-validation-success-dark: #{swatch.brand(validation, 'success-dark')};
+  --color-validation-warning: #{swatch.brand(validation, 'warning')};
+  --color-validation-warning-dark: #{swatch.brand(validation, 'warning-dark')};
+  --color-validation-danger: #{swatch.brand(validation, 'danger')};
+  --color-validation-danger-dark: #{swatch.brand(validation, 'danger-dark')};
+
+  // Decorator
+  @if setup.$ut-decorator {
+    --decorator-border-width: max(0.0625rem, 1px);
+    --decorator-border-color: #{swatch.brand(gray)};
+  }
+
+  // ## Components
+  //....
+  // ## Utilities
+  // $$ Tittle
+  @if setup.$ut-title {
+    --title-font-family: #{fonts.$title};
+    --title-color: #{swatch.brand(text)};
+    --title-color-secondary: #{swatch.brand(text, 'secondary')};
+    --title-line-height: #{title.line-height(default)};
+  }
+
+  // $$ Paragraph
+  @if setup.$ut-paragraph {
+    --paragraph-font-size: #{fonts.size(paragraph)};
+    --paragraph-line-height: #{fonts.line-height(paragraph)};
+  }
+
+  // $$ Debug
+  @if setup.$debug {
+    --debug-error: #{swatch.brand(debug, 'error')};
+    --debug-warning: #{swatch.brand(debug, 'warning')};
+    --debug-careful: #{swatch.brand(debug, 'careful')};
+    --debug-verify: #{swatch.brand(debug, 'verify')};
+    --debug-vertical-rhythm: #{swatch.brand(debug, 'vertical-rhythm')};
+    --debug-highlight: #{swatch.brand(debug, 'highlight')};
+  }
+
+  @if setup.$theme-color-scheme {
+    color-scheme: light dark;
+  }
 }
 
 html.dark {

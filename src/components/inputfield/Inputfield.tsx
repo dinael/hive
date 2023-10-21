@@ -1,4 +1,4 @@
-import {FC, useState, ChangeEvent, FocusEvent } from 'react'
+import { FC, useState, ChangeEvent, FocusEvent } from 'react'
 
 import styles from './Inputfield.module.scss'
 
@@ -12,7 +12,7 @@ export type InputfieldProps = {
   id?: string
   name?: string
   type?: 'text' | 'email' | 'password' | 'search' | 'number' | 'tel' | 'url' | 'date' | 'datetime-local' | 'time' | 'datetime' | 'mouth' | 'week' | 'year'
-  placeholder?: string
+  placeholder?: string | undefined
   value?: string | number
   error?: boolean
   errorText?: string
@@ -23,6 +23,8 @@ export type InputfieldProps = {
   isRequiredText?: string
   maxLength?: number
   className?: string
+  datalistId?: string
+  dataList?: string[]
   onBlur?: (event: FocusEvent<HTMLInputElement>) => void
   onFocus?: (event: FocusEvent<HTMLInputElement>) => void
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void
@@ -45,6 +47,8 @@ export const Inputfield: FC<InputfieldProps> = ({
   isRequiredText,
   maxLength,
   className,
+  datalistId,
+  dataList,
   onBlur,
   onFocus,
   onChange,
@@ -70,51 +74,71 @@ export const Inputfield: FC<InputfieldProps> = ({
     onChange && onChange(event)
   }
 
+  const inputLabelText =
+    <LabelText
+      onlyText
+      className={`${styles['inputfiled-label']}`}
+      text={label}
+      required={required}
+      isRequiredText={`${isRequiredText}`}
+      labelHidden={labelHidden} />
+
+  const validationMessage = error && !isFocused ? (
+    <ValidationMessage
+      className={styles['input-field-validation-message']}
+      message={`${errorText}`}
+      kind='error'
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      id={`validation-message-${id}`}
+    />
+  ) : null;
+
+  const datalistOptions = dataList && datalistId ? (
+    <datalist id={datalistId}>
+      {dataList && dataList.map((item, index) => (
+        <option key={index} value={item}></option>
+      ))}
+    </datalist>
+  ) : null
+
+
+
   // TODO: ADD ICON
   return (
-    <label
-      htmlFor={id}
-      className={`
+    <>
+      <label
+        htmlFor={id}
+        className={`
         ${styles['inputfiled-component']}
         ${error ? styles['has-error'] : ''}
         ${className ? className : ''}
       `}
-      {...props}>
-      <LabelText
-        onlyText
-        className={`${styles['inputfiled-label']}`}
-        text={label}
-        required={required}
-        isRequiredText={`${isRequiredText}`}
-        labelHidden={labelHidden}/>
-      <input
-        className={error && !isFocused ? 'error' : ''}
-        id={id}
-        name={name}
-        type={type ? type : 'text'}
-        placeholder={placeholder}
-        value={hasValue}
-        required={required}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        maxLength={maxLength}
-        readOnly={readOnly}
-        disabled={disabled}
-        spellCheck={spellcheck}
-        aria-describedby={`validation-message-${id}`}
-      />
-      {error && !isFocused ?
-        <ValidationMessage
-          className={styles['input-field-validation-message']}
-          message={`${errorText}`}
-          kind='error'
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          id={`validation-message-${id}`}/>
-      : null}
-    </label>
+        {...props}>
+        {inputLabelText}
+        <input
+          className={error && !isFocused ? 'error' : ''}
+          id={id}
+          name={name}
+          type={type ? type : 'text'}
+          placeholder={placeholder}
+          value={hasValue}
+          required={required}
+          onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          maxLength={maxLength}
+          readOnly={readOnly}
+          disabled={disabled}
+          spellCheck={spellcheck}
+          list={datalistId}
+          aria-describedby={`validation-message-${id}`}
+        />
+        {validationMessage}
+        {datalistOptions}
+      </label>
+    </>
   )
 }
 

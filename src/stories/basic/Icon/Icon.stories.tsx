@@ -16,7 +16,10 @@ export default {
     },
     size: {
       name: 'Size',
-      control: 'text'
+      control: {
+        type: 'select',
+        options: ['xs', 's', 'm', 'l', 'xl', 'xxl'],
+      },
     },
     title: {
       name: 'Title',
@@ -33,7 +36,7 @@ export const Default = (args: IconProps) => <Icon {...args} />
 
 Default.args = {
   name: 'close',
-  size : 'm',
+  size: 'm',
   title: '',
   viewBox: 24,
 }
