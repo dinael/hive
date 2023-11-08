@@ -1,48 +1,54 @@
 // ## Images tags
 :where(img) {
-    block-size: var(--img-block-size, auto);
-    display: var(--img-display, block);
-    inline-size: var(--img-inline-size, 100%);
-    object-fit: var(--img-object-fit, cover);
-    object-position: var(--img-object-position); //object-position: bottom 10px right 20px;
-    object-view-box: var(--img-object-view-box, 0); //object-view-box: inset(25% 20% 15% 0%);
-    position: var(--img-position, relative);
-    aspect-ratio: var(--img-aspect-ratio);
+  display: var(--img-display, block);
+  block-size: var(--img-block-size, auto);
+  inline-size: var(--img-inline-size, 100%);
+  position: var(--img-position, relative);
+  background-repeat: var(--img-background-repeat, no-repeat);
+  background-size: var(--img-background-size, cover);
+  vertical-align: var(--img-vertical-align, middle);
 
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;
+  aspect-ratio: var(--img-aspect-ratio);
+  shape-margin: var(--img-shape-margin, 1em);
+
+  object-fit: var(--img-object-fit, cover);
+  object-position: var(--img-object-position); //object-position: bottom 10px right 20px;
+  object-view-box: var(--img-object-view-box, 0); //object-view-box: inset(25% 20% 15% 0%);
+
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 :where(picture) {
-    display: var(--picture-display, block);
-    inline-size: var(--picture-width, 100%);
+  display: var(--picture-display, block);
+  inline-size: var(--picture-width, 100%);
 }
 
 :where(figure) {
-    display: var(--figure-display, block);
-    inline-size: var(--figure-width, 100%);
+  display: var(--figure-display, block);
+  inline-size: var(--figure-width, 100%);
 }
 
 :where(figcaption) {
-    display: var(--figcaption-display, block);
+  display: var(--figcaption-display, block);
 }
 
 :where(svg) {
-    display: var(--svg-display, block);
-    overflow: hidden;
+  display: var(--svg-display, block);
+  overflow: hidden;
+  fill: currentColor;
+  block-size: var(--svg-height, auto);
+  inline-size: var(--svg-width, 100%);
+
+  &:not([fill]) {
+    stroke: none;
     fill: currentColor;
-    block-size: var(--svg-height, auto);
-    inline-size: var(--svg-width, 100%);
+  }
 
-    &:not([fill]) {
-        stroke: none;
-        fill: currentColor;
-    }
-
-    &:not(:root) {
-        overflow: hidden;
-    }
+  &:not(:root) {
+    overflow: hidden;
+  }
 }
