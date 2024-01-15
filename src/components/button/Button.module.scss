@@ -145,6 +145,7 @@ a.button-component {
 
 // ## Sizes
 .default {
+  --botton-display: inline-flex;
   --button-block-size: 2.75rem;
   --button-font-size: var(--font-size);
 }
@@ -178,10 +179,6 @@ a.button-component {
 }
 
 // ## Kind
-.default {
-  --botton-display: inline-flex;
-}
-
 .rounded {
   --button-border-radius: #{radius(circle)};
   --button-padding-block: 0;

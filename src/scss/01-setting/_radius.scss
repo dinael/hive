@@ -2,13 +2,13 @@
 
 // ## Border radius size
 $radius-size: (
-    rounded: tokens.$hive-border-radius-rounded,
-    mini: tokens.$hive-border-radius-mini,
-    XXL:  tokens.$hive-border-radius-xxl,
-    XL:   tokens.$hive-border-radius-xl,
-    L:    tokens.$hive-border-radius-l,
-    M:    tokens.$hive-border-radius-m,
-    S:    tokens.$hive-border-radius-s,
-    XS:   tokens.$hive-border-radius-xs,
-    XXS:  tokens.$hive-border-radius-xxs,
-) !default;
+  rounded: tokens.$hive-border-radius-rounded,
+  mini: tokens.$hive-border-radius-mini,
+  XXL: tokens.$hive-border-radius-xxl,
+  XL: tokens.$hive-border-radius-xl,
+  L: tokens.$hive-border-radius-l,
+  M: tokens.$hive-border-radius-m,
+  S: tokens.$hive-border-radius-s,
+  XS: tokens.$hive-border-radius-xs,
+  XXS: tokens.$hive-border-radius-xxs,
+  ) !default;

@@ -95,7 +95,8 @@ $color-swatches: (
   gray: ('default': hsl(0 0% 65%),
     'dark': hsl(0 0% 33%),
     'light': hsl(0, 0%, 80%),
-    'extra-light': hsl(0, 0%, 95%))) !default;
+    'extra-light': hsl(0, 0%, 95%))
+) !default;
 
 // $$ Gradients
 $gradient-swatches: (
@@ -107,7 +108,8 @@ $gradient-swatches: (
     deg: 45),
   pale: (start:hsl(0, 0%, 20%),
     end: hsl(0, 0%, 40%),
-    deg: 15)) !default;
+    deg: 15)
+) !default;
 
 /*
 "destination": "_tokens.scss",

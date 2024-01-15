@@ -5,7 +5,7 @@
   --fieldset-padding-inline: 1rem;
 
   border-radius: radius(XXS);
-  border-width: var(--fieldset-border-width, max(2px, 0.125rem));
+  border-width: var(--fieldset-border-width, max(0.125rem, 2px));
   border-style: var(--fieldset-border-style, solid);
   border-color: var(--fieldset-border-color, var(--color-primary));
 

@@ -8,18 +8,20 @@
   background-size: var(--img-background-size, cover);
   vertical-align: var(--img-vertical-align, middle);
 
-  aspect-ratio: var(--img-aspect-ratio);
+  aspect-ratio: var(--img-aspect-ratio, 1);
   shape-margin: var(--img-shape-margin, 1em);
 
   object-fit: var(--img-object-fit, cover);
-  object-position: var(--img-object-position); //object-position: bottom 10px right 20px;
-  object-view-box: var(--img-object-view-box, 0); //object-view-box: inset(25% 20% 15% 0%);
+  object-position: var(--img-object-position, center);
+  object-view-box: var(--img-object-view-box, 0);
 
   image-rendering: -moz-crisp-edges;
   image-rendering: -o-crisp-edges;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
+
+  font-style: var(--img-font-style, italic);
 }
 
 :where(picture) {

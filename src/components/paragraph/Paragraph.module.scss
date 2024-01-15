@@ -2,7 +2,6 @@
 @use '../../scss/03-modules/titles' as title;
 
 // TODO: que funcione como título
-
 .paragraph-component {
   display: var(--paragraph-component-display, block);
   font-family: var(--paragraph-component-font-family, var(--font-family));
@@ -34,9 +33,9 @@
   display: block;
 }
 
-.column {
+// .column {
 
-}
+// }
 
 @media (orientation: portrait) {
   .a11y-length {

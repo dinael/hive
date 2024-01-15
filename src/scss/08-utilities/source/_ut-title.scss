@@ -9,44 +9,47 @@ $-title-size: title.$title-size;
 $-max-width-a11y: 65ch;
 
 @if $-ut-title {
-    // ** Utility class
-    [class*="title:"] {
-        @if $-accessibility-text {
-            --title-max-width: #{$-max-width-a11y} !important;
-        }
-        // TODO: @include font.line-height-crop($-ut-paragraph-line-height);
 
-        a {
-            --link-color: currentColor;
-        }
+  // ** Utility class
+  [class*="title:"] {
+    @if $-accessibility-text {
+      --title-max-width: #{$-max-width-a11y} !important;
     }
 
-    .title {
-        // $$ Sizes
-        @each $size, $value in $-title-size {
-            &\:#{to-lower-case($size)} {
-                --title-size: #{title.size($size)};
-                --title-line-height: #{title.line-height($size)};
-            }
-        }
+    // TODO: @include font.line-height-crop($-ut-paragraph-line-height);
 
-        // $$ kind
-        &\:secondary {
-            color: var(--title-color-secondary);
-        }
-
-        // $$ Marker
-        &\:marker {
-            &::before {
-                content: "#" / "";
-                display: inline;
-                margin-inline-end: 0.5rem;
-            }
-        }
-
-        // $$ Accessibility
-        &\:a11y {
-            --title-max-width: #{$-max-width-a11y};
-        }
+    a {
+      --link-color: currentColor;
     }
+  }
+
+  .title {
+
+    // $$ Sizes
+    @each $size, $value in $-title-size {
+      &\:#{to-lower-case($size)} {
+        --title-size: #{title.size($size)};
+        --title-line-height: #{title.line-height($size)};
+      }
+    }
+
+    // $$ kind
+    &\:secondary {
+      color: var(--title-color-secondary);
+    }
+
+    // $$ Marker
+    &\:marker {
+      &::before {
+        content: "#" / "";
+        display: inline;
+        margin-inline-end: 0.5rem;
+      }
+    }
+
+    // $$ Accessibility
+    &\:a11y {
+      --title-max-width: #{$-max-width-a11y};
+    }
+  }
 }

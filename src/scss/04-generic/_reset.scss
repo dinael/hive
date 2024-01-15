@@ -72,22 +72,32 @@
 
 // $$ Media queries
 @media (prefers-reduced-motion: no-preference) {
+
   html {
     scroll-behavior: smooth;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
-  @if not(setup.$ut-accessibility) {
 
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      scroll-behavior: auto !important;
-      transition-duration: 0.01ms !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  *::after,
+  *::before {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
 
