@@ -9,7 +9,7 @@ const coverageConfig = {
 const config: StorybookConfig = {
   stories: [
     "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   staticDirs: [
     '../public',
@@ -20,7 +20,6 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-mdx-gfm",
-    "@whitespace/storybook-addon-html",
     "storybook-addon-pseudo-states",
     "@storybook/addon-a11y",
     "addon-screen-reader",

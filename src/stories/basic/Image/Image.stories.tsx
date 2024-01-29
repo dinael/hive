@@ -1,3 +1,4 @@
+//import { } from '@storybook/react'
 import { Image, ImageProps } from '@/components/image/Image'
 
 export default {

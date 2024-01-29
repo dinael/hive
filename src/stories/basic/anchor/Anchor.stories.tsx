@@ -17,7 +17,7 @@ export default {
     className: {
       name: 'className',
       control: 'text'
-   },
+    },
   }
 }
 
