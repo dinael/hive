@@ -27,6 +27,7 @@
   .card-actions {
     inline-size: 100%;
     padding-inline: 0.75rem;
+    padding-block-start: 0.75rem;
   }
 
   .card-actions-contented {
@@ -45,7 +46,6 @@
 
     text-wrap: initial;
     word-break: keep-all;
-
     padding-inline: 0.75rem;
   }
 
@@ -67,6 +67,6 @@
 }
 
 .card-img {
-  height: 200px;
+  height: 12.5rem;
   order: -1;
 }

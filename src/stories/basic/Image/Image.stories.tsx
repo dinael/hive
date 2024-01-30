@@ -1,10 +1,10 @@
-//import { } from '@storybook/react'
 import { Image, ImageProps } from '@/components/image/Image'
 
 export default {
   title: 'Components/Basic/Image',
   component: Image,
   parameters: {
+    type: 'beta',
     vitest: {
       testFile: "Image.test.tsx"
     }
