@@ -9,7 +9,7 @@
   margin: var(--paragraph-margin, 0);
   column-count: var(--paragraph-column);
   column-gap: var(--paragraph-column-gap, 1em);
-  text-wrap: var(--paragraph-text-wrap, balance);
+  text-wrap: var(--paragraph-text-wrap, pretty);
   word-break: var(--paragraph-word-break, break-all);
   overflow-wrap: var(--paragraph-overflow-wrap, break-word);
   hyphens: var(--paragraph-hyphens, auto);

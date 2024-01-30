@@ -36,7 +36,7 @@ export const withChildren = (args: ParagraphProps) => ([
 ])
 
 Default.args = {
-  text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus natus assumenda beatae sapiente quis sed! Ducimus asperiores, excepturi magni eligendi magnam, natus officiis inventore, accusamus accusantium nihil nam temporibus beatae! Dolore qui molestias id accusantium',
+  text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus natus assumenda beatae sapiente quis sed! Ducimus asperiores, excepturi magni eligendi magnam, natus officiis inventore, accusamus accusantium nihil nam temporibus beatae! Dolore qui molestias id accusantium.',
   ellipsis: false,
   a11yLength: false,
   flat: false

@@ -9,15 +9,19 @@
   line-height: var(--paragraph-component-line-height);
   inline-size: var(--paragraph-component-inline-size, auto);
   max-inline-size: var(--paragraph-component-max-width, 100%);
-  padding: var(--paragraph-component-padding, 0 0 1rem 0);
+  padding: var(--paragraph-component-padding, 0);
   margin: var(--paragraph-component-margin, 0);
   column-count: var(--paragraph-component-column);
   column-gap: var(--paragraph-component-column-gap, 1rem);
-  text-wrap: var(--paragraph-component-text-wrap, balance);
+  text-wrap: var(--paragraph-component-text-wrap, pretty);
   word-break: var(--paragraph-component-word-break, break-all);
   overflow-wrap: var(--paragraph-component-overflow-wrap, break-word);
   hyphens: var(--paragraph-component-hyphens, auto);
   line-break: var(--paragraph-component-line-break, auto)
+}
+
+[class*="paragraph-component"] + [class*="paragraph-component"] {
+  padding-block-start: 1.75ch;
 }
 
 .flat {

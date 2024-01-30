@@ -5,14 +5,13 @@
 $-ut-paragraph: setup.$ut-paragraph;
 $-accessibility: setup.$accessibility;
 $-ut-paragraph-line-height: font.line-height(default) !default;
-$-paragraph-space-flow: 1rem !default;
-
+$-paragraph-space-flow: 1.75ch !default;
 $-paragraph-small: 30ch !default;
 $-paragraph-medium: 60ch !default;
 $-paragraph-a11y: 65ch !default;
 
 @if $-ut-paragraph {
-    [class*="paragraph"] {
+    [class="paragraph"] {
 
         @if $-accessibility {
             --paragraph-max-width: #{$-paragraph-a11y} !important;
