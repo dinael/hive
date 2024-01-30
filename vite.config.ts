@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 import { defineConfig } from 'vite'
-import istanbul from 'vite-plugin-istanbul';
+import istanbul from 'vite-plugin-istanbul'
 import react from '@vitejs/plugin-react'
 import * as path from 'path'
 
@@ -28,3 +28,8 @@ export default defineConfig({
     },
   },
 })
+
+if (!navigator.userAgent) {
+  //@ts-ignore
+  navigator.userAgent = "";
+}

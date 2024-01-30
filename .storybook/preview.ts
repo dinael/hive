@@ -46,6 +46,27 @@ export const decorators = [
   }),
 ];
 
+export const parameters = {
+  html: {
+    removeEmptyComments: true,
+    removeComments: /^\s*remove me\s*$/,
+    prettier: {
+      tabWidth: 4,
+      useTabs: false,
+      htmlWhitespaceSensitivity: "strict",
+    },
+  },
+  status: {
+    statuses: {
+      released: {
+        background: '#0000ff',
+        color: '#ffffff',
+        description: 'This component is stable and released',
+      },
+    },
+  },
+};
+
 export default preview;
 
 

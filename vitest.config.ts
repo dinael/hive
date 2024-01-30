@@ -15,7 +15,11 @@ export default defineConfig({
       reportsDirectory: './src/tests/unit/coverage'
     },
     resolve: {
-      alias: [{ find: "@", replacement: resolve(__dirname, "./src") }]
+      alias: [
+        { find: "@", replacement: resolve(__dirname, "./src") },
+        { find: '@', replacement: new URL('./src/', import.meta.url).pathname },
+        { find: /\.(scss|sass|css)$/, replacement: new URL('./tests/empty.css', import.meta.url).pathname },
+      ]
     },
     reporters: [
       ['json', { 'file': 'coverage.json' }]

@@ -1,8 +1,8 @@
 import type { StorybookConfig } from "@storybook/react-vite"
 
 const coverageConfig = {
-  include: ['**/stories/**'],
-  exclude: ['**/exampleDirectory/**'],
+  include: ["**/stories/**"],
+  exclude: ["**/exampleDirectory/**"],
   excludeNodeModules: true,
 };
 
@@ -12,8 +12,8 @@ const config: StorybookConfig = {
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   staticDirs: [
-    '../public',
-    '../src/assets'
+    "../public",
+    "../src/assets"
   ],
   addons: [
     "@storybook/addon-links",
@@ -27,6 +27,10 @@ const config: StorybookConfig = {
     "@storybook/addon-styling",
     "@storybook/addon-coverage",
     "storybook_vitest_addon",
+    "@etchteam/storybook-addon-status",
+    "@whitespace/storybook-addon-html",
+    "storybook-addon-html-validator",
+    "@storybook/addon-designs",
     {
       name: "@storybook/addon-coverage",
       options: {
