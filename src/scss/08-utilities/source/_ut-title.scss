@@ -12,6 +12,9 @@ $-max-width-a11y: 65ch;
 
   // ** Utility class
   [class*="title:"] {
+    overflow-wrap: break-word;
+    min-block-size: 0;
+
     @if $-accessibility-text {
       --title-max-width: #{$-max-width-a11y} !important;
     }

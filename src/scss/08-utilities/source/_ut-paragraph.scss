@@ -16,11 +16,13 @@ $-paragraph-a11y: 65ch !default;
         @if $-accessibility {
             --paragraph-max-width: #{$-paragraph-a11y} !important;
         }
+        overflow-wrap: break-word;
 
-        padding: var(--paragraph-padding, 0);
         line-height: var(--paragraph-line-height);
-        max-inline-size: var(--paragraph-max-width, auto);
         text-wrap: pretty;
+        max-inline-size: var(--paragraph-max-width, auto);
+        min-inline-size: 0;
+        padding: var(--paragraph-padding, 0);
 
         & + & {
             padding-block-start: var(--paragraph-padding, #{$-paragraph-space-flow});

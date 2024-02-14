@@ -122,8 +122,8 @@
       }
 
       &::before {
-        position: relative;
         content: "";
+        position: relative;
         display: inline-block;
         border-radius: radius(rounded);
         min-inline-size: var(--checkbox-switch-width);
@@ -134,10 +134,10 @@
       }
 
       &::after {
+        content: "";
         position: absolute;
         inset-block-start: 0.25em;
         display: inline-block;
-        content: "";
         block-size: 1em;
         inline-size: 1em;
         border-radius: radius(rounded);
@@ -179,7 +179,7 @@
     background: var(--input-chip-background, var(--color-basic-positive));
     transition: background .3s ease-in-out, color .3s ease-in-out;
 
-    &:hover {
+    @include hover {
       --input-chip-color: var(--color-basic-positive);
       --input-chip-background: var(--color-primary);
       --input-chip-before-border-color: var(--color-basic-positive);

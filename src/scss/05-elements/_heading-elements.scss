@@ -16,4 +16,5 @@ $-title-size: title.$title-size;
   line-height: var(--title-line-height);
   max-inline-size: var(--title-max-width, auto); // For accessibility: maximum width of 65characters
   overflow-wrap: break-word;
+  min-inline-size: 0;
 }

@@ -3,7 +3,6 @@
 @use "sass:selector";
 
 // ## mixin
-
 // $$ Selectors
 // append to parent
 @mixin parent-to-child($new-parent) {
@@ -179,3 +178,13 @@
 
 // Usage:
 // @include form.disable($opacity: 0.8);
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Usage:

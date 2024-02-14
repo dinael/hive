@@ -6,7 +6,7 @@
   border-radius: var(--anchor-border-radius, #{radius(XXS)});
   cursor: pointer;
 
-  &:hover {
+  @include hover {
     --anchor-color: var(--color-accent);
     --anchor-decoration-color: var(--color-accent);
   }
@@ -40,3 +40,4 @@
     gap: 0.25rem;
   }
 }
+

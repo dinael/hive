@@ -80,7 +80,7 @@ a.button-component {
   --button-color: var(--color-basic-positive);
   --button-border-color: var(--color-primary-dark);
 
-  &:hover {
+  @include hover {
     --button-background: var(--color-primary-light);
   }
 }
@@ -90,7 +90,7 @@ a.button-component {
   --button-color: var(--color-basic-positive);
   --button-border-color: var(--color-secondary-dark);
 
-  &:hover {
+  @include hover {
     --button-color: var(--color-basic-positive);
     --button-background: var(--color-secondary-extra-dark);
   }
@@ -101,7 +101,7 @@ a.button-component {
   --button-background: transparent;
   --button-border-color: var(--color-primary);
 
-  &:hover {
+  @include hover {
     --button-color: var(--color-basic-positive);
     --button-background: var(--color-primary);
     --button-border-color: var(--color-primary);
@@ -115,7 +115,7 @@ a.button-component {
 
   transition: border 0.35s ease;
 
-  &:hover {
+  @include hover {
     --button-background: transparent;
     --button-border-color: var(--color-primary);
   }
@@ -126,7 +126,7 @@ a.button-component {
   --button-border-color: var(--color-validation-success-dark);
   --button-background: var(--color-validation-success);
 
-  &:hover {
+  @include hover {
     --button-color: var(--color-basic-positive);
     --button-background: var(--color-validation-success-dark);
   }
@@ -137,7 +137,7 @@ a.button-component {
   --button-border-color: var(--color-validation-danger-dark);
   --button-background: var(--color-validation-danger);
 
-  &:hover {
+  @include hover {
     --button-color: var(--color-basic-positive);
     --button-background: var(--color-validation-danger-dark);
   }

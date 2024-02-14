@@ -17,7 +17,7 @@
     transition: color 0.35s ease-in-out;
     text-decoration-color: var(--anchor-decoration-color, var(--anchor-color));
 
-    &:hover {
+    @include hover {
         --anchor-color: var(--anchor-color-hover);
 
         filter: var(--anchor-filter, drop-shadow(0 0 0));
@@ -29,7 +29,7 @@
     // TODO states
     // &:active {
     //     --anchor-color: var(--anchor-color-active);
-    //     &:hover {
+    //     @include hover {
     //         --anchor-color: var(--anchor-color-active-hover);
     //     }
     // }
@@ -37,7 +37,7 @@
     &:visited {
         --anchor-color: var(--anchor-color-visited);
     }
-    //     &:hover {
+    //     @include hover {
     //         --anchor-color: var(--anchor-color-visited-hover);
     //     }
     //     &:active {

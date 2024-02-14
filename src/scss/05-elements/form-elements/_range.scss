@@ -43,16 +43,15 @@
 
     //** Thumb
     &::-webkit-slider-thumb {
-        &:hover {
-        }
+        @include hover {}
     }
 
     &::-moz-range-thumb {
-        &:hover {}
+        @include hover {}
     }
 
     &::-ms-thumb {
-        &:hover {}
+        @include hover {}
     }
 
     //** tooltip explorer

@@ -242,6 +242,7 @@ $-text-shadow: (
 
         &\:ellipsis {
             @include text.ellipsis;
+            inline-size: calc(100% - 1ch);
         }
 
         // $$ Brand attributes
